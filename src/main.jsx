@@ -5,8 +5,6 @@ import './App.css'
 import ReloadPrompt from './pwa-reload/ReloadPrompt';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { SnackbarProvider } from 'notistack';
-import { StyledEngineProvider } from '@mui/material/styles';
-import CustomizedSnackbar from './utils/CustomSnackbar';
 
 const darkTheme = createTheme({
   palette: {
@@ -30,23 +28,22 @@ const darkTheme = createTheme({
 //     </>
 //   )
 // }
+//<MyButton />
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={darkTheme}>
-        <SnackbarProvider
-          preventDuplicate
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          autoHideDuration={3000}>
-          <App />
-          <ReloadPrompt />
-        </SnackbarProvider>
-      </ThemeProvider>
-    </StyledEngineProvider>
+    <ThemeProvider theme={darkTheme}>
+      <SnackbarProvider
+        preventDuplicate
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        autoHideDuration={3000}>
+        <App />
+        <ReloadPrompt />
+      </SnackbarProvider>
+    </ThemeProvider>
   </React.StrictMode>
 )

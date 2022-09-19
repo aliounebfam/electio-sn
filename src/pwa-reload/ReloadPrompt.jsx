@@ -1,26 +1,33 @@
 import { useRegisterSW } from 'virtual:pwa-register/react'
 import CustomizedSnackbar from './../utils/CustomSnackbar';
-import { StyledEngineProvider } from '@mui/material/styles';
 
 function ReloadPrompt() {
+    const intervalMS = 60 * 60 * 1000; // Chaque 1h de temps
     const {
         offlineReady: [offlineReady],
         needRefresh: [needRefresh],
         updateServiceWorker,
     } = useRegisterSW(
-            // {
-            // onRegistered(r) {
-            //     // eslint-disable-next-line prefer-template
-            //     console.log('SW Registered: ' + r)
-            // },
-            // onRegisterError(error) {
-            //     console.log('SW registration error', error)
-            // },
-            // }
-        )
+        {
+            onRegistered(r) {
+                r && setInterval(() => {
+                    r.update()
+                }, intervalMS)
+            }
+        }
+        // {
+        // onRegistered(r) {
+        //     // eslint-disable-next-line prefer-template
+        //     console.log('SW Registered: ' + r) 
+        // },
+        // onRegisterError(error) {
+        //     console.log('SW registration error', error)
+        // },
+        // }
+    )
 
     return (
-        <StyledEngineProvider injectFirst>
+        <>
             {(offlineReady || needRefresh)
                 && <>
                     {offlineReady
@@ -29,7 +36,7 @@ function ReloadPrompt() {
                     }
                 </>
             }
-        </StyledEngineProvider>
+        </>
     )
 }
 
