@@ -1,11 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
-import './App.css'
-import ReloadPrompt from './pwa-reload/ReloadPrompt';
+import ReloadPrompt from './services/ReloadPwaPrompt';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { SnackbarProvider } from 'notistack';
+import { router } from './Routes';
+import {
+  RouterProvider,
+} from "react-router-dom";
 
+
+//theme
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
@@ -31,6 +35,9 @@ const darkTheme = createTheme({
 //<MyButton />
 
 
+
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={darkTheme}>
@@ -41,7 +48,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           horizontal: 'right',
         }}
         autoHideDuration={3000}>
-        <App />
+        <RouterProvider router={router} />
         <ReloadPrompt />
       </SnackbarProvider>
     </ThemeProvider>

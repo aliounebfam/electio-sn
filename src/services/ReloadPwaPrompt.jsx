@@ -1,5 +1,5 @@
 import { useRegisterSW } from 'virtual:pwa-register/react'
-import CustomizedSnackbar from './../utils/CustomSnackbar';
+import CustomizedSnackbar from '../utils/CustomSnackbar';
 
 function ReloadPrompt() {
     const intervalMS = 60 * 60 * 1000; // Chaque 1h de temps

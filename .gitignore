@@ -23,5 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
+# Config ABF
 preview.config.cjs
 dev-dist
