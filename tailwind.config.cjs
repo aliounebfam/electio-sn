@@ -6,7 +6,11 @@ module.exports = {
   ],
   important: '#root',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Comfortaa: ['Comfortaa', 'cursive']
+      }
+    },
   },
   plugins: [],
 }

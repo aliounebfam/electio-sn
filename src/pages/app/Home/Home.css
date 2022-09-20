@@ -1,0 +1,3 @@
+.cta-pr-btn:hover svg {
+    transform: translateX(5px);
+}

@@ -4,9 +4,7 @@ import ReloadPrompt from './services/ReloadPwaPrompt';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { SnackbarProvider } from 'notistack';
 import { router } from './Routes';
-import {
-  RouterProvider,
-} from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 
 
 //theme
@@ -33,9 +31,6 @@ const darkTheme = createTheme({
 //   )
 // }
 //<MyButton />
-
-
-
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
