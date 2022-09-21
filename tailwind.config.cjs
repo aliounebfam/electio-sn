@@ -8,7 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        Comfortaa: ['Comfortaa', 'cursive']
+        Comfortaa: ['Comfortaa', 'cursive'],
+        Hind: ['Hind', 'sans-serif'],
+        Trykker: ['Trykker', 'serif']
       }
     },
   },
