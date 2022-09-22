@@ -9,6 +9,7 @@ specifiers:
   '@types/react-dom': ^18.0.6
   '@vitejs/plugin-react': ^2.1.0
   autoprefixer: ^10.4.11
+  hamburger-react: ^2.5.0
   notistack: ^2.0.5
   postcss: ^8.4.16
   react: ^18.2.0
@@ -24,6 +25,7 @@ dependencies:
   '@emotion/styled': 11.10.4_yiaqs725o7pcd7rteavrnhgj4y
   '@mui/icons-material': 5.10.3_5evnxlqsqnxmrwqqtdxt2buelq
   '@mui/material': 5.10.5_af5ln35zuaotaffazii6n6bke4
+  hamburger-react: 2.5.0_react@18.2.0
   notistack: 2.0.5_l2qqre42bn772ugwcietgyxzoi
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -2569,6 +2571,14 @@ packages:
   /graceful-fs/4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
     dev: true
+
+  /hamburger-react/2.5.0_react@18.2.0:
+    resolution: {integrity: sha512-5GSXe+ucxTPJ0SkhIsPQ/PRDweZPIKya1lfahAuExx31SdheeUA4uOPfQIAirbKona8hvo79VDr5LJQzPXsdpw==}
+    peerDependencies:
+      react: ^16.8 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /has-bigints/1.0.2:
     resolution: {integrity: sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ==}
