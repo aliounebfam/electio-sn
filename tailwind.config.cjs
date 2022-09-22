@@ -11,7 +11,7 @@ module.exports = {
         Comfortaa: ['Comfortaa', 'cursive'],
         Hind: ['Hind', 'sans-serif'],
         Trykker: ['Trykker', 'serif']
-      }
+      },
     },
   },
   plugins: [],
