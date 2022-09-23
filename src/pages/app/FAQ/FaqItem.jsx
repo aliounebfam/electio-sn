@@ -15,8 +15,8 @@ export default function FaqItem({ question, content, isContentVisible }) {
     const handleClick = () => setIsFaqItemOpen(!isFaqItemOpen);
 
     return (
-        <Tooltip className='bg-red-800' title="Cliquez pour voir le contenu" placement='top' arrow>
-            <div onClick={handleClick} className={isFaqItemOpen ? "transition-all duration-300 bg-white border border-gray-200 shadow-lg shadow-violet-600/30 cursor-pointer hover:bg-gray-50" : "shadow-sm transition-all duration-200 bg-white border border-gray-200 cursor-pointer hover:bg-gray-50"}>
+        <Tooltip title="Cliquez pour voir le contenu" placement='top' arrow>
+            <div onClick={handleClick} className={isFaqItemOpen ? "transition-all duration-300 bg-white border border-gray-200 shadow-lg shadow-violet-600/30 cursor-pointer hover:bg-gray-50" : "shadow-sm transition-all duration-200 bg-white border border-gray-200 cursor-pointer hover:bg-gray-100"}>
                 <button type="button" className="flex items-center justify-between w-full px-4 py-5 sm:p-6">
                     <span className="flex text-lg text-violet-900 font-Hind"> {question} </span>
 
