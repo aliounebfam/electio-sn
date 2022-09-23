@@ -51,7 +51,9 @@ export default function Home() {
 
     return (
         <main className='flex-1'>
-            <div ref={main} style={{ height: mainHeight }} className={"relative lg:h-screen pb-16"}>
+
+            {/* HERO */}
+            <section ref={main} style={{ height: mainHeight }} className={"relative lg:h-screen pb-16"}>
                 <div>
                     <img className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000" src={"src/assets/images/" + src} alt="" />
                     <div aria-hidden="true" style={{ backgroundColor: "rgba(17, 24, 39," + (src === "femme_senegalaise.jpg" ? "0.75" : "0.5") + ")" }} className={"absolute inset-0 w-full h-full backdrop-blur-md "}></div>
@@ -103,9 +105,11 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className='container'>
-                <div className="py-16 bg-white">
+            </section>
+
+            {/* FAQ */}
+            <section className='container mx-auto'>
+                <div className="py-16 bg-gray-300/[0.57]">
                     <div className="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
                         <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
                             <div className="md:5/12 lg:w-5/12">
@@ -116,14 +120,89 @@ export default function Home() {
                                 </Tooltip>
                             </div>
                             <div className="md:7/12 lg:w-6/12">
-                                <h2 className="text-2xl text-gray-900 font-bold md:text-4xl">Foire aux questions (FAQ)</h2>
-                                <p className="text-xl mt-6 text-gray-700">Rubrique regroupant les réponses aux questions les plus fréquemment posées.</p>
-                                <p className="text-xl mt-2 text-gray-700">Vous avez des questions ? Vérifiez <CustomLinkBackground text={"ici"} path='/faq' /> si elles n'ont pas déjà été traitées</p>
+                                <h2 className="text-3xl font-Hind text-gray-900 font-bold md:text-4xl">Foire aux questions (FAQ)</h2>
+                                <p className="text-xl mt-6 font-Trykker text-gray-700">Rubrique regroupant les réponses aux questions les plus fréquemment posées.</p>
+                                <p className="text-xl mt-2 font-Trykker text-gray-700">Vous avez des questions ? Vérifiez <CustomLinkBackground className={"text-violet-800 font-bold"} text={"ici"} path='/faq' /> si elles n'ont pas déjà été traitées.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            {/* Team */}
+
+            <section className="container mx-auto">
+
+                <div className="py-20 bg-gray-300/40">
+                    <div className="container mx-auto px-6 md:px-12 text-center">
+                        <div className="mb-16">
+                            <h2 className="mb-4 font-Hind text-center text-2xl text-gray-900 font-bold md:text-[38px]">Équipe de développement</h2>
+                        </div>
+                        <div className="py-20 grid gap-28 md:gap-12 md:grid-cols-3">
+                            <div className="border-t-4 border-violet-500 space-y-8 group">
+                                <div className="w-36 h-36 -mt-16 mx-auto rounded-[2rem] rotate-45 overflow-hidden">
+                                    <img className="w-full h-full object-cover object-center -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale-[1.4]"
+                                        src="/src/assets/images/abf.jpg" alt="woman" loading="lazy" width="640" height="805" />
+                                </div>
+                                <div className="space-y-4 text-center">
+                                    <div>
+                                        <h4 className="text-2xl font-Hind">Alioune Badara FAM</h4>
+                                        <span className="block text-md text-gray-800 font-Trykker">Génie Logiciel</span>
+                                    </div>
+                                    <a href="https://www.linkedin.com/in/alioune-badara-fam" class="w-max mx-auto flex items-center space-x-3 hover:text-violet-800 transition">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 m-auto" viewBox="0 0 16 16">
+                                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
+                                        </svg>
+                                        <span>LinkedIn</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className=" border-t-4 border-violet-500 space-y-8 group">
+                                <div className="w-36 h-36 -mt-16 mx-auto rounded-[2rem] rotate-45 overflow-hidden">
+                                    <img className="w-full h-full object-cover  -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale-[1.4]"
+                                        src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="woman" loading="lazy" width="100" height="66" />
+                                </div>
+                                <div className="space-y-4 text-center">
+                                    <div>
+                                        <h4 className="text-2xl font-Hind">Mouhamed NDOYE</h4>
+                                        <span className="block text-md text-gray-800 font-Trykker">Génie Logiciel</span>
+                                    </div>
+                                    <a href="#" class="w-max mx-auto flex items-center space-x-3 hover:text-violet-800 transition">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 m-auto" viewBox="0 0 16 16">
+                                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
+                                        </svg>
+                                        <span>LinkedIn</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className="border-t-4 border-violet-500 space-y-8 group">
+                                <div className="w-36 h-36 -mt-16 mx-auto rounded-[2rem] rotate-45 overflow-hidden">
+                                    <img className="w-full h-full object-cover -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale-[1.4]"
+                                        src="https://avatars.dicebear.com/api/adventurer/oops.svg" alt="man" loading="lazy" width="1000" height="667" />
+                                </div>
+                                <div className="space-y-4 text-center">
+                                    <div>
+                                        <h4 className="text-2xl font-Hind">Mouhamadou Lamine SANE</h4>
+                                        <span className="block text-md text-gray-800 font-Trykker">Intelligence Artificielle</span>
+                                    </div>
+                                    <a href="#" class="w-max mx-auto flex items-center space-x-3 hover:text-violet-800 transition">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 m-auto" viewBox="0 0 16 16">
+                                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
+                                        </svg>
+                                        <span>LinkedIn</span>
+                                    </a>
+                                    {/* <a href="#" className="block w-max mx-auto text-blue-600">View Bio</a> */}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
 
         </main>
     )
