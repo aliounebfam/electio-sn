@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react';
-import { useLayoutEffect } from 'react';
 import { useRef } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import CustomLinkBackground from './../../../utils/CustomLinkBackground';
 import './Home.css'
+import Tooltip from '@mui/material/Tooltip';
 
 export default function Home() {
     const [src, setSrc] = useState("femme_senegalaise.jpg");
@@ -23,8 +24,6 @@ export default function Home() {
         setMainHeight(newMainHeight);
 
         function handleResize() {
-
-            console.log(window.innerWidth);
             if (window.innerWidth <= "1535") {
                 const newMainHeight = content.current.clientHeight + 40;
                 setMainHeight(newMainHeight + "px");
@@ -51,11 +50,11 @@ export default function Home() {
 
 
     return (
-        <main>
-            <div ref={main} style={{ height: mainHeight }} className={"flex-1 relative lg:h-screen pb-16"}>
+        <main className='flex-1'>
+            <div ref={main} style={{ height: mainHeight }} className={"relative lg:h-screen pb-16"}>
                 <div>
                     <img className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000" src={"src/assets/images/" + src} alt="" />
-                    <div aria-hidden="true" className={"absolute inset-0 w-full h-full backdrop-blur-md bg-[rgba(17,24,39)]/" + (src === "femme_senegalaise.jpg" ? "[0.75] " : "[0.55]")}></div>
+                    <div aria-hidden="true" style={{ backgroundColor: "rgba(17, 24, 39," + (src === "femme_senegalaise.jpg" ? "0.75" : "0.5") + ")" }} className={"absolute inset-0 w-full h-full backdrop-blur-md "}></div>
                     <div ref={content} className="relative">
                         <div className="mb-12 space-y-16 md:mb-20 pt-12 sm:pt-32 w-11/12 mx-auto">
                             <h1 className="relative leading-[48px]  lg:leading-[66px] text-white md:leading-[58px] sm:leading-[55px] text-3xl font-bold font-Comfortaa lg:text-[38px] md:text-4xl">
@@ -92,7 +91,7 @@ export default function Home() {
                                         Vous êtes déjà un électeur ?
                                     </span>&nbsp;
                                     <Link to={'/credential-request'} className="text-2xl py-10 sm:py-0 cssbuttons-io-button">
-                                        <span className='mt-1'>
+                                        <span className=' mt-1'>
                                             Demander des identifiants de connexion
                                         </span>
                                         <div className="icon">
@@ -106,21 +105,26 @@ export default function Home() {
                 </div>
             </div>
             <div className='container'>
-                <div class="py-16 bg-white">
-                    <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-                        <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
-                            <div class="md:5/12 lg:w-5/12">
-                                <img src="src/assets/images/question.jpg" className='shadow-violet-700 drop-shadow-2xl' alt="image" loading="lazy" width="" height="" />
+                <div className="py-16 bg-white">
+                    <div className="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
+                        <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
+                            <div className="md:5/12 lg:w-5/12">
+                                <Tooltip className='bg-red-800' title="Accéder à la rubrique FAQ" placement='right-start' arrow>
+                                    <Link to='/faq'>
+                                        <img src="src/assets/images/question.jpg" className='rounded-sm drop-shadow-2xl' alt="" loading="lazy" width="" height="" />
+                                    </Link>
+                                </Tooltip>
                             </div>
-                            <div class="md:7/12 lg:w-6/12">
-                                <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">Nuxt development is carried out by passionate developers</h2>
-                                <p class="mt-6 text-gray-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum omnis voluptatem accusantium nemo perspiciatis delectus atque autem! Voluptatum tenetur beatae unde aperiam, repellat expedita consequatur! Officiis id consequatur atque doloremque!</p>
-                                <p class="mt-4 text-gray-600"> Nobis minus voluptatibus pariatur dignissimos libero quaerat iure expedita at? Asperiores nemo possimus nesciunt dicta veniam aspernatur quam mollitia.</p>
+                            <div className="md:7/12 lg:w-6/12">
+                                <h2 className="text-2xl text-gray-900 font-bold md:text-4xl">Foire aux questions (FAQ)</h2>
+                                <p className="text-xl mt-6 text-gray-700">Rubrique regroupant les réponses aux questions les plus fréquemment posées.</p>
+                                <p className="text-xl mt-2 text-gray-700">Vous avez des questions ? Vérifiez <CustomLinkBackground text={"ici"} path='/faq' /> si elles n'ont pas déjà été traitées</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </main>
     )
 }

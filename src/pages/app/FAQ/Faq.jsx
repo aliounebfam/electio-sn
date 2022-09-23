@@ -1,5 +1,5 @@
 import React from 'react'
-import CustomLink from '../../../utils/CustomLinkBackground';
+import CustomLinkBackground from '../../../utils/CustomLinkBackground';
 import FaqItem from './FaqItem';
 
 export default function Faq() {
@@ -24,7 +24,7 @@ export default function Faq() {
                     />
                 </div>
                 <p className="text-center text-gray-700 font-Trykker text-[18px] mt-9">Vous n'avez pas trouvé de réponse à ce que vous cherchiez ? &nbsp;
-                    <CustomLink text="Contactez-nous" path={'/contact'} className="text-violet-900 font-extrabold font-Comfortaa" />
+                    <CustomLinkBackground text="Contactez-nous" path={'/contact'} className="text-violet-900 font-extrabold font-Comfortaa" />
                 </p>
             </div>
         </section>
