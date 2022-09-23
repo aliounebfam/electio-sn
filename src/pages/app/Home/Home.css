@@ -1,3 +1,125 @@
 .cta-pr-btn:hover svg {
     transform: translateX(5px);
 }
+
+
+/***/
+
+/* From uiverse.io by @adamgiebl */
+.cssbuttons-io-button {
+ background: #7c3aed;
+ color: white;
+ font-family: inherit;
+ padding: 0.35em;
+ padding-left: 1.2em;
+ font-size: 17px;
+ font-weight: 500;
+ border-radius: 0.4em;
+ border: none;
+ letter-spacing: 0.05em;
+ display: inline-flex;
+ align-items: center;
+ box-shadow: inset 0 0 1.6em -0.6em #714da6;
+ overflow: hidden;
+ position: relative;
+ height: 2.8em;
+ padding-right: 3.3em;
+}
+
+.cssbuttons-io-button .icon {
+ background: white;
+ margin-left: 1em;
+ position: absolute;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 2.2em;
+ width: 2.2em;
+ border-radius: 0.2em;
+ box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+ right: 0.3em;
+ transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+ width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+ width: 1.1em;
+ transition: transform 0.3s;
+ color: #7c3aed;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+ transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+ transform: scale(0.95);
+}
+
+
+
+
+/* From uiverse.io by @satyamchaudharydev */
+.login {
+  --primary-color: #7a46ce;
+  --secondary-color: #fff;
+  --hover-color: #6d28d9;
+  --arrow-width: 15px;
+  --arrow-stroke: 3px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 7px;
+  color: var(--secondary-color);
+  padding: 0.2em 0.7em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+}
+
+.login .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.login .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.login:hover {
+  background-color: var(--hover-color);
+  /* color: var(--primary-color); */
+}
+
+.login:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.login:hover .arrow:before {
+  right: 0;
+}
