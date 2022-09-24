@@ -80,13 +80,20 @@ export default function Home() {
                                 <div className='lg:before:absolute relative inline-block before:bg-gradient-to-r before:from-[#007E3C] before:via-[#F0E33F] before:to-[#D71A21] before:w-full before:h-[3px] before:top-[calc(100%-10px)] before:scale-x-100 before:transition-transform before:duration-300 before:origin-[0_50%]'>
                                     statistiques avancées
                                 </div>&nbsp;
-                                <div className='pt-0 inline-block'>
-                                    <button className='text-3xl login'>
-                                        Se connecter
-                                        <div className="arrow-wrapper">
-                                            <div className="arrow"></div>
-                                        </div>
-                                    </button>
+                                <div className='pt-3'>
+                                    <Link to={'/sign-up'}>
+                                        <button className='mr-10 text-3xl sign-up'>
+                                            S'inscrire pour être électeur
+                                        </button>
+                                    </Link>
+                                    <Link to={'/login'}>
+                                        <button className='mt-5 text-3xl login'>
+                                            Se connecter
+                                            <div className="arrow-wrapper">
+                                                <div className="arrow"></div>
+                                            </div>
+                                        </button>
+                                    </Link>
                                 </div>
                                 <div className='mt-9 font-Hind flex items-center flex-wrap space-y-2 md:space-y-0'>
                                     <span className='mt-1 sm:mr-1'>
