@@ -7,30 +7,13 @@ import { router } from './Routes';
 import { RouterProvider } from "react-router-dom";
 
 
+
 //theme
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
   }
 });
-
-// notistack: best react snackbar
-// const MyButton = () => {
-//   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
-
-//   let key;
-//   return (
-//     <>
-//       <Button className="text-red-700" onClick={() => {
-//         key = enqueueSnackbar('Affiche moi un texte ici', { variant: 'success' })
-//       }}>
-//         Show snackbar
-//       </Button>
-//       <button onClick={() => closeSnackbar(key)}>Delete last key</button>
-//     </>
-//   )
-// }
-//<MyButton />
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -12,12 +12,15 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@hookform/error-message": "^2.0.0",
     "@mui/icons-material": "^5.10.3",
     "@mui/material": "^5.10.5",
     "hamburger-react": "^2.5.0",
     "notistack": "^2.0.5",
     "react": "^18.2.0",
+    "react-detect-offline": "^2.4.5",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.36.1",
     "react-router-dom": "^6.4.0",
     "react-simple-typewriter": "^4.0.2"
   },

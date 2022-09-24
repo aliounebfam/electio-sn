@@ -2,14 +2,20 @@ import React from 'react';
 import PhoneIcon from '@mui/icons-material/Phone';
 import MailIcon from '@mui/icons-material/Mail';
 import { Tooltip } from '@mui/material';
-
+import { useForm } from 'react-hook-form';
+import { useSnackbar } from 'notistack'
 
 export default function Contact() {
+    const { register, handleSubmit, formState: { errors } } = useForm({ mode: "onChange" });
+    const { enqueueSnackbar } = useSnackbar();
+    // console.log(errors);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        //form action
-    }
+    const onSubmit = data => {
+        console.log("data")
+        enqueueSnackbar('Message envoyée avec succès', { variant: 'success' })
+    };
+
+
 
 
     return (
@@ -48,38 +54,53 @@ export default function Contact() {
                             Envoyez-nous un message
                         </span>
                         <div className=' shadow-lg shadow-violet-600/10 pt-3'>
-                            <form onSubmit={(e) => { handleSubmit(e) }} action="#" method="POST">
+                            <form onSubmit={handleSubmit(onSubmit)}>
                                 <div className="overflow-hidden shadow sm:rounded-md">
                                     <div className="bg-white px-4 py-5 sm:p-6">
                                         <div className="grid grid-cols-6 gap-6">
-                                            <div className="col-span-6 sm:col-span-3">
-                                                <label htmlFor="first-name" className="block text-md font-medium text-gray-700">Nom de famille</label>
-                                                <input type="text" name="first-name" id="first-name" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" />
-                                            </div>
 
                                             <div className="col-span-6 sm:col-span-3">
-                                                <label htmlFor="last-name" className="block text-md font-medium text-gray-700">Prénom</label>
-                                                <input type="text" name="last-name" id="last-name" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" />
-                                            </div>
-
-                                            <div className="col-span-6 sm:col-span-3">
-                                                <label htmlFor="email-address" className="block text-md font-medium text-gray-700">Adresse email</label>
-                                                <input type="text" name="email-address" id="email-address" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" />
+                                                <label htmlFor="firstName" className="block text-md font-medium text-gray-700">Nom de famille</label>
+                                                <input aria-invalid={true} type="text" name="firstName" id="firstName" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errors.firstName?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...register("firstName", {
+                                                    required: "Veuillez saisir votre nom de famille"
+                                                })} />
+                                                {errors.firstName?.message && <span className='text-red-600'>{errors.firstName.message}</span>}
                                             </div>
 
 
                                             <div className="col-span-6 sm:col-span-3">
-                                                <label htmlFor="phone-number" className="block text-md font-medium text-gray-700">Numéro de téléphone (Optionnel)</label>
-                                                <input type="number" name="phone-number" id="phone-number" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" />
+                                                <label htmlFor="lastName" className="block text-md font-medium text-gray-700">Prénom</label>
+                                                <input type="text" name="lastName" id="lastName" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errors.lastName?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...register("lastName", { required: "Veuillez saisir votre prénom" })} />
+                                                {errors.lastName?.message && <span className='text-red-600'>{errors.lastName.message}</span>}
+                                            </div>
+
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label htmlFor="emailAddress" className="block text-md font-medium text-gray-700">Adresse email</label>
+                                                <input type="text" name="emailAddress" id="emailAddress" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errors.emailAddress?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...register("emailAddress", {
+                                                    required: "Veuillez saisir votre adresse email",
+                                                    pattern: {
+                                                        value: /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/i,
+                                                        message: "L'adresse email saisie est invalide"
+                                                    }
+                                                })} />
+                                                {errors.emailAddress?.message && <span className='text-red-600'>{errors.emailAddress.message}</span>}
+                                            </div>
+
+                                            <div className="col-span-6 sm:col-span-3">
+                                                <label htmlFor="phoneNumber" className="block text-md font-medium text-gray-700">Numéro de téléphone (Optionnel)</label>
+                                                <input type="number" name="phoneNumber" id="phoneNumber" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" {...register("phoneNumber")} />
                                             </div>
 
                                             <div className="col-span-6">
                                                 <label htmlFor="subject" className="block text-md font-medium text-gray-700">Objet du message </label>
-                                                <input type="text" name="subject" id="subject" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" />
+                                                <input type="text" name="subject" id="subject" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errors.subject?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...register("subject", { required: "Veuillez saisir l'objet du message" })} />
+                                                {errors.subject?.message && <span className='text-red-600'>{errors.subject.message}</span>}
                                             </div>
+
                                             <div className="col-span-6">
                                                 <label htmlFor="message" className="block text-md font-medium text-gray-700">Message </label>
-                                                <textarea type="text" name="message" id="message" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" rows="4" />
+                                                <textarea type="text" name="message" id="message" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errors.message?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} rows="4" {...register("message", { required: "Veuillez saisir le corps du message" })} />
+                                                {errors.message?.message && <span className='text-red-600'>{errors.message.message}</span>}
                                             </div>
 
 
@@ -93,8 +114,8 @@ export default function Contact() {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
 
     )
 }
