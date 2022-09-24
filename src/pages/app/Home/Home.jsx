@@ -108,12 +108,12 @@ export default function Home() {
             </section>
 
             {/* FAQ */}
-            <section className=' mx-auto'>
-                <div className="py-16 bg-gray-300/[0.57]">
+            <section className='bg-gray-300/[0.5]'>
+                <div className="py-16 max-w-7xl mx-auto">
                     <div className="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
                         <div className="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
                             <div className="md:5/12 lg:w-5/12">
-                                <Tooltip className='bg-red-800' title="Accéder à la rubrique FAQ" placement='right-start' arrow>
+                                <Tooltip title="Accéder à la rubrique FAQ" placement='right-start' arrow>
                                     <Link to='/faq'>
                                         <img src="src/assets/images/question.jpg" className='rounded-sm drop-shadow-2xl' alt="" loading="lazy" width="" height="" />
                                     </Link>
@@ -121,8 +121,8 @@ export default function Home() {
                             </div>
                             <div className="md:7/12 lg:w-6/12">
                                 <h2 className="text-3xl font-Hind text-gray-900 font-bold md:text-4xl">Foire aux questions (FAQ)</h2>
-                                <p className="text-xl mt-6 font-Trykker text-gray-700">Rubrique regroupant les réponses aux questions les plus fréquemment posées.</p>
-                                <p className="text-xl mt-2 font-Trykker text-gray-700">Vous avez des questions ? Vérifiez <CustomLinkBackground className={"text-violet-800 font-bold"} text={"ici"} path='/faq' /> si elles n'ont pas déjà été traitées.</p>
+                                <p className="text-xl mt-6 font-Trykker text-gray-800">Rubrique regroupant les réponses aux questions les plus fréquemment posées.</p>
+                                <p className="text-xl mt-2 font-Trykker text-gray-800">Vous avez des questions ? Vérifiez <CustomLinkBackground className={"text-violet-800 font-bold"} text={"ici"} path='/faq' /> si elles n'ont pas déjà été traitées.</p>
                             </div>
                         </div>
                     </div>
@@ -130,10 +130,8 @@ export default function Home() {
             </section>
 
             {/* Team */}
-
-            <section className=" mx-auto">
-
-                <div className="py-20 bg-gray-300/40">
+            <section className="bg-gray-300/40">
+                <div className="mx-auto max-w-7xl  py-20">
                     <div className="container mx-auto px-6 md:px-12 text-center">
                         <div className="mb-16">
                             <h2 className="mb-4 font-Hind text-center text-3xl text-gray-900 font-bold md:text-[38px]">Équipe de développement</h2>
@@ -149,12 +147,14 @@ export default function Home() {
                                         <h4 className="text-2xl font-Hind">Alioune Badara FAM</h4>
                                         <span className="block text-md text-gray-800 font-Trykker">Génie Logiciel</span>
                                     </div>
-                                    <a href="https://www.linkedin.com/in/alioune-badara-fam" className="w-max mx-auto flex items-center space-x-3 hover:text-violet-800 transition">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 m-auto" viewBox="0 0 16 16">
-                                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
-                                        </svg>
-                                        <span>LinkedIn</span>
-                                    </a>
+                                    <Tooltip title="Accéder au compte LinkedIn de Alioune Badara FAM" placement='bottom' arrow followCursor>
+                                        <a href="https://www.linkedin.com/in/alioune-badara-fam" className="w-max mx-auto flex items-center space-x-3 hover:text-violet-800 transition">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 m-auto" viewBox="0 0 16 16">
+                                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
+                                            </svg>
+                                            <span>LinkedIn</span>
+                                        </a>
+                                    </Tooltip>
                                 </div>
                             </div>
 
@@ -168,12 +168,14 @@ export default function Home() {
                                         <h4 className="text-2xl font-Hind">Mouhamed NDOYE</h4>
                                         <span className="block text-md text-gray-800 font-Trykker">Génie Logiciel</span>
                                     </div>
-                                    <a href="#" className="w-max mx-auto flex items-center space-x-3 hover:text-violet-800 transition">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 m-auto" viewBox="0 0 16 16">
-                                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
-                                        </svg>
-                                        <span>LinkedIn</span>
-                                    </a>
+                                    <Tooltip title="Accéder au compte LinkedIn de Mouhamed NDOYE" placement='bottom' arrow followCursor>
+                                        <a href="#" className="w-max mx-auto flex items-center space-x-3 hover:text-violet-800 transition">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 m-auto" viewBox="0 0 16 16">
+                                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
+                                            </svg>
+                                            <span>LinkedIn</span>
+                                        </a>
+                                    </Tooltip>
                                 </div>
                             </div>
 
@@ -187,13 +189,14 @@ export default function Home() {
                                         <h4 className="text-2xl font-Hind">Mouhamadou Lamine SANE</h4>
                                         <span className="block text-md text-gray-800 font-Trykker">Intelligence Artificielle</span>
                                     </div>
-                                    <a href="#" className="w-max mx-auto flex items-center space-x-3 hover:text-violet-800 transition">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 m-auto" viewBox="0 0 16 16">
-                                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
-                                        </svg>
-                                        <span>LinkedIn</span>
-                                    </a>
-                                    {/* <a href="#" className="block w-max mx-auto text-blue-600">View Bio</a> */}
+                                    <Tooltip title="Accéder au compte LinkedIn de Alioune Badara FAM" placement='bottom' arrow followCursor>
+                                        <a href="#" className="w-max mx-auto flex items-center space-x-3 hover:text-violet-800 transition">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 m-auto" viewBox="0 0 16 16">
+                                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
+                                            </svg>
+                                            <span>LinkedIn</span>
+                                        </a>
+                                    </Tooltip>
                                 </div>
                             </div>
                         </div>
@@ -202,7 +205,6 @@ export default function Home() {
                 </div>
 
             </section>
-
 
         </main>
     )

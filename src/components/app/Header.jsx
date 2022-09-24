@@ -47,7 +47,7 @@ export default function Header() {
                         </button>
                         <div className="hidden lg:flex lg:items-center lg:ml-auto lg:space-x-10">
                             <CustomLinkUnderline text='Accueil' path='/' className="font-Hind text-lg" isNavLink={true} />
-                            <CustomLinkUnderline text='Election' path='presidentialElection' className="font-Hind text-lg" isNavLink={true} />
+                            <CustomLinkUnderline text='Elections Présidentielles' path='presidentialElection' className="font-Hind text-lg" isNavLink={true} />
                             <CustomLinkUnderline text='FAQ' path='faq' className="font-Hind text-lg" isNavLink={true} />
                             <CustomLinkUnderline text='Contact' path='contact' className="font-Hind text-lg" isNavLink={true} />
                         </div>
@@ -57,7 +57,7 @@ export default function Header() {
                         <div className={isMobileMenuVisible ? "flow-root" : "pointer-events-none"}>
                             <div tabIndex="-1" className={isMobileMenuVisible ? " flex flex-col px-6 -my-2 space-y-4 opacity-100 duration-1000 transition-transform-[opacity]" : "pointer-events-none opacity-0"}>
                                 <CustomLinkUnderline text='Accueil' path='/' className="font-Hind text-lg" isNavLink={true} />
-                                <CustomLinkUnderline text='Election' path='presidentialElection' className="font-Hind text-lg" isNavLink={true} />
+                                <CustomLinkUnderline text='Election Présidentielles' path='presidentialElection' className="font-Hind text-lg" isNavLink={true} />
                                 <CustomLinkUnderline text='FAQ' path='faq' className="font-Hind text-lg" isNavLink={true} />
                                 <CustomLinkUnderline text='Contact' path='contact' className="font-Hind text-lg" isNavLink={true} />
                             </div>
