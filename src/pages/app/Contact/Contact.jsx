@@ -54,39 +54,39 @@ export default function Contact() {
                                         <div className="grid grid-cols-6 gap-6">
                                             <div className="col-span-6 sm:col-span-3">
                                                 <label htmlFor="first-name" className="block text-md font-medium text-gray-700">Nom de famille</label>
-                                                <input type="text" name="first-name" id="first-name" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                                                <input type="text" name="first-name" id="first-name" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" />
                                             </div>
 
                                             <div className="col-span-6 sm:col-span-3">
                                                 <label htmlFor="last-name" className="block text-md font-medium text-gray-700">Prénom</label>
-                                                <input type="text" name="last-name" id="last-name" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                                                <input type="text" name="last-name" id="last-name" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" />
                                             </div>
 
                                             <div className="col-span-6 sm:col-span-3">
                                                 <label htmlFor="email-address" className="block text-md font-medium text-gray-700">Adresse email</label>
-                                                <input type="text" name="email-address" id="email-address" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                                                <input type="text" name="email-address" id="email-address" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" />
                                             </div>
 
 
                                             <div className="col-span-6 sm:col-span-3">
                                                 <label htmlFor="phone-number" className="block text-md font-medium text-gray-700">Numéro de téléphone (Optionnel)</label>
-                                                <input type="number" name="phone-number" id="phone-number" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                                                <input type="number" name="phone-number" id="phone-number" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" />
                                             </div>
 
                                             <div className="col-span-6">
                                                 <label htmlFor="subject" className="block text-md font-medium text-gray-700">Objet du message </label>
-                                                <input type="text" name="subject" id="subject" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                                                <input type="text" name="subject" id="subject" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" />
                                             </div>
                                             <div className="col-span-6">
                                                 <label htmlFor="message" className="block text-md font-medium text-gray-700">Message </label>
-                                                <textarea type="text" name="message" id="message" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" rows="4" />
+                                                <textarea type="text" name="message" id="message" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" rows="4" />
                                             </div>
 
 
                                         </div>
                                     </div>
                                     <div className="bg-gray-50 px-4 py-3 text-right">
-                                        <button type="submit" className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-6 text-sm sm:text-md font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1">Envoyer</button>
+                                        <button type="submit" className="inline-flex justify-center rounded-md border border-transparent bg-violet-600 py-3 px-6 text-sm sm:text-md font-medium text-white shadow-sm hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-1">Envoyer</button>
                                     </div>
                                 </div>
                             </form>
