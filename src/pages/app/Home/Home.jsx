@@ -59,7 +59,7 @@ export default function Home() {
             {/* HERO */}
             <section ref={main} style={{ height: mainHeight }} className={"bg-gray-700 relative lg:h-screen pb-16"}>
                 <div className=''>
-                    <img className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000" src={"src/assets/images/" + src} alt="" />
+                    <img className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000" src={"./assets/images/" + src} alt="" />
                     <div aria-hidden="true" style={{ backgroundColor: "rgba(17, 24, 39," + (src === "femme_senegalaise.jpg" ? "0.75" : "0.5") + ")" }} className={"absolute inset-0 w-full h-full backdrop-blur-md "}></div>
                     <div ref={content} className="relative ">
                         <div className="mb-12 space-y-16 md:mb-20 pt-12 sm:pt-32 w-11/12 mx-auto">
@@ -126,7 +126,7 @@ export default function Home() {
                             <div className="md:5/12 lg:w-5/12">
                                 <Tooltip title="Accéder à la rubrique FAQ" placement='right-start' arrow>
                                     <Link to='/faq'>
-                                        <img src="src/assets/images/question.jpg" className='rounded-sm drop-shadow-2xl' alt="" loading="lazy" width="" height="" />
+                                        <img src="./assets/images/question.jpg" className='rounded-sm drop-shadow-2xl' alt="" loading="lazy" width="" height="" />
                                     </Link>
                                 </Tooltip>
                             </div>
@@ -151,7 +151,7 @@ export default function Home() {
                             <div className="border-t-4 border-violet-500 space-y-8 group">
                                 <div className="w-36 h-36 -mt-16 mx-auto rounded-[2rem] rotate-45 overflow-hidden">
                                     <img className="w-full h-full object-cover object-center -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale-[1.4]"
-                                        src="/src/assets/images/abf.jpg" alt="ABF" loading="lazy" width="640" height="805" />
+                                        src="./assets/images/abf.jpg" alt="ABF" loading="lazy" width="640" height="805" />
                                 </div>
                                 <div className="space-y-4 text-center">
                                     <div>
