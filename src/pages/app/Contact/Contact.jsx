@@ -4,19 +4,19 @@ import MailIcon from '@mui/icons-material/Mail';
 import { Tooltip } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { useSnackbar } from 'notistack'
+import { useEffect } from 'react';
 
 export default function Contact() {
-    const { register, handleSubmit, formState: { errors } } = useForm({ mode: "onChange" });
+    const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful } } = useForm({ mode: "onChange" });
     const { enqueueSnackbar } = useSnackbar();
-    // console.log(errors);
 
     const onSubmit = data => {
-        console.log("data")
         enqueueSnackbar('Message envoyée avec succès', { variant: 'success' })
     };
 
-
-
+    useEffect(() => {
+        reset();
+    }, [isSubmitSuccessful])
 
     return (
         <div className='flex-1 bg-gray-300/25'>

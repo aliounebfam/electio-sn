@@ -52,23 +52,23 @@ export default function Header() {
                             <CustomLinkUnderline text='Contact' path='/contact' className="font-Hind text-lg" isNavLink={true} />
                         </div>
 
-                        <Link to='/login' className="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-transparent border border-violet-700 rounded-md lg:inline-flex hover:bg-violet-700 focus:bg-violet-700" role="button"> S'inscrire </Link>
+                        <Link to='/sign-up' className="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-transparent border border-violet-700 rounded-md lg:inline-flex hover:bg-violet-700 focus:bg-violet-700" role="button"> S'inscrire </Link>
 
                         <Link to='/login' className="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-violet-600 border border-transparent rounded-md lg:inline-flex hover:bg-violet-700 focus:bg-violet-700" role="button"> Se connecter </Link>
                     </nav>
-                    <nav ref={ref} className={isMobileMenuVisible ? "isolate fixed top-[76px] left-0 w-full h-min transition-all duration-500 visible opacity-100 max-h-min pt-4 pb-6 bg-gray-900 border border-violet-600/40 shadow-2xl shadow-violet-600/30 lg:hidden" : "left-0 top-[88px] w-full h-50 fixed transition-all max-h-0"}>
+                    <nav ref={ref} className={isMobileMenuVisible ? "isolate fixed top-[76px] left-0 w-full h-min visible opacity-100 max-h-min pt-4 pb-6 bg-gray-900 border border-violet-600/40 shadow-2xl shadow-violet-600/30 lg:hidden" : "left-0 top-[88px] w-full h-50 fixed transition-all max-h-0"}>
                         <div className={isMobileMenuVisible ? "flow-root" : "pointer-events-none"}>
-                            <div tabIndex="-1" className={isMobileMenuVisible ? " flex flex-col px-6 -my-2 space-y-4 opacity-100 duration-1000 transition-transform-[opacity]" : "pointer-events-none opacity-0"}>
+                            <div tabIndex="-1" className={isMobileMenuVisible ? " flex flex-col px-6 -my-2 space-y-4 opacity-100 duration-500 transition-transform-[opacity]" : "pointer-events-none opacity-0"}>
                                 <CustomLinkUnderline text='Accueil' path='/' className="font-Hind text-lg" isNavLink={true} />
                                 <CustomLinkUnderline text='Election Présidentielles' path='/presidential-election' className="font-Hind text-lg" isNavLink={true} />
                                 <CustomLinkUnderline text='FAQ' path='/faq' className="font-Hind text-lg" isNavLink={true} />
                                 <CustomLinkUnderline text='Contact' path='/contact' className="font-Hind text-lg" isNavLink={true} />
                             </div>
                         </div>
-                        <div className={isMobileMenuVisible ? "px-6 mt-6 opacity-100 transition-all duration-700 translate-x-0" : "-translate-x-[3px] opacity-0 pointer-events-none"}>
+                        <div className={isMobileMenuVisible ? "px-6 mt-6 opacity-100 transition-all duration-500 translate-x-0" : "-translate-x-[3px] opacity-0 pointer-events-none"}>
                             <Link to={'/sign-up'} className="inline-flex justify-center px-4 py-3 text-base font-semibold text-white transition-all duration-200 bg-transparent border border-violet-600 rounded-md  hover:bg-violet-700 focus:bg-violet-700" role="button"> S'inscrire </Link>
                         </div>
-                        <div className={isMobileMenuVisible ? "px-6 mt-5 opacity-100 transition-all duration-700 translate-x-0" : "-translate-x-[3px] opacity-0 pointer-events-none"}>
+                        <div className={isMobileMenuVisible ? "px-6 mt-5 opacity-100 transition-all duration-500 translate-x-0" : "-translate-x-[3px] opacity-0 pointer-events-none"}>
                             <Link to={'/login'} className="inline-flex justify-center px-4 py-3 text-base font-semibold text-white transition-all duration-200 bg-violet-600 border border-transparent rounded-md  hover:bg-violet-700 focus:bg-violet-700" role="button"> Se connecter </Link>
                         </div>
 
