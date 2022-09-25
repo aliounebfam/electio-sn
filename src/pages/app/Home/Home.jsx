@@ -6,8 +6,12 @@ import { Link } from 'react-router-dom';
 import CustomLinkBackground from './../../../utils/CustomLinkBackground';
 import './Home.css'
 import Tooltip from '@mui/material/Tooltip';
+import { useAuth } from '../../../context/AuthContext';
 
 export default function Home() {
+    // access to the current user
+    const currentUser = useAuth();
+
     const [src, setSrc] = useState("femme_senegalaise.jpg");
 
     const [mainHeight, setMainHeight] = useState(0);
@@ -53,11 +57,11 @@ export default function Home() {
         <main className='flex-1'>
 
             {/* HERO */}
-            <section ref={main} style={{ height: mainHeight }} className={"relative lg:h-screen pb-16"}>
-                <div>
+            <section ref={main} style={{ height: mainHeight }} className={"bg-gray-700 relative lg:h-screen pb-16"}>
+                <div className=''>
                     <img className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000" src={"src/assets/images/" + src} alt="" />
                     <div aria-hidden="true" style={{ backgroundColor: "rgba(17, 24, 39," + (src === "femme_senegalaise.jpg" ? "0.75" : "0.5") + ")" }} className={"absolute inset-0 w-full h-full backdrop-blur-md "}></div>
-                    <div ref={content} className="relative">
+                    <div ref={content} className="relative ">
                         <div className="mb-12 space-y-16 md:mb-20 pt-12 sm:pt-32 w-11/12 mx-auto">
                             <h1 className="relative leading-[48px]  lg:leading-[66px] text-white md:leading-[58px] sm:leading-[55px] text-3xl font-bold font-Comfortaa lg:text-[38px] md:text-4xl">
                                 <div className='inline-block text-transparent font-extrabold bg-[length:100%_100%] bg-no-repeat bg-gradient-to-br bg-clip-text from-[#007E3C] via-[#F0E33F] to-[#D71A21]'>
@@ -147,7 +151,7 @@ export default function Home() {
                             <div className="border-t-4 border-violet-500 space-y-8 group">
                                 <div className="w-36 h-36 -mt-16 mx-auto rounded-[2rem] rotate-45 overflow-hidden">
                                     <img className="w-full h-full object-cover object-center -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale-[1.4]"
-                                        src="/src/assets/images/abf.jpg" alt="woman" loading="lazy" width="640" height="805" />
+                                        src="/src/assets/images/abf.jpg" alt="ABF" loading="lazy" width="640" height="805" />
                                 </div>
                                 <div className="space-y-4 text-center">
                                     <div>
@@ -168,7 +172,7 @@ export default function Home() {
                             <div className=" border-t-4 border-violet-500 space-y-8 group">
                                 <div className="w-36 h-36 -mt-16 mx-auto rounded-[2rem] rotate-45 overflow-hidden">
                                     <img className="w-full h-full object-cover  -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale-[1.4]"
-                                        src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="woman" loading="lazy" width="100" height="66" />
+                                        src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="" loading="lazy" width="100" height="66" />
                                 </div>
                                 <div className="space-y-4 text-center">
                                     <div>
@@ -189,7 +193,7 @@ export default function Home() {
                             <div className="border-t-4 border-violet-500 space-y-8 group">
                                 <div className="w-36 h-36 -mt-16 mx-auto rounded-[2rem] rotate-45 overflow-hidden">
                                     <img className="w-full h-full object-cover -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale-[1.4]"
-                                        src="https://avatars.dicebear.com/api/adventurer/oops.svg" alt="man" loading="lazy" width="1000" height="667" />
+                                        src="https://avatars.dicebear.com/api/adventurer/oops.svg" alt="" loading="lazy" width="1000" height="667" />
                                 </div>
                                 <div className="space-y-4 text-center">
                                     <div>

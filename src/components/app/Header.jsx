@@ -35,7 +35,7 @@ export default function Header() {
                             <img className='pb-4' src="electio_sn_logo.png" alt="Logo Electio SN" width={65} />
                             <span className="self-center hover:bg-[length:100%_100%] bg-no-repeat bg-gradient-to-br bg-clip-text from-[#007E3C] via-[#F0E33F] to-[#D71A21] text-xl sm:text-2xl font-Comfortaa font-bold whitespace-nowrap ">Electio•SN</span>
                         </Link>
-                        <button type="button" className="inline-flex p-1 transition-all duration-200 rounded-md lg:hidden hover:bg-gray-800 ">
+                        <button type="button" className="inline-flex p-0 md:p-1 transition-all duration-200 rounded-md lg:hidden hover:bg-gray-800 ">
                             <Hamburger size={30} label="Afficher le menu" rounded toggled={isMobileMenuVisible}
                                 onToggle={toggled => {
                                     if (toggled) {

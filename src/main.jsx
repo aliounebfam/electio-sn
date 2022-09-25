@@ -5,6 +5,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { SnackbarProvider } from 'notistack';
 import { router } from './Routes';
 import { RouterProvider } from "react-router-dom";
+import { AuthProvider } from './context/AuthContext';
 
 
 
@@ -18,17 +19,19 @@ const darkTheme = createTheme({
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ThemeProvider theme={darkTheme}>
-      <SnackbarProvider
-        preventDuplicate
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-        autoHideDuration={3000}>
-        <RouterProvider router={router} />
-        <ReloadPrompt />
-      </SnackbarProvider>
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider theme={darkTheme}>
+        <SnackbarProvider
+          preventDuplicate
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+          autoHideDuration={3000}>
+          <RouterProvider router={router} />
+          <ReloadPrompt />
+        </SnackbarProvider>
+      </ThemeProvider>
+    </AuthProvider>
   </React.StrictMode>
 )
