@@ -13,7 +13,8 @@ export default function Header() {
     const ref = useRef(null)
 
     const handleClickOutside = (e) => {
-        if (ref.current) if (count % 2 != 0 && isMobileMenuVisible && (!ref.current.contains(e.target) || ref.current.contains(e.target.parentElement.parentElement.parentElement))) {
+        console.log(ref.current);
+        if (ref.current) if (count % 2 != 0 && isMobileMenuVisible && (!ref.current.contains(e.target) || ref.current.contains(e.target.parentElement.parentElement.parentElement) || ref.current.contains(e.target.parentElement.parentElement))) {
             setIsMobileMenuVisible(!isMobileMenuVisible)
         }
     }

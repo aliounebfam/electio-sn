@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function SignUp() {
     return (
-        <div>SignUp</div>
+        <div className='flex-1'>
+            SignUp
+        </div>
     )
 }
