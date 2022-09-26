@@ -142,7 +142,7 @@ export default function Home() {
 
             {/* Team */}
             <section className="bg-gray-300/40">
-                <div className="mx-auto max-w-7xl  py-20">
+                <div className="mx-auto max-w-7xl py-20">
                     <div className="container mx-auto px-6 md:px-12 text-center">
                         <div className="mb-16">
                             <h2 className="mb-4 font-Hind text-center text-3xl text-gray-900 font-bold md:text-[38px]">Équipe de développement</h2>

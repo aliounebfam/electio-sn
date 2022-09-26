@@ -6,6 +6,7 @@ import Home from "./pages/app/Home/Home";
 import SignUp from "./pages/app/SignUp/SignUp";
 import Login from "./pages/app/Login/Login";
 import NotFoundPage from "./pages/NotFoundPage";
+import CredentialRequest from "./pages/app/CredentialRequest/CredentialRequest";
 
 
 export const router = createBrowserRouter(
@@ -33,6 +34,10 @@ export const router = createBrowserRouter(
                 {
                     path: "/login",
                     element: <Login />
+                },
+                {
+                    path: "/credential-request",
+                    element: <CredentialRequest />
                 },
             ]
         },
