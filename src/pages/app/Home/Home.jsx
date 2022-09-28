@@ -60,7 +60,7 @@ export default function Home() {
             <section ref={main} style={{ height: mainHeight }} className={"bg-gray-700 relative lg:h-screen pb-16"}>
                 <div className=''>
                     <img className="absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000" src={"./assets/images/" + src} alt="" />
-                    <div aria-hidden="true" style={{ backgroundColor: "rgba(17, 24, 39," + (src === "femme_senegalaise.jpg" ? "0.75" : "0.5") + ")" }} className={"absolute inset-0 w-full h-full backdrop-blur-md "}></div>
+                    <div aria-hidden="true" style={{ backgroundColor: "rgba(17, 24, 39," + (src === "femme_senegalaise.jpg" ? "0.75" : "0.57") + ")" }} className={"absolute inset-0 w-full h-full backdrop-blur-md "}></div>
                     <div ref={content} className="relative ">
                         <div className="mb-12 space-y-16 md:mb-20 pt-12 sm:pt-32 w-11/12 mx-auto">
                             <h1 className="relative leading-[48px]  lg:leading-[66px] text-white md:leading-[58px] sm:leading-[55px] text-3xl font-bold font-Comfortaa lg:text-[38px] md:text-4xl">
