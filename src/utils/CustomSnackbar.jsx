@@ -46,7 +46,7 @@ export default function CustomizedSnackbar({ text, color, duration, vertical = '
     }, [])
 
     return (
-        <Snackbar key={vertical + horizontal} TransitionComponent={TransitionLeft} anchorOrigin={{ vertical, horizontal }} open={open} autoHideDuration={duration !== 'null' ? parseInt(duration) : null} onClose={handleClose}>
+        <Snackbar key={vertical + horizontal} TransitionComponent={TransitionLeft} anchorOrigin={{ vertical, horizontal }} open={open} autoHideDuration={duration !== null ? parseInt(duration) : null} onClose={handleClose}>
             <Alert onClose={handleClose} severity={color} sx={{ width: '100%' }}
                 action={buttons ?
                     <Buttons handleClose={handleClose} handleClick={onClick} /> : null

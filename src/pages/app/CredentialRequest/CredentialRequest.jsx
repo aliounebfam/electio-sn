@@ -4,6 +4,7 @@ import { useSnackbar } from 'notistack'
 import { useEffect } from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
+import CustomModalStepper from './CustomModalStepper';
 
 
 export default function CredentialRequest() {
@@ -12,7 +13,7 @@ export default function CredentialRequest() {
     const { register, handleSubmit, reset, watch, formState: { errors, isSubmitSuccessful } } = useForm({ mode: "onChange" });
     const { enqueueSnackbar } = useSnackbar();
     const researchValue = watch().research;
-    const proxy_url = "http://api.allorigins.win/get?url=https://thingproxy.freeboard.io/fetch/";
+    const proxy_url = "https://api.allorigins.win/get?url=https://thingproxy.freeboard.io/fetch/";
     const api_election_url = "https://elections.sec.gouv.sn/election/";
 
     const disableKeyboard = () => {
@@ -65,6 +66,7 @@ export default function CredentialRequest() {
             >
                 <CircularProgress size={65} color="inherit" />
             </Backdrop>
+            <CustomModalStepper />
             <div className=' max-w-7xl mx-auto shadow-lg shadow-violet-600/10 pt-3'>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="overflow-hidden shadow sm:rounded-md">

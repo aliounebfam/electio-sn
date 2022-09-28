@@ -1,0 +1,16 @@
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiStepIcon-root.css-m8a1uf-MuiSvgIcon-root-MuiStepIcon-root > circle{
+    color: #6d28d9;
+}
+
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiStepIcon-root.css-m8a1uf-MuiSvgIcon-root-MuiStepIcon-root > text{
+    fill: white;
+}
+
+
+svg.css-m8a1uf-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed{
+    color: #6d28d9;
+    background-color: white;
+    border-radius: 200%;
+    padding: 1px;
+    /* background-color: red; */
+}
