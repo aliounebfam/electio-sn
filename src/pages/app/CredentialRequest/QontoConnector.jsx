@@ -36,11 +36,11 @@ const QontoStepIconRoot = styled('div')(({ theme, ownerState }) => ({
     '& .QontoStepIcon-completedIcon': {
         color: '#784af4',
         zIndex: 1,
-        fontSize: 18,
+        fontSize: 25,
     },
     '& .QontoStepIcon-circle': {
-        width: 8,
-        height: 8,
+        width: 12,
+        height: 12,
         borderRadius: '50%',
         backgroundColor: 'currentColor',
     },
