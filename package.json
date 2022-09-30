@@ -19,11 +19,13 @@
     "hamburger-react": "^2.5.0",
     "notistack": "^2.0.5",
     "react": "^18.2.0",
+    "react-camera-pro": "^1.2.1",
     "react-detect-offline": "^2.4.5",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.36.1",
     "react-router-dom": "^6.4.0",
-    "react-simple-typewriter": "^4.0.2"
+    "react-simple-typewriter": "^4.0.2",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",

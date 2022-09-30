@@ -19,13 +19,13 @@ export default function CredentialRequest() {
     const api_election_url = "https://elections.sec.gouv.sn/election/";
 
     const disableKeyboard = () => {
-        document.onkeydown = function (e) {
+        document.onkeydown = function () {
             return false;
         }
     }
 
     const enableKeyboard = () => {
-        document.onkeydown = function (e) {
+        document.onkeydown = function () {
             return true;
         }
     }
@@ -39,7 +39,7 @@ export default function CredentialRequest() {
             })
             .then((data) => {
                 const actualData = data.contents;
-                actualData ? (setuserElectoralData(JSON.parse(actualData)), setOpenModalStepper(true)) : enqueueSnackbar('Les informations saisies ne correspondent à personne dans le fichier électoral actuel', { variant: 'warning', autoHideDuration: 6500 });
+                actualData ? (setuserElectoralData(JSON.parse(actualData)), setOpenModalStepper(true), console.log(JSON.parse(actualData))) : enqueueSnackbar('Les informations saisies ne correspondent à personne dans le fichier électoral actuel', { variant: 'warning', autoHideDuration: 6500 });
 
             })
             .catch(() => {
