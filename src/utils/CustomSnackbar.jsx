@@ -3,7 +3,6 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Slide from '@mui/material/Slide';
 import Buttons from './CustomButtonsForSnackbar';
-import { useEffect } from 'react';
 
 function TransitionLeft(props) {
     return <Slide {...props} direction="left" />;
@@ -24,30 +23,10 @@ export default function CustomizedSnackbar({ text, color, duration, vertical = '
         }
         setOpen(false);
     };
-    useEffect(() => {
-        let element;
-        if (color == "warning") {
-            element = document.getElementsByClassName("css-19whtgm-MuiPaper-root-MuiAlert-root")[0];
-            if (element !== undefined) {
-                element.style.backgroundColor = '#ffa345';
-            }
-        }
-        if (color == "success") {
-            element = document.getElementsByClassName("css-1w7ppv8-MuiPaper-root-MuiAlert-root")[0];
-            if (element !== undefined) {
-                element.style.backgroundColor = '#2f5f32';
-            }
-        }
-
-        if (element !== undefined) {
-            element.style.fontSize = '17px';
-            element.style.flexWrap = 'wrap';
-        }
-    }, [])
 
     return (
         <Snackbar key={vertical + horizontal} TransitionComponent={TransitionLeft} anchorOrigin={{ vertical, horizontal }} open={open} autoHideDuration={duration !== null ? parseInt(duration) : null} onClose={handleClose}>
-            <Alert onClose={handleClose} severity={color} sx={{ width: '100%' }}
+            <Alert onClose={handleClose} severity={color} sx={{ width: '100%', fontSize: "17px", flexWrap: "wrap", bgcolor: color == "warning" ? "#f3c122" : "#058863" }}
                 action={buttons ?
                     <Buttons handleClose={handleClose} handleClick={onClick} /> : null
                 }

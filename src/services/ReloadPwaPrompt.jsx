@@ -12,20 +12,18 @@ function ReloadPrompt() {
             onRegistered(r) {
                 r && setInterval(() => {
                     r.update()
-                }, intervalMS)
-            }
+                }, 20000) //20s pour les tests...
+            },
         }
     )
 
     return (
         <>
-            {(offlineReady || needRefresh)
-                && <>
-                    {offlineReady
-                        ? <CustomizedSnackbar text="L'application est prête à fonctionner hors ligne" color='success' duration='3000' />
-                        : <CustomizedSnackbar text='Nouveau contenu disponible, veuillez cliquer sur recharger pour mettre à jour.' duration={null} color='warning' buttons={true} onClick={() => updateServiceWorker(true)} />
-                    }
-                </>
+            {
+                needRefresh && <CustomizedSnackbar text='Nouveau contenu disponible, veuillez cliquer sur recharger pour mettre à jour.' duration={null} color='warning' buttons={true} onClick={() => updateServiceWorker(true)} />
+            }
+            {
+                offlineReady && <CustomizedSnackbar text="L'application est prête à fonctionner hors ligne" color='success' duration='3000' />
             }
         </>
     )

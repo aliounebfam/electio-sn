@@ -8,7 +8,6 @@ import { RouterProvider } from "react-router-dom";
 import { AuthProvider } from './context/AuthContext';
 
 
-
 //theme
 const darkTheme = createTheme({
   palette: {

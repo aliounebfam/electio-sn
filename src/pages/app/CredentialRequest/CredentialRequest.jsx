@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 export default function CredentialRequest() {
     const [userElectoralData, setuserElectoralData] = useState({})
-    const [openModalStepper, setOpenModalStepper] = useState(true)
+    const [openModalStepper, setOpenModalStepper] = useState(false)
     const [openBackdrop, setOpenBackdrop] = useState(false);
     const { register, handleSubmit, reset, watch, formState: { errors, isSubmitSuccessful } } = useForm({ mode: "onChange" });
     const { enqueueSnackbar } = useSnackbar();
@@ -39,7 +39,7 @@ export default function CredentialRequest() {
             })
             .then((data) => {
                 const actualData = data.contents;
-                actualData ? (setuserElectoralData(JSON.parse(actualData)), setOpenModalStepper(true), console.log(JSON.parse(actualData))) : enqueueSnackbar('Les informations saisies ne correspondent à personne dans le fichier électoral actuel', { variant: 'warning', autoHideDuration: 6500 });
+                actualData ? (setuserElectoralData(JSON.parse(actualData)), setOpenModalStepper(true)) : enqueueSnackbar('Les informations saisies ne correspondent à personne dans le fichier électoral actuel', { variant: 'warning', autoHideDuration: 6500 });
 
             })
             .catch(() => {
