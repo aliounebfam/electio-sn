@@ -12,6 +12,7 @@ import Voters from "./pages/dashboard/Voters";
 import Regions from "./pages/dashboard/Regions";
 import Departments from "./pages/dashboard/Departments";
 import Districts from "./pages/dashboard/Districts";
+import { Navigate } from "react-router-dom";
 
 
 export const router = createBrowserRouter(
@@ -65,6 +66,10 @@ export const router = createBrowserRouter(
                 {
                     path: "districts",
                     element: <Districts />
+                },
+                {
+                    path: "",
+                    element: <Navigate to="voters" />
                 },
             ]
         },
