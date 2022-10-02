@@ -7,6 +7,11 @@ import SignUp from "./pages/app/SignUp/SignUp";
 import Login from "./pages/app/Login/Login";
 import NotFoundPage from "./pages/NotFoundPage";
 import CredentialRequest from "./pages/app/CredentialRequest/CredentialRequest";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Voters from "./pages/dashboard/Voters";
+import Regions from "./pages/dashboard/Regions";
+import Departments from "./pages/dashboard/Departments";
+import Districts from "./pages/dashboard/Districts";
 
 
 export const router = createBrowserRouter(
@@ -38,6 +43,28 @@ export const router = createBrowserRouter(
                 {
                     path: "/credential-request",
                     element: <CredentialRequest />
+                },
+            ]
+        },
+        {
+            path: "/dashboard",
+            element: <Dashboard />,
+            children: [
+                {
+                    path: "voters",
+                    element: <Voters />
+                },
+                {
+                    path: "regions",
+                    element: <Regions />
+                },
+                {
+                    path: "departments",
+                    element: <Departments />
+                },
+                {
+                    path: "districts",
+                    element: <Districts />
                 },
             ]
         },

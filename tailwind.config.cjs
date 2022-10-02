@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
   content: [
     "./index.html",
@@ -12,6 +13,10 @@ module.exports = {
         Hind: ['Hind', 'sans-serif'],
         Trykker: ['Trykker', 'serif']
       },
+    },
+    screens: {
+      'xs': '300px',
+      ...defaultTheme.screens,
     },
   },
   plugins: [

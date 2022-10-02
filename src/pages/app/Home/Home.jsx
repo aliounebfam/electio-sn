@@ -10,7 +10,7 @@ import { useAuth } from '../../../context/AuthContext';
 
 export default function Home() {
     // access to the current user
-    const currentUser = useAuth();
+    // const currentUser = useAuth();
 
     const [src, setSrc] = useState("femme_senegalaise.jpg");
 
@@ -42,7 +42,7 @@ export default function Home() {
             });
         }
 
-        // window.addEventListener("resize", handleResize);
+        window.addEventListener("resize", handleResize);
 
         handleResize();
 

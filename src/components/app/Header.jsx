@@ -40,8 +40,8 @@ export default function Header() {
                                 onToggle={toggled => {
                                     if (toggled) {
                                         setIsMobileMenuVisible(!isMobileMenuVisible)
-                                        if (count != 0 && count % 2 == 0) setIsMobileMenuVisible(false)
                                     }
+                                    if (count != 0 && count % 2 == 0) setIsMobileMenuVisible(false)
                                 }}
                             />
                         </button>
