@@ -6,6 +6,7 @@ specifiers:
   '@hookform/error-message': ^2.0.0
   '@mui/icons-material': ^5.10.3
   '@mui/material': ^5.10.5
+  '@mui/x-data-grid': ^5.17.5
   '@tailwindcss/forms': ^0.5.3
   '@types/react': ^18.0.20
   '@types/react-dom': ^18.0.6
@@ -34,6 +35,7 @@ dependencies:
   '@hookform/error-message': 2.0.0_t4e2o6isxgefemw5pro4vkqtby
   '@mui/icons-material': 5.10.3_5evnxlqsqnxmrwqqtdxt2buelq
   '@mui/material': 5.10.5_af5ln35zuaotaffazii6n6bke4
+  '@mui/x-data-grid': 5.17.5_nfsb2jhsjja245b65g5s5d4aki
   firebase: 9.10.0
   hamburger-react: 2.5.0_react@18.2.0
   notistack: 2.0.5_l2qqre42bn772ugwcietgyxzoi
@@ -2703,6 +2705,25 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-is: 18.2.0
+    dev: false
+
+  /@mui/x-data-grid/5.17.5_nfsb2jhsjja245b65g5s5d4aki:
+    resolution: {integrity: sha512-rMSy2G/qFtvD3DQTBJ9d90VJfhCG/yEWsT0+m1CRybyS4O9u1hFjKOTr4FtTcjqu4qt7Nbrb/eLaQZVerN5P1Q==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      '@mui/material': ^5.4.1
+      '@mui/system': ^5.4.1
+      react: ^17.0.2 || ^18.0.0
+      react-dom: ^17.0.2 || ^18.0.0
+    dependencies:
+      '@babel/runtime': 7.19.0
+      '@mui/material': 5.10.5_af5ln35zuaotaffazii6n6bke4
+      '@mui/utils': 5.10.3_react@18.2.0
+      clsx: 1.2.1
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      reselect: 4.1.6
     dev: false
 
   /@nicolo-ribaudo/eslint-scope-5-internals/5.1.1-v1:
@@ -9437,6 +9458,10 @@ packages:
 
   /requires-port/1.0.0:
     resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
+    dev: false
+
+  /reselect/4.1.6:
+    resolution: {integrity: sha512-ZovIuXqto7elwnxyXbBtCPo9YFEr3uJqj2rRbcOOog1bmu2Ag85M4hixSwFWyaBMKXNgvPaJ9OSu9SkBPIeJHQ==}
     dev: false
 
   /resolve-cwd/3.0.0:

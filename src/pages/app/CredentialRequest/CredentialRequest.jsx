@@ -6,6 +6,7 @@ import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import CustomModalStepper from './CustomModalStepper';
 import { useState } from 'react';
+import { disableKeyboard, enableKeyboard } from '../../../utils/ToogleActivationKeyboard';
 
 
 export default function CredentialRequest() {
@@ -18,17 +19,7 @@ export default function CredentialRequest() {
     const proxy_url = "https://api.allorigins.win/get?url=https://thingproxy.freeboard.io/fetch/";
     const api_election_url = "https://elections.sec.gouv.sn/election/";
 
-    const disableKeyboard = () => {
-        document.onkeydown = function () {
-            return false;
-        }
-    }
 
-    const enableKeyboard = () => {
-        document.onkeydown = function () {
-            return true;
-        }
-    }
 
     const getUserElectionData = () => {
         setOpenBackdrop(true);
@@ -65,7 +56,6 @@ export default function CredentialRequest() {
             <Backdrop
                 className="text-violet-600 bg-gray-700/25 backdrop-blur-[3px] z-20"
                 open={openBackdrop}
-            // onClick={handleClose}
             >
                 <CircularProgress size={65} color="inherit" />
             </Backdrop>
