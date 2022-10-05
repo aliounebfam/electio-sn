@@ -1,0 +1,77 @@
+{
+    "Dakar": {
+        "Dakar": ["Gorée", "Dakar Plateau", "Gueule Tapée", "Fass", "Colobane", "Fann-Point E-Amitié", "Médina", "Grand-Dakar", "Biscuiterie", "Dieuppeul-Derklé", "Hann-Bel-Air", "Sicap-Liberté", "HLM", "Mermoz-Sacré Coeur", "Ouakam", "Ngor", "Yoff", "Grand-Yoff", "Patte d?oie", "Parcelles Assainies", "Cambérène"],
+        "Pikine": ["Pikine- Est", "Pikine-Nord", "Pikine-Ouest", "Dalifort-Foirail", "Djeddha Thiaroye Kao", "Guinaw Rail-Nord", "Guinaw Rail-Sud", "Tivaoune-Diacksao", "Diamagueune-Sicap Mbao", "Mbao", "Keur Massar", "Malika", "Yeumbeul-Sud", "Yeumbeul-Nord"],
+        "Guédiawaye": ["Golf-Sud", "Sam-Notaire", "Ndiarème-Limamoulaye", "Wakhinane", "Médina Gounass"],
+        "Rufisque": ["Bargny", "Sébikotane", "Sendou", "Rufisque-Est", "Rufisque-Nord", "Rufisque-Ouest", "Bambylor", "Yène", "Tivaouane Peulh-Niaga", "Diamniadio", "Sangalkam", "Jaxaay-Parcelles-Niakoul Rap"]
+    },
+    "Thies": {
+        "Thies": ["Khombole", "Pout", "Thiès-Ouest", "Thiès-Est", "Thiès-Nord", "Thiénaba", "Ngoudiane", "Ndiéyène Sirakh", "Touba Toul", "Keur Moussa", "Diender", "Fandène", "Kayar", "Notto", "Tassète"],
+        "Tivaouane": ["Tivaouane", "Mékhé", "Mboro", "Méouane", "Darou Khoudoss", "Taïba Ndiaye", "Mérina Dakhar", "Koul", "Pékèsse", "Niakhène", "Mbayène", "Thilmakha", "Ngandiouf", "Notto Gouye Diama", "Mont Rolland", "Pire Goureye", "Chérif Lo", "Pambal"],
+        "Mbour": ["Mbour", "Joal Fadiouth", "Fissel", "Ndiaganiao", "Sessene", "Sandiara", "Nguéniène", "Thiadiaye", "Sindia", "Malicounda", "Diass", "Nguékhokh", "Saly Portudal", "Ngaparou", "Somone", "Popenguine-Ndayane"]
+    },
+    "Louga": {
+        "Louga": ["Coki", "Ndiagne", "Guet Ardo", "Thiamène Cayor", "Pété Ouarack", "Keur Momar Sarr", "Nguer Malal", "Syer", "Gande", "Mbédiene", "Niomré", "Nguidilé", "Kéle Gueye", "Léona", "Sakal", "Ngueune Sarr"],
+        "Kébémer": ["Bandegne Ouolof", "Diokoul Diawrigne", "Kab Gaye", "Ndande", "Thieppe", "Guéoul", "Mbacké Cajor", "Darou Marnane", "Darou Mousty", "Mbadiane", "Ndoyene", "Sam Yabal", "Touba Mérina", "Ngourane Ouolof", "Thiolom Fall", "Sagatta Gueth", "Kanène Ndiob", "Loro"],
+        "Linguère": ["Linguère", "Dahra", "Barkédji", "Gassane", "Thiargny", "Thiel", "Boulal", "Dealy", "Thiamène Pass", "Sagatta Djolof", "Affé Djiolof", "Dodji", "Labgar", "Ouarkhokh", "Kamb", "Mboula", "Téssékéré Forage", "Yang-Yang"]
+    },
+    "Kaolack": {
+        "Kaolack": ["Kaolack", "Kahone", "Keur Baka", "Latmingué", "Thiaré", "Ndoffane", "Keur Socé", "Ndiaffate", "Ndiedieng", "Dya", "Ndiébel", "Thiomby", "Gandiaye", "Sibassor"],
+        "Guinguinéo": ["Guinguinéo", "Khelcom ? Birane", "Mbadakhoune", "Ndiago", "Ngathie Naoudé", "Fass", "Gagnick", "Dara Mboss", "Nguélou", "Nguélou", "Ourour", "Panal Ouolof", "Mboss"],
+        "Nioro du Rip": ["Kayemor", "Médina Sabakh", "Ngayene", "Gainthe Kaye", "Dabaly", "Darou Salam", "Paos Koto", "Porokhane", "Taïba Niassène", "Keur Maba Diakhou", "Keur Madongo", "Ndramé Escale", "Wack Ngouna", "Keur Madiabel"]
+    },
+    "Diourbel": {
+        "Diourbel": ["Diourbel", "Ndoulo", "Ngohe", "Pattar", "Tocky Gare", "Touré Mbondé", "Ndankh Séne", "Gade Escale", "Touba Lappé", "Keur Ngalgou", "Ndindy", "Taïba Moutoupha"],
+        "Bambey": ["Bambey", "Dinguiraye", "Baba Garage", "Keur Samba Kane", "Ngoye", "Thiakhar", "Ndondol", "Ndangalma", "Lambaye", "Réfane", "Gawane", "Ngogom"],
+        "Mbacké": ["Ngogom", "Touba Mosquée", "Dalla Ngabou", "Missirah", "Nghaye", "Touba Fall", "Darou Salam Typ", "Darou Nahim", "Kael", "Madina", "Touba Mboul", "Taïba Thièkène", "Dendèye Gouy Gui", "Ndioumane", "Taïf", "Sadio"]
+    },
+    "Fatick": {
+        "Fatick": ["Dioffior", "Thiaré Ndialgui", "Diaoulé", "Mbéllacadiao", "Ndiop", "Ndiop", "Diakhao", "Djilasse", "Djilasse", "Loul Sessène", "Palmarin Facao", "Niakhar", "Ngayokhème", "Patar", "Diarrère", "Diouroup", "Tattaguine"],
+        "Foundiougne": ["Foundiougne", "Sokone", "Keur Saloum Diané", "Keur Samba Gueye", "Toubacouta", "Nioro Alassane Tall", "Karang Poste", "Passy", "Soum", "Diossong", "Djilor", "Niassène", "Diagane Barka", "Diagane Barka", "Mbam", "Bassoul", "Dionewar", "Djirnda"],
+        "Gossas": ["Gossas", "Colobane", "Mbar", "Ndiene Lagane", "Ouadiour", "Patar Lia"]
+    },
+    "Kaffrine": {
+        "Kaffrine": ["Nganda", "Diamagadio", "Diokoul Belbouck", "Kathiotte", "Médinatoul Salam 2", "Gniby", "Boulel", "Kahi"],
+        "Birkilane": ["Birkelane", "Keur Mboucki", "Touba Mbella", "Diamal", "Mabo", "Ndiognick", "Ségré-gatta", "Mbeuleup"],
+        "Malème-Hodar": ["Malème-Hodar", "Darou Miname II", "Khelcom", "Ndioum Ngainth", "Ndiobène Samba Lamo", "Sagna", "Dianké Souf "],
+        "Koungheul": ["Koungheul", "Missirah Wadène", "Maka Yop", "Ngainthe Pathé", "Fass Thièkène", "Saly Escale", "Ida Mouride", "Ribot Escale", "Lour Escale"]
+    },
+    "Saint-Louis": {
+        "Saint-Louis": ["Saint-Louis", "Mpal", "Fass Ngom", "Ndiébène Gandiol", "Gandon"],
+        "Dagana": ["Dagana", "Richard Toll", "Ross-Béthio", "Rosso-Sénégal", "Ngnith", "Diama", "Ronkh", "Ndombo Sandjiry", "Gae", "Bokhol", "Mbane"],
+        "Podor": ["Podor", "Méry", "Doumga Lao", "Madina Diathbé", "Golléré", "Mboumba", "Walaldé", "Aéré Lao", "Gamadji Saré", "Dodel", "Guedé Village", "Guédé Chantier", "Démette", "Bodé Lao", "Fanaye", "Ndiayene Peindao", "Ndiandane", "Mbolo Birane", "Boké Dialloubé", "Galoya Toucouleur", "Pété"]
+    },
+    "Matam": {
+        "Matam": ["Matam", "Ourossogui", "Thilogne", "Nguidjilone", "Dabia", "Des Agnam Civol", "Oréfondé", "Bokidiawé", "Nabadji Civol", "Ogo"],
+        "Kanel": ["Kanel", "Odobéré", "Wouro Sidy", "Ndendory", "Sinthiou Bamambé Banadji", "Hamady Hounaré", "Aouré", "Bokiladji", "Orkadiéré", "Ouaoundé", "Semmé", "Dembancané"],
+        "Ranérou": ["Ranérou", "Lougré Thioly", "Oudalaye", "Vélingara"]
+    },
+    "Kédougou": {
+        "Kédougou": ["Kédougou", "Ninéfécha", "Bandafassi", "Tomboroncoto", "Dindefelo", "Fongolimbi", "Dimboli"],
+        "Salémata": ["Salémata", "Kévoye", "Dakatéli", "Ethiolo", "Oubadji", "Dar salam"],
+        "Saraya": ["Saraya", "Bembou", "Médina Baffé", "Sabodala", "Khossanto", "Missirah Sirimana"]
+    },
+
+    "Tambacounda": {
+        "Tambacounda": ["Tambacounda", "Niani Toucouleur", "Makacolibantang", "Ndoga Babacar", "Missirah", "Néttéboulou", "Dialacoto", "Sinthiou Malème", "Sinthiou Malème"],
+        "Goudiry": ["Goudiry", "Boynguel Bamba", "Sinthiou Mamadou Boubou", "Koussan", "Dougué", "Dianké Makha", "Boutoucoufara", "Bani Israel", "Sinthiou Bocar Aly", "Koulor", "Bala", "Koar", "Goumbayel"],
+        "Bakel": ["Bakel", "Bélé", "Sinthiou Fissa", "Kidira", "Toumboura", "Sadatou", "Madina Foulbé", "Gathiary", "Gathiary", "Ballou", "Gabou", "Diawara"],
+        "Koumpentoum": ["Koumpentoum", "Ndame", "Méréto", "Kahène", "Bamba Thialène", "Payar", "Kouthiaba Wolof", "Kouthia Gaydi", "Pass Coto", "Malem Niany"]
+    },
+    "Kolda": {
+        "Kolda": ["Kolda", "Dialambéré", "Médina Chérif", "Mampatim", "Coumbacara", "Coumbacara", "Bagadadji", "Dabo", "Thiétty", "Saré Bidji", "Guiro Yéro Bocar", "Dioulacolon", "Tankanto Escale", "Médina El hadj", "Salykégné", "Saré Yoba Diéga"],
+        "Médina Yoro Foulah ": ["Médina Yoro Foulah", "Badion", "Fafacourou", "Bourouco", "Bignarabé", "Ndorna", "Koulinto", "Niaming", "Dinguiraye", "Pata", "Kéréwane"],
+        "Vélingara": ["Vélingara", "Diaobé-Kabendou", "Kounkané", "Kandia", "Saré Coly Sallé", "Kandiaye", "Némataba", "Pakour", "Paroumba", "Ouassadou", "Bonconto", "Linkering", "Médina Gounass", "Sinthiang Koundara"]
+    },
+    "Sédhiou": {
+        "Sédhiou": ["Sédhiou", "Marssassoum", "Djiredji", "Bambaly", "Oudoucar", "Sama Kanta Peulh", "Diannah Ba", "Koussy", "Sakar", "Diendé", "Diannah Malary", "San Samba", "Bémet Bidjini", "Djibabouya"],
+        "Bounkiling": ["Bounkiling", "Ndiamacouta", "Boghal", "Tankon", "Ndiamalathiel", "Djinany", "Diacounda", "Inor", "Kandion Mangana", "Bona", "Diambati", "Faoune", "Diaroumé", "Madina Wandifa"],
+        "Goudomp": ["Goudomp", "Diattacounda", "Samine", "Yarang Balante", "Mangaroungou Santo", "Simbandi Balante", "Djibanar", "Kaour", "Diouboudou", "Simbandi Brassou", "Baghère", "Niagh", "Tanaff", "Karantaba", "Kolibantang"]
+    },
+
+    "Ziguinchor": {
+        "Ziguinchor": ["Ziguinchor", "Niaguis", "Adéane", "Boutoupa Camaracounda", "Niassia", "Enampore"],
+        "Bignona": ["Bignona", "Thionck Essyl", "Kataba 1", "Djinaky", "Kafountine", "Diouloulou", "Tenghori", "Niamone", "Ouonck", "Coubalan", "Balinghore", "Diégoune", "Kartiack", "Mangagoulack", "Mlomp", "Djibidione", "Oulampane", "Sindian", "Sindian"],
+        "Oussouye": ["Oussouye", "Diembéring", "Santhiaba Manjack", "Oukout", "Mlomp"]
+    }
+}
