@@ -1,7 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import { useSnackbar } from 'notistack'
-import { useEffect } from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import CustomModalStepper from './CustomModalStepper';
@@ -18,8 +17,6 @@ export default function CredentialRequest() {
     const researchValue = watch().research;
     const proxy_url = "https://api.allorigins.win/get?url=https://thingproxy.freeboard.io/fetch/";
     const api_election_url = "https://elections.sec.gouv.sn/election/";
-
-
 
     const getUserElectionData = () => {
         setOpenBackdrop(true);
@@ -46,9 +43,6 @@ export default function CredentialRequest() {
         getUserElectionData();
     };
 
-    useEffect(() => {
-        // reset();
-    }, [isSubmitSuccessful])
 
 
     return (

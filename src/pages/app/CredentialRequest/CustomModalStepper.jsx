@@ -31,20 +31,15 @@ const steps = ['Affichage informations électorales', 'Enregistrement informatio
 export default function CustomModalStepper({ userElectoralData }) {
     const { enqueueSnackbar } = useSnackbar();
     const [openModal, setOpenModal] = React.useState(true);
-
     const handleClose = () => {
         setOpenModal(false);
     };
-
     const fullScreen = useMediaQuery('(max-width:500px)');
-
     const [activeStep, setActiveStep] = React.useState(0);
     const [skipped, setSkipped] = React.useState(new Set());
-
     const isStepSkipped = (step) => {
         return skipped.has(step);
     };
-
     const handleNext = () => {
         let newSkipped = skipped;
         if (isStepSkipped(activeStep)) {
@@ -54,12 +49,9 @@ export default function CustomModalStepper({ userElectoralData }) {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
         setSkipped(newSkipped);
     };
-
     const handleBack = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
-
-
     const { register, handleSubmit, watch, formState: { errors } } = useForm({ mode: "onChange" });
     const onSubmit = data => {
         if (image != null) {
@@ -397,10 +389,6 @@ export default function CustomModalStepper({ userElectoralData }) {
                                 <Button type="submit" sx={{ color: "white", border: "1px solid rgb(109, 40, 217)" }} /*onClick={handleNext}*/>
                                     Valider les informations
                                 </Button>
-                                {/* <Button type="submit" sx={{ mt: 4, maxWidth: "fit-content", bgcolor: "#7C3AED", color: "white", '&:hover': { bgcolor: "#5B21B6" } }} size="medium" variant="contained">
-                                    Valider les informations
-                                </Button> */}
-
                             </form>
                     }
                 </DialogActions>
