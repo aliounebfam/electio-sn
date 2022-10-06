@@ -12,6 +12,7 @@ import { useState } from 'react';
 import { Backdrop, Box, Button, CircularProgress, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, LinearProgress, Typography, useMediaQuery } from '@mui/material';
 import { useSnackbar } from 'notistack';
 import { useForm } from 'react-hook-form';
+import { useEffect } from 'react';
 
 
 
@@ -20,6 +21,7 @@ export default function Regions() {
     const [oldEditingCell, setOldEditingCell] = useState({})
     const [openAlert, setOpenAlert] = useState(false)
     const [regionIdWhenDeleting, setRegionIdWhenDeleting] = useState()
+    const [rows, setRows] = useState([]);
     let isLoading = true;
     let regions = [];
     const { data, status, error } = useFirestoreQuery(
@@ -30,16 +32,37 @@ export default function Regions() {
     }
     if (status === "error") {
         console.log(`Error: ${error.message}`);
+        isLoading = false;
     }
     if (status === "success") {
         regions = data;
-        isLoading = false;
+        if (regions.length != 0 && rows.length != 0)
+            isLoading = false;
     }
+
+    useEffect(() => {
+        setRows(regions)
+    }, [regions])
+
     const handleEditCell = (params, event, details) => {
         const { id, field, value } = params;
-        if (JSON.stringify(oldEditingCell) !== JSON.stringify({ id, field, value })) {
+        if (event.type === "click")
+            setRows((regions) => {
+                return regions.map(region => {
+                    if (region.id == params.id) {
+                        return params.row;
+                    }
+                    else {
+                        return region;
+                    }
+                })
+            })
+        if (event.type !== "click" && JSON.stringify(oldEditingCell) !== JSON.stringify({ id, field, value })) {
             updateRegion(id, { [field]: field != "nom" ? parseFloat(value) : value });
             enqueueSnackbar('Champ correctement modifié', { variant: 'success' })
+        }
+        else {
+            enqueueSnackbar('Modification annulée', { variant: 'success' })
         }
     };
     const handleOldCell = (event) => {
@@ -120,7 +143,7 @@ export default function Regions() {
                 <div className='pb-5 text-xl  font-Hind font-normal'>
                     Liste de toutes les régions
                 </div>
-                <div style={{ height: '70vh', width: '100%' }}>
+                <div style={{ height: '600px', width: '100%' }}>
 
                     <DataGrid
                         sx={{
@@ -137,7 +160,7 @@ export default function Regions() {
                             Toolbar: CustomToolbar,
                             LoadingOverlay: LinearProgress
                         }}
-                        rows={regions}
+                        rows={rows}
                         columns={columns}
                         disableSelectionOnClick
                         sortingOrder={['asc', 'desc']}
@@ -203,7 +226,7 @@ function AddRegionToolbar() {
             </Backdrop>
             <Dialog
                 sx={{ zIndex: "30" }}
-                maxWidth={false}
+                maxWidth={"md"}
                 fullWidth={true}
                 open={openAddRegionModal}
                 onClose={handleCloseAddRegionModal}
@@ -213,7 +236,7 @@ function AddRegionToolbar() {
             >
                 <DialogTitle sx={{ bgcolor: "#111827", display: "flex", justifyContent: "space-between", alignItems: "center" }} id="alert-dialog-title">
                     {"Ajouter une nouvelle région"}
-                    <IconButton sx={{ display: useMediaQuery('(max-width:405px)') ? "none" : "block" }} onClick={handleCloseAddRegionModal}>
+                    <IconButton sx={{ display: useMediaQuery('(max-width:405px)') ? "none" : undefined }} onClick={handleCloseAddRegionModal}>
                         <CloseRoundedIcon />
                     </IconButton>
                 </DialogTitle>
