@@ -1,0 +1,542 @@
+[
+ {
+   "Departement": "ZIGUINCHOR",
+   "Latitude": "12,51578778",
+   "Longitude": "-16,22239121",
+   "BBY presi": 32846,
+   "IdrissaSeck presi": 2419,
+   "IssaSall presi": 556,
+   "Madick�Niang presi": 510,
+   "PASTEF presi": 41291
+ },
+ {
+   "Departement": "VELINGARA",
+   "Latitude": "12,98605399",
+   "Longitude": "-13,87456189",
+   "BBY presi": 47551,
+   "IdrissaSeck presi": 8106,
+   "IssaSall presi": 1361,
+   "Madick�Niang presi": 966,
+   "PASTEF presi": 10423
+ },
+ {
+   "Departement": "TIVAOUANE",
+   "Latitude": "15,09673597",
+   "Longitude": "-16,65307945",
+   "BBY presi": 79757,
+   "IdrissaSeck presi": 55966,
+   "IssaSall presi": 14098,
+   "Madick�Niang presi": 2054,
+   "PASTEF presi": 9836
+ },
+ {
+   "Departement": "THIES",
+   "Latitude": "14,74732325",
+   "Longitude": "-16,86877795",
+   "BBY presi": 100422,
+   "IdrissaSeck presi": 120054,
+   "IssaSall presi": 12102,
+   "Madick�Niang presi": 2312,
+   "PASTEF presi": 19737
+ },
+ {
+   "Departement": "TAMBACOUNDA",
+   "Latitude": "13,50307942",
+   "Longitude": "-13,5138183",
+   "BBY presi": 46096,
+   "IdrissaSeck presi": 5401,
+   "IssaSall presi": 1184,
+   "Madick�Niang presi": 1074,
+   "PASTEF presi": 11258
+ },
+ {
+   "Departement": "SEDHIOU",
+   "Latitude": "12,80458659",
+   "Longitude": "-15,61628662",
+   "BBY presi": 23414,
+   "IdrissaSeck presi": 3808,
+   "IssaSall presi": 407,
+   "Madick�Niang presi": 680,
+   "PASTEF presi": 14833
+ },
+ {
+   "Departement": "SARAYA",
+   "Latitude": "12,97235252",
+   "Longitude": "-11,82943665",
+   "BBY presi": 7122,
+   "IdrissaSeck presi": 1383,
+   "IssaSall presi": 275,
+   "Madick�Niang presi": 226,
+   "PASTEF presi": 2082
+ },
+ {
+   "Departement": "SALEMATA",
+   "Latitude": "12,60358341",
+   "Longitude": "-12,80217768",
+   "BBY presi": 4525,
+   "IdrissaSeck presi": 1062,
+   "IssaSall presi": 75,
+   "Madick�Niang presi": 309,
+   "PASTEF presi": 589
+ },
+ {
+   "Departement": "SAINT-LOUIS",
+   "Latitude": "15,96379361",
+   "Longitude": "-16,36776901",
+   "BBY presi": 62788,
+   "IdrissaSeck presi": 17404,
+   "IssaSall presi": 7471,
+   "Madick�Niang presi": 3160,
+   "PASTEF presi": 18632
+ },
+ {
+   "Departement": "RUFISQUE",
+   "Latitude": "14,75783758",
+   "Longitude": "-17,20078043",
+   "BBY presi": 100632,
+   "IdrissaSeck presi": 34892,
+   "IssaSall presi": 16164,
+   "Madick�Niang presi": 2273,
+   "PASTEF presi": 30186
+ },
+ {
+   "Departement": "RANEROU-FERLO",
+   "Latitude": "15,03340878",
+   "Longitude": "-14,15188079",
+   "BBY presi": 14827,
+   "IdrissaSeck presi": 528,
+   "IssaSall presi": 122,
+   "Madick�Niang presi": 137,
+   "PASTEF presi": 482
+ },
+ {
+   "Departement": "PODOR",
+   "Latitude": "16,14930855",
+   "Longitude": "-14,56996161",
+   "BBY presi": 127639,
+   "IdrissaSeck presi": 2806,
+   "IssaSall presi": 908,
+   "Madick�Niang presi": 510,
+   "PASTEF presi": 4802
+ },
+ {
+   "Departement": "PIKINE",
+   "Latitude": "14,76791038",
+   "Longitude": "-17,33970084",
+   "BBY presi": 183630,
+   "IdrissaSeck presi": 90388,
+   "IssaSall presi": 22866,
+   "Madick�Niang presi": 6601,
+   "PASTEF presi": 74255
+ },
+ {
+   "Departement": "OUSSOUYE",
+   "Latitude": "12,47419121",
+   "Longitude": "-16,61543995",
+   "BBY presi": 8707,
+   "IdrissaSeck presi": 406,
+   "IssaSall presi": 231,
+   "Madick�Niang presi": 101,
+   "PASTEF presi": 9209
+ },
+ {
+   "Departement": "NIORO DU RIP",
+   "Latitude": "13,7310865",
+   "Longitude": "-15,83477353",
+   "BBY presi": 72463,
+   "IdrissaSeck presi": 7180,
+   "IssaSall presi": 1506,
+   "Madick�Niang presi": 1264,
+   "PASTEF presi": 9825
+ },
+ {
+   "Departement": "MEDINA YORO FOULAH",
+   "Latitude": "13,21354463",
+   "Longitude": "-14,86607718",
+   "BBY presi": 19992,
+   "IdrissaSeck presi": 2888,
+   "IssaSall presi": 311,
+   "Madick�Niang presi": 396,
+   "PASTEF presi": 4133
+ },
+ {
+   "Departement": "MBOUR",
+   "Latitude": "14,45898191",
+   "Longitude": "-16,83044972",
+   "BBY presi": 132202,
+   "IdrissaSeck presi": 35437,
+   "IssaSall presi": 11653,
+   "Madick�Niang presi": 2042,
+   "PASTEF presi": 29896
+ },
+ {
+   "Departement": "MBACKE",
+   "Latitude": "14,77652336",
+   "Longitude": "-15,83997818",
+   "BBY presi": 67747,
+   "IdrissaSeck presi": 129724,
+   "IssaSall presi": 2334,
+   "Madick�Niang presi": 9963,
+   "PASTEF presi": 12686
+ },
+ {
+   "Departement": "MATAM",
+   "Latitude": "15,73656724",
+   "Longitude": "-13,59762305",
+   "BBY presi": 92454,
+   "IdrissaSeck presi": 2239,
+   "IssaSall presi": 582,
+   "Madick�Niang presi": 284,
+   "PASTEF presi": 3698
+ },
+ {
+   "Departement": "MALEME-HODAR",
+   "Latitude": "14,38754479",
+   "Longitude": "-15,2833596",
+   "BBY presi": 18926,
+   "IdrissaSeck presi": 2582,
+   "IssaSall presi": 1398,
+   "Madick�Niang presi": 345,
+   "PASTEF presi": 1285
+ },
+ {
+   "Departement": "LOUGA",
+   "Latitude": "15,74474519",
+   "Longitude": "-15,9972572",
+   "BBY presi": 73514,
+   "IdrissaSeck presi": 19788,
+   "IssaSall presi": 15617,
+   "Madick�Niang presi": 2344,
+   "PASTEF presi": 9612
+ },
+ {
+   "Departement": "LINGUERE",
+   "Latitude": "15,33792654",
+   "Longitude": "-15,19046419",
+   "BBY presi": 64291,
+   "IdrissaSeck presi": 5857,
+   "IssaSall presi": 1603,
+   "Madick�Niang presi": 1859,
+   "PASTEF presi": 5666
+ },
+ {
+   "Departement": "KOUNGHEUL",
+   "Latitude": "14,2044619",
+   "Longitude": "-14,85676607",
+   "BBY presi": 33728,
+   "IdrissaSeck presi": 5020,
+   "IssaSall presi": 885,
+   "Madick�Niang presi": 442,
+   "PASTEF presi": 2848
+ },
+ {
+   "Departement": "KOUMPENTOUM",
+   "Latitude": "14,17248193",
+   "Longitude": "-14,31795396",
+   "BBY presi": 20220,
+   "IdrissaSeck presi": 4613,
+   "IssaSall presi": 517,
+   "Madick�Niang presi": 580,
+   "PASTEF presi": 3652
+ },
+ {
+   "Departement": "KOLDA",
+   "Latitude": "12,85459284",
+   "Longitude": "-14,65416836",
+   "BBY presi": 36927,
+   "IdrissaSeck presi": 6245,
+   "IssaSall presi": 789,
+   "Madick�Niang presi": 1042,
+   "PASTEF presi": 13839
+ },
+ {
+   "Departement": "KEUR MASSAR",
+   "Latitude": "",
+   "Longitude": "",
+   "BBY presi": null,
+   "IdrissaSeck presi": null,
+   "IssaSall presi": null,
+   "Madick�Niang presi": null,
+   "PASTEF presi": null
+ },
+ {
+   "Departement": "KEDOUGOU",
+   "Latitude": "12,76593983",
+   "Longitude": "-12,43500363",
+   "BBY presi": 16153,
+   "IdrissaSeck presi": 2494,
+   "IssaSall presi": 324,
+   "Madick�Niang presi": 377,
+   "PASTEF presi": 3269
+ },
+ {
+   "Departement": "KEBEMER",
+   "Latitude": "15,30411387",
+   "Longitude": "-16,24890034",
+   "BBY presi": 42166,
+   "IdrissaSeck presi": 26739,
+   "IssaSall presi": 4374,
+   "Madick�Niang presi": 2076,
+   "PASTEF presi": 5125
+ },
+ {
+   "Departement": "KAOLACK",
+   "Latitude": "14,06245593",
+   "Longitude": "-16,06355185",
+   "BBY presi": 99376,
+   "IdrissaSeck presi": 18649,
+   "IssaSall presi": 4334,
+   "Madick�Niang presi": 1758,
+   "PASTEF presi": 22677
+ },
+ {
+   "Departement": "KANEL",
+   "Latitude": "14,97421604",
+   "Longitude": "-13,14362353",
+   "BBY presi": 65679,
+   "IdrissaSeck presi": 1364,
+   "IssaSall presi": 309,
+   "Madick�Niang presi": 192,
+   "PASTEF presi": 2562
+ },
+ {
+   "Departement": "KAFFRINE",
+   "Latitude": "14,10911854",
+   "Longitude": "-15,4423784",
+   "BBY presi": 38874,
+   "IdrissaSeck presi": 6513,
+   "IssaSall presi": 3406,
+   "Madick�Niang presi": 731,
+   "PASTEF presi": 5294
+ },
+ {
+   "Departement": "GUINGUINEO",
+   "Latitude": "14,29428815",
+   "Longitude": "-15,91451001",
+   "BBY presi": 21733,
+   "IdrissaSeck presi": 5786,
+   "IssaSall presi": 2645,
+   "Madick�Niang presi": 555,
+   "PASTEF presi": 2964
+ },
+ {
+   "Departement": "GUEDIAWAYE",
+   "Latitude": "14,77279976",
+   "Longitude": "-17,39670186",
+   "BBY presi": 65174,
+   "IdrissaSeck presi": 35646,
+   "IssaSall presi": 6552,
+   "Madick�Niang presi": 1977,
+   "PASTEF presi": 24243
+ },
+ {
+   "Departement": "GOUDOMP",
+   "Latitude": "12,63281767",
+   "Longitude": "-15,50985568",
+   "BBY presi": 23343,
+   "IdrissaSeck presi": 4434,
+   "IssaSall presi": 635,
+   "Madick�Niang presi": 770,
+   "PASTEF presi": 17012
+ },
+ {
+   "Departement": "GOUDIRY",
+   "Latitude": "13,99327402",
+   "Longitude": "-12,9311783",
+   "BBY presi": 21641,
+   "IdrissaSeck presi": 1964,
+   "IssaSall presi": 708,
+   "Madick�Niang presi": 303,
+   "PASTEF presi": 3514
+ },
+ {
+   "Departement": "GOSSAS",
+   "Latitude": "14,53029522",
+   "Longitude": "-15,85650236",
+   "BBY presi": 20292,
+   "IdrissaSeck presi": 4299,
+   "IssaSall presi": 518,
+   "Madick�Niang presi": 435,
+   "PASTEF presi": 2036
+ },
+ {
+   "Departement": "FOUNDIOUGNE",
+   "Latitude": "13,86009655",
+   "Longitude": "-16,43812212",
+   "BBY presi": 62373,
+   "IdrissaSeck presi": 5103,
+   "IssaSall presi": 1109,
+   "Madick�Niang presi": 771,
+   "PASTEF presi": 7905
+ },
+ {
+   "Departement": "FATICK",
+   "Latitude": "14,32860843",
+   "Longitude": "-16,48329553",
+   "BBY presi": 80888,
+   "IdrissaSeck presi": 5172,
+   "IssaSall presi": 4089,
+   "Madick�Niang presi": 673,
+   "PASTEF presi": 9349
+ },
+ {
+   "Departement": "Europe du Sud",
+   "Latitude": "",
+   "Longitude": "",
+   "BBY presi": 11643,
+   "IdrissaSeck presi": 11333,
+   "IssaSall presi": 2158,
+   "Madick�Niang presi": 407,
+   "PASTEF presi": 11520
+ },
+ {
+   "Departement": "Europe de l'Ouest, du Centre et du Nord",
+   "Latitude": "",
+   "Longitude": "",
+   "BBY presi": 15394,
+   "IdrissaSeck presi": 3191,
+   "IssaSall presi": 573,
+   "Madick�Niang presi": 212,
+   "PASTEF presi": 13380
+ },
+ {
+   "Departement": "DIOURBEL",
+   "Latitude": "14,76890488",
+   "Longitude": "-16,21630688",
+   "BBY presi": 40501,
+   "IdrissaSeck presi": 22026,
+   "IssaSall presi": 884,
+   "Madick�Niang presi": 1682,
+   "PASTEF presi": 6300
+ },
+ {
+   "Departement": "DAKAR",
+   "Latitude": "14,72243181",
+   "Longitude": "-17,46030761",
+   "BBY presi": 212355,
+   "IdrissaSeck presi": 115612,
+   "IssaSall presi": 18662,
+   "Madick�Niang presi": 5646,
+   "PASTEF presi": 101003
+ },
+ {
+   "Departement": "DAGANA",
+   "Latitude": "16,27366411",
+   "Longitude": "-15,85199256",
+   "BBY presi": 62091,
+   "IdrissaSeck presi": 11033,
+   "IssaSall presi": 6380,
+   "Madick�Niang presi": 957,
+   "PASTEF presi": 11847
+ },
+ {
+   "Departement": "BOUNKILING",
+   "Latitude": "13,1329005",
+   "Longitude": "-15,60534745",
+   "BBY presi": 23385,
+   "IdrissaSeck presi": 1105,
+   "IssaSall presi": 533,
+   "Madick�Niang presi": 255,
+   "PASTEF presi": 12605
+ },
+ {
+   "Departement": "BIRKILANE",
+   "Latitude": "14,04641447",
+   "Longitude": "-15,68030056",
+   "BBY presi": 22854,
+   "IdrissaSeck presi": 3309,
+   "IssaSall presi": 1053,
+   "Madick�Niang presi": 583,
+   "PASTEF presi": 3392
+ },
+ {
+   "Departement": "BIGNONA",
+   "Latitude": "12,88521292",
+   "Longitude": "-16,3665789",
+   "BBY presi": 27398,
+   "IdrissaSeck presi": 2169,
+   "IssaSall presi": 412,
+   "Madick�Niang presi": 377,
+   "PASTEF presi": 51438
+ },
+ {
+   "Departement": "BAMBEY",
+   "Latitude": "14,79978782",
+   "Longitude": "-16,48633461",
+   "BBY presi": 38625,
+   "IdrissaSeck presi": 25364,
+   "IssaSall presi": 1125,
+   "Madick�Niang presi": 1539,
+   "PASTEF presi": 4679
+ },
+ {
+   "Departement": "BAKEL",
+   "Latitude": "14,15215135",
+   "Longitude": "-12,25175642",
+   "BBY presi": 25723,
+   "IdrissaSeck presi": 2908,
+   "IssaSall presi": 419,
+   "Madick�Niang presi": 471,
+   "PASTEF presi": 4888
+ },
+ {
+   "Departement": "Asie-Moyen Orient",
+   "Latitude": "",
+   "Longitude": "",
+   "BBY presi": null,
+   "IdrissaSeck presi": null,
+   "IssaSall presi": null,
+   "Madick�Niang presi": null,
+   "PASTEF presi": null
+ },
+ {
+   "Departement": "Amerique-Oceanie",
+   "Latitude": "",
+   "Longitude": "",
+   "BBY presi": 3082,
+   "IdrissaSeck presi": 2389,
+   "IssaSall presi": 167,
+   "Madick�Niang presi": 80,
+   "PASTEF presi": 4846
+ },
+ {
+   "Departement": "Afrique du Nord",
+   "Latitude": "",
+   "Longitude": "",
+   "BBY presi": 6606,
+   "IdrissaSeck presi": 3408,
+   "IssaSall presi": 950,
+   "Madick�Niang presi": 203,
+   "PASTEF presi": 3460
+ },
+ {
+   "Departement": "Afrique du Centre",
+   "Latitude": "",
+   "Longitude": "",
+   "BBY presi": 14440,
+   "IdrissaSeck presi": 1725,
+   "IssaSall presi": 214,
+   "Madick�Niang presi": 118,
+   "PASTEF presi": 1894
+ },
+ {
+   "Departement": "Afrique de l'Ouest",
+   "Latitude": "",
+   "Longitude": "",
+   "BBY presi": 14603,
+   "IdrissaSeck presi": 6828,
+   "IssaSall presi": 610,
+   "Madick�Niang presi": 306,
+   "PASTEF presi": 3451
+ },
+ {
+   "Departement": "Afrique Australe",
+   "Latitude": "",
+   "Longitude": "",
+   "BBY presi": 1099,
+   "IdrissaSeck presi": 612,
+   "IssaSall presi": 103,
+   "Madick�Niang presi": 14,
+   "PASTEF presi": 224
+ }
+]
