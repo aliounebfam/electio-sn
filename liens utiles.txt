@@ -1,0 +1,33 @@
+Acte 3 de la décentralisation Sénégal
+
+https://docs.google.com/document/d/1xJvcnofUiriAJgQftPv1Wol_3-1deAoJlSitMqM-XWg/edit#
+
+
+https://youtu.be/UqMTr6tWcjo
+
+
+idea💡: senegal_moe_ue_2019_rapport_final: Page 44... résultat cartes par candidat
+
+
+
+** Divisions administratives **
+
+
+https://www.laposte.sn/envois-de-courriers/code-postal-senegal/ (quartiers)
+
+
+http://dge.sn/sites/default/files/2019-02/Tableau_Repartition_Electorat.pdf (données nombre électeur 2019 par regions, par départements et par communes)
+
+
+
+Régions : départements : communes : voir locations.json
+
+
+
+*** Lat Lon ***
+https://www.gps-longitude-latitude.net/longitude-latitude-coordonnees-gps-du-lieu
+
+
+
+use case diagramm
+http://www.csc.villanova.edu/~schragge/CSC8530/projects/evote/SubmittedUseCases.html
