@@ -40,7 +40,7 @@ export default function Departments() {
                     setDepartments(response);
                 }
                 else
-                    enqueueSnackbar('Une erreur est survenue lors de la récupération des régions', { variant: 'danger' })
+                    enqueueSnackbar('Une erreur est survenue lors de la récupération des régions', { variant: 'error' })
             })
             .catch(() => { })
             .finally(() => setIsFetchingData(false))
