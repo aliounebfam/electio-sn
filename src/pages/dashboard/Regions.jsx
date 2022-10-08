@@ -28,7 +28,7 @@ export default function Regions() {
                 if (!response.error)
                     setRegions(response)
                 else
-                    enqueueSnackbar('Une erreur est survenue lors de la récupération des régions', { variant: 'error' })
+                    enqueueSnackbar(response.message, { variant: 'error' })
             })
             .finally(() => setIsFetchingData(false))
     }
