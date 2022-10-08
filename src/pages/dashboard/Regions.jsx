@@ -1,13 +1,11 @@
 import React from 'react'
 import { DataGrid, GridActionsCellItem, GridToolbarContainer, frFR, GridToolbarExport, GridToolbarColumnsButton, GridToolbarFilterButton, GridToolbarDensitySelector } from '@mui/x-data-grid';
-import useFirestoreQuery from '../../hook/firestore/useFirestoreQuery';
 import DeleteIcon from '@mui/icons-material/Delete';
-import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { useMemo } from 'react';
 import { useCallback } from 'react';
-import { regionCollectionRef, deleteRegion, updateRegion, addRegion } from '../../services/RegionService';
+import { deleteRegion, updateRegion, addRegion, getAllRegions } from '../../services/dashboard/RegionService';
 import { useState } from 'react';
 import { Backdrop, Box, Button, CircularProgress, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, LinearProgress, Typography, useMediaQuery } from '@mui/material';
 import { useSnackbar } from 'notistack';
@@ -15,39 +13,39 @@ import { useForm } from 'react-hook-form';
 import { useEffect } from 'react';
 
 
-
 export default function Regions() {
     const { enqueueSnackbar } = useSnackbar();
     const [oldEditingCell, setOldEditingCell] = useState({})
     const [openAlert, setOpenAlert] = useState(false)
     const [regionIdWhenDeleting, setRegionIdWhenDeleting] = useState()
-    const [rows, setRows] = useState([]);
-    let isLoading = true;
-    let regions = [];
-    const { data, status, error } = useFirestoreQuery(
-        regionCollectionRef
-    );
-    if (status === "loading") {
-        isLoading = true;
+    const [regions, setRegions] = useState([]);
+    const [isFetchingData, setIsFetchingData] = useState(false);
+
+    const getRegions = () => {
+        setIsFetchingData(true)
+        getAllRegions()
+            .then((response) => {
+                if (!response.error)
+                    setRegions(response)
+                else
+                    enqueueSnackbar('Une erreur est survenue lors de la récupération des régions', { variant: 'danger' })
+            })
+            .finally(() => setIsFetchingData(false))
     }
-    if (status === "error") {
-        console.log(`Error: ${error.message}`);
-        isLoading = false;
-    }
-    if (status === "success") {
-        regions = data;
-        if (regions.length != 0 && rows.length != 0)
-            isLoading = false;
+
+    const updateRegionStateWhenAddingNewRegion = (newRegionData) => {
+        const newRegionDataWithId = { id: newRegionData.nom + newRegionData.latitude + newRegionData.longitude, ...newRegionData }
+        setRegions((regions) => [...regions, newRegionDataWithId]);
     }
 
     useEffect(() => {
-        setRows(regions)
-    }, [regions])
+        getRegions();
+    }, [])
 
     const handleEditCell = (params, event, details) => {
         const { id, field, value } = params;
         if (event.type === "click")
-            setRows((regions) => {
+            setRegions((regions) => {
                 return regions.map(region => {
                     if (region.id == params.id) {
                         return params.row;
@@ -58,8 +56,10 @@ export default function Regions() {
                 })
             })
         if (event.type !== "click" && JSON.stringify(oldEditingCell) !== JSON.stringify({ id, field, value })) {
-            updateRegion(id, { [field]: field != "nom" ? parseFloat(value) : value });
-            enqueueSnackbar('Champ correctement modifié', { variant: 'success' })
+            updateRegion(id, { [field]: field != "nom" ? parseFloat(value) : value })
+                .then(() => {
+                    enqueueSnackbar('Champ correctement modifié', { variant: 'success' })
+                });
         }
         else {
             enqueueSnackbar('Modification annulée', { variant: 'success' })
@@ -70,9 +70,12 @@ export default function Regions() {
         setOldEditingCell({ id, field, value })
     };
     const handleDelete = useCallback((id) => () => {
-        deleteRegion(id);
-        setOpenAlert(false);
-        enqueueSnackbar('Région correctement supprimée', { variant: 'success' })
+        deleteRegion(id).then(() => {
+            enqueueSnackbar('Région correctement supprimée', { variant: 'success' });
+            setRegions((regions) => regions.filter((region) => region.id != id));
+            setOpenAlert(false);
+        });
+
     })
     const handleClickOpenAlert = useCallback((id) => () => {
         setRegionIdWhenDeleting(id)
@@ -95,12 +98,6 @@ export default function Regions() {
                 getActions: ({ id }) => {
 
                     return [
-                        <GridActionsCellItem
-                            icon={<EditRoundedIcon />}
-                            label="Éditer"
-                            // onClick={handleEditClick(id)}
-                            showInMenu
-                        />,
                         <GridActionsCellItem
                             icon={<DeleteIcon />}
                             label="Supprimer"
@@ -160,7 +157,10 @@ export default function Regions() {
                             Toolbar: CustomToolbar,
                             LoadingOverlay: LinearProgress
                         }}
-                        rows={rows}
+                        componentsProps={{
+                            toolbar: { updateRegionStateWhenAddingNewRegion: updateRegionStateWhenAddingNewRegion }
+                        }}
+                        rows={regions}
                         columns={columns}
                         disableSelectionOnClick
                         sortingOrder={['asc', 'desc']}
@@ -176,7 +176,7 @@ export default function Regions() {
                         onCellEditCommit={handleEditCell}
                         onCellEditStart={handleOldCell}
                         localeText={frFR.components.MuiDataGrid.defaultProps.localeText}
-                        loading={isLoading}
+                        loading={isFetchingData}
                     />
                 </div>
             </div>
@@ -185,22 +185,24 @@ export default function Regions() {
 }
 
 
-function AddRegionToolbar() {
+function AddRegionToolbar({ updateRegionStateWhenAddingNewRegion }) {
     const { enqueueSnackbar } = useSnackbar();
     const [openAddRegionBackdrop, setOpenAddRegionBackdrop] = useState(false)
-    const { register, handleSubmit, watch, reset, resetField, formState: { errors } } = useForm({ mode: "onChange" });
+    const { register, handleSubmit, watch, resetField, formState: { errors } } = useForm({ mode: "onChange" });
     const [openAddRegionModal, setOpenAddRegionModal] = useState(false);
 
     const fullScreen = useMediaQuery('(max-width:325px)');
 
     const handleClick = () => {
         setOpenAddRegionModal(true);
-    };
+    }
+
     const onSubmit = () => {
         setOpenAddRegionBackdrop(true)
         addRegion(watch())
             .then(
                 () => {
+                    updateRegionStateWhenAddingNewRegion(watch());
                     resetField('nom');
                     resetField('latitude');
                     resetField('longitude');
@@ -285,11 +287,11 @@ function AddRegionToolbar() {
     );
 }
 
-function CustomToolbar() {
+function CustomToolbar({ updateRegionStateWhenAddingNewRegion }) {
     return (
         <GridToolbarContainer sx={{ display: "flex", flexDirection: "column", alignItems: "start" }}>
             <GridToolbarContainer sx={{ mb: "2px" }}>
-                <AddRegionToolbar />
+                <AddRegionToolbar updateRegionStateWhenAddingNewRegion={updateRegionStateWhenAddingNewRegion} />
             </GridToolbarContainer>
             <GridToolbarContainer sx={{ mb: "2px" }}>
                 <GridToolbarColumnsButton />
