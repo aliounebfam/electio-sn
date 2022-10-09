@@ -158,7 +158,7 @@ export default function Departments() {
             </span>
             <div className="bg-white mt-5 p-5 rounded-md shadow-md shadow-violet-400">
                 <div className='pb-5 text-xl  font-Hind font-normal'>
-                    Liste de toutes les départements
+                    Liste de tout les départements
                 </div>
                 <div style={{ height: '600px', width: '100%' }}>
 
