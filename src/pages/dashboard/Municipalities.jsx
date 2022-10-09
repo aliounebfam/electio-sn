@@ -402,7 +402,7 @@ function AddMunicipalitieToolbar({ regionsNameWithId, updateMunicipalitieStateWh
             </Dialog>
             <GridToolbarContainer>
                 <Button variant="outlined" startIcon={<AddRoundedIcon />} onClick={handleClickAddMunicipalitieButton}>
-                    Ajouter commune
+                    Ajouter une commune
                 </Button>
             </GridToolbarContainer>
         </>

@@ -132,7 +132,7 @@ export default function Regions() {
                 <DialogActions>
                     <Button disabled={isDeleting} onClick={handleClickCloseAlert}>Annuler</Button>
                     <LoadingButton id="loadingIndicator" loading={isDeleting} onClick={handleDelete(regionIdWhenDeleting)} autoFocus>
-                        Oui, je veux le supprimer
+                        Oui, je veux la supprimer
                     </LoadingButton>
                 </DialogActions>
             </Dialog>
@@ -284,7 +284,7 @@ function AddRegionToolbar({ updateRegionStateWhenAddingNewRegion }) {
             </Dialog>
             <GridToolbarContainer>
                 <Button variant="outlined" startIcon={<AddRoundedIcon />} onClick={handleClick}>
-                    Ajouter région
+                    Ajouter une région
                 </Button>
             </GridToolbarContainer>
         </>

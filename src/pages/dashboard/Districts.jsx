@@ -168,7 +168,7 @@ export default function Districts() {
             </span>
             <div className="bg-white mt-5 p-5 rounded-md shadow-md shadow-violet-400">
                 <div className='pb-5 text-xl  font-Hind font-normal'>
-                    Liste de tout les quartiers
+                    Liste de tous les quartiers
                 </div>
                 <div style={{ height: '600px', width: '100%' }}>
 
@@ -466,7 +466,7 @@ function AddDistrictToolbar({ regionsNameWithId, updateDistrictStateWhenAddingNe
             </Dialog>
             <GridToolbarContainer>
                 <Button variant="outlined" startIcon={<AddRoundedIcon />} onClick={handleClickAddDistrictButton}>
-                    Ajouter quartier
+                    Ajouter un quartier
                 </Button>
             </GridToolbarContainer>
         </>
