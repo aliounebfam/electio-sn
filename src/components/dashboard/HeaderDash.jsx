@@ -9,6 +9,8 @@ import LocationCityRoundedIcon from '@mui/icons-material/LocationCityRounded';
 import AsideNavbarItem from './AsideNavbarItem';
 import ApartmentRoundedIcon from '@mui/icons-material/ApartmentRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
+import { Tooltip } from '@mui/material';
+
 
 export default function HeaderDash() {
 
@@ -48,7 +50,10 @@ export default function HeaderDash() {
                     </button>
                     {/* End Menu Button */}
 
-                    <img className="ml-4 cursor-pointer inline-block h-10 w-10 rounded-full ring-2 ring-violet-700" src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="" />
+                    <Tooltip title="Cliquez pour accéder à votre profil" placement='bottom' followCursor>
+                        <img className="ml-4 cursor-pointer inline-block h-10 w-10 rounded-full ring-2 ring-violet-700/40 hover:ring-violet-700 transition duration-300" src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="" />
+                    </Tooltip>
+
                 </div>
 
                 {/* Start Mobile nav bar */}
