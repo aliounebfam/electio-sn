@@ -42,7 +42,6 @@ export default function HeaderDash() {
                     <button type="button" className="transition-all duration-200 rounded-md md:hidden bg-gray-800 hover:bg-gray-700 ">
                         <Hamburger size={29} label="Afficher le menu" rounded toggled={isMobileMenuVisible}
                             onToggle={toggled => {
-                                // handleToggle
                                 if (toggled) { setIsMobileMenuVisible(!isMobileMenuVisible) }
                                 if (count != 0 && count % 2 == 0) setIsMobileMenuVisible(false)
                             }}
