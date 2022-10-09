@@ -1,6 +1,6 @@
 import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
-import { getRegionName, getRegionRef } from "./RegionService";
+import { getRegionRef } from "./RegionService";
 
 export const departmentCollectionRef = collection(db, "departments");
 
@@ -15,7 +15,9 @@ export const deleteDepartment = async (id) => {
 export const updateDepartment = async (id, data) => {
     if (data?.regionName) {
         data["regionRef"] = getRegionRef(data.regionName.id)
-        delete data.regionName;
+        const regionName = data.regionName.nom;
+        delete data["regionName"];
+        data["regionName"] = regionName;
     }
     await updateDoc(getDocDepartmentRef(id),
         {

@@ -11,7 +11,7 @@ import { Backdrop, Box, Button, CircularProgress, Dialog, DialogActions, DialogC
 import { useSnackbar } from 'notistack';
 import { useForm } from 'react-hook-form';
 import { useEffect } from 'react';
-
+import LoadingButton from '@mui/lab/LoadingButton';
 
 export default function Regions() {
     const { enqueueSnackbar } = useSnackbar();
@@ -20,6 +20,7 @@ export default function Regions() {
     const [regionIdWhenDeleting, setRegionIdWhenDeleting] = useState()
     const [regions, setRegions] = useState([]);
     const [isFetchingData, setIsFetchingData] = useState(false);
+    const [isDeleting, setIsDeleting] = useState(false);
 
     const getRegions = () => {
         setIsFetchingData(true)
@@ -70,11 +71,13 @@ export default function Regions() {
         setOldEditingCell({ id, field, value })
     };
     const handleDelete = useCallback((id) => () => {
+        setIsDeleting(true);
         deleteRegion(id).then(() => {
             enqueueSnackbar('Région correctement supprimée', { variant: 'success' });
             setRegions((regions) => regions.filter((region) => region.id != id));
             setOpenAlert(false);
-        });
+        })
+            .finally(() => setIsDeleting(false));
 
     })
     const handleClickOpenAlert = useCallback((id) => () => {
@@ -82,7 +85,8 @@ export default function Regions() {
         setOpenAlert(true);
     })
     const handleClickCloseAlert = () => {
-        setOpenAlert(false);
+        if (!isDeleting)
+            setOpenAlert(false);
     }
     const columns = useMemo
         (() => [
@@ -126,10 +130,10 @@ export default function Regions() {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClickCloseAlert}>Annuler</Button>
-                    <Button onClick={handleDelete(regionIdWhenDeleting)} autoFocus>
+                    <Button disabled={isDeleting} onClick={handleClickCloseAlert}>Annuler</Button>
+                    <LoadingButton id="loadingIndicator" loading={isDeleting} onClick={handleDelete(regionIdWhenDeleting)} autoFocus>
                         Oui, je veux le supprimer
-                    </Button>
+                    </LoadingButton>
                 </DialogActions>
             </Dialog>
 

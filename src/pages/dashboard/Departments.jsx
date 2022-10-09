@@ -75,7 +75,7 @@ export default function Departments() {
                 const [regionNameAndId] = regionsNameWithId.filter(region => region.nom == value);
                 value = regionNameAndId;
             }
-            updateDepartment(id, { [field]: ((field != "nom" && field != "regionName") ? parseFloat(value) : value) })
+            updateDepartment(id, { [field]: ((field != "nom" && field != "regionName") ? (value) : value) })
                 .then(() => enqueueSnackbar('Champ correctement modifié', { variant: 'success' }));
         }
         else {
@@ -101,14 +101,15 @@ export default function Departments() {
         setOpenDeleteDepartmentAlert(true);
     })
     const handleClickCloseAlert = () => {
-        setOpenDeleteDepartmentAlert(false);
+        if (!isDeleting)
+            setOpenDeleteDepartmentAlert(false);
     }
     const columns = useMemo
         (() => [
-            { field: 'nom', headerName: 'Nom', minWidth: 150, flex: 0.8, editable: true, sort: "desc" },
-            { field: 'latitude', headerName: 'Latitude', type: 'number', minWidth: 100, flex: 0.3, editable: true },
-            { field: 'longitude', headerName: 'Longitude', type: 'number', minWidth: 100, flex: 0.3, editable: true },
-            { field: 'regionName', headerName: 'Région', type: "singleSelect", minWidth: 120, flex: 0.5, editable: true, valueOptions: () => { return regionsNameWithId.map((region) => { return region.nom }) } },
+            { field: 'nom', headerName: 'Nom', minWidth: 150, flex: 0.6, editable: true, sort: "desc" },
+            { field: 'latitude', headerName: 'Latitude', valueFormatter: ({ value }) => (value), minWidth: 100, flex: 0.3, editable: true },
+            { field: 'longitude', headerName: 'Longitude', valueFormatter: ({ value }) => (value), minWidth: 100, flex: 0.3, editable: true },
+            { field: 'regionName', headerName: 'Région', type: "singleSelect", minWidth: 120, flex: 0.4, editable: true, valueOptions: () => { return regionsNameWithId.map((region) => { return region.nom }) } },
             {
                 field: 'actions',
                 type: 'actions',
@@ -145,7 +146,7 @@ export default function Departments() {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClickCloseAlert}>Annuler</Button>
+                    <Button disabled={isDeleting} onClick={handleClickCloseAlert}>Annuler</Button>
                     <LoadingButton id="loadingIndicator" loading={isDeleting} onClick={handleDelete(departmentIdWhenDeleting)} autoFocus>
                         Oui, je veux le supprimer
                     </LoadingButton>
