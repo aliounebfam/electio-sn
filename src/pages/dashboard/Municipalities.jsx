@@ -92,7 +92,7 @@ export default function Municipalities() {
         deleteMunicipalitie(id)
             .then(() => {
                 setMunicipalities((municipalities) => municipalities.filter((municipalitie) => municipalitie.id != id));
-                enqueueSnackbar('Département correctement supprimée', { variant: 'success' })
+                enqueueSnackbar('Commune correctement supprimée', { variant: 'success' })
                 setOpenDeleteMunicipalitieAlert(false);
             })
             .finally(() => setIsDeleting(false));
@@ -237,11 +237,13 @@ function AddMunicipalitieToolbar({ regionsNameWithId, updateMunicipalitieStateWh
                 () => {
                     updateMunicipalitieStateWhenAddingNewMunicipalitie(watch());
                     setSelectedRegion('none');
+                    setSelectedDepartment('none');
                     resetField('nom');
                     resetField('latitude');
                     resetField('longitude');
                     resetField('regionName');
-                    enqueueSnackbar('Département correctement ajoutée', { variant: 'success' })
+                    resetField('departmentName');
+                    enqueueSnackbar('Commune correctement ajoutée', { variant: 'success' })
                 }
             )
             .finally(() => {
@@ -283,7 +285,7 @@ function AddMunicipalitieToolbar({ regionsNameWithId, updateMunicipalitieStateWh
                 aria-describedby="alert-dialog-description"
             >
                 <DialogTitle sx={{ bgcolor: "#111827", display: "flex", justifyContent: "space-between", alignItems: "center" }} id="alert-dialog-title">
-                    {"Ajouter un nouveau commune"}
+                    {"Ajouter une nouvelle commune"}
                     <IconButton sx={{ display: useMediaQuery('(max-width:405px)') ? "none" : undefined }} onClick={handleCloseAddMunicipalitieModal}>
                         <CloseRoundedIcon />
                     </IconButton>
@@ -292,7 +294,7 @@ function AddMunicipalitieToolbar({ regionsNameWithId, updateMunicipalitieStateWh
                     <Box sx={{ display: 'grid', gap: "30px", mt: "5px", }} >
                         <Box sx={{ display: 'grid', gap: "5px" }}>
                             <Typography sx={{ color: "#111827", fontFamily: "Hind", fontSize: "17.5px", fontWeight: '500' }}>Nom de la commune</Typography>
-                            <input type="text" autoComplete='off' name="municipalitie" id="municipalitie" placeholder='Ex:Mbour' style={{ borderRadius: "0.375rem", backgroundColor: "transparent", borderWidth: "1.5px" }} {...register("nom", {
+                            <input type="text" autoComplete='off' name="municipalitie" id="municipalitie" placeholder='Ex:Gorée' style={{ borderRadius: "0.375rem", backgroundColor: "transparent", borderWidth: "1.5px" }} {...register("nom", {
                                 required: "Veuillez entrez le nom de la commune que vous voulez ajouter"
                             })} />
                             {errors.nom?.message && <Typography sx={{ color: "#DC2626", fontFamily: "Hind" }}>{errors.nom.message}</Typography>}

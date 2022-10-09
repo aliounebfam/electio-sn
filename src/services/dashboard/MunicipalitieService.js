@@ -1,4 +1,4 @@
-import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc, query, where } from "firebase/firestore";
 import { db } from "../firebase";
 import { getDocDepartmentRef } from "./DepartmentService";
 import { getRegionRef } from "./RegionService";
@@ -60,4 +60,14 @@ export const getAllMunicipalities = async () => {
     }
     else
         return error;
+}
+
+export const getMunicipalitiesFromDepartmentName = async (departmentName) => {
+    let municipalitie = [];
+    const q = query(municipalitieCollectionRef, where("departmentName", "==", departmentName));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+        municipalitie.push({ id: doc.id, ...doc.data() })
+    });
+    return municipalitie;
 }

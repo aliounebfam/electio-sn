@@ -272,7 +272,7 @@ function AddDepartmentToolbar({ regionsNameWithId, updateDepartmentStateWhenAddi
                     <Box sx={{ display: 'grid', gap: "30px", mt: "5px", }} >
                         <Box sx={{ display: 'grid', gap: "5px" }}>
                             <Typography sx={{ color: "#111827", fontFamily: "Hind", fontSize: "17.5px", fontWeight: '500' }}>Nom du département</Typography>
-                            <input type="text" autoComplete='off' name="department" id="department" placeholder='Ex:Mbour' style={{ borderRadius: "0.375rem", backgroundColor: "transparent", borderWidth: "1.5px" }} {...register("nom", {
+                            <input type="text" autoComplete='off' name="department" id="department" placeholder='Ex:Pikine' style={{ borderRadius: "0.375rem", backgroundColor: "transparent", borderWidth: "1.5px" }} {...register("nom", {
                                 required: "Veuillez entrez le nom du département que vous voulez ajouter"
                             })} />
                             {errors.nom?.message && <Typography sx={{ color: "#DC2626", fontFamily: "Hind" }}>{errors.nom.message}</Typography>}
