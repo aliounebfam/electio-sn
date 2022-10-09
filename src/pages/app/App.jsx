@@ -15,7 +15,7 @@ function App() {
 
     useEffect(() => {
         if (!online) {
-            enqueueSnackbar('Vous êtes actuellement hors ligne', {
+            enqueueSnackbar('Vous êtes actuellement hors ligne !', {
                 variant: 'error', persist: true, anchorOrigin: {
                     vertical: 'bottom',
                     horizontal: 'center'
