@@ -37,7 +37,13 @@ function App() {
                 onChange={online => setOnline(online)}
                 render={() => (
                     <></>
-                )} />
+                )}
+                polling={
+                    {
+                        url: "https://ipv4.icanhazip.com",
+                    }
+                }
+            />
         </>
     )
 }
