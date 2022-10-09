@@ -5,6 +5,8 @@ import LocationCityRoundedIcon from '@mui/icons-material/LocationCityRounded';
 import AsideNavbarItem from './AsideNavbarItem';
 import ApartmentRoundedIcon from '@mui/icons-material/ApartmentRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
+import OtherHousesRoundedIcon from '@mui/icons-material/OtherHousesRounded';
+import RoofingRoundedIcon from '@mui/icons-material/RoofingRounded';
 
 export default function AsideNavBar() {
     return (
@@ -13,7 +15,7 @@ export default function AsideNavBar() {
                 <div className='hover:text-transparent px-2 flex items-center space-x-2'>
                     <img className='pb-2' src="./../electio_sn_logo.png" alt="Logo Electio SN" width={50} />
                     <Link to={'/'} className="pt-2">
-                        <span className="bg-clip-text hover:bg-[length:100%_100%] bg-no-repeat bg-gradient-to-br  from-[#007E3C] via-[#F0E33F] to-[#D71A21] text-xl font-bold font-Comfortaa" >
+                        <span className="bg-clip-text hover:bg-[length:100%_100%] bg-no-repeat bg-gradient-to-br from-[#007E3C] via-[#F0E33F] to-[#D71A21] text-xl font-bold font-Comfortaa" >
                             Electio•SN
                         </span>
                     </Link>
@@ -24,8 +26,8 @@ export default function AsideNavBar() {
                         <AsideNavbarItem text={"Électeurs"} icon={<PersonRoundedIcon />} path={'voters'} />
                         <AsideNavbarItem text={"Régions"} icon={<ApartmentRoundedIcon />} path={'regions'} />
                         <AsideNavbarItem text={"Départements"} icon={<LocationCityRoundedIcon />} path={'departments'} />
-                        <AsideNavbarItem text={"Communes"} icon={<LocationCityRoundedIcon />} path={'municipalities'} />
-                        <AsideNavbarItem text={"Quartiers"} icon={<LocationCityRoundedIcon />} path={'districts'} />
+                        <AsideNavbarItem text={"Communes"} icon={<OtherHousesRoundedIcon />} path={'municipalities'} />
+                        <AsideNavbarItem text={"Quartiers"} icon={<RoofingRoundedIcon />} path={'districts'} />
                     </div>
                     <div className='sticky space-x-3 text-gray-300 rounded-t-md hover:text-white bg-gray-900 shadow-[0_-1px_4px_0_rgba(0,0,0,0.1)] shadow-violet-500 inset-0 p-3 pl-6'>
                         <LogoutRoundedIcon />

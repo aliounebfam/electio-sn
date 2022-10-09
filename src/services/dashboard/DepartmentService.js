@@ -1,15 +1,15 @@
-import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc, query, where } from "firebase/firestore";
 import { db } from "../firebase";
 import { getRegionRef } from "./RegionService";
 
 export const departmentCollectionRef = collection(db, "departments");
 
 export const getDocDepartmentRef = (id) => {
-    return doc(db, "departments", id)
+    return doc(departmentCollectionRef, id);
 }
 
 export const deleteDepartment = async (id) => {
-    await deleteDoc(getDocDepartmentRef(id))
+    await deleteDoc(getDocDepartmentRef(id));
 }
 
 export const updateDepartment = async (id, data) => {
@@ -55,4 +55,15 @@ export const getAllDepartments = async () => {
     }
     else
         return error;
+}
+
+
+export const getDepartmentsFromRegionName = async (regionName) => {
+    let departments = [];
+    const q = query(departmentCollectionRef, where("regionName", "==", regionName));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+        departments.push({ id: doc.id, ...doc.data() })
+    });
+    return departments;
 }
