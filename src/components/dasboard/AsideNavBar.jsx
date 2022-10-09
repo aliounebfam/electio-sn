@@ -24,6 +24,7 @@ export default function AsideNavBar() {
                         <AsideNavbarItem text={"Électeurs"} icon={<PersonRoundedIcon />} path={'voters'} />
                         <AsideNavbarItem text={"Régions"} icon={<ApartmentRoundedIcon />} path={'regions'} />
                         <AsideNavbarItem text={"Départements"} icon={<LocationCityRoundedIcon />} path={'departments'} />
+                        <AsideNavbarItem text={"Communes"} icon={<LocationCityRoundedIcon />} path={'municipalities'} />
                         <AsideNavbarItem text={"Quartiers"} icon={<LocationCityRoundedIcon />} path={'districts'} />
                     </div>
                     <div className='sticky space-x-3 text-gray-300 rounded-t-md hover:text-white bg-gray-900 shadow-[0_-1px_4px_0_rgba(0,0,0,0.1)] shadow-violet-500 inset-0 p-3 pl-6'>

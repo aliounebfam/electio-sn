@@ -13,6 +13,7 @@ import Regions from "./pages/dashboard/Regions";
 import Departments from "./pages/dashboard/Departments";
 import Districts from "./pages/dashboard/Districts";
 import { Navigate } from "react-router-dom";
+import Municipalities from "./pages/dashboard/Municipalities";
 
 
 export const router = createBrowserRouter(
@@ -22,27 +23,27 @@ export const router = createBrowserRouter(
             element: <App />,
             children: [
                 {
-                    path: "/",
+                    path: "",
                     element: <Home />
                 },
                 {
-                    path: "/faq",
+                    path: "faq",
                     element: <Faq />
                 },
                 {
-                    path: "/contact",
+                    path: "contact",
                     element: <Contact />
                 },
                 {
-                    path: "/sign-up",
+                    path: "sign-up",
                     element: <SignUp />
                 },
                 {
-                    path: "/login",
+                    path: "login",
                     element: <Login />
                 },
                 {
-                    path: "/credential-request",
+                    path: "credential-request",
                     element: <CredentialRequest />
                 },
             ]
@@ -66,6 +67,10 @@ export const router = createBrowserRouter(
                 {
                     path: "districts",
                     element: <Districts />
+                },
+                {
+                    path: "municipalities",
+                    element: <Municipalities />
                 },
                 {
                     path: "",
