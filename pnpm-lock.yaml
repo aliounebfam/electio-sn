@@ -22,6 +22,7 @@ specifiers:
   react-detect-offline: ^2.4.5
   react-dom: ^18.2.0
   react-hook-form: ^7.36.1
+  react-multi-date-picker: ^3.3.1
   react-router-dom: ^6.4.0
   react-simple-typewriter: ^4.0.2
   styled-components: ^5.3.6
@@ -46,6 +47,7 @@ dependencies:
   react-detect-offline: 2.4.5
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.36.1_react@18.2.0
+  react-multi-date-picker: 3.3.1_biqbaboplfbrettd7655fr4n2y
   react-router-dom: 6.4.0_biqbaboplfbrettd7655fr4n2y
   react-simple-typewriter: 4.0.2_biqbaboplfbrettd7655fr4n2y
   styled-components: 5.3.6_biqbaboplfbrettd7655fr4n2y
@@ -9209,6 +9211,10 @@ packages:
       styled-components: 5.3.6_biqbaboplfbrettd7655fr4n2y
     dev: false
 
+  /react-date-object/2.1.5:
+    resolution: {integrity: sha512-iAtF2nz+jZjy3w36qKx2MsxXqbiL7UgGljz9jPjLWxWCl4rDTZUMS/i7hKKiVbL1lJlmubz1Xu6W3i6CW06kTg==}
+    dev: false
+
   /react-detect-offline/2.4.5:
     resolution: {integrity: sha512-sI13NPEKl3uQp95FT5CwrYzH3DnXCwNP6TnY6NRF5gFDM4NU9KDlbtA6HG2dwhDVS0RYQGXwZW/mHbdf8fCnaw==}
     dev: false
@@ -9264,6 +9270,16 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-element-popper/2.1.6_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-8va7mUmrKIkUnaM2t5Dyctd8cjgVgVcrv5vVD0FRay0sN6EPBCKa0bDi1/KmVDAjfgSIn7zQnjtc4VojcGrkgQ==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
   /react-error-overlay/6.0.11:
     resolution: {integrity: sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==}
     dev: false
@@ -9287,6 +9303,18 @@ packages:
 
   /react-is/18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
+    dev: false
+
+  /react-multi-date-picker/3.3.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-W6SUBCULMgfNJstQx7BNzojkNdG9LVpOdYJIMjqTS1scWZ9BqG8nIIOhHUAObrTEdwz2S7eMxcDg6UeXe5D6uw==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+      react-date-object: 2.1.5
+      react-dom: 18.2.0_react@18.2.0
+      react-element-popper: 2.1.6_biqbaboplfbrettd7655fr4n2y
     dev: false
 
   /react-refresh/0.11.0:
