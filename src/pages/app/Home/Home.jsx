@@ -10,7 +10,8 @@ import { useAuth } from '../../../context/AuthContext';
 
 export default function Home() {
     // access to the current user
-    // const currentUser = useAuth();
+    // const { currentUser } = useAuth();
+    // console.log(currentUser);
 
     const [src, setSrc] = useState("femme_senegalaise.jpg");
 
