@@ -14,33 +14,15 @@ import CheckIcon from '@mui/icons-material/Check';
 import ClearIcon from '@mui/icons-material/Clear';
 import { Camera } from "react-camera-pro";
 import { useRef } from 'react';
+import { getAllDistricts } from '../../../services/dashboard/DistrictService';
 
 
 export default function SignUp() {
-    const [datePickerValue, setDatePickerValue] = useState();
-    const { register, handleSubmit, reset, watch, setValue, formState: { errors, isSubmitSuccessful, isSubmitting } } = useForm({ mode: "onChange" });
-    const { enqueueSnackbar } = useSnackbar();
-
-    const top100Films = [
-        { label: 'The Shawshank Redemption', year: 1994 },
-        { label: 'The Godfather', year: 1972 },
-        { label: 'The Godfather: Part II', year: 1974 },
-        { label: 'The Dark Knight', year: 2008 },
-        { label: '12 Angry Men', year: 1957 },
-        { label: "Schindler's List", year: 1993 },
-        { label: 'Pulp Fiction', year: 1994 }
-    ]
-
-    const onSubmit = data => {
-        if (image != null) {
-            // handleNext();
-            enqueueSnackbar('Message envoyée avec succès', { variant: 'success' })
-        }
-        else {
-            enqueueSnackbar('Veuillez d\'abord prendre une photo de vous', { variant: 'warning' })
-        }
-    };
-
+    const [datePickerValue, setDatePickerValue] = useState(undefined);
+    const [districts, setDistricts] = useState([]);
+    const [randomKeyForResetField, setRandomKeyForResetField] = useState();
+    const { register, handleSubmit, reset, watch, setValue, formState: { errors, isSubmitting } } = useForm({ mode: "onChange" });
+    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
     const camera = useRef(null);
     const [image, setImage] = useState(null);
     const [oldImage, setOldImage] = useState(null);
@@ -51,20 +33,45 @@ export default function SignUp() {
     const handleOpenValidatePictureModal = () => setOpenValidatePictureModal(true);
     const handleCloseValidatePictureModal = () => setOpenValidatePictureModal(false);
 
+    const resetForm = () => {
+        reset();
+        setImage(null);
+        setDatePickerValue(undefined);
+        setRandomKeyForResetField(crypto.randomUUID());
+        closeSnackbar();
+        enqueueSnackbar('Message envoyée avec succès', { variant: 'success' });
+    }
 
-    console.log(watch());
-    // console.log(errors);
+    const getDistricts = () => {
+        getAllDistricts().then((response) => {
+            if (!response.error)
+                setDistricts(response);
+            else
+                enqueueSnackbar('Une erreur est survenue lors de la récupération des quartiers', { variant: 'error' })
+        });
+    }
 
     useEffect(() => {
-        if (isSubmitting && !isSubmitSuccessful)
-            enqueueSnackbar('Veuillez remplir tous les champs correctement', { variant: 'warning' })
+        if (Object.keys(errors).length != 0) {
+            let fieldValues = Object.values(watch()).filter((e) => e !== "" && e !== undefined && e != null);
+            if (fieldValues.length != 8) {
+                enqueueSnackbar('Veuillez remplir tous les champs correctement', { variant: 'warning', autoHideDuration: "1000" })
+            }
+        }
     }, [isSubmitting])
 
+    const onSubmit = () => {
+        if (image != null) {
+            console.log({ ...watch(), image });
 
-    useEffect(() => {
-        if (image != null)
-            reset();
-    }, [isSubmitSuccessful])
+            resetForm();
+        }
+        else {
+            closeSnackbar();
+            enqueueSnackbar('Veuillez d\'abord prendre une photo de vous', { variant: 'warning' })
+        }
+    };
+
 
     return (
         <div className='flex-1 bg-gray-300/25'>
@@ -110,6 +117,7 @@ export default function SignUp() {
                                                 format="DD/MM/YYYY"
                                                 inputMode="none"
                                                 value={datePickerValue}
+                                                key={randomKeyForResetField}
                                                 onChange={(value) => (setDatePickerValue(value.format()), setValue('date', value.format()))}
                                                 locale={fr}
                                                 weekStartDayIndex={1}
@@ -171,9 +179,14 @@ export default function SignUp() {
                                             <Autocomplete
                                                 disablePortal
                                                 id="combo-box-demo"
-                                                options={top100Films}
-                                                onChange={(e, value) => setValue("districts", value.label)}
-                                                isOptionEqualToValue={(option, value) => option.label === value.label}
+                                                options={districts}
+                                                key={randomKeyForResetField}
+                                                loading={!districts.length ? true : false}
+                                                loadingText="Récupération de la liste des quartiers..."
+                                                onChange={(e, value) => setValue("districts", value.nom)}
+                                                isOptionEqualToValue={(option, value) => option.nom === value.nom}
+                                                getOptionLabel={(option) => option.nom}
+                                                onOpen={getDistricts}
                                                 noOptionsText="Quartier introuvable | Veuillez vérifier l'orthographe de votre quartier."
                                                 sx={{
                                                     border: "1.5px solid " + (!watch().districts && errors.districts?.message ? "#DC2626" : "#d1d5db"), borderRadius: "5px", padding: "0px",
@@ -201,7 +214,7 @@ export default function SignUp() {
                                                     }} placeholder="Ex:Hersent"
                                                         hiddenLabel
                                                         fullWidth
-                                                        {...register("districts", { required: "Veuillez saisir le nom du quartier auquel vous habitez" })}
+                                                        {...register("districts", { required: "Veuillez sélectionner le nom du quartier auquel vous habitez" })}
                                                     />
                                                 }
                                             />
@@ -215,14 +228,15 @@ export default function SignUp() {
                                                     row
                                                     aria-labelledby="demo-row-radio-buttons-group-label"
                                                     name="row-radio-buttons-group"
+                                                    key={randomKeyForResetField}
                                                 >
-                                                    <FormControlLabel {...register("sex", { required: "Veuillez indiquez votre sexe" })} labelPlacement="bottom" value="true" control={<Radio sx={{
+                                                    <FormControlLabel {...register("sex", { required: "Veuillez indiquez votre sexe" })} labelPlacement="bottom" value="M" control={<Radio sx={{
                                                         color: (errors?.sex ? "#DC2626" : '#4B5563'),
                                                         '&.Mui-checked': {
                                                             color: "rgb(109, 40, 217)",
                                                         }
                                                     }} />} label="Masculin" />
-                                                    <FormControlLabel {...register("sex", { required: "Veuillez indiquez votre sexe" })} labelPlacement="bottom" value="false" control={<Radio sx={{
+                                                    <FormControlLabel {...register("sex", { required: "Veuillez indiquez votre sexe" })} labelPlacement="bottom" value="F" control={<Radio sx={{
                                                         color: (errors?.sex ? "#DC2626" : '#4B5563'),
                                                         '&.Mui-checked': {
                                                             color: "rgb(109, 40, 217)",
@@ -321,7 +335,7 @@ export default function SignUp() {
                                                                 <img src={image} alt='Taken photo' style={{
                                                                     transform: "scaleX(-1)", maxWidth: "250px", borderRadius: "3.5px"
                                                                 }} /> :
-                                                                < Skeleton sx={{ bgcolor: '#DDD6FE' }} variant="rounded" width={250} height={145} />
+                                                                < Skeleton sx={{ bgcolor: '#DDD6FE' }} variant="rounded" width={250} height={250} />
                                                         }
                                                     </Tooltip>
                                                 </Box>

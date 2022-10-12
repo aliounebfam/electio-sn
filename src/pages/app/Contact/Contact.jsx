@@ -11,7 +11,7 @@ export default function Contact() {
     const { enqueueSnackbar } = useSnackbar();
 
     const onSubmit = data => {
-        enqueueSnackbar('Message envoyée avec succès', { variant: 'success' })
+        enqueueSnackbar('Message envoyé avec succès', { variant: 'success' })
     };
 
     useEffect(() => {
