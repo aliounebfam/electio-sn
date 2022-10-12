@@ -1,0 +1,83 @@
+
+/**********************Violet********************/
+
+:root {
+  --rmdp-primary-purple: #7C3AED;
+  --rmdp-secondary-purple: #A78BFA;
+  --rmdp-shadow-purple: #7c3aed;
+  --rmdp-today-purple: #475569;
+  --rmdp-hover-purple: #8B5CF6;
+  --rmdp-deselect-purple: #A78BFA;
+}
+
+.purple .rmdp-wrapper {
+  border: 1px solid var(--rmdp-secondary-purple);
+  box-shadow: 0 0 5px var(--rmdp-secondary-purple);
+}
+
+.purple .rmdp-panel-body li {
+  background-color: var(--rmdp-primary-purple);
+  box-shadow: 0 0 2px var(--rmdp-secondary-purple);
+}
+
+.purple .rmdp-week-day {
+  color: var(--rmdp-primary-purple);
+}
+
+.purple .rmdp-day.rmdp-deactive {
+  color: var(--rmdp-secondary-purple);
+}
+
+.purple .rmdp-range {
+  background-color: var(--rmdp-primary-purple);
+  box-shadow: 0 0 3px var(--rmdp-shadow-purple);
+}
+
+.purple .rmdp-arrow {
+  border: solid var(--rmdp-primary-purple);
+  border-width: 0 2px 2px 0;
+}
+
+.purple .rmdp-arrow-container:hover {
+  background-color: var(--rmdp-primary-purple);
+  box-shadow: 0 0 3px var(--rmdp-secondary-purple);
+}
+
+.purple .rmdp-panel-body::-webkit-scrollbar-thumb {
+  background: var(--rmdp-primary-purple);
+}
+
+.purple .rmdp-day.rmdp-today span {
+  background-color: var(--rmdp-today-purple);
+}
+
+.purple .rmdp-rtl .rmdp-panel {
+  border-left: unset;
+  border-right: 1px solid var(--rmdp-secondary-purple);
+}
+
+.purple .rmdp-day.rmdp-selected span:not(.highlight) {
+  background-color: var(--rmdp-primary-purple);
+  box-shadow: 0 0 3px var(--rmdp-shadow-purple);
+}
+
+.purple .rmdp-day:not(.rmdp-day-hidden) span:hover {
+  background-color: var(--rmdp-hover-purple) !important;
+}
+
+.purple .b-deselect {
+  color: var(--rmdp-deselect-purple);
+  background-color: white;
+}
+
+.purple .rmdp-action-button {
+  color: var(--rmdp-primary-purple);
+}
+
+.purple .rmdp-button:not(.rmdp-action-button) {
+  background-color: var(--rmdp-primary-purple);
+}
+
+.purple .rmdp-button:not(.rmdp-action-button):hover {
+  background-color: var(--rmdp-deselect-purple);
+}

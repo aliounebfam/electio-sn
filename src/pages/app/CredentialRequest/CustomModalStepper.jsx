@@ -267,7 +267,7 @@ export default function CustomModalStepper({ userElectoralData }) {
                                                                     Pour confirmer votre identité, veuillez prendre une photo de vous avec votre carte d'identité près de votre visage.
                                                                 </Typography>
                                                                 <Typography sx={{ color: "#4C1D95", fontFamily: "Hind", fontSize: "15px", fontWeight: '500' }}>
-                                                                    Tenez à ce que vous soyez dans une pièce éclairée.
+                                                                    Tenez à ce que vous soyez dans une pièce bien éclairée.
                                                                 </Typography>
                                                                 <Button onClick={handleOpenTakeAPictureModal} sx={{ maxWidth: "fit-content", bgcolor: "#7C3AED", color: "white", '&:hover': { bgcolor: "#5B21B6" } }} size="small" variant="contained" startIcon={<PhotoCamera />}>
                                                                     Prendre une photo
@@ -293,7 +293,7 @@ export default function CustomModalStepper({ userElectoralData }) {
                                                                                 }
                                                                             }}>
                                                                                 <Camera facingMode={'user'} ref={camera} errorMessages={{
-                                                                                    noCameraAccessible: 'Pas d\'appareil photo accessible. Veuillez connectez votre caméra ou essayez un navigateur différent.',
+                                                                                    noCameraAccessible: 'Pas d\'appareil photo accessible. Veuillez connectez votre caméra ou essayez avec un navigateur différent.',
                                                                                     permissionDenied: 'Permission refusée. Veuillez donnez la permission au site d\'accéder à votre caméra',
                                                                                     switchCamera:
                                                                                         '...',

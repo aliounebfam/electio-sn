@@ -3,22 +3,67 @@ import { useForm } from 'react-hook-form';
 import { useSnackbar } from 'notistack'
 import { useEffect } from 'react';
 import { useState } from 'react';
-import DatePicker from "react-multi-date-picker"
+import DatePicker from "react-multi-date-picker";
+import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded';
+import fr from "./../../../utils/frenchLocaleDatePicker";
+import './PurpleColorDatePicker.css';
+import { TextField, Autocomplete, Button, FormControl, FormControlLabel, Radio, RadioGroup, Tooltip, Modal, Skeleton, Box, Typography } from '@mui/material';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import IconButton from '@mui/material/IconButton';
+import CheckIcon from '@mui/icons-material/Check';
+import ClearIcon from '@mui/icons-material/Clear';
+import { Camera } from "react-camera-pro";
+import { useRef } from 'react';
 
-import fr from "./../../../utils/frenchLocaleDatePicker"
 
 export default function SignUp() {
-    const maDate = new Date().toLocaleDateString("fr-FR")
-    const [datePickerValue, setDatePickerValue] = useState(maDate);
-    const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful } } = useForm({ mode: "onChange" });
+    const [datePickerValue, setDatePickerValue] = useState();
+    const { register, handleSubmit, reset, watch, setValue, formState: { errors, isSubmitSuccessful, isSubmitting } } = useForm({ mode: "onChange" });
     const { enqueueSnackbar } = useSnackbar();
 
+    const top100Films = [
+        { label: 'The Shawshank Redemption', year: 1994 },
+        { label: 'The Godfather', year: 1972 },
+        { label: 'The Godfather: Part II', year: 1974 },
+        { label: 'The Dark Knight', year: 2008 },
+        { label: '12 Angry Men', year: 1957 },
+        { label: "Schindler's List", year: 1993 },
+        { label: 'Pulp Fiction', year: 1994 }
+    ]
+
     const onSubmit = data => {
-        enqueueSnackbar('Message envoyée avec succès', { variant: 'success' })
+        if (image != null) {
+            // handleNext();
+            enqueueSnackbar('Message envoyée avec succès', { variant: 'success' })
+        }
+        else {
+            enqueueSnackbar('Veuillez d\'abord prendre une photo de vous', { variant: 'warning' })
+        }
     };
 
+    const camera = useRef(null);
+    const [image, setImage] = useState(null);
+    const [oldImage, setOldImage] = useState(null);
+    const [openTakeAPictureModal, setOpenTakeAPictureModal] = React.useState(false);
+    const handleOpenTakeAPictureModal = () => setOpenTakeAPictureModal(true);
+    const handleCloseTakeAPictureModal = () => setOpenTakeAPictureModal(false);
+    const [openValidatePictureModal, setOpenValidatePictureModal] = React.useState(false);
+    const handleOpenValidatePictureModal = () => setOpenValidatePictureModal(true);
+    const handleCloseValidatePictureModal = () => setOpenValidatePictureModal(false);
+
+
+    console.log(watch());
+    // console.log(errors);
+
     useEffect(() => {
-        reset();
+        if (isSubmitting && !isSubmitSuccessful)
+            enqueueSnackbar('Veuillez remplir tous les champs correctement', { variant: 'warning' })
+    }, [isSubmitting])
+
+
+    useEffect(() => {
+        if (image != null)
+            reset();
     }, [isSubmitSuccessful])
 
     return (
@@ -26,7 +71,7 @@ export default function SignUp() {
             <div className="mx-auto max-w-[1310px]">
                 <div className='flex-1 lg:p-12 p-8  bg-gray-300/5'>
                     <div className='text-center font-Hind text-xl md:text-2xl'>
-                        <div className="text-lg md:text-xl lg:text-2xl uppercase mb-4">
+                        <div className="select-none text-lg md:text-xl lg:text-2xl uppercase mb-4">
                             <span className="bg-violet-600 text-white pt-[5px] px-2 rounded-md">
                                 Inscription
                             </span>
@@ -43,7 +88,7 @@ export default function SignUp() {
 
                                         <div className="col-span-6 sm:col-span-3">
                                             <label htmlFor="firstName" className="block text-md font-medium text-gray-700">Nom de famille</label>
-                                            <input aria-invalid={true} type="text" name="firstName" id="firstName" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errors.firstName?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...register("firstName", {
+                                            <input autoComplete="off" aria-invalid={errors.firstName?.message} placeholder="Ex:FALL" type="text" name="firstName" id="firstName" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errors.firstName?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...register("firstName", {
                                                 required: "Veuillez saisir votre nom de famille"
                                             })} />
                                             {errors.firstName?.message && <span className='text-red-600'>{errors.firstName.message}</span>}
@@ -51,27 +96,61 @@ export default function SignUp() {
 
                                         <div className="col-span-6 sm:col-span-3">
                                             <label htmlFor="lastName" className="block text-md font-medium text-gray-700">Prénom</label>
-                                            <input type="text" name="lastName" id="lastName" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errors.lastName?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...register("lastName", { required: "Veuillez saisir votre prénom" })} />
+                                            <input autoComplete="off" placeholder="Ex:Moustapha" type="text" name="lastName" id="lastName" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errors.lastName?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...register("lastName", { required: "Veuillez saisir votre prénom" })} />
                                             {errors.lastName?.message && <span className='text-red-600'>{errors.lastName.message}</span>}
                                         </div>
 
                                         <div className="col-span-6 sm:col-span-3">
                                             <label htmlFor="phoneNumber" className="block text-md font-medium text-gray-700">Date de naissance</label>
                                             <DatePicker
+                                                {...register("date", { validate: value => value !== undefined || "Veuillez indiquez votre date de naissance" })}
+                                                containerStyle={{
+                                                    width: "100%"
+                                                }}
+                                                format="DD/MM/YYYY"
+                                                inputMode="none"
                                                 value={datePickerValue}
-                                                onChange={setDatePickerValue}
+                                                onChange={(value) => (setDatePickerValue(value.format()), setValue('date', value.format()))}
                                                 locale={fr}
+                                                weekStartDayIndex={1}
+                                                hideOnScroll
+                                                calendarPosition={'top-center'}
+                                                className="purple"
+                                                render={(value, openCalendar) => {
+                                                    return (
+                                                        <Button sx={{
+                                                            color: "#1E293B", border: "1.5px solid " + (datePickerValue == undefined && errors.date?.message ? "#DC2626" : "#d1d5db"), mt: "4px", width: "100%", height: "38px", '&:focus': {
+                                                                boxShadow: "0px 0px 0px 1.5px #7C3AED"
+                                                            },
+                                                            '&:hover': {
+                                                                "bgcolor": "transparent"
+                                                            },
+                                                            display: "flex",
+                                                            justifyContent: "space-between",
+                                                            borderRadius: "5px"
+                                                        }}
+                                                            onClick={openCalendar}
+                                                            endIcon={<CalendarMonthRoundedIcon sx={{ color: "#6D28D9" }} />}
+                                                        >
+                                                            {value ? value : "Appuyez pour ouvrir"}
+                                                        </Button>
+                                                    )
+                                                }}
                                             />
-                                            {/* <input type="number" name="phoneNumber" id="phoneNumber" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" {...register("phoneNumber")} /> */}
+                                            {datePickerValue == undefined && errors.date?.message && <span className='text-red-600'>{errors.date.message}</span>}
                                         </div>
+
                                         <div className="col-span-6 sm:col-span-3">
-                                            <label htmlFor="phoneNumber" className="block text-md font-medium text-gray-700">Lieu de naissance</label>
-                                            <input type="number" name="phoneNumber" id="phoneNumber" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" {...register("phoneNumber")} />
+                                            <label htmlFor="lieuNaissance" className="block text-md font-medium text-gray-700">Lieu de naissance</label>
+                                            <input autoComplete="off" type="text" placeholder='Ex:Thies' name="lieuNaissance" id="lieuNaissance" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errors.lieuNaissance?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...register("lieuNaissance", {
+                                                required: "Veuillez saisir votre lieu de naissance inscrit sur votre carte d'identité"
+                                            })} />
+                                            {errors.lieuNaissance?.message && <span className='text-red-600'>{errors.lieuNaissance.message}</span>}
                                         </div>
 
                                         <div className="col-span-6 sm:col-span-3">
                                             <label htmlFor="emailAddress" className="block text-md font-medium text-gray-700">Adresse email</label>
-                                            <input type="email" name="emailAddress" id="emailAddress" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errors.emailAddress?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...register("emailAddress", {
+                                            <input autoComplete="off" placeholder='Ex:moustaphafall@gmail.com' type="email" name="emailAddress" id="emailAddress" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errors.emailAddress?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...register("emailAddress", {
                                                 required: "Veuillez saisir votre adresse email",
                                                 pattern: {
                                                     value: /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/i,
@@ -83,14 +162,176 @@ export default function SignUp() {
 
                                         <div className="col-span-6 sm:col-span-3">
                                             <label htmlFor="phoneNumber" className="block text-md font-medium text-gray-700">Numéro de téléphone (Optionnel)</label>
-                                            <input type="number" name="phoneNumber" id="phoneNumber" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" {...register("phoneNumber")} />
+                                            <input autoComplete="off" placeholder='Ex:+221701060661' type="number" name="phoneNumber" id="phoneNumber" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" {...register("phoneNumber")} />
                                         </div>
 
+                                        <div className="col-span-6">
+                                            <label htmlFor="phoneNumber" className="mb-1 block text-md font-medium text-gray-700">Nom de votre quartier actuel</label>
+
+                                            <Autocomplete
+                                                disablePortal
+                                                id="combo-box-demo"
+                                                options={top100Films}
+                                                onChange={(e, value) => setValue("districts", value.label)}
+                                                isOptionEqualToValue={(option, value) => option.label === value.label}
+                                                noOptionsText="Quartier introuvable | Veuillez vérifier l'orthographe de votre quartier."
+                                                sx={{
+                                                    border: "1.5px solid " + (!watch().districts && errors.districts?.message ? "#DC2626" : "#d1d5db"), borderRadius: "5px", padding: "0px",
+                                                    '&:focus-within': {
+                                                        boxShadow: !watch().districts && errors.districts?.message ? "0px 0px 0px 0.8px #DC2626" : "0px 0px 0px 1.3px #7C3AED"
+                                                    }
+                                                }}
+                                                style={{
+                                                    borderLeft: !watch().districts && errors.districts?.message ? "10px solid #DC2626" : undefined,
+                                                }}
+                                                renderInput={
+                                                    (params) => <TextField {...params} sx={{
+                                                        input: {
+                                                            color: '#1E293B',
+                                                            '&:focus': {
+                                                                boxShadow: "none"
+                                                            },
+                                                            height: '4px',
+                                                        },
+                                                        "& .MuiOutlinedInput-root.Mui-focused": {
+                                                            "& > fieldset": {
+                                                                border: "none",
+                                                            },
+                                                        },
+                                                    }} placeholder="Ex:Hersent"
+                                                        hiddenLabel
+                                                        fullWidth
+                                                        {...register("districts", { required: "Veuillez saisir le nom du quartier auquel vous habitez" })}
+                                                    />
+                                                }
+                                            />
+                                            {!watch().districts && errors.districts?.message && <span className='text-red-600'>{errors.districts.message}</span>}
+                                        </div>
+
+                                        <div className="col-span-6">
+                                            <FormControl>
+                                                <label htmlFor="phoneNumber" className="block text-md font-medium text-gray-700">Sexe</label>
+                                                <RadioGroup
+                                                    row
+                                                    aria-labelledby="demo-row-radio-buttons-group-label"
+                                                    name="row-radio-buttons-group"
+                                                >
+                                                    <FormControlLabel {...register("sex", { required: "Veuillez indiquez votre sexe" })} labelPlacement="bottom" value="true" control={<Radio sx={{
+                                                        color: (errors?.sex ? "#DC2626" : '#4B5563'),
+                                                        '&.Mui-checked': {
+                                                            color: "rgb(109, 40, 217)",
+                                                        }
+                                                    }} />} label="Masculin" />
+                                                    <FormControlLabel {...register("sex", { required: "Veuillez indiquez votre sexe" })} labelPlacement="bottom" value="false" control={<Radio sx={{
+                                                        color: (errors?.sex ? "#DC2626" : '#4B5563'),
+                                                        '&.Mui-checked': {
+                                                            color: "rgb(109, 40, 217)",
+                                                        }
+                                                    }} />} label="Féminin" />
+                                                </RadioGroup>
+                                                {errors.sex?.message && <span className='text-red-600'>{errors.sex.message}</span>}
+                                            </FormControl>
+                                        </div>
+                                        <div className="col-span-6">
+                                            <Box sx={{ display: 'grid', gap: "5px" }}>
+                                                <Typography sx={{ color: "#111827", fontFamily: "Hind", fontSize: "17.5px", fontWeight: '500' }}>
+                                                    Pour confirmer votre identité, veuillez prendre une photo de vous avec votre carte d'identité près de votre visage.
+                                                </Typography>
+                                                <Typography sx={{ color: "#4C1D95", fontFamily: "Hind", fontSize: "15px", fontWeight: '500' }}>
+                                                    Tenez à ce que vous soyez dans une pièce bien éclairée.
+                                                </Typography>
+                                                <Button onClick={handleOpenTakeAPictureModal} sx={{ maxWidth: "fit-content", bgcolor: "#7C3AED", color: "white", '&:hover': { bgcolor: "#5B21B6" } }} size="small" variant="contained" startIcon={<PhotoCamera />}>
+                                                    Prendre une photo
+                                                </Button>
+                                                <Box sx={{ maxWidth: "50%" }}>
+                                                    <Modal
+                                                        open={openTakeAPictureModal}
+                                                        onClose={handleCloseTakeAPictureModal}
+                                                        aria-labelledby="modal-modal-title"
+                                                        aria-describedby="modal-modal-description"
+                                                    >
+                                                        <Box sx={{ bgcolor: "transparent", height: '100%' }}>
+                                                            <Box sx={{
+                                                                maxWidth: "90%", position: "relative", top: "50%", left: "50%", transform: "translate(-50%,-50%)", '@media screen and (min-width: 460px)': {
+                                                                    maxWidth: "80%"
+                                                                }, '@media screen and (min-width: 590px)': {
+                                                                    maxWidth: "70%"
+                                                                }, '@media screen and (min-width: 720px)': {
+                                                                    maxWidth: "50%"
+                                                                }
+                                                                , '@media screen and (min-width: 1338px)': {
+                                                                    maxWidth: "40%"
+                                                                }
+                                                            }}>
+                                                                <Camera facingMode={'user'} ref={camera} errorMessages={{
+                                                                    noCameraAccessible: 'Pas d\'appareil photo accessible. Veuillez connectez votre caméra ou essayez avec un navigateur différent.',
+                                                                    permissionDenied: 'Permission refusée. Veuillez donnez la permission au site d\'accéder à votre caméra',
+                                                                    switchCamera:
+                                                                        '...',
+                                                                    canvas: '...',
+                                                                }} aspectRatio={4 / 4} />
+
+                                                                <IconButton onClick={() => { setOldImage(camera.current.takePhoto()); handleOpenValidatePictureModal(); handleCloseTakeAPictureModal() }} sx={{ position: "absolute", top: "100%", left: "50%", transform: "translate(-50%,-50%)", bgcolor: "#7C3AED", color: "white", '&:hover': { bgcolor: "#5B21B6" } }} aria-label="prendre une photo" component="label">
+                                                                    <PhotoCamera />
+                                                                </IconButton>
+                                                                <IconButton size="small" onClick={() => { handleCloseTakeAPictureModal() }} sx={{ position: "absolute", top: "0", left: "calc(100%)", transform: "translate(-50%,-50%)", bgcolor: "#7C3AED", color: "white", '&:hover': { bgcolor: "#5B21B6" } }} aria-label="quitter l'option prendre une photo" component="label">
+                                                                    <ClearIcon />
+                                                                </IconButton>
+
+                                                            </Box>
+
+                                                        </Box>
+                                                    </Modal>
+                                                    <Modal
+                                                        open={openValidatePictureModal}
+                                                        onClose={handleCloseValidatePictureModal}
+                                                        aria-labelledby="modal-modal-title"
+                                                        aria-describedby="modal-modal-description"
+                                                    >
+                                                        <Box sx={{ bgcolor: "transparent", height: '100%' }}>
+                                                            <Box sx={{
+                                                                maxWidth: "90%", position: "relative", top: "50%", left: "50%", transform: "translate(-50%,-50%)", '@media screen and (min-width: 460px)': {
+                                                                    maxWidth: "80%"
+                                                                }, '@media screen and (min-width: 590px)': {
+                                                                    maxWidth: "70%"
+                                                                }, '@media screen and (min-width: 720px)': {
+                                                                    maxWidth: "50%"
+                                                                }
+                                                                , '@media screen and (min-width: 1338px)': {
+                                                                    maxWidth: "40%"
+                                                                }
+                                                            }}>
+                                                                <img src={oldImage} alt='Taken photo' style={{ transform: "scaleX(-1)" }} />
+
+                                                                <IconButton onClick={() => { handleCloseValidatePictureModal(); setImage(oldImage) }} sx={{ position: "absolute", top: "100%", left: "40%", transform: "translate(-50%,-50%)", bgcolor: "#16A34A", color: "white", '&:hover': { bgcolor: "#15803D" } }} aria-label="valider la photo prise" component="label">
+                                                                    <CheckIcon />
+                                                                </IconButton>
+                                                                <IconButton onClick={() => { handleCloseValidatePictureModal(); handleOpenTakeAPictureModal() }} sx={{ position: "absolute", top: "100%", left: "60%", transform: "translate(-50%,-50%)", bgcolor: "#DC2626", color: "white", '&:hover': { bgcolor: "#B91C1C" } }} aria-label="annuler la photo prise" component="label">
+                                                                    <ClearIcon />
+                                                                </IconButton>
+
+                                                            </Box>
+                                                        </Box>
+                                                    </Modal>
+                                                </Box>
+                                                <Box sx={{ maxWidth: "fit-content", borderRadius: "5px", display: "flex", justifyContent: "center", padding: "10px", border: "3px dashed #4C1D95" }}>
+                                                    <Tooltip title={!image ? "Vous n'avez pas encore pris de photo" : "Votre photo actuel"} placement='bottom-end' arrow>
+                                                        {
+                                                            image ?
+                                                                <img src={image} alt='Taken photo' style={{
+                                                                    transform: "scaleX(-1)", maxWidth: "250px", borderRadius: "3.5px"
+                                                                }} /> :
+                                                                < Skeleton sx={{ bgcolor: '#DDD6FE' }} variant="rounded" width={250} height={145} />
+                                                        }
+                                                    </Tooltip>
+                                                </Box>
+                                            </Box>
+                                        </div>
 
 
                                     </div>
                                 </div>
-                                <div className="bg-gray-50 px-4 py-3 text-left">
+                                <div className="bg-gray-50 px-4 py-3 text-right">
                                     <button type="submit" className="inline-flex justify-center rounded-md border border-transparent bg-violet-600 py-3 px-6 text-sm sm:text-[17px] font-medium text-white shadow-sm hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-1">
                                         S'inscrire
                                     </button>

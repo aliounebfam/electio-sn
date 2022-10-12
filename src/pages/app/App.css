@@ -39,3 +39,12 @@ body{scrollbar-width:auto;scrollbar-color:#7C3AED #eaeef1}::-webkit-scrollbar{wi
     color: white;
 }
 
+.MuiAutocomplete-endAdornment.css-1q60rmi-MuiAutocomplete-endAdornment .MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.MuiAutocomplete-popupIndicator.css-1ciwbrp-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator{
+    color:#3F3F46;
+}
+.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.MuiAutocomplete-popupIndicator.MuiAutocomplete-popupIndicatorOpen.css-12g98qh-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator{
+    color:#3F3F46;
+}
+.MuiAutocomplete-listbox{
+    background-color: #111827;
+}
