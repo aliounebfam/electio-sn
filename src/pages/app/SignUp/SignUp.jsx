@@ -16,8 +16,7 @@ import { Camera } from "react-camera-pro";
 import { useRef } from 'react';
 import { getAllDistricts } from '../../../services/dashboard/DistrictService';
 import { addVoter } from '../../../services/dashboard/VoterService';
-import { useAuth } from '../../../context/AuthContext';
-// import bcrypt from "bcrypt";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
     const [datePickerValue, setDatePickerValue] = useState(undefined);
@@ -35,7 +34,7 @@ export default function SignUp() {
     const handleOpenValidatePictureModal = () => setOpenValidatePictureModal(true);
     const handleCloseValidatePictureModal = () => setOpenValidatePictureModal(false);
     const [lastFindErrorInFieldSnackbarId, setLastFindErrorInFieldSnackbarId] = useState(undefined);
-    const { signUp } = useAuth();
+    const navigate = useNavigate();
 
     const resetForm = () => {
         reset();
@@ -65,19 +64,24 @@ export default function SignUp() {
 
     const onSubmit = async () => {
         if (image != null) {
-            const voterData = { ...watch(), password: crypto.randomUUID().slice(0, 13), photo: image, canVoted: false, isAdmin: false, isSuperAdmin: false, isCandidate: false };
-            console.log(voterData);
-
-            await signUp(voterData.emailAddress, voterData.password);
-
+            const voterData = { ...watch(), photo: image, canVoted: false, isAdmin: false, isSuperAdmin: false, isCandidate: false };
             addVoter(voterData)
+                .then(() => {
+                    closeSnackbar(lastFindErrorInFieldSnackbarId);
+                    navigate("/");
+                    enqueueSnackbar('Votre demande d\'enregistrement à la plateforme a été correctement envoyée.\nVous recevrez un mail contenant vos identifiants de connexion dans maximum 48h.', {
+                        variant: 'success', autoHideDuration: 7500,
+                        style: {
+                            whiteSpace: 'pre-line'
+                        }
+                    });
+                    resetForm();
+                })
+                .catch(() => {
+                    closeSnackbar(lastFindErrorInFieldSnackbarId);
 
-
-            // resetForm();
-
-
-            closeSnackbar(lastFindErrorInFieldSnackbarId);
-            enqueueSnackbar('On submit...', { variant: 'success' });
+                    enqueueSnackbar('Une erreur est survenue lors de la création de votre compte', { variant: 'error' });
+                });
         }
         else {
             closeSnackbar(lastFindErrorInFieldSnackbarId);

@@ -10,20 +10,20 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-    const [currentUser, setCurrentUser] = useState()
-    const [loading, setLoading] = useState(true)
+    const [currentUser, setCurrentUser] = useState();
+    const [loading, setLoading] = useState(true);
 
     function signUp(email, password) {
-        return createUserWithEmailAndPassword(auth, email, password)
-    }
+        return createUserWithEmailAndPassword(auth, email, password);
+    };
 
     function login(email, password) {
-        return signInWithEmailAndPassword(auth, email, password)
-    }
+        return signInWithEmailAndPassword(auth, email, password);
+    };
 
     function logout() {
-        return signOut(auth)
-    }
+        return signOut(auth);
+    };
 
     function resetPassword(email) {
         return sendPasswordResetEmail(auth, email)

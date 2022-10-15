@@ -33,7 +33,6 @@ export const updateVoter = async (id, data) => {
 export const getAllVoters = async () => {
     let voters = [];
     let error = undefined;
-
     await getDocs(voterCollectionRef)
         .then((response) => {
             voters = response.docs.map(voter => ({ id: voter.id, ...voter.data() }))
@@ -41,7 +40,7 @@ export const getAllVoters = async () => {
         .catch(errs => {
             error = { error: true, message: errs }
         })
-    if (voters.length != 0) {
+    if (error == undefined) {
         return voters
     }
     else

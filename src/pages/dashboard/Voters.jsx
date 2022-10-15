@@ -1,20 +1,17 @@
 import React from 'react';
-import { DataGrid, GridActionsCellItem, GridToolbarContainer, frFR, GridToolbarExport, GridToolbarColumnsButton, GridToolbarFilterButton, GridToolbarDensitySelector, GridToolbar } from '@mui/x-data-grid';
+import { DataGrid, GridActionsCellItem, frFR, GridToolbar } from '@mui/x-data-grid';
 import DeleteIcon from '@mui/icons-material/Delete';
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
 import { useMemo } from 'react';
 import { useCallback } from 'react';
-import { deleteVoter, updateVoter, addVoter, getAllVoters } from '../../services/dashboard/VoterService';
+import { deleteVoter, updateVoter, getAllVoters } from '../../services/dashboard/VoterService';
 import { useState } from 'react';
-import { Backdrop, Box, Button, CircularProgress, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, LinearProgress, Typography, useMediaQuery } from '@mui/material';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, LinearProgress } from '@mui/material';
 import { useSnackbar } from 'notistack';
-import { useForm } from 'react-hook-form';
 import { useEffect } from 'react';
 import LoadingButton from '@mui/lab/LoadingButton';
 import { Tooltip } from '@mui/material';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
+import { useAuth } from '../../context/AuthContext';
 
 export default function Voters() {
     const { enqueueSnackbar } = useSnackbar();
@@ -26,6 +23,7 @@ export default function Voters() {
     const [isFetchingData, setIsFetchingData] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
     const [isValidating, setIsValidating] = useState(false);
+    const { signUp } = useAuth();
 
     const getVoters = () => {
         setIsFetchingData(true)
@@ -37,11 +35,11 @@ export default function Voters() {
                     enqueueSnackbar(response.message, { variant: 'error' })
             })
             .finally(() => setIsFetchingData(false))
-    }
+    };
 
     useEffect(() => {
         getVoters();
-    }, [])
+    }, []);
 
     const handleEditCell = (params, event, details) => {
         const { id, field, value } = params;
@@ -53,11 +51,11 @@ export default function Voters() {
         }
         else {
             enqueueSnackbar('Aucune modification effectuée', { variant: 'success' })
-        }
+        };
     };
     const handleOldCell = (event) => {
         const { id, field, value } = event;
-        setOldEditingCell({ id, field, value })
+        setOldEditingCell({ id, field, value });
     };
 
     const handleDelete = useCallback((id) => () => {
@@ -70,7 +68,7 @@ export default function Voters() {
             .finally(() => setIsDeleting(false));
     });
     const handleClickOpenDeleteAlert = useCallback((id) => () => {
-        setVoterSelectedData(id)
+        setVoterSelectedData(id);
         setOpenDeleteAlert(true);
     });
     const handleClickCloseDeleteAlert = () => {
@@ -79,17 +77,35 @@ export default function Voters() {
     };
 
     const handleClickOpenValidateAlert = useCallback((data) => () => {
-        setVoterSelectedData(data)
+        setVoterSelectedData(data);
         setOpenValidateAlert(true);
     });
     const handleClickCloseValidateAlert = () => {
         if (!isValidating)
             setOpenValidateAlert(false);
-
     };
-    const handleValidate = useCallback((data) => () => {
-        let { emailAddress: email } = data;
-        console.log(email);
+    const handleValidate = useCallback((data) => async () => {
+        setIsValidating(true);
+        const { emailAddress: email } = data.row;
+        const password = crypto.randomUUID().slice(0, 13);
+        await signUp(email, password)
+            .then(() => {
+                updateVoter(data.id, { isRegistered: true })
+                    .then(() => {
+                        // A revoir...
+                        // setVoters(voters.map(voter => {
+                        //     if (voter.id == data.id)
+                        //         return { ...voter, isRegistered: true };
+                        //     else
+                        //         voter;
+                        // }));
+                        enqueueSnackbar('Un mail a été envoyé à l\'utilisateur correspondant avec ses informations de connexion', { variant: 'success' });
+                    });
+                setOpenValidateAlert(false);
+            })
+            .finally(() => {
+                setIsValidating(false);
+            });
     });
 
     const columns = useMemo
@@ -132,18 +148,28 @@ export default function Voters() {
                 editable: false,
                 getActions: ({ id, row }) => {
 
-                    return [
-                        <GridActionsCellItem
-                            icon={<DoneRoundedIcon />}
-                            label="Valider"
-                            onClick={handleClickOpenValidateAlert(row)}
-                        />,
-                        <GridActionsCellItem
-                            icon={<DeleteIcon />}
-                            label="Supprimer"
-                            onClick={handleClickOpenDeleteAlert(id)}
-                        />
-                    ]
+                    if (!row.isRegistered) {
+                        return [
+                            <GridActionsCellItem
+                                icon={<DoneRoundedIcon />}
+                                label="Valider"
+                                onClick={handleClickOpenValidateAlert({ id, row })}
+                            />,
+                            <GridActionsCellItem
+                                icon={<DeleteIcon />}
+                                label="Supprimer"
+                                onClick={handleClickOpenDeleteAlert(id)}
+                            />
+                        ]
+                    }
+                    else
+                        return [
+                            <GridActionsCellItem
+                                icon={<DeleteIcon />}
+                                label="Supprimer"
+                                onClick={handleClickOpenDeleteAlert(id)}
+                            />
+                        ]
                 },
             },
         ],
