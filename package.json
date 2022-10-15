@@ -17,6 +17,7 @@
     "@mui/lab": "5.0.0-alpha.102",
     "@mui/material": "^5.10.5",
     "@mui/x-data-grid": "^5.17.5",
+    "bcrypt": "^5.1.0",
     "firebase": "^9.10.0",
     "hamburger-react": "^2.5.0",
     "notistack": "^2.0.5",

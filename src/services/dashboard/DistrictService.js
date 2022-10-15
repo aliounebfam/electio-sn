@@ -1,4 +1,4 @@
-import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc, query, where } from "firebase/firestore";
 import { db } from "../firebase";
 import { getDocDepartmentRef } from "./DepartmentService";
 import { getDocMunicipalitieRef } from "./MunicipalitieService";
@@ -65,4 +65,14 @@ export const getAllDistricts = async () => {
     }
     else
         return error;
+}
+
+export const getDistrictFromName = async (districtName) => {
+    let district = undefined;
+    const q = query(districtCollectionRef, where("nom", "==", districtName));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+        district = { id: doc.id, ...doc.data() };
+    });
+    return district;
 }

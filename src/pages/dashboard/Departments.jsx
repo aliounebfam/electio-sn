@@ -19,9 +19,9 @@ import LoadingButton from '@mui/lab/LoadingButton';
 
 export default function Departments() {
     const { enqueueSnackbar } = useSnackbar();
-    const [oldEditingCell, setOldEditingCell] = useState({})
-    const [openDeleteDepartmentAlert, setOpenDeleteDepartmentAlert] = useState(false)
-    const [departmentIdWhenDeleting, setDepartmentIdWhenDeleting] = useState()
+    const [oldEditingCell, setOldEditingCell] = useState({});
+    const [openDeleteDepartmentAlert, setOpenDeleteDepartmentAlert] = useState(false);
+    const [departmentIdWhenDeleting, setDepartmentIdWhenDeleting] = useState();
     const [departments, setDepartments] = useState([]);
     const [regionsNameWithId, setRegionsNameWithId] = useState([]);
     const [isFetchingData, setIsFetchingData] = useState(false);
@@ -29,33 +29,32 @@ export default function Departments() {
 
     const updateDepartmentStateWhenAddingNewDepartment = (newDepartmentData) => {
         const newDepartmentDataWithId = { id: newDepartmentData.nom + newDepartmentData.latitude + newDepartmentData.longitude, ...newDepartmentData }
-        setDepartments([...departments, newDepartmentDataWithId])
+        setDepartments([...departments, newDepartmentDataWithId]);
     }
 
     const getDepartments = () => {
-        setIsFetchingData(true)
+        setIsFetchingData(true);
         getAllDepartments()
             .then((response) => {
                 if (!response.error) {
                     setDepartments(response);
                 }
                 else
-                    enqueueSnackbar(response.message, { variant: 'error' })
+                    enqueueSnackbar(response.message, { variant: 'error' });
             })
-            .catch(() => { })
-            .finally(() => setIsFetchingData(false))
-    }
+            .finally(() => setIsFetchingData(false));
+    };
 
     const getRegionsNameWithId = async () => {
         await getAllRegionsNameAndId()
             .then(res => setRegionsNameWithId(res))
-            .catch(err => console.log(err))
-    }
+            .catch(err => console.log(err));
+    };
 
     useEffect(() => {
         getDepartments();
         getRegionsNameWithId();
-    }, [])
+    }, []);
 
     const handleEditCell = (params, event, details) => {
         let { id, field, value } = params;
@@ -69,7 +68,7 @@ export default function Departments() {
                         return department;
                     }
                 })
-            })
+            });
         if ((event.type !== "click" || (params.field === "regionName" && event.type === "click")) && JSON.stringify(oldEditingCell) !== JSON.stringify({ id, field, value })) {
             if (field == "regionName") {
                 const [regionNameAndId] = regionsNameWithId.filter(region => region.nom == value);
@@ -79,15 +78,15 @@ export default function Departments() {
                 .then(() => enqueueSnackbar('Champ correctement modifié', { variant: 'success' }));
         }
         else {
-            enqueueSnackbar('Modification annulée', { variant: 'success' })
+            enqueueSnackbar('Modification annulée', { variant: 'success' });
         }
     };
     const handleOldCell = (event) => {
         const { id, field, value } = event;
-        setOldEditingCell({ id, field, value })
+        setOldEditingCell({ id, field, value });
     };
     const handleDelete = useCallback((id) => () => {
-        setIsDeleting(true)
+        setIsDeleting(true);
         deleteDepartment(id)
             .then(() => {
                 setDepartments((departments) => departments.filter((department) => department.id != id));

@@ -15,7 +15,9 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { Camera } from "react-camera-pro";
 import { useRef } from 'react';
 import { getAllDistricts } from '../../../services/dashboard/DistrictService';
-
+import { addVoter } from '../../../services/dashboard/VoterService';
+import { useAuth } from '../../../context/AuthContext';
+// import bcrypt from "bcrypt";
 
 export default function SignUp() {
     const [datePickerValue, setDatePickerValue] = useState(undefined);
@@ -32,14 +34,14 @@ export default function SignUp() {
     const [openValidatePictureModal, setOpenValidatePictureModal] = React.useState(false);
     const handleOpenValidatePictureModal = () => setOpenValidatePictureModal(true);
     const handleCloseValidatePictureModal = () => setOpenValidatePictureModal(false);
+    const [lastFindErrorInFieldSnackbarId, setLastFindErrorInFieldSnackbarId] = useState(undefined);
+    const { signUp } = useAuth();
 
     const resetForm = () => {
         reset();
         setImage(null);
         setDatePickerValue(undefined);
         setRandomKeyForResetField(crypto.randomUUID());
-        closeSnackbar();
-        enqueueSnackbar('Message envoyée avec succès', { variant: 'success' });
     }
 
     const getDistricts = () => {
@@ -55,23 +57,33 @@ export default function SignUp() {
         if (Object.keys(errors).length != 0) {
             let fieldValues = Object.values(watch()).filter((e) => e !== "" && e !== undefined && e != null);
             if (fieldValues.length != 8) {
-                enqueueSnackbar('Veuillez remplir tous les champs correctement', { variant: 'warning', autoHideDuration: "1000" })
+                closeSnackbar(lastFindErrorInFieldSnackbarId);
+                setLastFindErrorInFieldSnackbarId(enqueueSnackbar('Veuillez remplir tous les champs correctement', { variant: 'warning' }))
             }
         }
     }, [isSubmitting])
 
-    const onSubmit = () => {
+    const onSubmit = async () => {
         if (image != null) {
-            console.log({ ...watch(), image });
+            const voterData = { ...watch(), password: crypto.randomUUID().slice(0, 13), photo: image, canVoted: false, isAdmin: false, isSuperAdmin: false, isCandidate: false };
+            console.log(voterData);
 
-            resetForm();
+            await signUp(voterData.emailAddress, voterData.password);
+
+            addVoter(voterData)
+
+
+            // resetForm();
+
+
+            closeSnackbar(lastFindErrorInFieldSnackbarId);
+            enqueueSnackbar('On submit...', { variant: 'success' });
         }
         else {
-            closeSnackbar();
+            closeSnackbar(lastFindErrorInFieldSnackbarId);
             enqueueSnackbar('Veuillez d\'abord prendre une photo de vous', { variant: 'warning' })
         }
     };
-
 
     return (
         <div className='flex-1 bg-gray-300/25'>
@@ -110,7 +122,7 @@ export default function SignUp() {
                                         <div className="col-span-6 sm:col-span-3">
                                             <label htmlFor="phoneNumber" className="block text-md font-medium text-gray-700">Date de naissance</label>
                                             <DatePicker
-                                                {...register("date", { validate: value => value !== undefined || "Veuillez indiquez votre date de naissance" })}
+                                                {...register("dateOfBirth", { validate: value => value !== undefined || "Veuillez indiquez votre date de naissance" })}
                                                 containerStyle={{
                                                     width: "100%"
                                                 }}
@@ -118,7 +130,7 @@ export default function SignUp() {
                                                 inputMode="none"
                                                 value={datePickerValue}
                                                 key={randomKeyForResetField}
-                                                onChange={(value) => (setDatePickerValue(value.format()), setValue('date', value.format()))}
+                                                onChange={(value) => (setDatePickerValue(value.format()), setValue('dateOfBirth', value.format()))}
                                                 locale={fr}
                                                 weekStartDayIndex={1}
                                                 hideOnScroll
@@ -145,15 +157,15 @@ export default function SignUp() {
                                                     )
                                                 }}
                                             />
-                                            {datePickerValue == undefined && errors.date?.message && <span className='text-red-600'>{errors.date.message}</span>}
+                                            {datePickerValue == undefined && errors.dateOfBirth?.message && <span className='text-red-600'>{errors.dateOfBirth.message}</span>}
                                         </div>
 
                                         <div className="col-span-6 sm:col-span-3">
-                                            <label htmlFor="lieuNaissance" className="block text-md font-medium text-gray-700">Lieu de naissance</label>
-                                            <input autoComplete="off" type="text" placeholder='Ex:Thies' name="lieuNaissance" id="lieuNaissance" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errors.lieuNaissance?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...register("lieuNaissance", {
+                                            <label htmlFor="placeOfBirth" className="block text-md font-medium text-gray-700">Lieu de naissance</label>
+                                            <input autoComplete="off" type="text" placeholder='Ex:Thies' name="placeOfBirth" id="placeOfBirth" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errors.placeOfBirth?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...register("placeOfBirth", {
                                                 required: "Veuillez saisir votre lieu de naissance inscrit sur votre carte d'identité"
                                             })} />
-                                            {errors.lieuNaissance?.message && <span className='text-red-600'>{errors.lieuNaissance.message}</span>}
+                                            {errors.placeOfBirth?.message && <span className='text-red-600'>{errors.placeOfBirth.message}</span>}
                                         </div>
 
                                         <div className="col-span-6 sm:col-span-3">
@@ -169,7 +181,7 @@ export default function SignUp() {
                                         </div>
 
                                         <div className="col-span-6 sm:col-span-3">
-                                            <label htmlFor="phoneNumber" className="block text-md font-medium text-gray-700">Numéro de téléphone (Optionnel)</label>
+                                            <label htmlFor="phoneNumber" className="block text-md font-medium text-gray-700">Numéro de téléphone (<span className="text-violet-800">Optionnel</span>) </label>
                                             <input autoComplete="off" placeholder='Ex:+221701060661' type="number" name="phoneNumber" id="phoneNumber" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-violet-500 focus:ring-violet-500 sm:text-sm" {...register("phoneNumber")} />
                                         </div>
 
@@ -183,19 +195,19 @@ export default function SignUp() {
                                                 key={randomKeyForResetField}
                                                 loading={!districts.length ? true : false}
                                                 loadingText="Récupération de la liste des quartiers..."
-                                                onChange={(e, value) => setValue("districts", value.nom)}
+                                                onChange={(e, value) => setValue("district", value.nom)}
                                                 isOptionEqualToValue={(option, value) => option.nom === value.nom}
                                                 getOptionLabel={(option) => option.nom}
                                                 onOpen={getDistricts}
                                                 noOptionsText="Quartier introuvable | Veuillez vérifier l'orthographe de votre quartier."
                                                 sx={{
-                                                    border: "1.5px solid " + (!watch().districts && errors.districts?.message ? "#DC2626" : "#d1d5db"), borderRadius: "5px", padding: "0px",
+                                                    border: "1.5px solid " + (!watch().district && errors.district?.message ? "#DC2626" : "#d1d5db"), borderRadius: "5px", padding: "0px",
                                                     '&:focus-within': {
-                                                        boxShadow: !watch().districts && errors.districts?.message ? "0px 0px 0px 0.8px #DC2626" : "0px 0px 0px 1.3px #7C3AED"
+                                                        boxShadow: !watch().district && errors.district?.message ? "0px 0px 0px 0.8px #DC2626" : "0px 0px 0px 1.3px #7C3AED"
                                                     }
                                                 }}
                                                 style={{
-                                                    borderLeft: !watch().districts && errors.districts?.message ? "10px solid #DC2626" : undefined,
+                                                    borderLeft: !watch().district && errors.district?.message ? "10px solid #DC2626" : undefined,
                                                 }}
                                                 renderInput={
                                                     (params) => <TextField {...params} sx={{
@@ -214,11 +226,11 @@ export default function SignUp() {
                                                     }} placeholder="Ex:Hersent"
                                                         hiddenLabel
                                                         fullWidth
-                                                        {...register("districts", { required: "Veuillez sélectionner le nom du quartier auquel vous habitez" })}
+                                                        {...register("district", { required: "Veuillez sélectionner le nom du quartier auquel vous habitez" })}
                                                     />
                                                 }
                                             />
-                                            {!watch().districts && errors.districts?.message && <span className='text-red-600'>{errors.districts.message}</span>}
+                                            {!watch().district && errors.district?.message && <span className='text-red-600'>{errors.district.message}</span>}
                                         </div>
 
                                         <div className="col-span-6">
