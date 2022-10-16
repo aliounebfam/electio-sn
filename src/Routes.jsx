@@ -1,4 +1,3 @@
-import { createBrowserRouter } from "react-router-dom";
 import App from "./pages/app/App";
 import Contact from "./pages/app/Contact/Contact";
 import Faq from "./pages/app/FAQ/Faq";
@@ -12,8 +11,9 @@ import Voters from "./pages/dashboard/Voters";
 import Regions from "./pages/dashboard/Regions";
 import Departments from "./pages/dashboard/Departments";
 import Districts from "./pages/dashboard/Districts";
-import { Navigate } from "react-router-dom";
 import Municipalities from "./pages/dashboard/Municipalities";
+import { createBrowserRouter } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 export const router = createBrowserRouter(
     [
@@ -77,7 +77,6 @@ export const router = createBrowserRouter(
                 },
             ]
         },
-
         {
             path: "*",
             element: <NotFoundPage />,

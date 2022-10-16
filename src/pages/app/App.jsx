@@ -12,7 +12,7 @@ function App() {
     const { enqueueSnackbar, closeSnackbar } = useSnackbar();
     const [online, setOnline] = useState(true);
     const location = useLocation();
-    const [appOfflineSnackbarId, setAppOfflineSnackbarId] = useState()
+    const [appOfflineSnackbarId, setAppOfflineSnackbarId] = useState(null);
 
     useEffect(() => {
         if (!online) {
@@ -24,7 +24,8 @@ function App() {
             }));
         }
         else {
-            closeSnackbar(appOfflineSnackbarId);
+            if (appOfflineSnackbarId != null)
+                closeSnackbar(appOfflineSnackbarId);
         }
     }, [online]);
 
