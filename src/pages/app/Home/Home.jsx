@@ -6,10 +6,8 @@ import { Link } from 'react-router-dom';
 import CustomLinkBackground from './../../../utils/CustomLinkBackground';
 import './Home.css'
 import Tooltip from '@mui/material/Tooltip';
-import { useAuth } from '../../../context/AuthContext';
 
 export default function Home() {
-    const { currentUser } = useAuth();
     const [src, setSrc] = useState("femme_senegalaise.jpg");
     const [mainHeight, setMainHeight] = useState(0);
     const main = useRef();
@@ -20,8 +18,6 @@ export default function Home() {
     });
 
     useEffect(() => {
-        console.log(currentUser);
-
         const newMainHeight = content.current.clientHeight + 40;
         setMainHeight(newMainHeight);
 
