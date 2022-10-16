@@ -1,38 +1,39 @@
 import Header from './../../components/app/Header'
 import Footer from './../../components/app/Footer'
 import './App.css'
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { ScrollRestoration } from 'react-router-dom';
 import { Detector } from "react-detect-offline";
 import { useSnackbar } from 'notistack'
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-
 function App() {
     const { enqueueSnackbar, closeSnackbar } = useSnackbar();
     const [online, setOnline] = useState(true);
+    const location = useLocation();
+    const [appOfflineSnackbarId, setAppOfflineSnackbarId] = useState()
 
     useEffect(() => {
         if (!online) {
-            enqueueSnackbar('Vous êtes actuellement hors ligne !', {
+            setAppOfflineSnackbarId(enqueueSnackbar('Vous êtes actuellement hors ligne !', {
                 variant: 'error', persist: true, anchorOrigin: {
                     vertical: 'bottom',
                     horizontal: 'center'
                 }
-            });
+            }));
         }
         else {
-            closeSnackbar();
+            closeSnackbar(appOfflineSnackbarId);
         }
-    });
+    }, [online]);
 
     return (
         <>
-            <Header />
+            {!location.pathname.startsWith("/dashboard") && <Header />}
             <Outlet />
-            <Footer />
             <ScrollRestoration />
+            {!location.pathname.startsWith("/dashboard") && <Footer />}
             <Detector
                 onChange={online => setOnline(online)}
                 render={() => (

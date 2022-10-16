@@ -23,7 +23,13 @@ export default function Login() {
                         enqueueSnackbar('Email et/ou mot de passe incorrect(s)', { variant: 'error' });
                 }
                 else {
-                    enqueueSnackbar('Vous êtes correctement connecté(e)', { variant: 'success' });
+                    enqueueSnackbar('Vous êtes correctement connecté(e)', {
+                        variant: 'success',
+                        anchorOrigin: {
+                            vertical: 'bottom',
+                            horizontal: 'right',
+                        }
+                    });
                     reset();
                     navigate("/");
                     setOpenBackdrop(true);

@@ -15,7 +15,6 @@ import Districts from "./pages/dashboard/Districts";
 import { Navigate } from "react-router-dom";
 import Municipalities from "./pages/dashboard/Municipalities";
 
-
 export const router = createBrowserRouter(
     [
         {
@@ -46,38 +45,39 @@ export const router = createBrowserRouter(
                     path: "credential-request",
                     element: <CredentialRequest />
                 },
+                {
+                    path: "dashboard",
+                    element: <Dashboard />,
+                    children: [
+                        {
+                            path: "voters",
+                            element: <Voters />
+                        },
+                        {
+                            path: "regions",
+                            element: <Regions />
+                        },
+                        {
+                            path: "departments",
+                            element: <Departments />
+                        },
+                        {
+                            path: "districts",
+                            element: <Districts />
+                        },
+                        {
+                            path: "municipalities",
+                            element: <Municipalities />
+                        },
+                        {
+                            path: "",
+                            element: <Navigate to="voters" />
+                        },
+                    ]
+                },
             ]
         },
-        {
-            path: "/dashboard",
-            element: <Dashboard />,
-            children: [
-                {
-                    path: "voters",
-                    element: <Voters />
-                },
-                {
-                    path: "regions",
-                    element: <Regions />
-                },
-                {
-                    path: "departments",
-                    element: <Departments />
-                },
-                {
-                    path: "districts",
-                    element: <Districts />
-                },
-                {
-                    path: "municipalities",
-                    element: <Municipalities />
-                },
-                {
-                    path: "",
-                    element: <Navigate to="voters" />
-                },
-            ]
-        },
+
         {
             path: "*",
             element: <NotFoundPage />,

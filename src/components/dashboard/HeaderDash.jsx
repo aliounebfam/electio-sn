@@ -9,26 +9,37 @@ import LocationCityRoundedIcon from '@mui/icons-material/LocationCityRounded';
 import AsideNavbarItem from './AsideNavbarItem';
 import ApartmentRoundedIcon from '@mui/icons-material/ApartmentRounded';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
+import OtherHousesRoundedIcon from '@mui/icons-material/OtherHousesRounded';
+import RoofingRoundedIcon from '@mui/icons-material/RoofingRounded';
 import { Tooltip } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
+import { useSnackbar } from 'notistack';
 
 
 export default function HeaderDash() {
-
     const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
-
-    const [openMobileNavbarBackdrop, setOpenMobileNavbarBackdrop] = React.useState(false);
-    const handleCloseMobileNavbarBackdrop = () => {
-        setOpenMobileNavbarBackdrop(false);
-    };
-    const handleToggleMobileNavbarBackdrop = () => {
-        setOpenMobileNavbarBackdrop(!openMobileNavbarBackdrop);
-    };
-
     const [count, setCount] = useState(0);
+    const navigate = useNavigate();
+    const { logout } = useAuth();
+    const { enqueueSnackbar } = useSnackbar();
+
+    const handleSignOutClick = async () => {
+        await logout().then(() => {
+            navigate("/login");
+            enqueueSnackbar('Vous êtes correctement déconnecté(e)', {
+                variant: 'success',
+                anchorOrigin: {
+                    vertical: 'bottom',
+                    horizontal: 'right',
+                }
+            });
+        });
+    };
 
     useEffect(() => {
         setCount(count + 1)
-    }, [isMobileMenuVisible])
+    }, [isMobileMenuVisible]);
 
     return (
         <>
@@ -52,7 +63,6 @@ export default function HeaderDash() {
                     <Tooltip title="Cliquez pour accéder à votre profil" placement='bottom' followCursor>
                         <img className="ml-4 cursor-pointer inline-block h-10 w-10 rounded-full ring-2 ring-violet-700/40 hover:ring-violet-700 transition duration-300" src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="" />
                     </Tooltip>
-
                 </div>
 
                 {/* Start Mobile nav bar */}
@@ -73,14 +83,14 @@ export default function HeaderDash() {
                                     </Link>
                                 </div>
                                 <div>
-
                                     <div className='m-6 flex flex-col space-y-8'>
                                         <AsideNavbarItem text={"Électeurs"} icon={<PersonRoundedIcon />} path={'voters'} />
                                         <AsideNavbarItem text={"Régions"} icon={<ApartmentRoundedIcon />} path={'regions'} />
                                         <AsideNavbarItem text={"Départements"} icon={<LocationCityRoundedIcon />} path={'departments'} />
-                                        <AsideNavbarItem text={"Quartiers"} icon={<LocationCityRoundedIcon />} path={'districts'} />
+                                        <AsideNavbarItem text={"Communes"} icon={<OtherHousesRoundedIcon />} path={'municipalities'} />
+                                        <AsideNavbarItem text={"Quartiers"} icon={<RoofingRoundedIcon />} path={'districts'} />
                                     </div>
-                                    <div className='sticky space-x-3 text-gray-300 rounded-t-md hover:text-white bg-gray-900 shadow-[0_-1px_4px_0_rgba(0,0,0,0.1)] shadow-violet-500 inset-0 p-3 pl-6'>
+                                    <div onClick={handleSignOutClick} className='cursor-pointer sticky space-x-3 text-gray-300 rounded-t-md hover:text-white bg-gray-900 shadow-[0_-1px_4px_0_rgba(0,0,0,0.1)] shadow-violet-500 inset-0 p-3 pl-6'>
                                         <LogoutRoundedIcon />
                                         <span>
                                             Déconnexion
@@ -90,11 +100,9 @@ export default function HeaderDash() {
                             </div>
                         </nav>
                     </Slide>
-
                 </Backdrop>
-
-
                 {/* End Mobile nav bar */}
+
             </header>
         </>
     )

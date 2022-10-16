@@ -1,7 +1,6 @@
 import './../app/App.css'
 import React from 'react'
 import { Outlet } from 'react-router-dom';
-import { ScrollRestoration } from 'react-router-dom';
 import { Detector } from "react-detect-offline";
 import { useSnackbar } from 'notistack'
 import { useEffect } from 'react';
@@ -10,7 +9,6 @@ import HeaderDash from '../../components/dashboard/HeaderDash';
 import AsideNavBar from '../../components/dashboard/AsideNavBar';
 
 export default function Dashboard() {
-
     const { enqueueSnackbar, closeSnackbar } = useSnackbar();
     const [online, setOnline] = useState(true);
 
@@ -34,8 +32,7 @@ export default function Dashboard() {
         else {
             closeSnackbar();
         }
-    });
-
+    }, [online]);
 
     return (
         <>
@@ -46,7 +43,6 @@ export default function Dashboard() {
                     <main className='bg-gray-300/[0.5] h-full w-full overflow-y-auto'>
                         <div className='sm:container grid px-6 py-3 mx-auto '>
                             <Outlet />
-                            <ScrollRestoration />
                         </div>
                     </main>
                 </div>
