@@ -64,7 +64,7 @@ export default function SignUp() {
 
     const onSubmit = async () => {
         if (image != null) {
-            const voterData = { ...watch(), photo: image, canVoted: false, isAdmin: false, isSuperAdmin: false, isCandidate: false };
+            const voterData = { ...watch(), photo: image, canVoted: false, isAdmin: false, isSuperAdmin: false, isCandidate: false, isRegistered: false };
             addVoter(voterData)
                 .then(() => {
                     closeSnackbar(lastFindErrorInFieldSnackbarId);

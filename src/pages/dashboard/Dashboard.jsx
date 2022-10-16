@@ -45,9 +45,8 @@ export default function Dashboard() {
                     <HeaderDash />
                     <main className='bg-gray-300/[0.5] h-full w-full overflow-y-auto'>
                         <div className='sm:container grid px-6 py-3 mx-auto '>
-
                             <Outlet />
-
+                            <ScrollRestoration />
                         </div>
                     </main>
                 </div>
@@ -63,7 +62,6 @@ export default function Dashboard() {
                     }
                 }
             />
-            <ScrollRestoration />
         </>
     )
 }

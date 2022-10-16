@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@emailjs/browser': ^3.7.0
   '@emotion/react': ^11.10.4
   '@emotion/styled': ^11.10.4
   '@hookform/error-message': ^2.0.0
@@ -32,6 +33,7 @@ specifiers:
   workbox-window: ^6.5.4
 
 dependencies:
+  '@emailjs/browser': 3.7.0
   '@emotion/react': 11.10.4_w5j4k42lgipnm43s3brx6h3c34
   '@emotion/styled': 11.10.4_yiaqs725o7pcd7rteavrnhgj4y
   '@hookform/error-message': 2.0.0_t4e2o6isxgefemw5pro4vkqtby
@@ -1550,6 +1552,21 @@ packages:
     dependencies:
       postcss: 8.4.16
       postcss-selector-parser: 6.0.10
+    dev: false
+
+  /@emailjs/browser/3.7.0:
+    resolution: {integrity: sha512-qjMKx0uCtFUiZkO6C3XYYtmdHqaoOlt2kcxsYD536u5rHZlfo4DAQGwTVo/y2wunVG5rUgSn3TFKZ7vPfgX6LQ==}
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      eslint-config-standard-with-typescript: 22.0.0
+    transitivePeerDependencies:
+      - '@typescript-eslint/eslint-plugin'
+      - eslint
+      - eslint-plugin-import
+      - eslint-plugin-n
+      - eslint-plugin-promise
+      - supports-color
+      - typescript
     dev: false
 
   /@emotion/babel-plugin/11.10.2:
@@ -3485,6 +3502,24 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - typescript
+    dev: false
+
+  /@typescript-eslint/parser/5.38.0:
+    resolution: {integrity: sha512-/F63giJGLDr0ms1Cr8utDAxP2SPiglaD6V+pCOcG35P2jCqdfR7uuEhz1GIC3oy4hkUF8xA1XSXmd9hOh/a5EA==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/scope-manager': 5.38.0
+      '@typescript-eslint/types': 5.38.0
+      '@typescript-eslint/typescript-estree': 5.38.0
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@typescript-eslint/parser/5.38.0_eslint@8.23.1:
@@ -5536,6 +5571,31 @@ packages:
       - eslint-import-resolver-webpack
       - jest
       - supports-color
+    dev: false
+
+  /eslint-config-standard-with-typescript/22.0.0:
+    resolution: {integrity: sha512-VA36U7UlFpwULvkdnh6MQj5GAV2Q+tT68ALLAwJP0ZuNXU2m0wX07uxX4qyLRdHgSzH4QJ73CveKBuSOYvh7vQ==}
+    peerDependencies:
+      '@typescript-eslint/eslint-plugin': ^5.0.0
+      eslint: ^8.0.1
+      eslint-plugin-import: ^2.25.2
+      eslint-plugin-n: ^15.0.0
+      eslint-plugin-promise: ^6.0.0
+      typescript: '*'
+    dependencies:
+      '@typescript-eslint/parser': 5.38.0
+      eslint-config-standard: 17.0.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /eslint-config-standard/17.0.0:
+    resolution: {integrity: sha512-/2ks1GKyqSOkH7JFvXJicu0iMpoojkwB+f5Du/1SC0PtBL+s8v30k9njRZ21pm2drKYm2342jFnGWzttxPmZVg==}
+    peerDependencies:
+      eslint: ^8.0.1
+      eslint-plugin-import: ^2.25.2
+      eslint-plugin-n: ^15.0.0
+      eslint-plugin-promise: ^6.0.0
     dev: false
 
   /eslint-import-resolver-node/0.3.6:

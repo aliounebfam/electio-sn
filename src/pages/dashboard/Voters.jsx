@@ -6,12 +6,12 @@ import { useMemo } from 'react';
 import { useCallback } from 'react';
 import { deleteVoter, updateVoter, getAllVoters } from '../../services/dashboard/VoterService';
 import { useState } from 'react';
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, LinearProgress } from '@mui/material';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, LinearProgress, Tooltip } from '@mui/material';
 import { useSnackbar } from 'notistack';
 import { useEffect } from 'react';
 import LoadingButton from '@mui/lab/LoadingButton';
-import { Tooltip } from '@mui/material';
 import { useAuth } from '../../context/AuthContext';
+import emailjs from '@emailjs/browser';
 
 export default function Voters() {
     const { enqueueSnackbar } = useSnackbar();
@@ -87,24 +87,34 @@ export default function Voters() {
     const handleValidate = useCallback((data) => async () => {
         setIsValidating(true);
         const { emailAddress: email } = data.row;
+        const { firstName } = data.row;
+        const { lastName } = data.row;
+        const voterName = lastName + " " + firstName;
         const password = crypto.randomUUID().slice(0, 13);
         await signUp(email, password)
             .then(() => {
                 updateVoter(data.id, { isRegistered: true })
                     .then(() => {
-                        // A revoir...
-                        // setVoters(voters.map(voter => {
-                        //     if (voter.id == data.id)
-                        //         return { ...voter, isRegistered: true };
-                        //     else
-                        //         voter;
-                        // }));
-                        enqueueSnackbar('Un mail a été envoyé à l\'utilisateur correspondant avec ses informations de connexion', { variant: 'success' });
+                        setVoters(voters.map(voter => {
+                            if (voter.id == data.id)
+                                return { ...voter, isRegistered: true };
+                            else
+                                return voter;
+                        }));
+                        emailjs.send("service_ps3pobi", "template_5jwhysh", {
+                            voterName,
+                            voterEmail: email,
+                            voterPassword: password,
+                        }, "Me36dqvXStfJFrj6r").then(function (response) {
+                            enqueueSnackbar('Un mail a été envoyé à l\'utilisateur correspondant avec ses informations de connexion', { variant: 'success' });
+                            setOpenValidateAlert(false);
+                        }, function (error) {
+                            enqueueSnackbar('Une erreur est survenue lors de l\'envoi du mail à l\'utilisateur correspondant', { variant: 'error' });
+                        })
+                            .finally(() => {
+                                setIsValidating(false);
+                            });
                     });
-                setOpenValidateAlert(false);
-            })
-            .finally(() => {
-                setIsValidating(false);
             });
     });
 
@@ -136,7 +146,7 @@ export default function Voters() {
             { field: 'phoneNumber', headerName: 'Numéro de téléphone', minWidth: 160, flex: 0.5 },
             { field: 'emailAddress', headerName: 'Adresse email', minWidth: 250, flex: 0.5 },
             { field: 'district', headerName: 'Quartier', minWidth: 200, flex: 0.5 },
-            { field: 'isRegistered', headerName: 'Inscrit', type: "boolean", minWidth: 60, flex: 0.2, editable: true },
+            { field: 'isRegistered', headerName: 'Inscrit', type: "boolean", minWidth: 60, flex: 0.2 },
             { field: 'isCandidate', headerName: 'Candidat', type: "boolean", minWidth: 85, flex: 0.2, editable: true },
             { field: 'isAdmin', headerName: 'Admin', type: "boolean", minWidth: 60, flex: 0.2, editable: true },
             { field: 'isSuperAdmin', headerName: 'Super Admin', type: "boolean", minWidth: 100, flex: 0.2, editable: true },
