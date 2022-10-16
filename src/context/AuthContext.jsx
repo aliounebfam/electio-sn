@@ -2,10 +2,10 @@ import { createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmail
 import React, { useContext, useState, useEffect } from "react"
 import { auth } from "../services/firebase"
 
-const AuthContext = React.createContext()
+const AuthContext = React.createContext();
 
 export function useAuth() {
-    return useContext(AuthContext)
+    return useContext(AuthContext);
 }
 
 export function AuthProvider({ children }) {
@@ -20,7 +20,7 @@ export function AuthProvider({ children }) {
         let error = undefined;
         const response = await signInWithEmailAndPassword(auth, email, password)
             .catch((err) => {
-                error = { code: err.code, message: err.message }
+                error = { code: err.code, message: err.message };
             });
         if (error != undefined)
             return error;
@@ -33,11 +33,11 @@ export function AuthProvider({ children }) {
     };
 
     function resetPassword(email) {
-        return sendPasswordResetEmail(auth, email)
+        return sendPasswordResetEmail(auth, email);
     };
 
     function updateEmailService(email) {
-        return updateEmail(currentUser, email)
+        return updateEmail(currentUser, email);
     };
 
     function updatePasswordService(password) {

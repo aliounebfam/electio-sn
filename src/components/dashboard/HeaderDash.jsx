@@ -54,11 +54,11 @@ export default function HeaderDash() {
                     </button>
                     {/* End Menu Button */}
 
-                    <Tooltip title="Cliquez pour accéder à votre profil" placement='bottom' followCursor>
-                        <Link to={'profil'}>
-                            <img className="ml-4 cursor-pointer inline-block h-10 w-10 rounded-full ring-2 ring-violet-700/40 hover:ring-violet-700 transition duration-300" src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="" />
-                        </Link>
-                    </Tooltip>
+                    <Link to={'profil'}>
+                        <Tooltip title="Cliquez pour accéder à votre profil" placement='bottom' followCursor>
+                            <img className="cursor-pointer inline-block h-10 w-10 rounded-full ring-2 ring-violet-700/40 hover:ring-violet-700 transition duration-300" src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="" />
+                        </Tooltip>
+                    </Link>
                 </div>
 
                 {/* Start Mobile nav bar */}

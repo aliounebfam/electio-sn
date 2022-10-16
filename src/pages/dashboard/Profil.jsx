@@ -103,8 +103,9 @@ export default function Profil() {
                 <form>
                     <div className="border-violet-500 border overflow-hidden shadow sm:rounded-md">
                         <div className="bg-white px-4 py-5 sm:p-6">
-                            <div className='underline text-xl font-medium text-gray-700 mb-4 font-Hind'>
+                            <div className='underline inline-block text-xl font-medium text-gray-700 mb-4 font-Hind'>
                                 Vos informations
+                                <span className='inline-block bg-violet-700 text-white rounded-full px-2 pt-1 ml-3 text-sm'>Non éditable</span>
                             </div>
                             {voter ? <div>
                                 <div className="grid grid-cols-6 gap-6">
@@ -133,7 +134,7 @@ export default function Profil() {
                                             Sexe :
                                         </span>
                                         &nbsp;
-                                        <span>
+                                        <span className='italic font-medium'>
                                             {voter?.sex == "M" ? "Masculin" : "Féminin"}
                                         </span>
                                     </div>
@@ -191,7 +192,7 @@ export default function Profil() {
                                         required: "Veuillez saisir votre nouveau mot de passe",
                                         minLength: {
                                             value: 6,
-                                            message: 'Le mot de passe doit comporter au moins 6 caractères' // JS only: <p>error message</p> TS only support string
+                                            message: 'Le mot de passe doit comporter au moins 6 caractères'
                                         }
                                     })} />
                                     {errorsChangePassword.newPassword?.message && <span className='text-red-600'>{errorsChangePassword.newPassword.message}</span>}

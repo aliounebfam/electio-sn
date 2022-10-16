@@ -115,7 +115,11 @@ export default function Voters() {
                                 setIsValidating(false);
                             });
                     });
-            });
+            })
+            .catch(() => {
+                enqueueSnackbar('Une erreur est survenue lors de l\'ajout de l\'utilisateur comme électeur', { variant: 'error' });
+                setIsValidating(false);
+            })
     });
 
     const columns = useMemo

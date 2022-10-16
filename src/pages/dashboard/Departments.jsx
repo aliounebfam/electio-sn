@@ -16,7 +16,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import LoadingButton from '@mui/lab/LoadingButton';
 
-
 export default function Departments() {
     const { enqueueSnackbar } = useSnackbar();
     const [oldEditingCell, setOldEditingCell] = useState({});
@@ -48,7 +47,7 @@ export default function Departments() {
     const getRegionsNameWithId = async () => {
         await getAllRegionsNameAndId()
             .then(res => setRegionsNameWithId(res))
-            .catch(err =>{});
+            .catch(err => { });
     };
 
     useEffect(() => {
