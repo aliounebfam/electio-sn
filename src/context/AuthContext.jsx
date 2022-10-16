@@ -26,7 +26,6 @@ export function AuthProvider({ children }) {
             return error;
         else
             return response;
-
     };
 
     function logout() {

@@ -3,10 +3,10 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useSnackbar } from 'notistack';
 import { useForm } from 'react-hook-form';
-import { Autocomplete, Skeleton, TextField } from '@mui/material';
+import { Autocomplete, Backdrop, CircularProgress, Skeleton, TextField } from '@mui/material';
 import { getAllDistricts } from '../../services/dashboard/DistrictService';
 import { useAuth } from '../../context/AuthContext';
-import { getVoterDataFromEmail } from '../../services/dashboard/VoterService';
+import { getVoterDataFromEmail, updateVoter } from '../../services/dashboard/VoterService';
 
 export default function Profil() {
     const { register, setValue } = useForm();
@@ -14,15 +14,38 @@ export default function Profil() {
     const { register: registerChangeEmail, handleSubmit: handleSubmitChangeEmail, setValue: setValueChangeEmail, reset: resetChangeEmail, watch: watchChangeEmail, formState: { errors: errorsChangeEmail } } = useForm({ mode: "onChange" });
     const { enqueueSnackbar } = useSnackbar();
     const [districts, setDistricts] = useState([]);
-    const { currentUser } = useAuth();
-    const [voter, setVoter] = useState()
+    const { currentUser, updateEmailService } = useAuth();
+    const [voter, setVoter] = useState();
+    const [openBackdrop, setOpenBackdrop] = useState(false);
 
     const onChangePasswordSubmit = async () => {
-
+        console.log();
     };
+
     const onChangeEmailSubmit = async () => {
-
+        if (voter.emailAddress != watchChangeEmail().emailAddress) {
+            setOpenBackdrop(true);
+            updateEmailService(watchChangeEmail().emailAddress)
+                .then(() => {
+                    updateVoter(voter.id, { emailAddress: watchChangeEmail().emailAddress })
+                        .then(() => {
+                            enqueueSnackbar('Adresse email modifiée avec succès', { variant: 'success' });
+                        })
+                        .finally(() => {
+                            setOpenBackdrop(false);
+                        })
+                })
+                .catch(() => {
+                    enqueueSnackbar('Une erreur est survenue lors de la modification de l\'adresse email', { variant: 'error', autoHideDuration: 5000 });
+                    enqueueSnackbar('Déconnectez-vous, reconnectez-vous puis réessayez', { variant: 'warning', autoHideDuration: 5000 });
+                    setValueChangeEmail("emailAddress", voter.emailAddress);
+                });
+        }
+        else {
+            enqueueSnackbar('Aucune modification détectée', { variant: 'warning' });
+        }
     };
+
     useEffect(() => {
         if (voter) {
             setValueChangeEmail("emailAddress", voter.emailAddress);
@@ -51,7 +74,15 @@ export default function Profil() {
 
 
     return (
+
+
         <div className="bg-white mt-5 p-5 rounded-md shadow-md shadow-violet-400">
+            <Backdrop
+                className="text-violet-600 bg-gray-700/25 backdrop-blur-[3px] z-20"
+                open={openBackdrop}
+            >
+                <CircularProgress size={65} color="inherit" />
+            </Backdrop>
             <div className='pb-5 text-2xl font-Hind font-normal'>
                 Gestion de votre profil
             </div>

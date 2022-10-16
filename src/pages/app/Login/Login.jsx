@@ -19,8 +19,9 @@ export default function Login() {
         await login(watch().emailAddress, watch().password)
             .then((response) => {
                 if (response.code) {
-                    if (response.code == "auth/user-not-found")
+                    if (response.code == "auth/user-not-found") {
                         enqueueSnackbar('Email et/ou mot de passe incorrect(s)', { variant: 'error' });
+                    }
                 }
                 else {
                     enqueueSnackbar('Vous êtes correctement connecté(e)', {
@@ -32,12 +33,15 @@ export default function Login() {
                     });
                     reset();
                     navigate("/");
-                    setOpenBackdrop(true);
                 }
             })
             .catch((error) => {
                 enqueueSnackbar('Une erreur est survenue lors de la tentative de connexion', { variant: 'error' });
             })
+            .finally(() => {
+                setOpenBackdrop(false);
+            });
+
     };
 
     return (
