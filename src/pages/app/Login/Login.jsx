@@ -84,7 +84,7 @@ export default function Login() {
 
                                         <div className="col-span-6">
                                             <label htmlFor="password" className="block text-md font-medium text-gray-700">Mot de passe</label>
-                                            <input autoComplete="off" aria-invalid={errors.password?.message} type="password" name="password" id="password" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errors.password?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...register("password", {
+                                            <input autoComplete="off" aria-invalid={errors.password?.message} placeholder="Entrez votre mot de passe" type="password" name="password" id="password" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errors.password?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...register("password", {
                                                 required: "Veuillez saisir votre mot de passe"
                                             })} />
                                             {errors.password?.message && <span className='text-red-600'>{errors.password.message}</span>}
