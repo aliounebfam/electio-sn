@@ -46,13 +46,12 @@ export const getAllVoters = async () => {
         return error;
 }
 
-export const getVoterFromEmail = async (email) => {
+export const getVoterDataFromEmail = async (email) => {
     let voter = undefined;
     const q = query(voterCollectionRef, where("emailAddress", "==", email));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
         voter = { id: doc.id, ...doc.data() };
     });
-    console.log(voter);
     return voter;
 }

@@ -4,17 +4,11 @@ import { Turn as Hamburger } from 'hamburger-react'
 import { useState, useEffect } from 'react';
 import Slide from '@mui/material/Slide';
 import Backdrop from '@mui/material/Backdrop';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import LocationCityRoundedIcon from '@mui/icons-material/LocationCityRounded';
-import AsideNavbarItem from './AsideNavbarItem';
-import ApartmentRoundedIcon from '@mui/icons-material/ApartmentRounded';
-import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import OtherHousesRoundedIcon from '@mui/icons-material/OtherHousesRounded';
-import RoofingRoundedIcon from '@mui/icons-material/RoofingRounded';
 import { Tooltip } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useSnackbar } from 'notistack';
+import AsideNavbarContent from './AsideNavbarContent';
 
 
 export default function HeaderDash() {
@@ -61,7 +55,9 @@ export default function HeaderDash() {
                     {/* End Menu Button */}
 
                     <Tooltip title="Cliquez pour accéder à votre profil" placement='bottom' followCursor>
-                        <img className="ml-4 cursor-pointer inline-block h-10 w-10 rounded-full ring-2 ring-violet-700/40 hover:ring-violet-700 transition duration-300" src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="" />
+                        <Link to={'profil'}>
+                            <img className="ml-4 cursor-pointer inline-block h-10 w-10 rounded-full ring-2 ring-violet-700/40 hover:ring-violet-700 transition duration-300" src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="" />
+                        </Link>
                     </Tooltip>
                 </div>
 
@@ -82,21 +78,7 @@ export default function HeaderDash() {
                                         </span>
                                     </Link>
                                 </div>
-                                <div>
-                                    <div className='m-6 flex flex-col space-y-8'>
-                                        <AsideNavbarItem text={"Électeurs"} icon={<PersonRoundedIcon />} path={'voters'} />
-                                        <AsideNavbarItem text={"Régions"} icon={<ApartmentRoundedIcon />} path={'regions'} />
-                                        <AsideNavbarItem text={"Départements"} icon={<LocationCityRoundedIcon />} path={'departments'} />
-                                        <AsideNavbarItem text={"Communes"} icon={<OtherHousesRoundedIcon />} path={'municipalities'} />
-                                        <AsideNavbarItem text={"Quartiers"} icon={<RoofingRoundedIcon />} path={'districts'} />
-                                    </div>
-                                    <div onClick={handleSignOutClick} className='cursor-pointer sticky space-x-3 text-gray-300 rounded-t-md hover:text-white bg-gray-900 shadow-[0_-1px_4px_0_rgba(0,0,0,0.1)] shadow-violet-500 inset-0 p-3 pl-6'>
-                                        <LogoutRoundedIcon />
-                                        <span>
-                                            Déconnexion
-                                        </span>
-                                    </div>
-                                </div>
+                                <AsideNavbarContent />
                             </div>
                         </nav>
                     </Slide>

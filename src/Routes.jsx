@@ -14,6 +14,7 @@ import Districts from "./pages/dashboard/Districts";
 import Municipalities from "./pages/dashboard/Municipalities";
 import { createBrowserRouter } from "react-router-dom";
 import { Navigate } from "react-router-dom";
+import Profil from "./pages/dashboard/Profil";
 
 export const router = createBrowserRouter(
     [
@@ -68,6 +69,10 @@ export const router = createBrowserRouter(
                         {
                             path: "municipalities",
                             element: <Municipalities />
+                        },
+                        {
+                            path: "profil",
+                            element: <Profil />
                         },
                         {
                             path: "",

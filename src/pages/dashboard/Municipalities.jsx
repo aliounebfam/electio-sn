@@ -50,7 +50,7 @@ export default function Municipalities() {
     const getRegionsNameWithId = async () => {
         await getAllRegionsNameAndId()
             .then(res => setRegionsNameWithId(res))
-            .catch(err => console.log(err))
+            .catch(err => { });
     }
 
     useEffect(() => {

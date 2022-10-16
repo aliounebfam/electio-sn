@@ -48,7 +48,7 @@ export default function Departments() {
     const getRegionsNameWithId = async () => {
         await getAllRegionsNameAndId()
             .then(res => setRegionsNameWithId(res))
-            .catch(err => console.log(err));
+            .catch(err =>{});
     };
 
     useEffect(() => {
