@@ -124,7 +124,7 @@ export default function SignUp() {
                                         </div>
 
                                         <div className="col-span-6 sm:col-span-3">
-                                            <label htmlFor="phoneNumber" className="block text-md font-medium text-gray-700">Date de naissance</label>
+                                            <label htmlFor="dateOfBirth" className="block text-md font-medium text-gray-700">Date de naissance</label>
                                             <DatePicker
                                                 {...register("dateOfBirth", { validate: value => value !== undefined || "Veuillez indiquez votre date de naissance" })}
                                                 containerStyle={{
@@ -190,7 +190,7 @@ export default function SignUp() {
                                         </div>
 
                                         <div className="col-span-6">
-                                            <label htmlFor="phoneNumber" className="mb-1 block text-md font-medium text-gray-700">Nom de votre quartier actuel</label>
+                                            <label htmlFor="districts" className="mb-1 block text-md font-medium text-gray-700">Nom de votre quartier actuel</label>
 
                                             <Autocomplete
                                                 disablePortal
@@ -239,7 +239,7 @@ export default function SignUp() {
 
                                         <div className="col-span-6">
                                             <FormControl>
-                                                <label htmlFor="phoneNumber" className="block text-md font-medium text-gray-700">Sexe</label>
+                                                <label htmlFor="sex" className="block text-md font-medium text-gray-700">Sexe</label>
                                                 <RadioGroup
                                                     row
                                                     aria-labelledby="demo-row-radio-buttons-group-label"

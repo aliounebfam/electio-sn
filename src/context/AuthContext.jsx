@@ -17,8 +17,17 @@ export function AuthProvider({ children }) {
         return createUserWithEmailAndPassword(auth, email, password);
     };
 
-    function login(email, password) {
-        return signInWithEmailAndPassword(auth, email, password);
+    async function login(email, password) {
+        let error = undefined;
+        const response = await signInWithEmailAndPassword(auth, email, password)
+            .catch((err) => {
+                error = { code: err.code, message: err.message }
+            });
+        if (error != undefined)
+            return error;
+        else
+            return response;
+
     };
 
     function logout() {

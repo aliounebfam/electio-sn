@@ -9,22 +9,19 @@ import Tooltip from '@mui/material/Tooltip';
 import { useAuth } from '../../../context/AuthContext';
 
 export default function Home() {
-    // access to the current user
-    // const { currentUser } = useAuth();
-    // console.log(currentUser);
-
+    const { currentUser } = useAuth();
     const [src, setSrc] = useState("femme_senegalaise.jpg");
-
     const [mainHeight, setMainHeight] = useState(0);
     const main = useRef();
     const content = useRef();
-
     const [windowSize, setWindowSize] = useState({
         width: undefined,
         height: undefined,
     });
 
     useEffect(() => {
+        console.log(currentUser);
+
         const newMainHeight = content.current.clientHeight + 40;
         setMainHeight(newMainHeight);
 
@@ -36,7 +33,6 @@ export default function Home() {
             else {
                 setMainHeight("100vh");
             }
-
             setWindowSize({
                 width: window.innerWidth,
                 height: window.innerHeight,
@@ -44,9 +40,7 @@ export default function Home() {
         }
 
         window.addEventListener("resize", handleResize);
-
         handleResize();
-
         setTimeout(() => {
             setSrc('drapeau-senegal.jpg');
         }, 4000)
