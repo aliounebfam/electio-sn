@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword, signOut, updateEmail, updatePassword } from "firebase/auth"
+import { createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword, signOut, updateEmail, updatePassword, reauthenticateWithCredential, EmailAuthProvider } from "firebase/auth"
 import React, { useContext, useState, useEffect } from "react"
 import { auth } from "../services/firebase"
 
@@ -34,22 +34,30 @@ export function AuthProvider({ children }) {
 
     function resetPassword(email) {
         return sendPasswordResetEmail(auth, email)
-    }
+    };
 
     function updateEmailService(email) {
         return updateEmail(currentUser, email)
-    }
+    };
 
     function updatePasswordService(password) {
-        return updatePassword(currentUser, password)
-    }
+        return updatePassword(currentUser, password);
+    };
+
+    function reauthenticateUser(email, password) {
+        const credential = EmailAuthProvider.credential(
+            email,
+            password
+        );
+        return reauthenticateWithCredential(currentUser, credential);
+    };
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
             setCurrentUser(user)
             setLoading(false)
         })
-        return unsubscribe
+        return unsubscribe;
     }, [])
 
     const value = {
@@ -59,8 +67,9 @@ export function AuthProvider({ children }) {
         logout,
         resetPassword,
         updateEmailService,
-        updatePasswordService
-    }
+        updatePasswordService,
+        reauthenticateUser
+    };
 
     return (
         <AuthContext.Provider value={value}>

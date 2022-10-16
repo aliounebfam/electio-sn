@@ -14,12 +14,29 @@ export default function Profil() {
     const { register: registerChangeEmail, handleSubmit: handleSubmitChangeEmail, setValue: setValueChangeEmail, reset: resetChangeEmail, watch: watchChangeEmail, formState: { errors: errorsChangeEmail } } = useForm({ mode: "onChange" });
     const { enqueueSnackbar } = useSnackbar();
     const [districts, setDistricts] = useState([]);
-    const { currentUser, updateEmailService } = useAuth();
+    const { currentUser, updateEmailService, updatePasswordService, reauthenticateUser } = useAuth();
     const [voter, setVoter] = useState();
     const [openBackdrop, setOpenBackdrop] = useState(false);
 
     const onChangePasswordSubmit = async () => {
-        console.log();
+        setOpenBackdrop(true);
+        reauthenticateUser(voter.emailAddress, watchChangePassword().oldPassword)
+            .then(() => {
+                updatePasswordService(watchChangePassword().newPassword)
+                    .then(() => {
+                        enqueueSnackbar('Mot de passe modifié avec succès', { variant: 'success' });
+                    })
+                    .finally(() => setOpenBackdrop(false));
+            })
+            .catch((error) => {
+                if (error = "FirebaseError: Firebase: Error (auth/wrong-password).")
+                    enqueueSnackbar('Ancien mot de passe incorrect', { variant: 'error' });
+                else {
+                    enqueueSnackbar('Une erreur est survenue lors de la modification de votre adresse email', { variant: 'error', autoHideDuration: 5000 });
+                    enqueueSnackbar('Déconnectez-vous, reconnectez-vous puis réessayez', { variant: 'warning', autoHideDuration: 5000 });
+                };
+                setOpenBackdrop(false);
+            });
     };
 
     const onChangeEmailSubmit = async () => {
@@ -33,10 +50,10 @@ export default function Profil() {
                         })
                         .finally(() => {
                             setOpenBackdrop(false);
-                        })
+                        });
                 })
                 .catch(() => {
-                    enqueueSnackbar('Une erreur est survenue lors de la modification de l\'adresse email', { variant: 'error', autoHideDuration: 5000 });
+                    enqueueSnackbar('Une erreur est survenue lors de la modification de votre adresse email', { variant: 'error', autoHideDuration: 5000 });
                     enqueueSnackbar('Déconnectez-vous, reconnectez-vous puis réessayez', { variant: 'warning', autoHideDuration: 5000 });
                     setValueChangeEmail("emailAddress", voter.emailAddress);
                 });
@@ -60,7 +77,6 @@ export default function Profil() {
         getVoterDataFromEmail(currentUser.email).then(
             response => setVoter(response)
         );
-
     }, []);
 
     const getDistricts = () => {
@@ -72,13 +88,10 @@ export default function Profil() {
         });
     }
 
-
     return (
-
-
         <div className="bg-white mt-5 p-5 rounded-md shadow-md shadow-violet-400">
             <Backdrop
-                className="text-violet-600 bg-gray-700/25 backdrop-blur-[3px] z-20"
+                className="text-violet-600 bg-gray-700/25 backdrop-blur-[3px] z-50"
                 open={openBackdrop}
             >
                 <CircularProgress size={65} color="inherit" />
@@ -168,21 +181,26 @@ export default function Profil() {
                                 <div className="col-span-6">
                                     <label htmlFor="oldPassword" className="block text-md font-medium text-gray-700">Ancien mot de passe</label>
                                     <input autoComplete="off" aria-invalid={errorsChangePassword.oldPassword?.message} placeholder="Entrez votre ancien mot de passe" type="password" name="oldPassword" id="oldPassword" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errorsChangePassword.oldPassword?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...registerChangePassword("oldPassword", {
-                                        required: "Veuillez saisir votre mot de passe"
+                                        required: "Veuillez saisir ancien votre mot de passe",
                                     })} />
                                     {errorsChangePassword.oldPassword?.message && <span className='text-red-600'>{errorsChangePassword.oldPassword.message}</span>}
                                 </div>
                                 <div className="col-span-6">
                                     <label htmlFor="newPassword" className="block text-md font-medium text-gray-700">Nouveau mot de passe</label>
                                     <input autoComplete="off" aria-invalid={errorsChangePassword.newPassword?.message} placeholder="Entrez votre nouveau mot de passe" type="password" name="newPassword" id="newPassword" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errorsChangePassword.newPassword?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...registerChangePassword("newPassword", {
-                                        required: "Veuillez saisir votre mot de passe"
+                                        required: "Veuillez saisir votre nouveau mot de passe",
+                                        minLength: {
+                                            value: 6,
+                                            message: 'Le mot de passe doit comporter au moins 6 caractères' // JS only: <p>error message</p> TS only support string
+                                        }
                                     })} />
                                     {errorsChangePassword.newPassword?.message && <span className='text-red-600'>{errorsChangePassword.newPassword.message}</span>}
                                 </div>
                                 <div className="col-span-6">
                                     <label htmlFor="newPasswordConfirmation" className="block text-md font-medium text-gray-700">Confirmation du nouveau mot de passe</label>
                                     <input autoComplete="off" aria-invalid={errorsChangePassword.newPasswordConfirmation?.message} type="password" name="newPasswordConfirmation" id="newPasswordConfirmation" className={"mt-1 block w-full rounded-md  shadow-sm sm:text-sm " + (errorsChangePassword.newPasswordConfirmation?.message ? "border-red-500 border-l-[10px] focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-violet-500 focus:ring-violet-500")} {...registerChangePassword("newPasswordConfirmation", {
-                                        required: "Veuillez saisir votre mot de passe"
+                                        required: "Veuillez saisir votre mot de passe",
+                                        validate: value => value == watchChangePassword().newPassword || "Les mots de passe ne correspondent pas"
                                     })} />
                                     {errorsChangePassword.newPasswordConfirmation?.message && <span className='text-red-600'>{errorsChangePassword.newPasswordConfirmation.message}</span>}
                                 </div>
@@ -196,7 +214,6 @@ export default function Profil() {
                     </div>
                 </form>
             </div>
-
         </div>
     )
 }
