@@ -1,4 +1,4 @@
-import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, serverTimestamp, updateDoc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc, query, where } from "firebase/firestore";
 import { db } from "../firebase";
 
 export const voterCollectionRef = collection(db, "voters");
@@ -8,7 +8,6 @@ export const getVoterRef = (id) => {
 }
 
 export const addVoter = async (data) => {
-
     await addDoc(voterCollectionRef,
         {
             ...data,
@@ -45,4 +44,15 @@ export const getAllVoters = async () => {
     }
     else
         return error;
+}
+
+export const getVoterFromEmail = async (email) => {
+    let voter = undefined;
+    const q = query(voterCollectionRef, where("emailAddress", "==", email));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+        voter = { id: doc.id, ...doc.data() };
+    });
+    console.log(voter);
+    return voter;
 }
