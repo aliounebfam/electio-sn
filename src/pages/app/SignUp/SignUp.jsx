@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useSnackbar } from 'notistack'
 import { useEffect } from 'react';
@@ -15,14 +15,14 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { Camera } from "react-camera-pro";
 import { useRef } from 'react';
 import { getAllDistricts } from '../../../services/dashboard/DistrictService';
-import { addVoter } from '../../../services/dashboard/VoterService';
+import { addVoter, isEmailAddressAlreadyUsed } from '../../../services/dashboard/VoterService';
 import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
     const [datePickerValue, setDatePickerValue] = useState(undefined);
     const [districts, setDistricts] = useState([]);
     const [randomKeyForResetField, setRandomKeyForResetField] = useState();
-    const { register, handleSubmit, reset, watch, setValue, formState: { errors, isSubmitting } } = useForm({ mode: "onChange" });
+    const { register, handleSubmit, reset, watch, setValue, formState: { errors, isSubmitting, touchedFields } } = useForm({ mode: "onChange" });
     const { enqueueSnackbar, closeSnackbar } = useSnackbar();
     const camera = useRef(null);
     const [image, setImage] = useState(null);
@@ -56,9 +56,11 @@ export default function SignUp() {
         if (Object.keys(errors).length != 0) {
             let fieldValues = Object.values(watch()).filter((e) => e !== "" && e !== undefined && e != null);
             if (fieldValues.length != 8) {
-                closeSnackbar(lastFindErrorInFieldSnackbarId);
                 setLastFindErrorInFieldSnackbarId(enqueueSnackbar('Veuillez remplir tous les champs correctement', { variant: 'warning' }))
             }
+            setTimeout(() => {
+                closeSnackbar(lastFindErrorInFieldSnackbarId);
+            }, 3000);
         }
     }, [isSubmitting])
 
@@ -79,7 +81,6 @@ export default function SignUp() {
                 })
                 .catch(() => {
                     closeSnackbar(lastFindErrorInFieldSnackbarId);
-
                     enqueueSnackbar('Une erreur est survenue lors de la création de votre compte', { variant: 'error' });
                 });
         }
@@ -179,7 +180,8 @@ export default function SignUp() {
                                                 pattern: {
                                                     value: /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/i,
                                                     message: "L'adresse email saisie est invalide"
-                                                }
+                                                },
+                                                validate: async (value) => !await isEmailAddressAlreadyUsed(value) || "Il existe déjà un compte avec cette adresse email"
                                             })} />
                                             {errors.emailAddress?.message && <span className='text-red-600'>{errors.emailAddress.message}</span>}
                                         </div>

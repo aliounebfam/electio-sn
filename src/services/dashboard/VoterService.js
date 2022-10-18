@@ -55,3 +55,14 @@ export const getVoterDataFromEmail = async (email) => {
     });
     return voter;
 }
+
+export const isEmailAddressAlreadyUsed = async (email) => {
+    let isAlreadyUsed = false;
+    const q = query(voterCollectionRef, where("emailAddress", "==", email));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+        if (doc)
+            isAlreadyUsed = true;
+    });
+    return isAlreadyUsed;
+}
