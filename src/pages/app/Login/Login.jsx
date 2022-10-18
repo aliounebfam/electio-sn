@@ -22,6 +22,10 @@ export default function Login() {
                     if (response.code == "auth/user-not-found") {
                         enqueueSnackbar('Email et/ou mot de passe incorrect(s)', { variant: 'error' });
                     }
+                    else {
+                        enqueueSnackbar('Une erreur est survenue lors de la tentative de connexion', { variant: 'error' });
+                        enqueueSnackbar('Si l\'erreur persiste, changez de réseau puis réessayer', { variant: 'warning' });
+                    }
                 }
                 else {
                     enqueueSnackbar('Vous êtes correctement connecté(e)', {
@@ -41,7 +45,6 @@ export default function Login() {
             .finally(() => {
                 setOpenBackdrop(false);
             });
-
     };
 
     return (
@@ -64,7 +67,6 @@ export default function Login() {
                             Heureux de vous revoir parmi nous.
                         </div>
                         <div className='text-lg text-slate-800'>
-
                             Connectez-vous et ayez accès à plus de <span className='relative before:absolute before:bg-gradient-to-r before:from-[#007E3C] before:via-[#F0E33F] before:to-[#D71A21] before:w-full before:h-[1.8px] before:top-[calc(100%-7px)] before:scale-x-100 before:transition-transform before:duration-300 before:origin-[0_50%]'>fonctionnalités</span>.
                         </div>
                     </div>
