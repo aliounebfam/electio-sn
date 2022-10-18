@@ -5,31 +5,12 @@ import { useState, useEffect } from 'react';
 import Slide from '@mui/material/Slide';
 import Backdrop from '@mui/material/Backdrop';
 import { Tooltip } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
-import { useSnackbar } from 'notistack';
 import AsideNavbarContent from './AsideNavbarContent';
 
 
 export default function HeaderDash() {
     const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
     const [count, setCount] = useState(0);
-    const navigate = useNavigate();
-    const { logout } = useAuth();
-    const { enqueueSnackbar } = useSnackbar();
-
-    const handleSignOutClick = async () => {
-        await logout().then(() => {
-            navigate("/login");
-            enqueueSnackbar('Vous êtes correctement déconnecté(e)', {
-                variant: 'success',
-                anchorOrigin: {
-                    vertical: 'bottom',
-                    horizontal: 'right',
-                }
-            });
-        });
-    };
 
     useEffect(() => {
         setCount(count + 1)
@@ -55,8 +36,13 @@ export default function HeaderDash() {
                     {/* End Menu Button */}
 
                     <Link to={'profil'}>
-                        <Tooltip title="Cliquez pour accéder à votre profil" placement='bottom' followCursor>
-                            <img className="cursor-pointer inline-block h-10 w-10 rounded-full ring-2 ring-violet-700/40 hover:ring-violet-700 transition duration-300" src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="" />
+                        <Tooltip title="Cliquez pour accéder à votre profil" placement='bottom' arrow>
+                            <div className="flex group items-center">
+                                <span className="font-Comfortaa text-lg font-medium">
+                                    Mon profil
+                                </span>
+                                <img className="ml-4 cursor-pointer inline-block h-10 w-10 rounded-full ring-2 ring-violet-700/40 group-hover:ring-violet-700 transition duration-300" src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="" />
+                            </div>
                         </Tooltip>
                     </Link>
                 </div>
