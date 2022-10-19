@@ -1,0 +1,3883 @@
+{
+  "Dakar": {
+    "Dakar": [
+      {
+        "Gorée": {
+          "latitude": 14.6678596,
+          "longitude": -17.3989282,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Dakar Plateau": {
+          "latitude": 14.6629438,
+          "longitude": -17.4374803,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Gueule Tapée": {
+          "latitude": 14.6734519,
+          "longitude": -17.4632496,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Fass": {
+          "latitude": 14.691,
+          "longitude": -17.4543767,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Colobane": {
+          "latitude": 14.6734519,
+          "longitude": -17.4632496,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Fann-Point E-Amitié": {
+          "latitude": 14.6927081,
+          "longitude": -17.4616695,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Médina": {
+          "latitude": 14.6821999,
+          "longitude": -17.450951,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Grand-Dakar": {
+          "latitude": 14.699931,
+          "longitude": -17.4539407,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Biscuiterie": {
+          "latitude": 14.7111341,
+          "longitude": -17.4484616,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Dieuppeul-Derklé": {
+          "latitude": 14.7249629,
+          "longitude": -17.4514192,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Hann-Bel-Air": {
+          "latitude": 14.69789,
+          "longitude": -17.4369451,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Sicap-Liberté": {
+          "latitude": 14.7217792,
+          "longitude": -17.4633259,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "HLM": {
+          "latitude": 14.7001174,
+          "longitude": -17.4455042,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Mermoz-Sacré Coeur": {
+          "latitude": 14.7034173,
+          "longitude": -17.4746142,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Ouakam": {
+          "latitude": 14.72305,
+          "longitude": -17.4943069,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Ngor": {
+          "latitude": 14.7441621,
+          "longitude": -17.5120556,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Yoff": {
+          "latitude": 14.7434165,
+          "longitude": -17.485433,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Grand-Yoff": {
+          "latitude": 14.7328281,
+          "longitude": -17.4561914,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Patte d'oie": {
+          "latitude": 14.7483723,
+          "longitude": -17.4395893,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Parcelles Assainies": {
+          "latitude": 14.7609131,
+          "longitude": -17.441068,
+          "departement": "Dakar"
+        }
+      },
+      {
+        "Cambérène": {
+          "latitude": 14.7716841,
+          "longitude": -17.4218702,
+          "departement": "Dakar"
+        }
+      }
+    ],
+    "Pikine": [
+      {
+        "Pikine- Est": {
+          "latitude": 14.7581085,
+          "longitude": -17.3863615,
+          "departement": "Pikine"
+        }
+      },
+      {
+        "Pikine-Nord": {
+          "latitude": 14.760237,
+          "longitude": -17.3952321,
+          "departement": "Pikine"
+        }
+      },
+      {
+        "Pikine-Ouest": {
+          "latitude": 14.7524062,
+          "longitude": -17.4055814,
+          "departement": "Pikine"
+        }
+      },
+      {
+        "Dalifort-Foirail": {
+          "latitude": 14.7406998,
+          "longitude": -17.4114955,
+          "departement": "Pikine"
+        }
+      },
+      {
+        "Djeddha Thiaroye Kao": {
+          "latitude": 14.7641907,
+          "longitude": -17.380448,
+          "departement": "Pikine"
+        }
+      },
+      {
+        "Guinaw Rail-Nord": {
+          "latitude": 14.7527106,
+          "longitude": -17.3834048,
+          "departement": "Pikine"
+        }
+      },
+      {
+        "Guinaw Rail-Sud": {
+          "latitude": 14.7527106,
+          "longitude": -17.3834048,
+          "departement": "Pikine"
+        }
+      },
+      {
+        "Tivaoune-Diacksao": {
+          "latitude": 14.7466798,
+          "longitude": -17.3617745,
+          "departement": "Pikine"
+        }
+      },
+      {
+        "Diamagueune-Sicap Mbao": {
+          "latitude": 14.7486152,
+          "longitude": -17.3521272,
+          "departement": "Pikine"
+        }
+      },
+      {
+        "Mbao": {
+          "latitude": 14.729852,
+          "longitude": -17.325817,
+          "departement": "Pikine"
+        }
+      },
+      {
+        "Keur Massar": {
+          "latitude": 14.786368,
+          "longitude": -17.311941,
+          "departement": "Pikine"
+        }
+      },
+      {
+        "Malika": {
+          "latitude": 14.796181,
+          "longitude": -17.337383,
+          "departement": "Pikine"
+        }
+      },
+      {
+        "Yeumbeul-Sud": {
+          "latitude": 14.7721845,
+          "longitude": -17.3581264,
+          "departement": "Pikine"
+        }
+      },
+      {
+        "Yeumbeul-Nord": {
+          "latitude": 14.7721845,
+          "longitude": -17.3581264,
+          "departement": "Pikine"
+        }
+      }
+    ],
+    "Guediawaye": [
+      {
+        "Golf-Sud": {
+          "latitude": 14.7753368,
+          "longitude": -17.4090132,
+          "departement": "Guediawaye"
+        }
+      },
+      {
+        "Sam-Notaire": {
+          "latitude": 14.7741389,
+          "longitude": -17.3961413,
+          "departement": "Guediawaye"
+        }
+      },
+      {
+        "Ndiarème-Limamoulaye": {
+          "latitude": 14.779491,
+          "longitude": -17.38465,
+          "departement": "Guediawaye"
+        }
+      },
+      {
+        "Wakhinane": {
+          "latitude": 14.6994908,
+          "longitude": -17.439959,
+          "departement": "Guediawaye"
+        }
+      },
+      {
+        "Médina Gounass": {
+          "latitude": 13.146617,
+          "longitude": -13.752088,
+          "departement": "Guediawaye"
+        }
+      }
+    ],
+    "Rufisque": [
+      {
+        "Bargny": {
+          "latitude": 14.6984847,
+          "longitude": -17.2282225,
+          "departement": "Rufisque"
+        }
+      },
+      {
+        "Sébikotane": {
+          "latitude": 14.7450749,
+          "longitude": -17.1336827,
+          "departement": "Rufisque"
+        }
+      },
+      {
+        "Sendou": {
+          "latitude": 14.67231,
+          "longitude": -17.20784,
+          "departement": "Rufisque"
+        }
+      },
+      {
+        "Rufisque-Est": {
+          "latitude": 14.71554,
+          "longitude": -17.270929,
+          "departement": "Rufisque"
+        }
+      },
+      {
+        "Rufisque-Nord": {
+          "latitude": 14.71554,
+          "longitude": -17.270929,
+          "departement": "Rufisque"
+        }
+      },
+      {
+        "Rufisque-Ouest": {
+          "latitude": 14.71554,
+          "longitude": -17.270929,
+          "departement": "Rufisque"
+        }
+      },
+      {
+        "Bambylor": {
+          "latitude": 14.79959,
+          "longitude": -17.183611,
+          "departement": "Rufisque"
+        }
+      },
+      {
+        "Yène Kao": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Rufisque"
+        }
+      },
+      {
+        "Tivaouane Peulh-Niaga": {
+          "latitude": 14.8056993,
+          "longitude": -17.2799392,
+          "departement": "Rufisque"
+        }
+      },
+      {
+        "Diamniadio": {
+          "latitude": 14.065613,
+          "longitude": -16.57579,
+          "departement": "Rufisque"
+        }
+      },
+      {
+        "Sangalkam": {
+          "latitude": 14.778973,
+          "longitude": -17.2260129,
+          "departement": "Rufisque"
+        }
+      },
+      {
+        "Jaxaay-Parcelles-Niakoul Rap": {
+          "latitude": 14.7750486,
+          "longitude": -17.2802335,
+          "departement": "Rufisque"
+        }
+      }
+    ]
+  },
+  "Thies": {
+    "Thies": [
+      {
+        "Khombole": {
+          "latitude": 14.7673872,
+          "longitude": -16.685136,
+          "departement": "Thies"
+        }
+      },
+      {
+        "Pout": {
+          "latitude": 14.7673432,
+          "longitude": -17.062802,
+          "departement": "Thies"
+        }
+      },
+      {
+        "Thiès-Ouest": {
+          "latitude": 14.7727624,
+          "longitude": -16.9535691,
+          "departement": "Thies"
+        }
+      },
+      {
+        "Thiès-Est": {
+          "latitude": 14.7763067,
+          "longitude": -16.9063491,
+          "departement": "Thies"
+        }
+      },
+      {
+        "Thiès-Nord": {
+          "latitude": 14.8013929,
+          "longitude": -16.947666,
+          "departement": "Thies"
+        }
+      },
+      {
+        "Thiénaba": {
+          "latitude": 14.762645,
+          "longitude": -16.795746,
+          "departement": "Thies"
+        }
+      },
+      {
+        "Ngoudiane": {
+          "latitude": 14.7258756,
+          "longitude": -16.7358835,
+          "departement": "Thies"
+        }
+      },
+      {
+        "Ndiéyène Sirakh": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Thies"
+        }
+      },
+      {
+        "Touba Toul": {
+          "latitude": 14.8665572,
+          "longitude": -15.8994956,
+          "departement": "Thies"
+        }
+      },
+      {
+        "Keur Moussa": {
+          "latitude": 14.7779642,
+          "longitude": -17.1240813,
+          "departement": "Thies"
+        }
+      },
+      {
+        "Diender": {
+          "latitude": 14.889437,
+          "longitude": -17.082741,
+          "departement": "Thies"
+        }
+      },
+      {
+        "Fandène": {
+          "latitude": 14.4543383,
+          "longitude": -16.9132905,
+          "departement": "Thies"
+        }
+      },
+      {
+        "Kayar": {
+          "latitude": 14.9165428,
+          "longitude": -17.1203909,
+          "departement": "Thies"
+        }
+      },
+      {
+        "Notto": {
+          "latitude": 14.6980775,
+          "longitude": -16.8783167,
+          "departement": "Thies"
+        }
+      },
+      {
+        "Tassète": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Thies"
+        }
+      }
+    ],
+    "Tivaouane": [
+      {
+        "Tivaouane": {
+          "latitude": 14.9526715,
+          "longitude": -16.8119382,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Mékhé": {
+          "latitude": 15.115983,
+          "longitude": -16.6320777,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Mboro": {
+          "latitude": 15.1393769,
+          "longitude": -16.8827427,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Méouane": {
+          "latitude": 15.078687,
+          "longitude": -16.7610612,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Darou Khoudoss": {
+          "latitude": 15.110346,
+          "longitude": -16.841974,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Taïba Ndiaye": {
+          "latitude": 15.0394223,
+          "longitude": -16.8783167,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Mérina Dakhar": {
+          "latitude": 15.633333,
+          "longitude": -16.433333,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Koul": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Pékèsse": {
+          "latitude": 15.11376,
+          "longitude": -16.415559,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Niakhène": {
+          "latitude": 15.077949,
+          "longitude": -16.3483069,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Mbayène": {
+          "latitude": 15.17734,
+          "longitude": -16.304724,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Thilmakha": {
+          "latitude": 15.0379112,
+          "longitude": -16.2536853,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Ngandiouf": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Notto Gouye Diama": {
+          "latitude": 14.993048,
+          "longitude": -17.005227,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Mont Rolland": {
+          "latitude": 14.9208187,
+          "longitude": -16.9904664,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Pire Goureye": {
+          "latitude": 15.0123286,
+          "longitude": -16.7323097,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Chérif Lo": {
+          "latitude": 14.894587,
+          "longitude": -16.8537329,
+          "departement": "Tivaouane"
+        }
+      },
+      {
+        "Pambal": {
+          "latitude": 14.968629,
+          "longitude": -16.89579,
+          "departement": "Tivaouane"
+        }
+      }
+    ],
+    "Mbour": [
+      {
+        "Mbour": {
+          "latitude": 14.4228422,
+          "longitude": -16.9653756,
+          "departement": "Mbour"
+        }
+      },
+      {
+        "Joal Fadiouth": {
+          "latitude": 14.1811693,
+          "longitude": -16.8502879,
+          "departement": "Mbour"
+        }
+      },
+      {
+        "Fissel": {
+          "latitude": 14.5413631,
+          "longitude": -16.6143944,
+          "departement": "Mbour"
+        }
+      },
+      {
+        "Ndiaganiao": {
+          "latitude": 14.5388455,
+          "longitude": -16.7264125,
+          "departement": "Mbour"
+        }
+      },
+      {
+        "Sessene": {
+          "latitude": 14.428417,
+          "longitude": -16.7533299,
+          "departement": "Mbour"
+        }
+      },
+      {
+        "Sandiara": {
+          "latitude": 14.4340744,
+          "longitude": -16.7927658,
+          "departement": "Mbour"
+        }
+      },
+      {
+        "Nguéniène": {
+          "latitude": 14.2657,
+          "longitude": -16.75079,
+          "departement": "Mbour"
+        }
+      },
+      {
+        "Thiadiaye": {
+          "latitude": 14.4223149,
+          "longitude": -16.702825,
+          "departement": "Mbour"
+        }
+      },
+      {
+        "Sindia": {
+          "latitude": 14.5889351,
+          "longitude": -17.0391798,
+          "departement": "Mbour"
+        }
+      },
+      {
+        "Malicounda": {
+          "latitude": 14.4842035,
+          "longitude": -16.9412098,
+          "departement": "Mbour"
+        }
+      },
+      {
+        "Diass": {
+          "latitude": 14.6373423,
+          "longitude": -17.0879032,
+          "departement": "Mbour"
+        }
+      },
+      {
+        "Nguékhokh": {
+          "latitude": 14.5179897,
+          "longitude": -17.0096553,
+          "departement": "Mbour"
+        }
+      },
+      {
+        "Saly Portudal": {
+          "latitude": 14.443593,
+          "longitude": -16.9889904,
+          "departement": "Mbour"
+        }
+      },
+      {
+        "Ngaparou": {
+          "latitude": 14.4651653,
+          "longitude": -17.0583726,
+          "departement": "Mbour"
+        }
+      },
+      {
+        "Somone": {
+          "latitude": 14.4850425,
+          "longitude": -17.074614,
+          "departement": "Mbour"
+        }
+      },
+      {
+        "Popenguine-Ndayane": {
+          "latitude": 14.5567995,
+          "longitude": -17.1115302,
+          "departement": "Mbour"
+        }
+      }
+    ]
+  },
+
+  "Louga": {
+    "Louga": [
+      {
+        "Coki": {
+          "latitude": 15.5040533,
+          "longitude": -15.9905529,
+          "departement": "Louga"
+        }
+      },
+      {
+        "Ndiagne": {
+          "latitude": 15.4184221,
+          "longitude": -16.0728356,
+          "departement": "Louga"
+        }
+      },
+      {
+        "Guet Ardo": {
+          "latitude": 15.4103452,
+          "longitude": -16.0860628,
+          "departement": "Louga"
+        }
+      },
+      {
+        "Thiamène Cayor": {
+          "latitude": 15.4789999,
+          "longitude": -15.8671954,
+          "departement": "Louga"
+        }
+      },
+      {
+        "Pété Ouarack": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Louga"
+        }
+      },
+      {
+        "Keur Momar Sarr": {
+          "latitude": 15.9230977,
+          "longitude": -15.9626436,
+          "departement": "Louga"
+        }
+      },
+      {
+        "Nguer Malal": {
+          "latitude": 15.7405791,
+          "longitude": -16.0037745,
+          "departement": "Louga"
+        }
+      },
+      {
+        "Syer": {
+          "latitude": 16.0759285,
+          "longitude": -15.8928883,
+          "departement": "Louga"
+        }
+      },
+      {
+        "Gande": {
+          "latitude": 15.576545,
+          "longitude": -15.8363687,
+          "departement": "Louga"
+        }
+      },
+      {
+        "Mbédiene": {
+          "latitude": 15.5097391,
+          "longitude": -16.2007366,
+          "departement": "Louga"
+        }
+      },
+      {
+        "Niomré": {
+          "latitude": 15.6752963,
+          "longitude": -16.11546,
+          "departement": "Louga"
+        }
+      },
+      {
+        "Nguidilé": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Louga"
+        }
+      },
+      {
+        "Kéle Gueye": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Louga"
+        }
+      },
+      {
+        "Léona": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Louga"
+        }
+      },
+      {
+        "Sakal": {
+          "latitude": 15.6,
+          "longitude": -16.066667,
+          "departement": "Louga"
+        }
+      },
+      {
+        "Ngueune Sarr": {
+          "latitude": 15.7136994,
+          "longitude": -16.2750158,
+          "departement": "Louga"
+        }
+      }
+    ],
+    "Kebemer": [
+      {
+        "Bandegne Ouolof": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Diokoul Diawrigne": {
+          "latitude": 15.3745907,
+          "longitude": -16.5164262,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Kab Gaye": {
+          "latitude": 15.312659,
+          "longitude": -16.62829,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Ndande": {
+          "latitude": 15.2768199,
+          "longitude": -16.5260001,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Thieppe": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Guéoul": {
+          "latitude": 15.4777226,
+          "longitude": -16.3434358,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Mbacké Cajor": {
+          "latitude": 14.8038531,
+          "longitude": -15.9053689,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Darou Marnane": {
+          "latitude": 14.832029,
+          "longitude": -15.885219,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Darou Mousty": {
+          "latitude": 15.0430419,
+          "longitude": -16.0463837,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Mbadiane": {
+          "latitude": 15.103187,
+          "longitude": -15.874526,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Ndoyene": {
+          "latitude": 14.5669418,
+          "longitude": -17.1262983,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Sam Yabal": {
+          "latitude": 15.2080879,
+          "longitude": -15.9009639,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Touba Mérina": {
+          "latitude": 15.2567586,
+          "longitude": -16.0125895,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Ngourane Ouolof": {
+          "latitude": 15.4458989,
+          "longitude": -16.2948773,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Thiolom Fall": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Sagatta Gueth": {
+          "latitude": 15.2820089,
+          "longitude": -16.1713267,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Kanène Ndiob": {
+          "latitude": 15.3662572,
+          "longitude": -16.1735323,
+          "departement": "Kebemer"
+        }
+      },
+      {
+        "Loro": {
+          "latitude": 15.273954,
+          "longitude": -16.102308,
+          "departement": "Kebemer"
+        }
+      }
+    ],
+    "Linguere": [
+      {
+        "Linguère": {
+          "latitude": 15.3961099,
+          "longitude": -15.1112776,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Dahra": {
+          "latitude": 15.3558802,
+          "longitude": -15.4829681,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Barkédji": {
+          "latitude": 15.2773856,
+          "longitude": -14.8673531,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Gassane": {
+          "latitude": 14.8206267,
+          "longitude": -15.2926308,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Thiargny": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Thiel": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Boulal": {
+          "latitude": 15.25,
+          "longitude": -14.1,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Dealy": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Thiamène Pass": {
+          "latitude": 15.4789999,
+          "longitude": -15.8671954,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Sagatta Djolof": {
+          "latitude": 15.2820089,
+          "longitude": -16.1713267,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Affé Djiolof": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Dodji": {
+          "latitude": 15.5342144,
+          "longitude": -14.9491069,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Labgar": {
+          "latitude": 15.82649,
+          "longitude": -14.81075,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Ouarkhokh": {
+          "latitude": 15.3832114,
+          "longitude": -15.2355711,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Kamb": {
+          "latitude": 15.533333,
+          "longitude": -15.433333,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Mboula": {
+          "latitude": 15.6714295,
+          "longitude": -15.4317028,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Téssékéré Forage": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Linguere"
+        }
+      },
+      {
+        "Yang-Yang": {
+          "latitude": 15.5893191,
+          "longitude": -15.3438547,
+          "departement": "Linguere"
+        }
+      }
+    ]
+  },
+
+  "Kaolack": {
+    "Kaolack": [
+      {
+        "Kaolack": {
+          "latitude": 14.1652083,
+          "longitude": -16.0757749,
+          "departement": "Kaolack"
+        }
+      },
+      {
+        "Kahone": {
+          "latitude": 14.155166,
+          "longitude": -16.037436,
+          "departement": "Kaolack"
+        }
+      },
+      {
+        "Keur Baka": {
+          "latitude": 13.656837,
+          "longitude": -15.679619,
+          "departement": "Kaolack"
+        }
+      },
+      {
+        "Latmingué": {
+          "latitude": 14.06913,
+          "longitude": -15.93364,
+          "departement": "Kaolack"
+        }
+      },
+      {
+        "Thiaré": {
+          "latitude": 13.89734,
+          "longitude": -15.77906,
+          "departement": "Kaolack"
+        }
+      },
+      {
+        "Ndoffane": {
+          "latitude": 13.919217,
+          "longitude": -15.9259271,
+          "departement": "Kaolack"
+        }
+      },
+      {
+        "Keur Socé": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Kaolack"
+        }
+      },
+      {
+        "Ndiaffate": {
+          "latitude": 14.088965,
+          "longitude": -16.167227,
+          "departement": "Kaolack"
+        }
+      },
+      {
+        "Ndiedieng": {
+          "latitude": 13.949785,
+          "longitude": -16.1501647,
+          "departement": "Kaolack"
+        }
+      },
+      {
+        "Dya": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Kaolack"
+        }
+      },
+      {
+        "Ndiébel": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Kaolack"
+        }
+      },
+      {
+        "Thiomby": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Kaolack"
+        }
+      },
+      {
+        "Gandiaye": {
+          "latitude": 14.2445365,
+          "longitude": -16.2728091,
+          "departement": "Kaolack"
+        }
+      },
+      {
+        "Sibassor": {
+          "latitude": 14.2061555,
+          "longitude": -16.1604421,
+          "departement": "Kaolack"
+        }
+      }
+    ],
+    "Guinguineo": [
+      {
+        "Guinguinéo": {
+          "latitude": 14.270251,
+          "longitude": -15.9406128,
+          "departement": "Guinguineo"
+        }
+      },
+      {
+        "Khelcom ? Birane": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Guinguineo"
+        }
+      },
+      {
+        "Mbadakhoune": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Guinguineo"
+        }
+      },
+      {
+        "Ndiago": {
+          "latitude": 14.9244444,
+          "longitude": -17.0347222,
+          "departement": "Guinguineo"
+        }
+      },
+      {
+        "Ngathie Naoudé": {
+          "latitude": 14.095794,
+          "longitude": -15.8773988,
+          "departement": "Guinguineo"
+        }
+      },
+      {
+        "Fass": {
+          "latitude": 14.691,
+          "longitude": -17.4543767,
+          "departement": "Guinguineo"
+        }
+      },
+      {
+        "Gagnick": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Guinguineo"
+        }
+      },
+      {
+        "Dara Mboss": {
+          "latitude": 14.3205691,
+          "longitude": -15.714099,
+          "departement": "Guinguineo"
+        }
+      },
+      {
+        "Nguélou": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Guinguineo"
+        }
+      },
+      {
+        "Ourour": {
+          "latitude": 14.32361,
+          "longitude": -16.030491,
+          "departement": "Guinguineo"
+        }
+      },
+      {
+        "Panal Ouolof": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Guinguineo"
+        }
+      },
+      {
+        "Mboss": {
+          "latitude": 14.3650605,
+          "longitude": -15.7497878,
+          "departement": "Guinguineo"
+        }
+      }
+    ],
+    "Nioro du Rip": [
+      {
+        "Kayemor": {
+          "latitude": 14.9165428,
+          "longitude": -17.1203909,
+          "departement": "Nioro du Rip"
+        }
+      },
+      {
+        "Médina Sabakh": {
+          "latitude": 13.6001563,
+          "longitude": -15.5811465,
+          "departement": "Nioro du Rip"
+        }
+      },
+      {
+        "Ngayene": {
+          "latitude": 13.6846456,
+          "longitude": -15.490293,
+          "departement": "Nioro du Rip"
+        }
+      },
+      {
+        "Gainthe Kaye": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Nioro du Rip"
+        }
+      },
+      {
+        "Dabaly": {
+          "latitude": 13.741923,
+          "longitude": -15.684867,
+          "departement": "Nioro du Rip"
+        }
+      },
+      {
+        "Darou Salam": {
+          "latitude": 15.020773,
+          "longitude": -15.902403,
+          "departement": "Nioro du Rip"
+        }
+      },
+      {
+        "Paos Koto": {
+          "latitude": 13.7856565,
+          "longitude": -15.7982094,
+          "departement": "Nioro du Rip"
+        }
+      },
+      {
+        "Porokhane": {
+          "latitude": 13.690613,
+          "longitude": -15.830055,
+          "departement": "Nioro du Rip"
+        }
+      },
+      {
+        "Taïba Niassène": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Nioro du Rip"
+        }
+      },
+      {
+        "Keur Maba Diakhou": {
+          "latitude": 13.65,
+          "longitude": -15.983333,
+          "departement": "Nioro du Rip"
+        }
+      },
+      {
+        "Keur Madongo": {
+          "latitude": 14.908855,
+          "longitude": -15.771968,
+          "departement": "Nioro du Rip"
+        }
+      },
+      {
+        "Ndramé Escale": {
+          "latitude": 13.8017517,
+          "longitude": -16.1719605,
+          "departement": "Nioro du Rip"
+        }
+      },
+      {
+        "Wack Ngouna": {
+          "latitude": 13.7584764,
+          "longitude": -16.0610787,
+          "departement": "Nioro du Rip"
+        }
+      },
+      {
+        "Keur Madiabel": {
+          "latitude": 13.8487435,
+          "longitude": -16.0552006,
+          "departement": "Nioro du Rip"
+        }
+      }
+    ]
+  },
+
+  "Diourbel": {
+    "Diourbel": [
+      {
+        "Diourbel": {
+          "latitude": 14.6561238,
+          "longitude": -16.2345633,
+          "departement": "Diourbel"
+        }
+      },
+      {
+        "Ndoulo": {
+          "latitude": 14.7399018,
+          "longitude": -16.1095802,
+          "departement": "Diourbel"
+        }
+      },
+      {
+        "Ngohe": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Diourbel"
+        }
+      },
+      {
+        "Pattar": {
+          "latitude": 14.703772,
+          "longitude": -16.156868,
+          "departement": "Diourbel"
+        }
+      },
+      {
+        "Tocky Gare": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Diourbel"
+        }
+      },
+      {
+        "Touré Mbondé": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Diourbel"
+        }
+      },
+      {
+        "Ndankh Séne": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Diourbel"
+        }
+      },
+      {
+        "Gade Escale": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Diourbel"
+        }
+      },
+      {
+        "Touba Lappé": {
+          "latitude": 14.8665572,
+          "longitude": -15.8994956,
+          "departement": "Diourbel"
+        }
+      },
+      {
+        "Keur Ngalgou": {
+          "latitude": 14.8737045,
+          "longitude": -16.3059946,
+          "departement": "Diourbel"
+        }
+      },
+      {
+        "Ndindy": {
+          "latitude": 14.8943707,
+          "longitude": -16.2036778,
+          "departement": "Diourbel"
+        }
+      },
+      {
+        "Taïba Moutoupha": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Diourbel"
+        }
+      }
+    ],
+    "Bambey": [
+      {
+        "Bambey": {
+          "latitude": 14.6965115,
+          "longitude": -16.458256,
+          "departement": "Bambey"
+        }
+      },
+      {
+        "Dinguiraye": {
+          "latitude": 14.028324,
+          "longitude": -16.123465,
+          "departement": "Bambey"
+        }
+      },
+      {
+        "Baba Garage": {
+          "latitude": 14.9414124,
+          "longitude": -16.4891799,
+          "departement": "Bambey"
+        }
+      },
+      {
+        "Keur Samba Kane": {
+          "latitude": 14.8966216,
+          "longitude": -16.5981861,
+          "departement": "Bambey"
+        }
+      },
+      {
+        "Ngoye": {
+          "latitude": 14.6417724,
+          "longitude": -16.4346979,
+          "departement": "Bambey"
+        }
+      },
+      {
+        "Thiakhar": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Bambey"
+        }
+      },
+      {
+        "Ndondol": {
+          "latitude": 14.6439232,
+          "longitude": -16.5811415,
+          "departement": "Bambey"
+        }
+      },
+      {
+        "Ndangalma": {
+          "latitude": 14.7252639,
+          "longitude": -16.5672462,
+          "departement": "Bambey"
+        }
+      },
+      {
+        "Lambaye": {
+          "latitude": 14.8023331,
+          "longitude": -16.5363109,
+          "departement": "Bambey"
+        }
+      },
+      {
+        "Réfane": {
+          "latitude": 14.783489,
+          "longitude": -16.614553,
+          "departement": "Bambey"
+        }
+      },
+      {
+        "Gawane": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Bambey"
+        }
+      }
+    ],
+    "Mbacke": [
+      {
+        "Ngogom": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Mbacke"
+        }
+      },
+      {
+        "Touba Mosquée": {
+          "latitude": 14.8631766,
+          "longitude": -15.8758222,
+          "departement": "Mbacke"
+        }
+      },
+      {
+        "Dalla Ngabou": {
+          "latitude": 14.772693,
+          "longitude": -15.977585,
+          "departement": "Mbacke"
+        }
+      },
+      {
+        "Missirah": {
+          "latitude": 13.68042,
+          "longitude": -16.50128,
+          "departement": "Mbacke"
+        }
+      },
+      {
+        "Nghaye": {
+          "latitude": 14.4415617,
+          "longitude": -15.8290298,
+          "departement": "Mbacke"
+        }
+      },
+      {
+        "Touba Fall": {
+          "latitude": 14.8665572,
+          "longitude": -15.8994956,
+          "departement": "Mbacke"
+        }
+      },
+      {
+        "Darou Salam Typ": {
+          "latitude": 14.692671,
+          "longitude": -15.927506,
+          "departement": "Mbacke"
+        }
+      },
+      {
+        "Darou Nahim": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Mbacke"
+        }
+      },
+      {
+        "Kael": {
+          "latitude": 14.7119858,
+          "longitude": -15.9039005,
+          "departement": "Mbacke"
+        }
+      },
+      {
+        "Madina": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Mbacke"
+        }
+      },
+      {
+        "Touba Mboul": {
+          "latitude": 14.8665572,
+          "longitude": -15.8994956,
+          "departement": "Mbacke"
+        }
+      },
+      {
+        "Taïba Thièkène": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Mbacke"
+        }
+      },
+      {
+        "Dendèye Gouy Gui": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Mbacke"
+        }
+      },
+      {
+        "Ndioumane": {
+          "latitude": 14.6297117,
+          "longitude": -15.9986327,
+          "departement": "Mbacke"
+        }
+      },
+      {
+        "Taïf": {
+          "latitude": 14.383333,
+          "longitude": -15.066667,
+          "departement": "Mbacke"
+        }
+      },
+      {
+        "Sadio": {
+          "latitude": 14.7977888,
+          "longitude": -15.5445064,
+          "departement": "Mbacke"
+        }
+      }
+    ]
+  },
+
+  "Fatick": {
+    "Fatick": [
+      {
+        "Dioffior": {
+          "latitude": 14.1864516,
+          "longitude": -16.6586052,
+          "departement": "Fatick"
+        }
+      },
+      {
+        "Thiaré Ndialgui": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Fatick"
+        }
+      },
+      {
+        "Diaoulé": {
+          "latitude": 14.366667,
+          "longitude": -16.216667,
+          "departement": "Fatick"
+        }
+      },
+      {
+        "Mbéllacadiao": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Fatick"
+        }
+      },
+      {
+        "Ndiop": {
+          "latitude": 14.542241,
+          "longitude": -16.255987,
+          "departement": "Fatick"
+        }
+      },
+      {
+        "Diakhao": {
+          "latitude": 14.4630791,
+          "longitude": -16.2904635,
+          "departement": "Fatick"
+        }
+      },
+      {
+        "Djilasse": {
+          "latitude": 14.245842,
+          "longitude": -16.634575,
+          "departement": "Fatick"
+        }
+      },
+      {
+        "Loul Sessène": {
+          "latitude": 14.313829,
+          "longitude": -16.60973,
+          "departement": "Fatick"
+        }
+      },
+      {
+        "Palmarin Facao": {
+          "latitude": 14.015725,
+          "longitude": -16.7647799,
+          "departement": "Fatick"
+        }
+      },
+      {
+        "Niakhar": {
+          "latitude": 14.47593,
+          "longitude": -16.403219,
+          "departement": "Fatick"
+        }
+      },
+      {
+        "Ngayokhème": {
+          "latitude": 14.5351305,
+          "longitude": -16.4345849,
+          "departement": "Fatick"
+        }
+      },
+      {
+        "Patar": {
+          "latitude": 14.703772,
+          "longitude": -16.156868,
+          "departement": "Fatick"
+        }
+      },
+      {
+        "Diarrère": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Fatick"
+        }
+      },
+      {
+        "Diouroup": {
+          "latitude": 14.3674651,
+          "longitude": -16.5260001,
+          "departement": "Fatick"
+        }
+      },
+      {
+        "Tattaguine": {
+          "latitude": 14.4250062,
+          "longitude": -16.6070268,
+          "departement": "Fatick"
+        }
+      }
+    ],
+    "Foundiougne": [
+      {
+        "Foundiougne": {
+          "latitude": 14.1240756,
+          "longitude": -16.4670909,
+          "departement": "Foundiougne"
+        }
+      },
+      {
+        "Sokone": {
+          "latitude": 13.8778012,
+          "longitude": -16.3728707,
+          "departement": "Foundiougne"
+        }
+      },
+      {
+        "Keur Saloum Diané": {
+          "latitude": 13.753866,
+          "longitude": -16.32563,
+          "departement": "Foundiougne"
+        }
+      },
+      {
+        "Keur Samba Gueye": {
+          "latitude": 13.943329,
+          "longitude": -16.014255,
+          "departement": "Foundiougne"
+        }
+      },
+      {
+        "Toubacouta": {
+          "latitude": 13.7821423,
+          "longitude": -16.4692997,
+          "departement": "Foundiougne"
+        }
+      },
+      {
+        "Nioro Alassane Tall": {
+          "latitude": 13.7776949,
+          "longitude": -16.3390209,
+          "departement": "Foundiougne"
+        }
+      },
+      {
+        "Karang Poste": {
+          "latitude": 13.6050746,
+          "longitude": -16.4258643,
+          "departement": "Foundiougne"
+        }
+      },
+      {
+        "Passy": {
+          "latitude": 13.9865575,
+          "longitude": -16.2610404,
+          "departement": "Foundiougne"
+        }
+      },
+      {
+        "Soum": {
+          "latitude": 14.0839104,
+          "longitude": -16.4755791,
+          "departement": "Foundiougne"
+        }
+      },
+      {
+        "Diossong": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Foundiougne"
+        }
+      },
+      {
+        "Djilor": {
+          "latitude": 14.0566349,
+          "longitude": -16.3353419,
+          "departement": "Foundiougne"
+        }
+      },
+      {
+        "Niassène": {
+          "latitude": 16.0084589,
+          "longitude": -16.165018,
+          "departement": "Foundiougne"
+        }
+      },
+      {
+        "Diagane Barka": {
+          "latitude": 14.1903626,
+          "longitude": -16.6678169,
+          "departement": "Foundiougne"
+        }
+      },
+      {
+        "Mbam": {
+          "latitude": 14.1192085,
+          "longitude": -16.4361702,
+          "departement": "Foundiougne"
+        }
+      },
+      {
+        "Bassoul": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Foundiougne"
+        }
+      },
+      {
+        "Dionewar": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Foundiougne"
+        }
+      },
+      {
+        "Djirnda": {
+          "latitude": 13.983333,
+          "longitude": -16.6,
+          "departement": "Foundiougne"
+        }
+      }
+    ],
+    "Gossas": [
+      {
+        "Gossas": {
+          "latitude": 14.4957057,
+          "longitude": -16.0669571,
+          "departement": "Gossas"
+        }
+      },
+      {
+        "Colobane": {
+          "latitude": 14.6734519,
+          "longitude": -17.4632496,
+          "departement": "Gossas"
+        }
+      },
+      {
+        "Mbar": {
+          "latitude": 14.5398422,
+          "longitude": -15.7556564,
+          "departement": "Gossas"
+        }
+      },
+      {
+        "Ndiene Lagane": {
+          "latitude": 14.5111561,
+          "longitude": -15.9259271,
+          "departement": "Gossas"
+        }
+      },
+      {
+        "Ouadiour": {
+          "latitude": 14.429196,
+          "longitude": -16.0493226,
+          "departement": "Gossas"
+        }
+      },
+      {
+        "Patar Lia": {
+          "latitude": 14.496325,
+          "longitude": -16.163803,
+          "departement": "Gossas"
+        }
+      }
+    ]
+  },
+  "Kaffrine": {
+    "Kaffrine": [
+      {
+        "Nganda": {
+          "latitude": 13.8279624,
+          "longitude": -15.4053436,
+          "departement": "Kaffrine"
+        }
+      },
+      {
+        "Diamagadio": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Kaffrine"
+        }
+      },
+      {
+        "Diokoul Belbouck": {
+          "latitude": 15.3745907,
+          "longitude": -16.5164262,
+          "departement": "Kaffrine"
+        }
+      },
+      {
+        "Kathiotte": {
+          "latitude": 13.9492383,
+          "longitude": -15.4077143,
+          "departement": "Kaffrine"
+        }
+      },
+      {
+        "Médinatoul Salam 2": {
+          "latitude": 13.8228647,
+          "longitude": -15.2545787,
+          "departement": "Kaffrine"
+        }
+      },
+      {
+        "Gniby": {
+          "latitude": 14.433869,
+          "longitude": -15.653347,
+          "departement": "Kaffrine"
+        }
+      },
+      {
+        "Boulel": {
+          "latitude": 14.2849198,
+          "longitude": -15.5342485,
+          "departement": "Kaffrine"
+        }
+      },
+      {
+        "Kahi": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Kaffrine"
+        }
+      }
+    ],
+    "Birkilane": [
+      {
+        "Birkelane": {
+          "latitude": 14.128458,
+          "longitude": -15.7439194,
+          "departement": "Birkilane"
+        }
+      },
+      {
+        "Keur Mboucki": {
+          "latitude": 14.1381642,
+          "longitude": -15.8304975,
+          "departement": "Birkilane"
+        }
+      },
+      {
+        "Touba Mbella": {
+          "latitude": 14.8665572,
+          "longitude": -15.8994956,
+          "departement": "Birkilane"
+        }
+      },
+      {
+        "Diamal": {
+          "latitude": 14.10683,
+          "longitude": -15.767146,
+          "departement": "Birkilane"
+        }
+      },
+      {
+        "Mabo": {
+          "latitude": 13.9137639,
+          "longitude": -15.6676471,
+          "departement": "Birkilane"
+        }
+      },
+      {
+        "Ndiognick": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Birkilane"
+        }
+      },
+      {
+        "Ségré-gatta": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Birkilane"
+        }
+      },
+      {
+        "Mbeuleup": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Birkilane"
+        }
+      }
+    ],
+    "Maleme-Hodar": [
+      {
+        "Malème-Hodar": {
+          "latitude": 14.08844,
+          "longitude": -15.29466,
+          "departement": "Maleme-Hodar"
+        }
+      },
+      {
+        "Darou Miname II": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Maleme-Hodar"
+        }
+      },
+      {
+        "Khelcom": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Maleme-Hodar"
+        }
+      },
+      {
+        "Ndioum Ngainth": {
+          "latitude": 16.5101114,
+          "longitude": -14.6500371,
+          "departement": "Maleme-Hodar"
+        }
+      },
+      {
+        "Ndiobène Samba Lamo": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Maleme-Hodar"
+        }
+      },
+      {
+        "Sagna": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Maleme-Hodar"
+        }
+      },
+      {
+        "Dianké Souf ": {
+          "latitude": 14.2274216,
+          "longitude": -15.3350723,
+          "departement": "Maleme-Hodar"
+        }
+      }
+    ],
+    "Koungheul": [
+      {
+        "Koungheul": {
+          "latitude": 13.9802139,
+          "longitude": -14.8016887,
+          "departement": "Koungheul"
+        }
+      },
+      {
+        "Missirah Wadène": {
+          "latitude": 13.68042,
+          "longitude": -16.50128,
+          "departement": "Koungheul"
+        }
+      },
+      {
+        "Maka Yop": {
+          "latitude": 14.03279,
+          "longitude": -15.023868,
+          "departement": "Koungheul"
+        }
+      },
+      {
+        "Ngainthe Pathé": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Koungheul"
+        }
+      },
+      {
+        "Fass Thièkène": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Koungheul"
+        }
+      },
+      {
+        "Saly Escale": {
+          "latitude": 14.443593,
+          "longitude": -16.9889904,
+          "departement": "Koungheul"
+        }
+      },
+      {
+        "Ida Mouride": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Koungheul"
+        }
+      },
+      {
+        "Ribot Escale": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Koungheul"
+        }
+      },
+      {
+        "Lour Escale": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Koungheul"
+        }
+      }
+    ]
+  },
+
+  "Saint-Louis": {
+    "Saint-Louis": [
+      {
+        "Saint-Louis": {
+          "latitude": 16.0326307,
+          "longitude": -16.4818167,
+          "departement": "Saint-Louis"
+        }
+      },
+      {
+        "Mpal": {
+          "latitude": 15.9212665,
+          "longitude": -16.2669247,
+          "departement": "Saint-Louis"
+        }
+      },
+      {
+        "Fass Ngom": {
+          "latitude": 15.933333,
+          "longitude": -16.316667,
+          "departement": "Saint-Louis"
+        }
+      },
+      {
+        "Ndiébène Gandiol": {
+          "latitude": 15.88561,
+          "longitude": -16.496201,
+          "departement": "Saint-Louis"
+        }
+      },
+      {
+        "Gandon": {
+          "latitude": 15.9620715,
+          "longitude": -16.4472128,
+          "departement": "Saint-Louis"
+        }
+      }
+    ],
+    "Dagana": [
+      {
+        "Dagana": {
+          "latitude": 16.5105628,
+          "longitude": -15.5034785,
+          "departement": "Dagana"
+        }
+      },
+      {
+        "Richard Toll": {
+          "latitude": 16.4588779,
+          "longitude": -15.6940454,
+          "departement": "Dagana"
+        }
+      },
+      {
+        "Ross-Béthio": {
+          "latitude": 16.2774313,
+          "longitude": -16.1389809,
+          "departement": "Dagana"
+        }
+      },
+      {
+        "Rosso-Sénégal": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Dagana"
+        }
+      },
+      {
+        "Ngnith": {
+          "latitude": 15.4002994,
+          "longitude": -15.1536731,
+          "departement": "Dagana"
+        }
+      },
+      {
+        "Diama": {
+          "latitude": 16.208203,
+          "longitude": -16.403782,
+          "departement": "Dagana"
+        }
+      },
+      {
+        "Ronkh": {
+          "latitude": 16.2774313,
+          "longitude": -16.1389809,
+          "departement": "Dagana"
+        }
+      },
+      {
+        "Gae": {
+          "latitude": 16.578735,
+          "longitude": -15.450624,
+          "departement": "Dagana"
+        }
+      },
+      {
+        "Bokhol": {
+          "latitude": 16.516667,
+          "longitude": -15.4,
+          "departement": "Dagana"
+        }
+      },
+      {
+        "Mbane": {
+          "latitude": 16.2667668,
+          "longitude": -15.7952744,
+          "departement": "Dagana"
+        }
+      }
+    ],
+    "Podor": [
+      {
+        "Podor": {
+          "latitude": 16.667229,
+          "longitude": -14.959994,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Méry": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Doumga Lao": {
+          "latitude": 16.3400007,
+          "longitude": -14.2265138,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Madina Diathbé": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Golléré": {
+          "latitude": 16.2488504,
+          "longitude": -14.108845,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Mboumba": {
+          "latitude": 16.19148,
+          "longitude": -14.021746,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Walaldé": {
+          "latitude": 16.5073206,
+          "longitude": -14.2056246,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Aéré Lao": {
+          "latitude": 16.4008376,
+          "longitude": -14.323918,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Gamadji Saré": {
+          "latitude": 16.51856,
+          "longitude": -14.7127211,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Dodel": {
+          "latitude": 16.487015,
+          "longitude": -14.421918,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Guedé Village": {
+          "latitude": 16.5311999,
+          "longitude": -14.79267,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Guédé Chantier": {
+          "latitude": 16.5311999,
+          "longitude": -14.79267,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Démette": {
+          "latitude": 16.567389,
+          "longitude": -14.28076,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Bodé Lao": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Fanaye": {
+          "latitude": 16.5258829,
+          "longitude": -15.2224062,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Ndiayene Peindao": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Ndiandane": {
+          "latitude": 16.593767,
+          "longitude": -14.99098,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Mbolo Birane": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Boké Dialloubé": {
+          "latitude": 16.067684,
+          "longitude": -13.996977,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Galoya Toucouleur": {
+          "latitude": 16.0717776,
+          "longitude": -13.8549591,
+          "departement": "Podor"
+        }
+      },
+      {
+        "Pété": {
+          "latitude": 16.1058889,
+          "longitude": -13.9477547,
+          "departement": "Podor"
+        }
+      }
+    ]
+  },
+
+  "Matam": {
+    "Matam": [
+      {
+        "Matam": {
+          "latitude": 15.9909396,
+          "longitude": -13.6557417,
+          "departement": "Matam"
+        }
+      },
+      {
+        "Ourossogui": {
+          "latitude": 15.60444,
+          "longitude": -13.3211909,
+          "departement": "Matam"
+        }
+      },
+      {
+        "Thilogne": {
+          "latitude": 15.9650839,
+          "longitude": -13.594313,
+          "departement": "Matam"
+        }
+      },
+      {
+        "Nguidjilone": {
+          "latitude": 15.9373269,
+          "longitude": -13.3515091,
+          "departement": "Matam"
+        }
+      },
+      {
+        "Dabia": {
+          "latitude": 15.914268,
+          "longitude": -13.515742,
+          "departement": "Matam"
+        }
+      },
+      {
+        "Des Agnam Civol": {
+          "latitude": 16.0068567,
+          "longitude": -13.6878382,
+          "departement": "Matam"
+        }
+      },
+      {
+        "Oréfondé": {
+          "latitude": 16.0442663,
+          "longitude": -13.7260205,
+          "departement": "Matam"
+        }
+      },
+      {
+        "Bokidiawé": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Matam"
+        }
+      },
+      {
+        "Nabadji Civol": {
+          "latitude": 15.7097195,
+          "longitude": -13.2853293,
+          "departement": "Matam"
+        }
+      },
+      {
+        "Ogo": {
+          "latitude": 15.5484418,
+          "longitude": -13.2980962,
+          "departement": "Matam"
+        }
+      }
+    ],
+    "Kanel": [
+      {
+        "Kanel": {
+          "latitude": 15.4884265,
+          "longitude": -13.1754767,
+          "departement": "Kanel"
+        }
+      },
+      {
+        "Odobéré": {
+          "latitude": 15.5604622,
+          "longitude": -13.1068183,
+          "departement": "Kanel"
+        }
+      },
+      {
+        "Wouro Sidy": {
+          "latitude": 15.416667,
+          "longitude": -13.183333,
+          "departement": "Kanel"
+        }
+      },
+      {
+        "Ndendory": {
+          "latitude": 15.3497508,
+          "longitude": -13.0444757,
+          "departement": "Kanel"
+        }
+      },
+      {
+        "Sinthiou Bamambé Banadji": {
+          "latitude": 15.3688083,
+          "longitude": -13.1365521,
+          "departement": "Kanel"
+        }
+      },
+      {
+        "Hamady Hounaré": {
+          "latitude": 15.3469578,
+          "longitude": -13.0212924,
+          "departement": "Kanel"
+        }
+      },
+      {
+        "Aouré": {
+          "latitude": 15.144856,
+          "longitude": -12.946432,
+          "departement": "Kanel"
+        }
+      },
+      {
+        "Bokiladji": {
+          "latitude": 15.0532116,
+          "longitude": -12.7451163,
+          "departement": "Kanel"
+        }
+      },
+      {
+        "Orkadiéré": {
+          "latitude": 15.2814884,
+          "longitude": -12.9637033,
+          "departement": "Kanel"
+        }
+      },
+      {
+        "Ouaoundé": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Kanel"
+        }
+      },
+      {
+        "Semmé": {
+          "latitude": 15.2008428,
+          "longitude": -12.9449928,
+          "departement": "Kanel"
+        }
+      },
+      {
+        "Dembancané": {
+          "latitude": 15.0898955,
+          "longitude": -12.7048943,
+          "departement": "Kanel"
+        }
+      }
+    ],
+    "Ranerou-Ferlo": [
+      {
+        "Ranérou": {
+          "latitude": 15.2954278,
+          "longitude": -13.957908,
+          "departement": "Ranerou-Ferlo"
+        }
+      },
+      {
+        "Lougré Thioly": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Ranerou-Ferlo"
+        }
+      },
+      {
+        "Oudalaye": {
+          "latitude": 15.1236916,
+          "longitude": -13.6557135,
+          "departement": "Ranerou-Ferlo"
+        }
+      },
+      {
+        "Vélingara": {
+          "latitude": 13.1440754,
+          "longitude": -14.1059408,
+          "departement": "Ranerou-Ferlo"
+        }
+      }
+    ]
+  },
+
+  "Kedougou": {
+    "Kedougou": [
+      {
+        "Kédougou": {
+          "latitude": 12.5604607,
+          "longitude": -12.1747077,
+          "departement": "Kedougou"
+        }
+      },
+      {
+        "Ninéfécha": {
+          "latitude": 12.552006,
+          "longitude": -12.1775273,
+          "departement": "Kedougou"
+        }
+      },
+      {
+        "Bandafassi": {
+          "latitude": 12.5387162,
+          "longitude": -12.310599,
+          "departement": "Kedougou"
+        }
+      },
+      {
+        "Tomboroncoto": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Kedougou"
+        }
+      },
+      {
+        "Dindefelo": {
+          "latitude": 12.3831798,
+          "longitude": -12.3277761,
+          "departement": "Kedougou"
+        }
+      },
+      {
+        "Fongolimbi": {
+          "latitude": 12.4244545,
+          "longitude": -12.0061503,
+          "departement": "Kedougou"
+        }
+      },
+      {
+        "Dimboli": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Kedougou"
+        }
+      }
+    ],
+    "Salemata": [
+      {
+        "Salémata": {
+          "latitude": 12.6341958,
+          "longitude": -12.819851,
+          "departement": "Salemata"
+        }
+      },
+      {
+        "Kévoye": {
+          "latitude": 12.5093952,
+          "longitude": -12.7296268,
+          "departement": "Salemata"
+        }
+      },
+      {
+        "Dakatéli": {
+          "latitude": 12.466667,
+          "longitude": -12.65,
+          "departement": "Salemata"
+        }
+      },
+      {
+        "Ethiolo": {
+          "latitude": 12.589336,
+          "longitude": -12.856031,
+          "departement": "Salemata"
+        }
+      },
+      {
+        "Oubadji": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Salemata"
+        }
+      },
+      {
+        "Dar salam": {
+          "latitude": 13.7228867,
+          "longitude": -13.5849104,
+          "departement": "Salemata"
+        }
+      }
+    ],
+    "Saraya": [
+      {
+        "Saraya": {
+          "latitude": 12.836369,
+          "longitude": -11.7552333,
+          "departement": "Saraya"
+        }
+      },
+      {
+        "Bembou": {
+          "latitude": 12.8252941,
+          "longitude": -11.8749152,
+          "departement": "Saraya"
+        }
+      },
+      {
+        "Médina Baffé": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Saraya"
+        }
+      },
+      {
+        "Sabodala": {
+          "latitude": 13.166667,
+          "longitude": -12.116667,
+          "departement": "Saraya"
+        }
+      },
+      {
+        "Khossanto": {
+          "latitude": 13.1336925,
+          "longitude": -11.967619,
+          "departement": "Saraya"
+        }
+      },
+      {
+        "Missirah Sirimana": {
+          "latitude": 13.68042,
+          "longitude": -16.50128,
+          "departement": "Saraya"
+        }
+      }
+    ]
+  },
+
+  "Tambacounda": {
+    "Tambacounda": [
+      {
+        "Tambacounda": {
+          "latitude": 13.7725888,
+          "longitude": -13.6710059,
+          "departement": "Tambacounda"
+        }
+      },
+      {
+        "Niani Toucouleur": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Tambacounda"
+        }
+      },
+      {
+        "Makacolibantang": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Tambacounda"
+        }
+      },
+      {
+        "Ndoga Babacar": {
+          "latitude": 13.752252,
+          "longitude": -14.102292,
+          "departement": "Tambacounda"
+        }
+      },
+      {
+        "Missirah": {
+          "latitude": 13.68042,
+          "longitude": -16.50128,
+          "departement": "Tambacounda"
+        }
+      },
+      {
+        "Néttéboulou": {
+          "latitude": 13.5779947,
+          "longitude": -13.7854039,
+          "departement": "Tambacounda"
+        }
+      },
+      {
+        "Dialacoto": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Tambacounda"
+        }
+      },
+      {
+        "Sinthiou Malème": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Tambacounda"
+        }
+      }
+    ],
+    "Goudiry": [
+      {
+        "Goudiry": {
+          "latitude": 14.1858733,
+          "longitude": -12.7163849,
+          "departement": "Goudiry"
+        }
+      },
+      {
+        "Boynguel Bamba": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Goudiry"
+        }
+      },
+      {
+        "Sinthiou Mamadou Boubou": {
+          "latitude": 14.275801,
+          "longitude": -12.806194,
+          "departement": "Goudiry"
+        }
+      },
+      {
+        "Koussan": {
+          "latitude": 14.1305401,
+          "longitude": -12.442357,
+          "departement": "Goudiry"
+        }
+      },
+      {
+        "Dougué": {
+          "latitude": 13.9903055,
+          "longitude": -12.671865,
+          "departement": "Goudiry"
+        }
+      },
+      {
+        "Dianké Makha": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Goudiry"
+        }
+      },
+      {
+        "Boutoucoufara": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Goudiry"
+        }
+      },
+      {
+        "Bani Israel": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Goudiry"
+        }
+      },
+      {
+        "Sinthiou Bocar Aly": {
+          "latitude": 15.3688083,
+          "longitude": -13.1365521,
+          "departement": "Goudiry"
+        }
+      },
+      {
+        "Koulor": {
+          "latitude": 14.98571,
+          "longitude": -16.031025,
+          "departement": "Goudiry"
+        }
+      },
+      {
+        "Bala": {
+          "latitude": 14.0191877,
+          "longitude": -13.1653839,
+          "departement": "Goudiry"
+        }
+      },
+      {
+        "Koar": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Goudiry"
+        }
+      },
+      {
+        "Goumbayel": {
+          "latitude": 13.6895746,
+          "longitude": -13.1711511,
+          "departement": "Goudiry"
+        }
+      }
+    ],
+    "Bakel": [
+      {
+        "Bakel": {
+          "latitude": 14.9026699,
+          "longitude": -12.4638538,
+          "departement": "Bakel"
+        }
+      },
+      {
+        "Bélé": {
+          "latitude": 14.316667,
+          "longitude": -13.033333,
+          "departement": "Bakel"
+        }
+      },
+      {
+        "Sinthiou Fissa": {
+          "latitude": 14.388309,
+          "longitude": -12.3707303,
+          "departement": "Bakel"
+        }
+      },
+      {
+        "Kidira": {
+          "latitude": 14.4581116,
+          "longitude": -12.2118824,
+          "departement": "Bakel"
+        }
+      },
+      {
+        "Toumboura": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Bakel"
+        }
+      },
+      {
+        "Sadatou": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Bakel"
+        }
+      },
+      {
+        "Madina Foulbé": {
+          "latitude": 13.853641,
+          "longitude": -12.081583,
+          "departement": "Bakel"
+        }
+      },
+      {
+        "Gathiary": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Bakel"
+        }
+      },
+      {
+        "Ballou": {
+          "latitude": 14.7428345,
+          "longitude": -12.2404869,
+          "departement": "Bakel"
+        }
+      },
+      {
+        "Gabou": {
+          "latitude": 14.71642,
+          "longitude": -12.4122682,
+          "departement": "Bakel"
+        }
+      },
+      {
+        "Diawara": {
+          "latitude": 15.0186358,
+          "longitude": -12.5441446,
+          "departement": "Bakel"
+        }
+      }
+    ],
+    "Koumpentoum": [
+      {
+        "Koumpentoum": {
+          "latitude": 13.9779361,
+          "longitude": -14.562614,
+          "departement": "Koumpentoum"
+        }
+      },
+      {
+        "Ndame": {
+          "latitude": 15.892493,
+          "longitude": -15.901859,
+          "departement": "Koumpentoum"
+        }
+      },
+      {
+        "Méréto": {
+          "latitude": 13.8200177,
+          "longitude": -14.4388515,
+          "departement": "Koumpentoum"
+        }
+      },
+      {
+        "Kahène": {
+          "latitude": 14.155166,
+          "longitude": -16.037436,
+          "departement": "Koumpentoum"
+        }
+      },
+      {
+        "Bamba Thialène": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Koumpentoum"
+        }
+      },
+      {
+        "Payar": {
+          "latitude": 14.4370737,
+          "longitude": -14.491256,
+          "departement": "Koumpentoum"
+        }
+      },
+      {
+        "Kouthiaba Wolof": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Koumpentoum"
+        }
+      },
+      {
+        "Kouthia Gaydi": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Koumpentoum"
+        }
+      },
+      {
+        "Pass Coto": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Koumpentoum"
+        }
+      },
+      {
+        "Malem Niany": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Koumpentoum"
+        }
+      }
+    ]
+  },
+  "Kolda": {
+    "Kolda": [
+      {
+        "Kolda": {
+          "latitude": 12.9107495,
+          "longitude": -14.9505671,
+          "departement": "Kolda"
+        }
+      },
+      {
+        "Dialambéré": {
+          "latitude": 12.827966,
+          "longitude": -14.248541,
+          "departement": "Kolda"
+        }
+      },
+      {
+        "Médina Chérif": {
+          "latitude": 14.6821999,
+          "longitude": -17.450951,
+          "departement": "Kolda"
+        }
+      },
+      {
+        "Mampatim": {
+          "latitude": 12.8924707,
+          "longitude": -14.3355527,
+          "departement": "Kolda"
+        }
+      },
+      {
+        "Coumbacara": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Kolda"
+        }
+      },
+      {
+        "Bagadadji": {
+          "latitude": 12.8,
+          "longitude": -15.05,
+          "departement": "Kolda"
+        }
+      },
+      {
+        "Dabo": {
+          "latitude": 12.8787344,
+          "longitude": -14.4810648,
+          "departement": "Kolda"
+        }
+      },
+      {
+        "Thiétty": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Kolda"
+        }
+      },
+      {
+        "Saré Bidji": {
+          "latitude": 12.9178856,
+          "longitude": -15.0082584,
+          "departement": "Kolda"
+        }
+      },
+      {
+        "Guiro Yéro Bocar": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Kolda"
+        }
+      },
+      {
+        "Dioulacolon": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Kolda"
+        }
+      },
+      {
+        "Tankanto Escale": {
+          "latitude": 12.562407,
+          "longitude": -15.435566,
+          "departement": "Kolda"
+        }
+      },
+      {
+        "Médina El hadj": {
+          "latitude": 14.6821999,
+          "longitude": -17.450951,
+          "departement": "Kolda"
+        }
+      },
+      {
+        "Salykégné": {
+          "latitude": 13.251427,
+          "longitude": -15.786737,
+          "departement": "Kolda"
+        }
+      },
+      {
+        "Saré Yoba Diéga": {
+          "latitude": 12.768195,
+          "longitude": -15.10989,
+          "departement": "Kolda"
+        }
+      }
+    ],
+    "Medina Yoro Foulah": [
+      {
+        "Médina Yoro Foulah": {
+          "latitude": 13.28891,
+          "longitude": -14.71435,
+          "departement": "Medina Yoro Foulah"
+        }
+      },
+      {
+        "Badion": {
+          "latitude": 13.0809407,
+          "longitude": -14.3544612,
+          "departement": "Medina Yoro Foulah"
+        }
+      },
+      {
+        "Fafacourou": {
+          "latitude": 13.0652354,
+          "longitude": -14.5567876,
+          "departement": "Medina Yoro Foulah"
+        }
+      },
+      {
+        "Bourouco": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Medina Yoro Foulah"
+        }
+      },
+      {
+        "Bignarabé": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Medina Yoro Foulah"
+        }
+      },
+      {
+        "Ndorna": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Medina Yoro Foulah"
+        }
+      },
+      {
+        "Koulinto": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Medina Yoro Foulah"
+        }
+      },
+      {
+        "Niaming": {
+          "latitude": 14.3385236,
+          "longitude": -16.9270066,
+          "departement": "Medina Yoro Foulah"
+        }
+      },
+      {
+        "Dinguiraye": {
+          "latitude": 14.028324,
+          "longitude": -16.123465,
+          "departement": "Medina Yoro Foulah"
+        }
+      },
+      {
+        "Pata": {
+          "latitude": 13.4369851,
+          "longitude": -14.9491069,
+          "departement": "Medina Yoro Foulah"
+        }
+      },
+      {
+        "Kéréwane": {
+          "latitude": 13.446536,
+          "longitude": -14.993978,
+          "departement": "Medina Yoro Foulah"
+        }
+      }
+    ],
+    "Velingara": [
+      {
+        "Vélingara": {
+          "latitude": 13.1440754,
+          "longitude": -14.1059408,
+          "departement": "Velingara"
+        }
+      },
+      {
+        "Diaobé-Kabendou": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Velingara"
+        }
+      },
+      {
+        "Kounkané": {
+          "latitude": 12.9316814,
+          "longitude": -14.0827096,
+          "departement": "Velingara"
+        }
+      },
+      {
+        "Kandia": {
+          "latitude": 13.0896143,
+          "longitude": -14.2250605,
+          "departement": "Velingara"
+        }
+      },
+      {
+        "Saré Coly Sallé": {
+          "latitude": 13.0751499,
+          "longitude": -14.0551275,
+          "departement": "Velingara"
+        }
+      },
+      {
+        "Kandiaye": {
+          "latitude": 12.9673649,
+          "longitude": -14.03428,
+          "departement": "Velingara"
+        }
+      },
+      {
+        "Némataba": {
+          "latitude": 13.224737,
+          "longitude": -14.066037,
+          "departement": "Velingara"
+        }
+      },
+      {
+        "Pakour": {
+          "latitude": 12.7599201,
+          "longitude": -13.9622597,
+          "departement": "Velingara"
+        }
+      },
+      {
+        "Paroumba": {
+          "latitude": 12.793631,
+          "longitude": -13.836479,
+          "departement": "Velingara"
+        }
+      },
+      {
+        "Ouassadou": {
+          "latitude": 12.7444,
+          "longitude": -14.15802,
+          "departement": "Velingara"
+        }
+      },
+      {
+        "Bonconto": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Velingara"
+        }
+      },
+      {
+        "Linkering": {
+          "latitude": 12.94926,
+          "longitude": -13.74553,
+          "departement": "Velingara"
+        }
+      },
+      {
+        "Médina Gounass": {
+          "latitude": 13.146617,
+          "longitude": -13.752088,
+          "departement": "Velingara"
+        }
+      },
+      {
+        "Sinthiang Koundara": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Velingara"
+        }
+      }
+    ]
+  },
+
+  "Sedhiou": {
+    "Sedhiou": [
+      {
+        "Sédhiou": {
+          "latitude": 13.064051,
+          "longitude": -15.643841,
+          "departement": "Sedhiou"
+        }
+      },
+      {
+        "Marssassoum": {
+          "latitude": 12.836481,
+          "longitude": -15.9773322,
+          "departement": "Sedhiou"
+        }
+      },
+      {
+        "Djiredji": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Sedhiou"
+        }
+      },
+
+      {
+        "Bambaly": {
+          "latitude": 10.8633545,
+          "longitude": -19.1737421,
+          "departement": "Sedhiou"
+        }
+      },
+      {
+        "Oudoucar": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Sedhiou"
+        }
+      },
+      {
+        "Sama Kanta Peulh": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Sedhiou"
+        }
+      },
+      {
+        "Diannah Ba": {
+          "latitude": 12.83574,
+          "longitude": -15.2282571,
+          "departement": "Sedhiou"
+        }
+      },
+      {
+        "Koussy": {
+          "latitude": 12.8752457,
+          "longitude": -15.6075597,
+          "departement": "Sedhiou"
+        }
+      },
+      {
+        "Sakar": {
+          "latitude": 14.716677,
+          "longitude": -17.4676861,
+          "departement": "Sedhiou"
+        }
+      },
+      {
+        "Diendé": {
+          "latitude": 12.7895951,
+          "longitude": -15.557696,
+          "departement": "Sedhiou"
+        }
+      },
+      {
+        "Diannah Malary": {
+          "latitude": 12.8472975,
+          "longitude": -15.2609138,
+          "departement": "Sedhiou"
+        }
+      },
+      {
+        "San Samba": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Sedhiou"
+        }
+      },
+      {
+        "Bémet Bidjini": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Sedhiou"
+        }
+      },
+      {
+        "Djibabouya": {
+          "latitude": 12.7924409,
+          "longitude": -15.9685189,
+          "departement": "Sedhiou"
+        }
+      }
+    ],
+    "Bounkiling": [
+      {
+        "Bounkiling": {
+          "latitude": 13.0382683,
+          "longitude": -15.7031107,
+          "departement": "Bounkiling"
+        }
+      },
+      {
+        "Ndiamacouta": {
+          "longitude": 13.3152289,
+          "latitude": -15.6401463,
+          "departement": "Bounkiling"
+        }
+      },
+      {
+        "Boghal": {
+          "latitude": 15.945914,
+          "longitude": -16.113876,
+          "departement": "Bounkiling"
+        }
+      },
+      {
+        "Tankon": {
+          "latitude": 13.2437372,
+          "longitude": -15.493223,
+          "departement": "Bounkiling"
+        }
+      },
+      {
+        "Ndiamalathiel": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Bounkiling"
+        }
+      },
+      {
+        "Diacounda": {
+          "latitude": 12.962613,
+          "longitude": -15.9756309,
+          "departement": "Bounkiling"
+        }
+      },
+      {
+        "Inor": {
+          "latitude": 12.993248,
+          "longitude": -15.710105,
+          "departement": "Bounkiling"
+        }
+      },
+      {
+        "Kandion Mangana": {
+          "latitude": 13.18476,
+          "longitude": -15.7892,
+          "departement": "Bounkiling"
+        }
+      },
+      {
+        "Bona": {
+          "latitude": 12.956902,
+          "longitude": -15.839274,
+          "departement": "Bounkiling"
+        }
+      },
+      {
+        "Diambati": {
+          "latitude": 13.0321512,
+          "longitude": -15.4911387,
+          "departement": "Bounkiling"
+        }
+      },
+      {
+        "Faoune": {
+          "latitude": 13.0750535,
+          "longitude": -15.6187748,
+          "departement": "Bounkiling"
+        }
+      },
+      {
+        "Diaroumé": {
+          "latitude": 12.9843119,
+          "longitude": -15.6163281,
+          "departement": "Bounkiling"
+        }
+      },
+      {
+        "Madina Wandifa": {
+          "latitude": 13.0579459,
+          "longitude": -15.6430441,
+          "departement": "Bounkiling"
+        }
+      }
+    ],
+    "Goudomp": [
+      {
+        "Goudomp": {
+          "latitude": 12.5336006,
+          "longitude": -15.9528748,
+          "departement": "Goudomp"
+        }
+      },
+      {
+        "Diattacounda": {
+          "latitude": 12.5490949,
+          "longitude": -15.6734653,
+          "departement": "Goudomp"
+        }
+      },
+      {
+        "Samine": {
+          "latitude": 2.4853276,
+          "longitude": -15.6306208,
+          "departement": "Goudomp"
+        }
+      },
+      {
+        "Yarang Balante": {
+          "latitude": 12.3986791,
+          "longitude": -15.6772599,
+          "departement": "Goudomp"
+        }
+      },
+      {
+        "Mangaroungou Santo": {
+          "latitude": 12.5326209,
+          "longitude": -15.5195954,
+          "departement": "Goudomp"
+        }
+      },
+      {
+        "Simbandi Balante": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Goudomp"
+        }
+      },
+      {
+        "Djibanar": {
+          "latitude": 12.5446763,
+          "longitude": -15.8084823,
+          "departement": "Goudomp"
+        }
+      },
+      {
+        "Kaour": {
+          "latitude": 12.5677751,
+          "longitude": -15.909774,
+          "departement": "Goudomp"
+        }
+      },
+      {
+        "Diouboudou": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Goudomp"
+        }
+      },
+      {
+        "Simbandi Brassou": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Goudomp"
+        }
+      },
+      {
+        "Baghère": {
+          "latitude": 12.6636815,
+          "longitude": -15.4288847,
+          "departement": "Goudomp"
+        }
+      },
+      {
+        "Niagh": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Goudomp"
+        }
+      },
+      {
+        "Tanaff": {
+          "latitude": 12.6538704,
+          "longitude": -15.4243804,
+          "departement": "Goudomp"
+        }
+      },
+      {
+        "Karantaba": {
+          "latitude": 13.05437,
+          "longitude": -15.504531,
+          "departement": "Goudomp"
+        }
+      },
+      {
+        "Kolibantang": {
+          "latitude": 12.7303998,
+          "longitude": -15.5433915,
+          "departement": "Goudomp"
+        }
+      }
+    ]
+  },
+
+  "Ziguinchor": {
+    "Ziguinchor": [
+      {
+        "Ziguinchor": {
+          "latitude": 12.5641479,
+          "longitude": -16.2639825,
+          "departement": "Ziguinchor"
+        }
+      },
+      {
+        "Niaguis": {
+          "latitude": 12.568263,
+          "longitude": -16.172958,
+          "departement": "Ziguinchor"
+        }
+      },
+      {
+        "Adéane": {
+          "latitude": 12.6267874,
+          "longitude": -16.0140586,
+          "departement": "Ziguinchor"
+        }
+      },
+      {
+        "Boutoupa Camaracounda": {
+          "latitude": 12.5050186,
+          "longitude": -16.0809371,
+          "departement": "Ziguinchor"
+        }
+      },
+      {
+        "Niassia": {
+          "latitude": 12.471154,
+          "longitude": -16.372509,
+          "departement": "Ziguinchor"
+        }
+      },
+      {
+        "Enampore": {
+          "latitude": 12.514448,
+          "longitude": -16.449364,
+          "departement": "Ziguinchor"
+        }
+      }
+    ],
+    "Bignona": [
+      {
+        "Bignona": {
+          "latitude": 12.8050911,
+          "longitude": -16.2345633,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Thionck Essyl": {
+          "latitude": 12.7879089,
+          "longitude": -16.50538,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Kataba 1": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Djinaky": {
+          "latitude": 12.9452514,
+          "longitude": -16.4597284,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Kafountine": {
+          "latitude": 12.9283363,
+          "longitude": -16.7411559,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Diouloulou": {
+          "latitude": 13.0459566,
+          "longitude": -16.6026064,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Tenghori": {
+          "latitude": 14.497401,
+          "longitude": -14.452362,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Niamone": {
+          "latitude": 12.741826,
+          "longitude": -16.331209,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Ouonck": {
+          "latitude": 12.7118097,
+          "longitude": -16.0566701,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Coubalan": {
+          "latitude": 12.6635421,
+          "longitude": -16.1735323,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Balinghore": {
+          "latitude": 12.774933,
+          "longitude": -16.355803,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Diégoune": {
+          "latitude": 12.8373481,
+          "longitude": -16.362568,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Kartiack": {
+          "latitude": 12.85892,
+          "longitude": -16.501341,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Mangagoulack": {
+          "latitude": 12.7287862,
+          "longitude": -16.4632139,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Mlomp": {
+          "latitude": 12.5612733,
+          "longitude": -16.5760857,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Djibidione": {
+          "latitude": 13.0610582,
+          "longitude": -16.2625114,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Oulampane": {
+          "latitude": 12.95365,
+          "longitude": -15.992209,
+          "departement": "Bignona"
+        }
+      },
+      {
+        "Sindian": {
+          "latitude": 12.9674104,
+          "longitude": -16.1786787,
+          "departement": "Bignona"
+        }
+      }
+    ],
+    "Oussouye": [
+      {
+        "Oussouye": {
+          "latitude": 12.4884485,
+          "longitude": -16.543676,
+          "departement": "Oussouye"
+        }
+      },
+      {
+        "Diembéring": {
+          "latitude": 12.4693092,
+          "longitude": -16.7809682,
+          "departement": "Oussouye"
+        }
+      },
+      {
+        "Santhiaba Manjack": {
+          "latitude": 12.372835,
+          "longitude": -16.559887,
+          "departement": "Oussouye"
+        }
+      },
+      {
+        "Oukout": {
+          "latitude": 12.4773613,
+          "longitude": -16.5547242,
+          "departement": "Oussouye"
+        }
+      },
+      {
+        "Mlomp": {
+          "latitude": 12.5612733,
+          "longitude": -16.5760857,
+          "departement": "Oussouye"
+        }
+      }
+    ]
+  }
+}
