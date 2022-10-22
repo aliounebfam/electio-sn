@@ -14,7 +14,8 @@ import Districts from "./pages/dashboard/Districts";
 import Municipalities from "./pages/dashboard/Municipalities";
 import { createBrowserRouter } from "react-router-dom";
 import { Navigate } from "react-router-dom";
-import Profil from "./pages/dashboard/Profil";
+import Profile from "./pages/dashboard/Profile";
+import Election from "./pages/dashboard/Election";
 
 export const router = createBrowserRouter(
     [
@@ -51,6 +52,10 @@ export const router = createBrowserRouter(
                     element: <Dashboard />,
                     children: [
                         {
+                            path: "elections",
+                            element: <Election />
+                        },
+                        {
                             path: "voters",
                             element: <Voters />
                         },
@@ -71,8 +76,8 @@ export const router = createBrowserRouter(
                             element: <Municipalities />
                         },
                         {
-                            path: "profil",
-                            element: <Profil />
+                            path: "profile",
+                            element: <Profile />
                         },
                         {
                             path: "",

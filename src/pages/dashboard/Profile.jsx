@@ -8,7 +8,7 @@ import { getAllDistricts } from '../../services/dashboard/DistrictService';
 import { useAuth } from '../../context/AuthContext';
 import { getVoterDataFromEmail, updateVoter } from '../../services/dashboard/VoterService';
 
-export default function Profil() {
+export default function Profile() {
     const { register, setValue } = useForm();
     const { register: registerChangePassword, handleSubmit: handleSubmitChangePassword, reset: resetChangePassword, watch: watchChangePassword, formState: { errors: errorsChangePassword } } = useForm({ mode: "onChange" });
     const { register: registerChangeEmail, handleSubmit: handleSubmitChangeEmail, setValue: setValueChangeEmail, reset: resetChangeEmail, watch: watchChangeEmail, formState: { errors: errorsChangeEmail } } = useForm({ mode: "onChange" });

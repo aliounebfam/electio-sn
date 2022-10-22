@@ -34,9 +34,9 @@ export default function HeaderDash() {
                     </button>
                     {/* End Menu Button */}
 
-                    <Link to={'profil'}>
+                    <Link to={'profile'}>
                         <div className="flex group items-center">
-                            <span className="font-Comfortaa text-lg font-medium">
+                            <span className="text-gray-200 transition duration-300 group-hover:text-white font-Comfortaa text-lg font-medium">
                                 Mon profil
                             </span>
                             <img className="ml-4 cursor-pointer inline-block h-10 w-10 rounded-full ring-2 ring-violet-700/40 group-hover:ring-violet-700 transition duration-300" src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="" />

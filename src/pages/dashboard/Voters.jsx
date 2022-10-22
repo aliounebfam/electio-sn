@@ -266,7 +266,7 @@ export default function Voters() {
                         initialState={{
                             sorting: {
                                 sortModel: [{
-                                    field: "nom",
+                                    field: "firstName",
                                     sort: "asc"
                                 }],
                             },
