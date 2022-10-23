@@ -249,7 +249,6 @@ export default function Election() {
                     Liste de toutes les élections
                 </div>
                 <div style={{ height: '600px', width: '100%' }}>
-
                     <DataGrid
                         sx={{
                             bgcolor: "#0F172A",

@@ -7,6 +7,7 @@ import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import OtherHousesRoundedIcon from '@mui/icons-material/OtherHousesRounded';
 import RoofingRoundedIcon from '@mui/icons-material/RoofingRounded';
 import HowToVoteRoundedIcon from '@mui/icons-material/HowToVoteRounded';
+import BallotIcon from '@mui/icons-material/Ballot';
 import { useNavigate } from "react-router-dom";
 import { useSnackbar } from 'notistack';
 import { useAuth } from '../../context/AuthContext';
@@ -32,6 +33,7 @@ export default function AsideNavbarContent() {
     return (
         <div>
             <div className='m-6 flex flex-col space-y-8'>
+                <AsideNavbarItem text={"Voter"} icon={<BallotIcon />} path={'vote'} />
                 <AsideNavbarItem text={"Élections"} icon={<HowToVoteRoundedIcon />} path={'elections'} />
                 <AsideNavbarItem text={"Électeurs"} icon={<PersonRoundedIcon />} path={'voters'} />
                 <AsideNavbarItem text={"Régions"} icon={<ApartmentRoundedIcon />} path={'regions'} />
