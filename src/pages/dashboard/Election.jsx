@@ -30,7 +30,7 @@ export default function Election() {
                     enqueueSnackbar(response.message, { variant: 'error' })
             })
             .finally(() => setIsFetchingData(false))
-    }
+    };
 
     const updateElectionStateWhenAddingNewElection = (newElectionData) => {
         const newElectionDataWithId = { id: newElectionData.year, ...newElectionData }

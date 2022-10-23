@@ -66,3 +66,21 @@ export const isEmailAddressAlreadyUsed = async (email) => {
     });
     return isAlreadyUsed;
 }
+
+export const getAllCandidateFromSpecificYear = async (year) => {
+    let candidates = [];
+    let error = undefined;
+    const q = query(voterCollectionRef, where("candidateYears", "array-contains", year));
+    await getDocs(q)
+        .then((response) => {
+            candidates = response.docs.map(candidate => ({ id: candidate.id, ...candidate.data() }))
+        })
+        .catch(errs => {
+            error = { error: true, message: errs }
+        })
+    if (error == undefined) {
+        return candidates
+    }
+    else
+        return error;
+}

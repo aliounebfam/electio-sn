@@ -16,6 +16,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import Profile from "./pages/dashboard/Profile";
 import Election from "./pages/dashboard/Election";
+import Vote from "./pages/dashboard/Vote";
 
 export const router = createBrowserRouter(
     [
@@ -51,6 +52,10 @@ export const router = createBrowserRouter(
                     path: "dashboard",
                     element: <Dashboard />,
                     children: [
+                        {
+                            path: "vote",
+                            element: <Vote />
+                        },
                         {
                             path: "elections",
                             element: <Election />
