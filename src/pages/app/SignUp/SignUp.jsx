@@ -6,7 +6,7 @@ import { useState } from 'react';
 import DatePicker from "react-multi-date-picker";
 import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded';
 import fr from "./../../../utils/frenchLocaleDatePicker";
-import './PurpleColorDatePicker.css';
+import './../../../utils/PurpleColorDatePicker.css';
 import { TextField, Autocomplete, Button, FormControl, FormControlLabel, Radio, RadioGroup, Tooltip, Modal, Skeleton, Box, Typography } from '@mui/material';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import IconButton from '@mui/material/IconButton';

@@ -12,6 +12,9 @@ import { useEffect } from 'react';
 import LoadingButton from '@mui/lab/LoadingButton';
 import { useAuth } from '../../context/AuthContext';
 import emailjs from '@emailjs/browser';
+import DatePicker, { DateObject } from "react-multi-date-picker";
+import './../../utils/PurpleColorDatePicker.css';
+import DatePanel from 'react-multi-date-picker/plugins/date_panel';
 
 export default function Voters() {
     const { enqueueSnackbar } = useSnackbar();
@@ -105,12 +108,13 @@ export default function Voters() {
                             voterName,
                             voterEmail: email,
                             voterPassword: password,
-                        }, "Me36dqvXStfJFrj6r").then(function (response) {
-                            enqueueSnackbar('Un mail a été envoyé à l\'utilisateur correspondant avec ses informations de connexion', { variant: 'success' });
-                            setOpenValidateAlert(false);
-                        }, function (error) {
-                            enqueueSnackbar('Une erreur est survenue lors de l\'envoi du mail à l\'utilisateur correspondant', { variant: 'error' });
-                        })
+                        }, "Me36dqvXStfJFrj6r")
+                            .then(function (response) {
+                                enqueueSnackbar('Un mail a été envoyé à l\'utilisateur correspondant avec ses informations de connexion', { variant: 'success' });
+                                setOpenValidateAlert(false);
+                            }, function (error) {
+                                enqueueSnackbar('Une erreur est survenue lors de l\'envoi du mail à l\'utilisateur correspondant', { variant: 'error' });
+                            })
                             .finally(() => {
                                 setIsValidating(false);
                             });
@@ -143,6 +147,7 @@ export default function Voters() {
                     </Tooltip>
                 )
             },
+
             { field: 'firstName', headerName: 'Nom', minWidth: 150, flex: 1, sort: "desc" },
             { field: 'lastName', headerName: 'Prénom', minWidth: 200, flex: 1 },
             { field: 'dateOfBirth', headerName: 'Date de Naissance', type: 'date', minWidth: 140, flex: 0.5 },
@@ -152,6 +157,51 @@ export default function Voters() {
             { field: 'district', headerName: 'Quartier', minWidth: 200, flex: 0.5 },
             { field: 'isRegistered', headerName: 'Inscrit', type: "boolean", minWidth: 60, flex: 0.2 },
             { field: 'isCandidate', headerName: 'Candidat', type: "boolean", minWidth: 85, flex: 0.2, editable: true },
+            {
+                field: 'candidateYears', headerName: 'Année(s) de candidature', minWidth: 175, flex: 0.2,
+                align: "center",
+                renderCell: (params) => (
+                    <>
+                        <DatePicker
+                            inputMode="none"
+                            placeholder="Jamais été candidat"
+                            style={{
+                                width: "100%",
+                                color: "#0F172A",
+                            }}
+                            minDate={new Date()}
+                            onlyYearPicker
+                            multiple
+                            sort
+                            plugins={[
+                                <DatePanel />
+                            ]}
+                            className="purple"
+                            calendarPosition={'bottom-center'}
+                            value={params.row?.candidateYears?.map(value => new DateObject({
+                                year: value,
+                                month: 1,
+                                day: 1
+                            }))}
+                            onChange={
+                                values => {
+                                    updateVoter(params.id, { candidateYears: values.map(value => value.year) })
+                                        .then(() => {
+                                            enqueueSnackbar('Champ correctement modifié', { variant: 'success' })
+                                        });
+                                    voters.map(
+                                        voter => {
+                                            if (voter.id != params.id)
+                                                return voter;
+                                            else
+                                                return { ...voter, candidateYears: values }
+                                        })
+                                }
+                            }
+                        />
+                    </>
+                )
+            },
             { field: 'isAdmin', headerName: 'Admin', type: "boolean", minWidth: 60, flex: 0.2, editable: true },
             { field: 'isSuperAdmin', headerName: 'Super Admin', type: "boolean", minWidth: 100, flex: 0.2, editable: true },
             {
