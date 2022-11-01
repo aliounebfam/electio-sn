@@ -86,7 +86,7 @@ export const router = createBrowserRouter(
                         },
                         {
                             path: "",
-                            element: <Navigate to="voters" />
+                            element: <Navigate to="vote" />
                         },
                     ]
                 },

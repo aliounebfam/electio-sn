@@ -1,19 +1,10 @@
-import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, serverTimestamp, updateDoc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc, query, where } from "firebase/firestore";
 import { db } from "../firebase";
 
 export const electionCollectionRef = collection(db, "elections");
 
 export const getElectionRef = (id) => {
     return doc(electionCollectionRef, id)
-}
-
-export const getElectionName = async (ref) => {
-    let electionName = undefined;
-    await getDoc(ref).then((response) => {
-        const { nom } = response.data();
-        electionName = nom
-    })
-    return electionName;
 }
 
 export const deleteElection = async (id) => {
@@ -38,24 +29,6 @@ export const addElection = async (data) => {
     );
 }
 
-export const getAllElectionsNameAndId = async () => {
-    let electionsName = [];
-    let errors = undefined;
-    await getDocs(electionCollectionRef)
-        .then((response) => {
-            electionsName = response.docs.map(election => ({ id: election.id, nom: election.data().nom }))
-        })
-        .catch(errs => {
-            errors = { error: true, message: errs }
-        })
-    if (electionsName.length != 0) {
-        return electionsName
-    }
-    else
-        return errors;
-}
-
-
 export const getAllElections = async () => {
     let elections = [];
     let error = undefined;
@@ -72,4 +45,14 @@ export const getAllElections = async () => {
     }
     else
         return error;
+}
+
+export const getElectionStateFromCurrentYear = async () => {
+    let electionState = undefined;
+    const q = query(electionCollectionRef, where("year", "==", new Date().getFullYear()));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+        electionState = doc.data().state;
+    });
+    return electionState;
 }

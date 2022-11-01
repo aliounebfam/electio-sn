@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useSnackbar } from 'notistack';
 import { useForm } from 'react-hook-form';
-import { Autocomplete, Backdrop, CircularProgress, Skeleton, TextField } from '@mui/material';
+import { Backdrop, CircularProgress, Skeleton } from '@mui/material';
 import { getAllDistricts } from '../../services/dashboard/DistrictService';
 import { useAuth } from '../../context/AuthContext';
 import { getVoterDataFromEmail, updateVoter } from '../../services/dashboard/VoterService';

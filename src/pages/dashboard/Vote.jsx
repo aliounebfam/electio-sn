@@ -1,15 +1,16 @@
 import React from 'react';
 import { DataGrid, GridToolbar, frFR } from '@mui/x-data-grid';
 import { useMemo } from 'react';
-import { useCallback } from 'react';
 import { useSnackbar } from 'notistack';
 import { useEffect } from 'react';
 import LoadingButton from '@mui/lab/LoadingButton';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { useState } from 'react';
-import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, LinearProgress, Tooltip, Typography, useMediaQuery } from '@mui/material';
-import { getAllCandidateFromSpecificYear } from '../../services/dashboard/VoterService';
+import { Alert, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, LinearProgress, Tooltip, Typography, useMediaQuery } from '@mui/material';
+import { getAllCandidateFromSpecificYear, getVoterDataFromEmail } from '../../services/dashboard/VoterService';
 import HowToVoteRoundedIcon from '@mui/icons-material/HowToVoteRounded';
+import { getElectionStateFromCurrentYear } from '../../services/dashboard/ElectionService';
+import { useAuth } from '../../context/AuthContext';
 
 export default function Votes() {
     const [isFetchingData, setIsFetchingData] = useState(false);
@@ -18,7 +19,10 @@ export default function Votes() {
     const [candidates, setCandidates] = useState([]);
     const { enqueueSnackbar } = useSnackbar();
     const [isVoting, setIsVoting] = useState(false);
+    const [electionState, setElectionState] = useState(undefined);
     const fullScreen = useMediaQuery('(max-width:325px)');
+    const { currentUser } = useAuth();
+    const [voterData, setVoterData] = useState(undefined);
 
     const getCandidates = () => {
         setIsFetchingData(true)
@@ -41,9 +45,15 @@ export default function Votes() {
             setOpenVoteDialog(false);
     };
 
-
     useEffect(() => {
         getCandidates();
+        getVoterDataFromEmail(currentUser.email)
+            .then(
+                response => {
+                    setVoterData(response)
+                }
+            );
+        getElectionStateFromCurrentYear().then((r) => setElectionState(r));
     }, []);
 
     const columns = useMemo
@@ -68,7 +78,7 @@ export default function Votes() {
             },
             {
                 field: 'fullName',
-                headerName: 'Full name',
+                headerName: 'Nom complet',
                 minWidth: 250,
                 flex: 1,
                 valueGetter: (params) => {
@@ -83,6 +93,12 @@ export default function Votes() {
                 align: "center",
                 flex: 0.5,
                 minWidth: 150,
+                disableColumnMenu: true,
+                sortable: false,
+                hide: electionState !== "inProgress" ||
+                    voterData?.votedYears?.includes(new Date().getFullYear()) ||
+                    !voterData?.canVoted
+                ,
                 renderCell: (params) => (
                     <Button
                         sx={{
@@ -105,10 +121,36 @@ export default function Votes() {
 
     return (
         <div className="bg-white mt-5 p-5 rounded-md shadow-md shadow-violet-400">
-            <div className='pb-5 text-[23px] font-Hind font-normal'>
-                Voter pour le candidat de votre choix
+            <div className='pb-3 text-[23px] font-Hind font-normal'>
+                Voter pour le candidat de votre choix.
             </div>
+            {voterData != undefined || electionState != undefined ?
+                <>
+                    {
+                        voterData?.canVoted ?
+                            undefined :
+                            <Alert sx={{ marginBottom: "10px" }} severity="error">
+                                Vous n'avez pas la possibilité de voter.
+                            </Alert>
+                    }
+                    {
+                        electionState == "inProgress" ?
+                            undefined :
+                            <Alert sx={{ marginBottom: "10px" }} severity="warning">
+                                Pas encore d'élection démarrée sur cette année en cours !
+                            </Alert>
 
+                    }
+                    {
+                        voterData?.votedYears?.includes(new Date().getFullYear()) ?
+                            <Alert sx={{ marginBottom: "10px" }} severity="success">
+                                Vous avez déjà voté(e).
+                            </Alert> :
+                            null
+                    }
+                </> :
+                undefined
+            }
             <Dialog
                 sx={{ zIndex: "30" }}
                 maxWidth={"md"}
@@ -176,7 +218,7 @@ export default function Votes() {
                         borderColor: '#6D28D9',
                         '& .MuiDataGrid-cell:hover': {
                             bgcolor: "#475569"
-                        },
+                        }
                     }}
                     components={{
                         Toolbar: GridToolbar,
@@ -201,3 +243,4 @@ export default function Votes() {
         </div>
     )
 }
+
