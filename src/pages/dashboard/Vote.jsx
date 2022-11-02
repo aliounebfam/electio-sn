@@ -127,26 +127,25 @@ export default function Votes() {
             {voterData != undefined || electionState != undefined ?
                 <>
                     {
-                        voterData?.canVoted ?
-                            undefined :
+                        !voterData?.canVoted ?
                             <Alert sx={{ marginBottom: "10px" }} severity="error">
                                 Vous n'avez pas la possibilité de voter.
-                            </Alert>
+                            </Alert> :
+                            undefined
                     }
                     {
-                        electionState == "inProgress" ?
-                            undefined :
+                        electionState != "inProgress" && voterData?.canVoted ?
                             <Alert sx={{ marginBottom: "10px" }} severity="warning">
                                 Pas encore d'élection démarrée sur cette année en cours !
-                            </Alert>
-
+                            </Alert> :
+                            undefined
                     }
                     {
                         voterData?.votedYears?.includes(new Date().getFullYear()) ?
                             <Alert sx={{ marginBottom: "10px" }} severity="success">
                                 Vous avez déjà voté(e).
                             </Alert> :
-                            null
+                            undefined
                     }
                 </> :
                 undefined
