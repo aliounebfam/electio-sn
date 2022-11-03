@@ -1,4 +1,4 @@
-import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc, query, where } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc, query, where, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { getDocDepartmentRef } from "./DepartmentService";
 import { getDocMunicipalitieRef } from "./MunicipalitieService";

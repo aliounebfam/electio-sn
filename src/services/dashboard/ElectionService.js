@@ -1,7 +1,8 @@
-import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc, query, where } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc, query, where, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 export const electionCollectionRef = collection(db, "elections");
+const actualYearToString = new Date().getFullYear().toString();
 
 export const getElectionRef = (id) => {
     return doc(electionCollectionRef, id)
@@ -25,8 +26,9 @@ export const addElection = async (data) => {
         {
             ...data,
             created_at: serverTimestamp()
-        }
-    );
+        }).then(() => setDoc(doc(db, "votes", actualYearToString), {}))
+        ;
+
 }
 
 export const getAllElections = async () => {

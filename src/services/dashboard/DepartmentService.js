@@ -1,4 +1,4 @@
-import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc, query, where } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc, query, where, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { getRegionRef } from "./RegionService";
 
@@ -66,4 +66,12 @@ export const getDepartmentsFromRegionName = async (regionName) => {
         departments.push({ id: doc.id, ...doc.data() })
     });
     return departments;
+}
+
+export const getDepartmentFromMunicipality = async (departmentRef) => {
+    let department = undefined;
+    department = await getDoc(departmentRef);
+    if (department.exists()) {
+        return { id: department.id, ...department.data() };
+    };
 }

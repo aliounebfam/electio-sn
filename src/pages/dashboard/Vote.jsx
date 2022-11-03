@@ -7,10 +7,13 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { useState } from 'react';
 import { Alert, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, LinearProgress, Tooltip, Typography, useMediaQuery } from '@mui/material';
-import { getAllCandidateFromSpecificYear, getVoterDataFromEmail } from '../../services/dashboard/VoterService';
+import { getAllCandidateFromSpecificYear, getVoterDataFromEmail, updateVoter } from '../../services/dashboard/VoterService';
 import HowToVoteRoundedIcon from '@mui/icons-material/HowToVoteRounded';
 import { getElectionStateFromCurrentYear } from '../../services/dashboard/ElectionService';
 import { useAuth } from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
+import { arrayUnion } from 'firebase/firestore';
+import { updateVoteData } from '../../services/dashboard/VoteService';
 
 export default function Votes() {
     const [isFetchingData, setIsFetchingData] = useState(false);
@@ -23,6 +26,7 @@ export default function Votes() {
     const fullScreen = useMediaQuery('(max-width:325px)');
     const { currentUser } = useAuth();
     const [voterData, setVoterData] = useState(undefined);
+    const navigate = useNavigate();
 
     const getCandidates = () => {
         setIsFetchingData(true)
@@ -35,6 +39,25 @@ export default function Votes() {
             })
             .finally(() => setIsFetchingData(false))
     };
+
+    const handleClickConfirmVote = () => {
+        setIsVoting(true);
+        updateVoter(voterData.id, {
+            votedYears: arrayUnion(new Date().getFullYear())
+        })
+            .then(response => {
+                updateVoteData({ candidateId: selectedCandidateData.id, voterDistrict: voterData.district })
+                    .then(() => enqueueSnackbar("Vote enregistré avec succès", { variant: 'success' }))
+                    .finally(() => {
+                        setIsVoting(false);
+                        navigate("/dashboard")
+                    })
+            })
+            .finally(() => {
+            });
+        // console.log(selectedCandidateData);
+        // console.log(voterData.id);
+    }
 
     const handleClickOpenVoteDialog = (data) => {
         setSelectedCandidateData(data)
@@ -134,14 +157,15 @@ export default function Votes() {
                             undefined
                     }
                     {
-                        electionState != "inProgress" && voterData?.canVoted ?
+                        electionState != "inProgress" && voterData?.canVoted && !voterData?.votedYears?.includes(new Date().getFullYear()) ?
                             <Alert sx={{ marginBottom: "10px" }} severity="warning">
                                 Pas encore d'élection démarrée sur cette année en cours !
                             </Alert> :
                             undefined
                     }
                     {
-                        voterData?.votedYears?.includes(new Date().getFullYear()) ?
+                        voterData?.votedYears?.includes(new Date().getFullYear()) &&
+                            voterData?.canVoted ?
                             <Alert sx={{ marginBottom: "10px" }} severity="success">
                                 Vous avez déjà voté(e).
                             </Alert> :
@@ -200,7 +224,7 @@ export default function Votes() {
                     <Button onClick={handleClickCloseVoteDialog} sx={{ display: useMediaQuery('(min-width:405px)') ? "none" : "block", color: "white", border: "1px solid rgb(109, 40, 217)" }}>
                         Annuler
                     </Button>
-                    <LoadingButton sx={{ color: "white", border: "1px solid rgb(109, 40, 217)" }} id="loadingIndicator" loading={isVoting} onClick={() => console.log("voting")} autoFocus>
+                    <LoadingButton sx={{ color: "white", border: "1px solid rgb(109, 40, 217)" }} id="loadingIndicator" loading={isVoting} onClick={handleClickConfirmVote} autoFocus>
                         Oui, je le veux
                     </LoadingButton>
                 </DialogActions>

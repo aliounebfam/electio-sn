@@ -73,3 +73,11 @@ export const getAllRegions = async () => {
     else
         return error;
 }
+
+export const getRegionFromMunicipality = async (regionRef) => {
+    let region = undefined;
+    region = await getDoc(regionRef);
+    if (region.exists()) {
+        return { id: region.id, ...region.data() };
+    };
+}
