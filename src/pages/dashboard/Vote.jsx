@@ -50,13 +50,9 @@ export default function Votes() {
                     .then(() => enqueueSnackbar("Vote enregistré avec succès", { variant: 'success' }))
                     .finally(() => {
                         setIsVoting(false);
-                        navigate("/dashboard")
+                        navigate("/dashboard", { replace: true })
                     })
             })
-            .finally(() => {
-            });
-        // console.log(selectedCandidateData);
-        // console.log(voterData.id);
     }
 
     const handleClickOpenVoteDialog = (data) => {

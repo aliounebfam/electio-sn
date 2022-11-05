@@ -35,15 +35,19 @@ export const updateVoteData = async (data) => {
                 [data.candidateId]: {
                     total: increment(1),
                     districts: {
+                        total: increment(1),
                         [district.id]: increment(1)
                     },
                     municipalities: {
+                        total: increment(1),
                         [municipality.id]: increment(1)
                     },
                     departments: {
+                        total: increment(1),
                         [department.id]: increment(1)
                     },
                     regions: {
+                        total: increment(1),
                         [region.id]: increment(1)
                     },
                 }
