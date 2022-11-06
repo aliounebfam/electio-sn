@@ -1,18 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Turn as Hamburger } from 'hamburger-react'
 import { useState, useEffect } from 'react';
 import Slide from '@mui/material/Slide';
 import Backdrop from '@mui/material/Backdrop';
 import AsideNavbarContent from './AsideNavbarContent';
-import { useLocation } from 'react-router-dom';
 
 
 export default function HeaderDash() {
     const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
     const [count, setCount] = useState(0);
     const location = useLocation();
-
 
     useEffect(() => {
         setCount(count + 1)
@@ -37,14 +35,14 @@ export default function HeaderDash() {
                     </button>
                     {/* End Menu Button */}
 
-                    <NavLink to={'profile'}>
+                    <Link to={'profile'}>
                         <div className="flex group items-center">
                             <span className={"transition duration-300 font-Comfortaa text-lg font-medium " + (location.pathname === "/dashboard/profile" ? "text-white" : "text-gray-200 group-hover:text-white")}>
                                 Mon profil
                             </span>
                             <img className={"ml-4 cursor-pointer inline-block h-10 w-10 rounded-full ring-2 ring-violet-700/40 transition duration-300 " + (location.pathname === "/dashboard/profile" ? "ring-violet-700" : "group-hover:ring-violet-700")} src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="" />
                         </div>
-                    </NavLink>
+                    </Link>
                 </div>
 
                 {/* Start Mobile nav bar */}
