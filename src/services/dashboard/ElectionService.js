@@ -22,13 +22,19 @@ export const updateElection = async (id, data) => {
 }
 
 export const addElection = async (data) => {
+    let newElectionId = undefined;
     await addDoc(electionCollectionRef,
         {
             ...data,
             created_at: serverTimestamp()
-        }).then(() => setDoc(doc(db, "votes", actualYearToString), {}))
-        ;
-
+        })
+        .then(
+            (response) => {
+                newElectionId = response.id;
+                setDoc(doc(db, "votes", actualYearToString), {});
+            }
+        );
+    return newElectionId;
 }
 
 export const getAllElections = async () => {

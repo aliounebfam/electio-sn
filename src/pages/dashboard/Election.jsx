@@ -33,8 +33,7 @@ export default function Election() {
     };
 
     const updateElectionStateWhenAddingNewElection = (newElectionData) => {
-        const newElectionDataWithId = { id: newElectionData.year, ...newElectionData }
-        setElections((elections) => [...elections, newElectionDataWithId]);
+        setElections((elections) => [...elections, newElectionData]);
     }
 
     const handleStartElection = (id) => {
@@ -67,6 +66,7 @@ export default function Election() {
 
     useEffect(() => {
         getElections();
+        console.log(elections.some(election => election.year == 2023))
     }, [])
 
     const handleEditCell = (params, event, details) => {
@@ -265,7 +265,10 @@ export default function Election() {
                             LoadingOverlay: LinearProgress
                         }}
                         componentsProps={{
-                            toolbar: { updateElectionStateWhenAddingNewElection: updateElectionStateWhenAddingNewElection }
+                            toolbar: {
+                                updateElectionStateWhenAddingNewElection: updateElectionStateWhenAddingNewElection,
+                                elections: elections
+                            }
                         }}
                         rows={elections}
                         columns={columns}
@@ -292,7 +295,7 @@ export default function Election() {
 };
 
 
-function AddElectionToolbar({ updateElectionStateWhenAddingNewElection }) {
+function AddElectionToolbar({ updateElectionStateWhenAddingNewElection, elections }) {
     const { enqueueSnackbar } = useSnackbar();
     const [openAddAlert, setOpenAddAlert] = useState(false);
     const [isAdding, setIsAdding] = useState(false);
@@ -303,9 +306,9 @@ function AddElectionToolbar({ updateElectionStateWhenAddingNewElection }) {
             state: "created"
         };
         setIsAdding(true);
-        addElection(electionData).then(() => {
+        addElection(electionData).then((id) => {
             enqueueSnackbar('Élection correctement ajoutée', { variant: 'success' });
-            updateElectionStateWhenAddingNewElection(electionData);
+            updateElectionStateWhenAddingNewElection({ id, ...electionData });
             setOpenAddAlert(false);
         })
             .finally(() => setIsAdding(false));
@@ -337,20 +340,20 @@ function AddElectionToolbar({ updateElectionStateWhenAddingNewElection }) {
                     </LoadingButton>
                 </DialogActions>
             </Dialog>
-            <GridToolbarContainer>
+            {!elections?.some(election => election.year == new Date().getFullYear()) && <GridToolbarContainer>
                 <Button variant="outlined" startIcon={<AddRoundedIcon />} onClick={handleClickOpenAddAlert}>
                     Ajouter une élection
                 </Button>
-            </GridToolbarContainer>
+            </GridToolbarContainer>}
         </>
     );
 };
 
-function CustomToolbar({ updateElectionStateWhenAddingNewElection }) {
+function CustomToolbar({ updateElectionStateWhenAddingNewElection, elections }) {
     return (
         <GridToolbarContainer sx={{ display: "flex", flexDirection: "column", alignItems: "start" }}>
             <GridToolbarContainer sx={{ mb: "2px" }}>
-                <AddElectionToolbar updateElectionStateWhenAddingNewElection={updateElectionStateWhenAddingNewElection} />
+                <AddElectionToolbar elections={elections} updateElectionStateWhenAddingNewElection={updateElectionStateWhenAddingNewElection} />
             </GridToolbarContainer>
             <GridToolbarContainer sx={{ mb: "2px" }}>
                 <GridToolbarColumnsButton />
