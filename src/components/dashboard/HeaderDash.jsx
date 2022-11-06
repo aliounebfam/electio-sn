@@ -5,11 +5,14 @@ import { useState, useEffect } from 'react';
 import Slide from '@mui/material/Slide';
 import Backdrop from '@mui/material/Backdrop';
 import AsideNavbarContent from './AsideNavbarContent';
+import { useLocation } from 'react-router-dom';
 
 
 export default function HeaderDash() {
     const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
     const [count, setCount] = useState(0);
+    const location = useLocation();
+
 
     useEffect(() => {
         setCount(count + 1)
@@ -36,10 +39,10 @@ export default function HeaderDash() {
 
                     <Link to={'profile'}>
                         <div className="flex group items-center">
-                            <span className="text-gray-200 transition duration-300 group-hover:text-white font-Comfortaa text-lg font-medium">
+                            <span className={"transition duration-300 font-Comfortaa text-lg font-medium " + (location.pathname === "/dashboard/profile" ? "text-white" : "text-gray-200 group-hover:text-white")}>
                                 Mon profil
                             </span>
-                            <img className="ml-4 cursor-pointer inline-block h-10 w-10 rounded-full ring-2 ring-violet-700/40 group-hover:ring-violet-700 transition duration-300" src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="" />
+                            <img className={"ml-4 cursor-pointer inline-block h-10 w-10 rounded-full ring-2 ring-violet-700/40 transition duration-300 " + (location.pathname === "/dashboard/profile" ? "ring-violet-700" : "group-hover:ring-violet-700")} src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="" />
                         </div>
                     </Link>
                 </div>
