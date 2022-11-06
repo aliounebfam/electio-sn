@@ -31,16 +31,26 @@ export default function AsideNavbarContent() {
     };
 
     return (
-        <div>
-            <div className='m-6 flex flex-col space-y-8'>
+        <div className='flex flex-col justify-between h-[calc(100vh-65px)]'>
+
+            <div className='my-9 mx-6 flex flex-col space-y-10'>
                 <AsideNavbarItem text={"Voter"} icon={<BallotIcon />} path={'vote'} />
-                <AsideNavbarItem text={"Élections"} icon={<HowToVoteRoundedIcon />} path={'elections'} />
-                <AsideNavbarItem text={"Électeurs"} icon={<PersonRoundedIcon />} path={'voters'} />
-                <AsideNavbarItem text={"Régions"} icon={<ApartmentRoundedIcon />} path={'regions'} />
-                <AsideNavbarItem text={"Départements"} icon={<LocationCityRoundedIcon />} path={'departments'} />
-                <AsideNavbarItem text={"Communes"} icon={<OtherHousesRoundedIcon />} path={'municipalities'} />
-                <AsideNavbarItem text={"Quartiers"} icon={<RoofingRoundedIcon />} path={'districts'} />
+
+                <div className='flex flex-col space-y-8'>
+                    <p className='text-sm text-gray-200 decoration-white underline underline-offset-2 decoration-wavy italic font-semibold'>Section administrateur</p>
+                    <AsideNavbarItem text={"Électeurs"} icon={<PersonRoundedIcon />} path={'voters'} />
+                </div>
+
+                <div className='flex flex-col space-y-8'>
+                    <p className='text-sm text-gray-200 underline-offset-2 decoration-white underline decoration-wavy italic font-semibold'>Section super administrateur</p>
+                    <AsideNavbarItem text={"Élections"} icon={<HowToVoteRoundedIcon />} path={'elections'} />
+                    <AsideNavbarItem text={"Régions"} icon={<ApartmentRoundedIcon />} path={'regions'} />
+                    <AsideNavbarItem text={"Départements"} icon={<LocationCityRoundedIcon />} path={'departments'} />
+                    <AsideNavbarItem text={"Communes"} icon={<OtherHousesRoundedIcon />} path={'municipalities'} />
+                    <AsideNavbarItem text={"Quartiers"} icon={<RoofingRoundedIcon />} path={'districts'} />
+                </div>
             </div>
+
             <div onClick={handleSignOutClick} className='cursor-pointer sticky space-x-3 text-gray-300 rounded-t-md hover:text-white bg-gray-900 shadow-[0_-1px_4px_0_rgba(0,0,0,0.1)] shadow-violet-500 inset-0 p-3 pl-6'>
                 <LogoutRoundedIcon />
                 <span>
