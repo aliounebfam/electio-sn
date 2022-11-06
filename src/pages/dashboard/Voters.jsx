@@ -26,7 +26,7 @@ export default function Voters() {
     const [isFetchingData, setIsFetchingData] = useState(false);
     const [isDeleting, setIsDeleting] = useState(false);
     const [isValidating, setIsValidating] = useState(false);
-    const { signUp } = useAuth();
+    const { signUp, currentDataUser } = useAuth();
 
     const getVoters = () => {
         setIsFetchingData(true)
@@ -156,7 +156,6 @@ export default function Voters() {
             { field: 'emailAddress', headerName: 'Adresse email', minWidth: 250, flex: 0.5 },
             { field: 'district', headerName: 'Quartier', minWidth: 200, flex: 0.5 },
             { field: 'isRegistered', headerName: 'Inscrit', type: "boolean", minWidth: 60, flex: 0.2 },
-            { field: 'isCandidate', headerName: 'Candidat', type: "boolean", minWidth: 85, flex: 0.2, editable: true },
             {
                 field: 'candidateYears', headerName: 'Année(s) de candidature', minWidth: 175, flex: 0.2,
                 align: "center",
@@ -169,6 +168,7 @@ export default function Voters() {
                                 width: "100%",
                                 color: "#0F172A",
                             }}
+                            readOnly={!currentDataUser?.isSuperAdmin}
                             minDate={new Date()}
                             onlyYearPicker
                             multiple
@@ -202,14 +202,15 @@ export default function Voters() {
                     </>
                 )
             },
-            { field: 'isAdmin', headerName: 'Admin', type: "boolean", minWidth: 60, flex: 0.2, editable: true },
-            { field: 'isSuperAdmin', headerName: 'Super Admin', type: "boolean", minWidth: 100, flex: 0.2, editable: true },
+            { field: 'isAdmin', headerName: 'Admin', type: "boolean", minWidth: 60, flex: 0.2, editable: currentDataUser?.isSuperAdmin },
+            { field: 'isSuperAdmin', headerName: 'Super Admin', type: "boolean", minWidth: 100, flex: 0.2, editable: currentDataUser?.isSuperAdmin },
             {
                 field: 'actions',
                 type: 'actions',
                 headerName: "Actions",
                 width: 80,
                 editable: false,
+                hide: !currentDataUser?.isSuperAdmin,
                 getActions: ({ id, row }) => {
 
                     if (!row.isRegistered) {
