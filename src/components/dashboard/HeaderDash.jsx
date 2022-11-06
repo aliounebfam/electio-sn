@@ -37,14 +37,14 @@ export default function HeaderDash() {
                     </button>
                     {/* End Menu Button */}
 
-                    <Link to={'profile'}>
+                    <NavLink to={'profile'}>
                         <div className="flex group items-center">
                             <span className={"transition duration-300 font-Comfortaa text-lg font-medium " + (location.pathname === "/dashboard/profile" ? "text-white" : "text-gray-200 group-hover:text-white")}>
                                 Mon profil
                             </span>
                             <img className={"ml-4 cursor-pointer inline-block h-10 w-10 rounded-full ring-2 ring-violet-700/40 transition duration-300 " + (location.pathname === "/dashboard/profile" ? "ring-violet-700" : "group-hover:ring-violet-700")} src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="" />
                         </div>
-                    </Link>
+                    </NavLink>
                 </div>
 
                 {/* Start Mobile nav bar */}
