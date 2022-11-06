@@ -17,6 +17,8 @@ import { Navigate } from "react-router-dom";
 import Profile from "./pages/dashboard/Profile";
 import Election from "./pages/dashboard/Election";
 import Vote from "./pages/dashboard/Vote";
+import AdminRoute from "./utils/AdminRoute";
+
 
 export const router = createBrowserRouter(
     [
@@ -74,7 +76,10 @@ export const router = createBrowserRouter(
                         },
                         {
                             path: "districts",
-                            element: <Districts />
+                            element:
+                                <AdminRoute>
+                                    <Districts />
+                                </AdminRoute>
                         },
                         {
                             path: "municipalities",

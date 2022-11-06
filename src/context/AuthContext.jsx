@@ -1,5 +1,7 @@
 import { createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword, signOut, updateEmail, updatePassword, reauthenticateWithCredential, EmailAuthProvider } from "firebase/auth"
+import { onSnapshot, query, where } from "firebase/firestore";
 import React, { useContext, useState, useEffect } from "react"
+import { voterCollectionRef } from "../services/dashboard/VoterService";
 import { auth } from "../services/firebase"
 
 const AuthContext = React.createContext();
@@ -10,6 +12,7 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
     const [currentUser, setCurrentUser] = useState();
+    const [currentDataUser, setCurrentDataUser] = useState();
     const [loading, setLoading] = useState(true);
 
     function signUp(email, password) {
@@ -54,14 +57,22 @@ export function AuthProvider({ children }) {
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
-            setCurrentUser(user)
-            setLoading(false)
-        })
+            const q = query(voterCollectionRef, where("emailAddress", "==", user?.email));
+            onSnapshot(q, (querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    setCurrentDataUser(doc.data());
+                });
+            });
+            setCurrentUser(user);
+            setLoading(false);
+        });
         return unsubscribe;
-    }, [])
+    }, []);
+
 
     const value = {
         currentUser,
+        currentDataUser,
         login,
         signUp,
         logout,

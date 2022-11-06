@@ -1,4 +1,4 @@
-import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc, query, where } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc, query, where, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
 
 export const voterCollectionRef = collection(db, "voters");
