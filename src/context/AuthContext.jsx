@@ -1,10 +1,10 @@
 import { createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword, signOut, updateEmail, updatePassword, reauthenticateWithCredential, EmailAuthProvider } from "firebase/auth"
 import { onSnapshot, query, where } from "firebase/firestore";
-import React, { useContext, useState, useEffect } from "react"
+import { useContext, useState, useEffect, createContext } from "react"
 import { voterCollectionRef } from "../services/dashboard/VoterService";
 import { auth } from "../services/firebase"
 
-const AuthContext = React.createContext();
+const AuthContext = createContext();
 
 export function useAuth() {
     return useContext(AuthContext);

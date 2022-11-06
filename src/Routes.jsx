@@ -18,6 +18,7 @@ import Profile from "./pages/dashboard/Profile";
 import Election from "./pages/dashboard/Election";
 import Vote from "./pages/dashboard/Vote";
 import AdminRoute from "./utils/AdminRoute";
+import SuperAdminRoute from "./utils/SuperAdminRoute";
 
 
 export const router = createBrowserRouter(
@@ -60,30 +61,45 @@ export const router = createBrowserRouter(
                         },
                         {
                             path: "elections",
-                            element: <Election />
+                            element:
+                                <SuperAdminRoute>
+                                    <Election />
+                                </SuperAdminRoute>
                         },
                         {
                             path: "voters",
-                            element: <Voters />
+                            element:
+                                <AdminRoute>
+                                    <Voters />
+                                </AdminRoute>
                         },
                         {
                             path: "regions",
-                            element: <Regions />
+                            element:
+                                <SuperAdminRoute>
+                                    <Regions />
+                                </SuperAdminRoute>
                         },
                         {
                             path: "departments",
-                            element: <Departments />
+                            element:
+                                <SuperAdminRoute>
+                                    <Departments />
+                                </SuperAdminRoute>
                         },
                         {
                             path: "districts",
                             element:
-                                <AdminRoute>
+                                <SuperAdminRoute>
                                     <Districts />
-                                </AdminRoute>
+                                </SuperAdminRoute>
                         },
                         {
                             path: "municipalities",
-                            element: <Municipalities />
+                            element:
+                                <SuperAdminRoute>
+                                    <Municipalities />
+                                </SuperAdminRoute>
                         },
                         {
                             path: "profile",
@@ -91,7 +107,7 @@ export const router = createBrowserRouter(
                         },
                         {
                             path: "",
-                            element: <Navigate to="vote" />
+                            element: <Navigate to="vote" replace={true} />
                         },
                     ]
                 },
