@@ -24,10 +24,12 @@ export default function Election() {
         setIsFetchingData(true)
         getAllElections()
             .then((response) => {
-                if (!response.error)
-                    setElections(response)
-                else
-                    enqueueSnackbar(response.message, { variant: 'error' })
+                if (response) {
+                    if (!response.error)
+                        setElections(response)
+                    else
+                        enqueueSnackbar(response?.message, { variant: 'error' })
+                }
             })
             .finally(() => setIsFetchingData(false))
     };
@@ -66,7 +68,6 @@ export default function Election() {
 
     useEffect(() => {
         getElections();
-        console.log(elections.some(election => election.year == 2023))
     }, [])
 
     const handleEditCell = (params, event, details) => {
