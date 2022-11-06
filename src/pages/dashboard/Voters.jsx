@@ -167,6 +167,7 @@ export default function Voters() {
                             style={{
                                 width: "100%",
                                 color: "#0F172A",
+                                cursor: !currentDataUser?.isSuperAdmin ? "default" : "pointer"
                             }}
                             readOnly={!currentDataUser?.isSuperAdmin}
                             minDate={new Date()}
