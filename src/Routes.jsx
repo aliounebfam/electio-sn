@@ -19,6 +19,7 @@ import Election from "./pages/dashboard/Election";
 import Vote from "./pages/dashboard/Vote";
 import AdminRoute from "./utils/AdminRoute";
 import SuperAdminRoute from "./utils/SuperAdminRoute";
+import PresidentialElection from "./pages/app/PresidentialELection/PresidentialElection";
 
 
 export const router = createBrowserRouter(
@@ -50,6 +51,10 @@ export const router = createBrowserRouter(
                 {
                     path: "credential-request",
                     element: <CredentialRequest />
+                },
+                {
+                    path: "presidential-election",
+                    element: <PresidentialElection />
                 },
                 {
                     path: "dashboard",
