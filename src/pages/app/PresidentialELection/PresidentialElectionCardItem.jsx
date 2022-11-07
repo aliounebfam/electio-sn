@@ -1,8 +1,8 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 
 export default function PresidentialElectionCardItem({ year }) {
     return (
-        <div className="hover:shadow-violet-600 transition-shadow duration-500 cursor-pointer p-6 sm:p-8 rounded-2xl border-gray-700 bg-gray-900 shadow-2xl ">
+        <Link to={year.toString()} className="hover:shadow-violet-600 transition-shadow duration-500 cursor-pointer p-6 sm:p-8 rounded-2xl border-gray-700 bg-gray-900 shadow-2xl ">
             <div className="relative overflow-hidden rounded-xl">
                 <div className='bg-gray-800 text-white select-none h-60 flex justify-center items-center text-6xl italic font-Trykker'>
                     {year}
@@ -13,6 +13,6 @@ export default function PresidentialElectionCardItem({ year }) {
                     Election de {year}
                 </h3>
             </div>
-        </div>
+        </Link>
     )
 }

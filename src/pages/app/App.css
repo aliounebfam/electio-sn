@@ -30,10 +30,6 @@ body{scrollbar-width:auto;scrollbar-color:#7C3AED #eaeef1}::-webkit-scrollbar{wi
 .MuiBox-root.css-79rdmv input:focus{
     box-shadow: 0px 0px 0px 1px #7C3AED;
 }
-/* 
-#\:rd1\: > div > span{
-    color: white;
-} */
 
 #loadingIndicator .MuiCircularProgress-root.MuiCircularProgress-indeterminate.MuiCircularProgress-colorInherit.css-62e83j-MuiCircularProgress-root{
     color: white;

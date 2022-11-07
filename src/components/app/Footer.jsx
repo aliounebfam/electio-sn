@@ -9,7 +9,7 @@ export default function Footer() {
                 <div className='max-w-[1208px] mx-auto'>
                     <div className="flex flex-col items-center sm:flex sm:flex-row sm:items-center sm:justify-between">
                         <Link to={'/'} className="hover:text-transparent text-white transition-all duration-[350ms] flex items-center">
-                            <img className='mb-5' src="electio_sn_logo.png" alt="Logo Electio SN" width={75} />
+                            <img className='mb-5' src="../electio_sn_logo.png" alt="Logo Electio SN" width={75} />
                             <span className="self-center hover:bg-[length:100%_100%] bg-no-repeat bg-gradient-to-br bg-clip-text from-[#007E3C] via-[#F0E33F] to-[#D71A21] text-xl sm:text-2xl font-Comfortaa font-bold whitespace-nowrap ">Electio•SN</span>
                         </Link>
                         <ul className="flex flex-wrap items-center mb-6 sm:text-lg font-Trykker sm:mb-0 text-gray-200">

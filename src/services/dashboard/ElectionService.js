@@ -64,3 +64,14 @@ export const getElectionStateFromCurrentYear = async () => {
     });
     return electionState;
 }
+
+export const isElectionYearExist = async (year) => {
+    let isExist = false;
+    const q = query(electionCollectionRef, where("year", "==", year));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+        if (doc)
+            isExist = true;
+    });
+    return isExist;
+}

@@ -32,7 +32,7 @@ export default function Header() {
                 <div className=" px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <nav className="flex items-center justify-between h-16 lg:h-20">
                         <Link to={'/'} className="flex-shrink-0 hover:text-transparent text-white transition-all duration-[350ms] flex items-center">
-                            <img className='pb-4' src="electio_sn_logo.png" alt="Logo Electio SN" width={65} />
+                            <img className='pb-4' src="../electio_sn_logo.png" alt="Logo Electio SN" width={65} />
                             <span className="self-center hover:bg-[length:100%_100%] bg-no-repeat bg-gradient-to-br bg-clip-text from-[#007E3C] via-[#F0E33F] to-[#D71A21] text-xl sm:text-2xl font-Comfortaa font-bold whitespace-nowrap ">Electio•SN</span>
                         </Link>
                         <button type="button" className="inline-flex p-0 md:p-1 transition-all duration-200 rounded-md lg:hidden hover:bg-gray-800 ">

@@ -20,6 +20,9 @@ import Vote from "./pages/dashboard/Vote";
 import AdminRoute from "./utils/AdminRoute";
 import SuperAdminRoute from "./utils/SuperAdminRoute";
 import PresidentialElection from "./pages/app/PresidentialELection/PresidentialElection";
+import PresidentialElectionYear from "./pages/app/PresidentialELection/PresidentialElectionYear";
+import CheckElectionYearRoute from "./utils/CheckElectionYearRoute";
+import { isElectionYearExist } from "./services/dashboard/ElectionService";
 
 
 export const router = createBrowserRouter(
@@ -54,7 +57,19 @@ export const router = createBrowserRouter(
                 },
                 {
                     path: "presidential-election",
-                    element: <PresidentialElection />
+                    element: <PresidentialElection />,
+                },
+                {
+                    path: "presidential-election/:year",
+                    element:
+                        <CheckElectionYearRoute>
+                            <PresidentialElectionYear />
+                        </CheckElectionYearRoute>,
+                    loader: async ({ params }) => {
+                        let isExist = false;
+                        await isElectionYearExist(Number(params.year)).then(r => isExist = r);
+                        return isExist;
+                    }
                 },
                 {
                     path: "dashboard",
