@@ -55,27 +55,26 @@ export const getAllElections = async () => {
         return error;
 }
 
-export const getElectionStateFromCurrentYear = async () => {
-    let electionState = undefined;
-    const q = query(electionCollectionRef, where("year", "==", new Date().getFullYear()));
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-        electionState = doc.data().state;
-    });
-    return electionState;
-}
-
-export const isElectionYearExistAndIsInProgressStateOrIsInStoppedState = async (year) => {
-    let isExistAndIsInProgressStateOrIsInStoppedState = false;
+export const getElectionDataFromSpecificYear = async (year) => {
+    let election = undefined;
     const q = query(electionCollectionRef, where("year", "==", year));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-        if (doc && (doc.data().state == "inProgress" || doc.data().state == "stopped"))
-            isExistAndIsInProgressStateOrIsInStoppedState = true;
+        election = { id: doc.id, ...doc.data() };
     });
-    return isExistAndIsInProgressStateOrIsInStoppedState;
+    return election;
 }
 
+// export const isElectionYearExistAndIsInProgressStateOrIsInStoppedState = async (year) => {
+//     let isExistAndIsInProgressStateOrIsInStoppedState = false;
+//     const q = query(electionCollectionRef, where("year", "==", year));
+//     const querySnapshot = await getDocs(q);
+//     querySnapshot.forEach((doc) => {
+//         if (doc && (doc.data().state == "inProgress" || doc.data().state == "stopped"))
+//             isExistAndIsInProgressStateOrIsInStoppedState = true;
+//     });
+//     return isExistAndIsInProgressStateOrIsInStoppedState;
+// }
 
 export const getAllElectionsInProgressStateOrInStoppedState = async () => {
     let electionsInProgressStateOrInStoppedState = [];

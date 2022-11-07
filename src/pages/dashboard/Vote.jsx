@@ -9,7 +9,7 @@ import { useState } from 'react';
 import { Alert, Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, LinearProgress, Tooltip, Typography, useMediaQuery } from '@mui/material';
 import { getAllCandidateFromSpecificYear, getVoterDataFromEmail, updateVoter } from '../../services/dashboard/VoterService';
 import HowToVoteRoundedIcon from '@mui/icons-material/HowToVoteRounded';
-import { getElectionStateFromCurrentYear } from '../../services/dashboard/ElectionService';
+import { getElectionDataFromSpecificYear } from '../../services/dashboard/ElectionService';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { arrayUnion } from 'firebase/firestore';
@@ -72,7 +72,7 @@ export default function Votes() {
                     setVoterData(response)
                 }
             );
-        getElectionStateFromCurrentYear().then((r) => setElectionState(r));
+        getElectionDataFromSpecificYear(new Date().getFullYear()).then((r) => setElectionState(r.state));
     }, []);
 
     const columns = useMemo
@@ -186,7 +186,7 @@ export default function Votes() {
                         <CloseRoundedIcon />
                     </IconButton>
                 </DialogTitle>
-                {/* selectedCandidateData */}
+
                 <DialogContent dividers sx={{ bgcolor: "#F3F4F6", color: "#374151", fontWeight: "500" }}>
                     <Box sx={{ display: 'grid', gap: "30px", mt: "5px", }} >
                         <Box sx={{}}>

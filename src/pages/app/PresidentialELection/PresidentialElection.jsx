@@ -41,7 +41,6 @@ export default function PresidentialElection() {
                 <section className="pb-10">
                     <div className="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6 pt-0">
                         <div className={(isFetching || !elections.length == 0) ? "grid gap-8 sm:grid-cols-2 md:grid-cols-3" : "h-64"}>
-                            {console.log(elections)}
                             {
                                 isFetching ?
                                     (

@@ -22,7 +22,7 @@ import SuperAdminRoute from "./utils/SuperAdminRoute";
 import PresidentialElection from "./pages/app/PresidentialELection/PresidentialElection";
 import PresidentialElectionYear from "./pages/app/PresidentialELection/PresidentialElectionYear";
 import CheckElectionYearRoute from "./utils/CheckElectionYearRoute";
-import { isElectionYearExistAndIsInProgressStateOrIsInStoppedState } from "./services/dashboard/ElectionService";
+import { getElectionDataFromSpecificYear } from "./services/dashboard/ElectionService";
 
 
 export const router = createBrowserRouter(
@@ -66,9 +66,10 @@ export const router = createBrowserRouter(
                             <PresidentialElectionYear />
                         </CheckElectionYearRoute>,
                     loader: async ({ params }) => {
-                        let isExist = false;
-                        await isElectionYearExistAndIsInProgressStateOrIsInStoppedState(Number(params.year)).then(r => isExist = r);
-                        return isExist;
+                        let election = undefined;
+                        await getElectionDataFromSpecificYear(Number(params.year))
+                            .then(r => election = r);
+                        return election;
                     }
                 },
                 {
