@@ -65,13 +65,35 @@ export const getElectionStateFromCurrentYear = async () => {
     return electionState;
 }
 
-export const isElectionYearExist = async (year) => {
-    let isExist = false;
+export const isElectionYearExistAndIsInProgressStateOrIsInStoppedState = async (year) => {
+    let isExistAndIsInProgressStateOrIsInStoppedState = false;
     const q = query(electionCollectionRef, where("year", "==", year));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-        if (doc)
-            isExist = true;
+        if (doc && (doc.data().state == "inProgress" || doc.data().state == "stopped"))
+            isExistAndIsInProgressStateOrIsInStoppedState = true;
     });
-    return isExist;
+    return isExistAndIsInProgressStateOrIsInStoppedState;
+}
+
+
+export const getAllElectionsInProgressStateOrInStoppedState = async () => {
+    let electionsInProgressStateOrInStoppedState = [];
+    let error = undefined;
+
+    await getDocs(electionCollectionRef)
+        .then((response) => {
+            electionsInProgressStateOrInStoppedState = response.docs.map(election => {
+                if (election.data().state == "inProgress" || election.data().state == "stopped")
+                    return { id: election.id, ...election.data() };
+            })
+        })
+        .catch(errs => {
+            error = { error: true, message: errs }
+        })
+    if (electionsInProgressStateOrInStoppedState.length != 0) {
+        return electionsInProgressStateOrInStoppedState
+    }
+    else
+        return error;
 }

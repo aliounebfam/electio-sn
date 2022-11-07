@@ -10,7 +10,7 @@ export default function PresidentialElectionCardItem({ year }) {
             </div>
             <div className="mt-6 relative">
                 <h3 className="text-2xl font-semibold font-Comfortaa text-gray-800 dark:text-white">
-                    Election de {year}
+                    Élection de {year}
                 </h3>
             </div>
         </Link>
