@@ -57,12 +57,14 @@ export function AuthProvider({ children }) {
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
-            const q = query(voterCollectionRef, where("emailAddress", "==", user?.email));
-            onSnapshot(q, (querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    setCurrentDataUser(doc.data());
+            if (user) {
+                const q = query(voterCollectionRef, where("emailAddress", "==", user?.email));
+                onSnapshot(q, (querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        setCurrentDataUser(doc.data());
+                    });
                 });
-            });
+            }
             setCurrentUser(user);
             setLoading(false);
         });
