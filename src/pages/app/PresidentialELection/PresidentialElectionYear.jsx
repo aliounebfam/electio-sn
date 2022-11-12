@@ -14,6 +14,7 @@ export default function PresidentialElectionYear() {
     const { year } = useParams();
     const [election, setElection] = useState();
     const [candidates, setCandidates] = useState([]);
+    const [candidateResults, setCandidateResults] = useState([]);
     const [voteData, setVoteData] = useState([]);
     const [isFetchingData, setIsFetchingData] = useState(false);
     const { enqueueSnackbar } = useSnackbar();
@@ -22,15 +23,17 @@ export default function PresidentialElectionYear() {
         setIsFetchingData(true)
         getAllCandidateFromSpecificYear(new Date().getFullYear())
             .then((response) => {
-                if (!response.error)
+                if (!response.error) {
                     setCandidates(response)
+                    setCandidateResults(response)
+                }
                 else
                     enqueueSnackbar(response.message, { variant: 'error' })
             })
             .finally(() => setIsFetchingData(false))
     };
 
-    candidates.sort(
+    candidateResults.sort(
         (first, second) => {
             if (Object.keys(voteData).length != 0) {
                 if (voteData.candidates[first.id] == undefined) {
@@ -67,11 +70,7 @@ export default function PresidentialElectionYear() {
             setVoteData(doc.data())
         });
 
-
-
     }, []);
-
-
 
 
     return (
@@ -138,8 +137,8 @@ export default function PresidentialElectionYear() {
                             <span className='text-xl font-Hind mt-3 block italic'>Nombre total de votes par candidat</span>
                             <ul className='list-decimal list-outside text-xl ml-10 space-y-5 mt-2'>
                                 {
-                                    candidates.map(
-                                        (candidate, index) => (
+                                    candidateResults.map(
+                                        (candidate) => (
                                             <Fragment key={candidate.id}>
                                                 <li key={candidate.id}>
                                                     {candidate.lastName + " " + candidate.firstName + " : "
