@@ -1,4 +1,4 @@
-import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc, query, where, onSnapshot } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, serverTimestamp, updateDoc, query, where, onSnapshot, orderBy } from "firebase/firestore";
 import { db } from "../firebase";
 
 export const voterCollectionRef = collection(db, "voters");
@@ -69,8 +69,9 @@ export const isEmailAddressAlreadyUsed = async (email) => {
 
 export const getAllCandidateFromSpecificYear = async (year) => {
     let candidates = [];
-    let error = undefined;
-    const q = query(voterCollectionRef, where("candidateYears", "array-contains", year));
+    let error = null;
+    const q = query(voterCollectionRef, where("candidateYears", "array-contains", year), orderBy("firstName"));
+    // const q = query(voterCollectionRef, where("candidateYears", "array-contains", year));
     await getDocs(q)
         .then((response) => {
             candidates = response.docs.map(candidate => ({ id: candidate.id, ...candidate.data() }))

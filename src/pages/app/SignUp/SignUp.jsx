@@ -22,7 +22,7 @@ export default function SignUp() {
     const [datePickerValue, setDatePickerValue] = useState(undefined);
     const [districts, setDistricts] = useState([]);
     const [randomKeyForResetField, setRandomKeyForResetField] = useState();
-    const { register, handleSubmit, reset, watch, setValue, formState: { errors, isSubmitting, touchedFields } } = useForm({ mode: "onChange" });
+    const { register, handleSubmit, reset, watch, setValue, formState: { errors, isSubmitting } } = useForm({ mode: "onChange" });
     const { enqueueSnackbar, closeSnackbar } = useSnackbar();
     const camera = useRef(null);
     const [image, setImage] = useState(null);

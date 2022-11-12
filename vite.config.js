@@ -8,10 +8,7 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      manifest: manifest,
-      devOptions: {
-        enabled: true
-      }
+      manifest: manifest
     })
   ]
 })

@@ -72,7 +72,7 @@ export default function Votes() {
                     setVoterData(response)
                 }
             );
-        getElectionDataFromSpecificYear(new Date().getFullYear()).then((r) => setElectionState(r.state));
+        getElectionDataFromSpecificYear(new Date().getFullYear()).then((r) => setElectionState(r?.state));
     }, []);
 
     const columns = useMemo

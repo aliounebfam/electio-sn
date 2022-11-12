@@ -23,7 +23,7 @@ export default function Home() {
 
         function handleResize() {
             if (window.innerWidth <= "1535") {
-                const newMainHeight = content.current.clientHeight + 40;
+                const newMainHeight = content.current?.clientHeight + 40;
                 setMainHeight(newMainHeight + "px");
             }
             else {
