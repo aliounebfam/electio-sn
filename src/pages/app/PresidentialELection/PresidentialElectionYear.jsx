@@ -1,4 +1,5 @@
 import { Skeleton } from '@mui/material';
+import { data } from 'autoprefixer';
 import { doc, onSnapshot, query, where } from 'firebase/firestore';
 import { useSnackbar } from 'notistack';
 import { Fragment } from 'react';
@@ -29,6 +30,29 @@ export default function PresidentialElectionYear() {
             .finally(() => setIsFetchingData(false))
     };
 
+    candidates.sort(
+        (first, second) => {
+            if (Object.keys(voteData).length != 0) {
+                if (voteData.candidates[first.id] == undefined) {
+                    voteData.candidates[first.id] = 0
+                }
+                if (voteData.candidates[second.id] == undefined) {
+                    voteData.candidates[second.id] = 0
+                }
+
+                if (voteData.candidates[first.id] > voteData.candidates[second.id])
+                    return -1
+                else if (voteData.candidates[first.id] < voteData.candidates[second.id])
+                    return 1
+                else
+                    if (first.firstName > second.firstName)
+                        return 1
+                    else
+                        return -1
+            }
+        }
+    )
+
     useEffect(() => {
         getCandidates();
 
@@ -43,29 +67,11 @@ export default function PresidentialElectionYear() {
             setVoteData(doc.data())
         });
 
+
+
     }, []);
 
 
-    candidates.sort(
-        (first, second) => {
-            if (voteData.candidates[first.id] == undefined) {
-                voteData.candidates[first.id] = 0
-            }
-            if (voteData.candidates[second.id] == undefined) {
-                voteData.candidates[second.id] = 0
-            }
-
-            if (voteData.candidates[first.id] > voteData.candidates[second.id])
-                return -1
-            else if (voteData.candidates[first.id] < voteData.candidates[second.id])
-                return 1
-            else
-                if (first.firstName > second.firstName)
-                    return 1
-                else
-                    return -1
-        }
-    )
 
 
     return (
@@ -135,9 +141,9 @@ export default function PresidentialElectionYear() {
                                     candidates.map(
                                         (candidate, index) => (
                                             <Fragment key={candidate.id}>
-
                                                 <li key={candidate.id}>
-                                                    {candidate.lastName + " " + candidate.firstName} : {voteData.candidates[candidate.id] ? voteData.candidates[candidate.id] : 0}
+                                                    {candidate.lastName + " " + candidate.firstName + " : "
+                                                        + (Object.keys(voteData).length != 0 ? (voteData.candidates[candidate.id] ? voteData.candidates[candidate.id] : 0) : 0)}
                                                 </li>
                                             </Fragment>
                                         )
