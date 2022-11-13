@@ -8,10 +8,11 @@ import { useParams } from 'react-router-dom'
 import { electionCollectionRef } from '../../../services/dashboard/ElectionService';
 import { getAllCandidateFromSpecificYear } from '../../../services/dashboard/VoterService';
 import { db } from '../../../services/firebase';
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { MapContainer, Marker, Popup, useMapEvent } from 'react-leaflet';
 import "leaflet-boundary-canvas";
 import coordinates from "../../../utils/senegal.json"
 import { getAllRegions } from '../../../services/dashboard/RegionService';
+import { getAllDepartments } from '../../../services/dashboard/DepartmentService';
 
 export default function PresidentialElectionYear() {
     const { year } = useParams();
@@ -19,9 +20,12 @@ export default function PresidentialElectionYear() {
     const [candidates, setCandidates] = useState([]);
     const [voteData, setVoteData] = useState([]);
     const [regions, setRegions] = useState([]);
+    const [departments, setDepartments] = useState([]);
+    const [zoomLevel, setZoomLevel] = useState()
     const [isFetchingData, setIsFetchingData] = useState(false);
     const { enqueueSnackbar } = useSnackbar();
     const [map, setMap] = useState(null);
+
 
     let newCoordinates = [[]];
     coordinates[0].forEach(element => {
@@ -52,6 +56,8 @@ export default function PresidentialElectionYear() {
             map.fitBounds(ukLayer.getBounds());
         };
         fetchGeoJSON();
+
+        map.on("zoomend", () => setZoomLevel(map.getZoom()));
     }, [map]);
 
     const getCandidates = () => {
@@ -96,6 +102,8 @@ export default function PresidentialElectionYear() {
         getAllRegions().then((r) => {
             setRegions(r);
         });
+
+        getAllDepartments().then((r) => setDepartments(r));
 
         const electionQuery = query(electionCollectionRef, where("year", "==", Number(year)));
         onSnapshot(electionQuery, (querySnapshot) => {
@@ -194,17 +202,17 @@ export default function PresidentialElectionYear() {
                                     minZoom={7}
                                     style={{ height: "500px", zIndex: 0 }}
                                     ref={setMap}
-                                    zoomAnimation={true}
                                 >
+                                    {/* {console.log(departments)} */}
                                     {
-                                        regions.length > 0 && regions.map(
+                                        (zoomLevel <= 8 && regions.length > 0) && regions.map(
                                             region => (
                                                 <Marker key={region.id} position={[Number(region.latitude), Number(region.longitude)]}>
                                                     <Popup >
-                                                        <span className='text-base'>
+                                                        <span className='text-base underline underline-offset-2 '>
                                                             Région de {region.nom}
                                                         </span>
-                                                        <ul className='list-decimal list-outside text-sm ml-10 space-y-5 mt-2'>
+                                                        <ul className='list-decimal list-outside text-sm ml-10 space-y-3 mt-2'>
                                                             {
                                                                 candidates.map(
                                                                     (candidate) => {
@@ -216,6 +224,39 @@ export default function PresidentialElectionYear() {
                                                                                 <li key={candidate.id}>
                                                                                     {candidate.lastName + " " + candidate.firstName + " : "
                                                                                         + (actualRegion && (Object.keys(voteData).length != 0) ? ((Object.keys(actualRegion).length > 0) ? actualRegion[candidate.id] : 0) : 0)}
+                                                                                </li>
+                                                                            </Fragment>
+                                                                        )
+                                                                    }
+                                                                )
+                                                            }
+                                                        </ul>
+                                                    </Popup>
+                                                </Marker>
+                                            )
+                                        )
+                                    }
+                                    {
+                                        (zoomLevel > 8 && zoomLevel <= 10 && departments.length > 0) && departments.map(
+                                            department =>
+                                            (
+                                                <Marker key={department.id} position={[Number(department.latitude.replace(',', '.')), Number(department.longitude.replace(',', '.'))]}>
+                                                    <Popup >
+                                                        <span className='text-base underline underline-offset-2 '>
+                                                            Département de {department.nom}
+                                                        </span>
+                                                        <ul className='list-decimal list-outside text-sm ml-10 space-y-3 mt-2'>
+                                                            {
+                                                                candidates.map(
+                                                                    (candidate) => {
+                                                                        const actualDepartment = voteData?.departments[department.id];
+                                                                        if (actualDepartment && actualDepartment[candidate.id] == undefined)
+                                                                            actualDepartment[candidate.id] = 0;
+                                                                        return (
+                                                                            <Fragment key={candidate.id}>
+                                                                                <li key={candidate.id}>
+                                                                                    {candidate.lastName + " " + candidate.firstName + " : "
+                                                                                        + (actualDepartment && (Object.keys(voteData).length != 0) ? ((Object.keys(actualDepartment).length > 0) ? actualDepartment[candidate.id] : 0) : 0)}
                                                                                 </li>
                                                                             </Fragment>
                                                                         )
