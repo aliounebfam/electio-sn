@@ -11,34 +11,27 @@ import { db } from '../../../services/firebase';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import "leaflet-boundary-canvas";
 import coordinates from "../../../utils/senegal.json"
+import { getAllRegions } from '../../../services/dashboard/RegionService';
 
 export default function PresidentialElectionYear() {
     const { year } = useParams();
     const [election, setElection] = useState();
     const [candidates, setCandidates] = useState([]);
-    const [candidateResults, setCandidateResults] = useState([]);
     const [voteData, setVoteData] = useState([]);
+    const [regions, setRegions] = useState([]);
     const [isFetchingData, setIsFetchingData] = useState(false);
     const { enqueueSnackbar } = useSnackbar();
-
-
     const [map, setMap] = useState(null);
 
-
     let newCoordinates = [[]];
-
     coordinates[0].forEach(element => {
         const arr = Object.values(element)
         newCoordinates[0].push(arr.reverse());
     });
 
-    const position = [16.2, - 14.567871093750002];
-    const mapStyle = { height: "500px" };
 
     useEffect(() => {
         if (!map) return;
-
-
         const fetchGeoJSON = async () => {
             const response = await fetch(
                 "https://cdn.rawgit.com/johan/world.geo.json/34c96bba/countries/SEN.geo.json"
@@ -51,7 +44,7 @@ export default function PresidentialElectionYear() {
                 {
                     boundary: geoJSON,
                     attribution:
-                        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, UK shape <a href="https://github.com/johan/world.geo.json">johan/word.geo.json</a>'
+                        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
                 }
             );
             map.addLayer(osm);
@@ -67,7 +60,6 @@ export default function PresidentialElectionYear() {
             .then((response) => {
                 if (!response.error) {
                     setCandidates(response)
-                    setCandidateResults(response)
                 }
                 else
                     enqueueSnackbar(response.message, { variant: 'error' })
@@ -75,7 +67,7 @@ export default function PresidentialElectionYear() {
             .finally(() => setIsFetchingData(false))
     };
 
-    candidateResults.sort(
+    candidates.sort(
         (first, second) => {
             if (Object.keys(voteData).length != 0) {
                 if (voteData.candidates[first.id] == undefined) {
@@ -100,6 +92,10 @@ export default function PresidentialElectionYear() {
 
     useEffect(() => {
         getCandidates();
+
+        getAllRegions().then((r) => {
+            setRegions(r);
+        });
 
         const electionQuery = query(electionCollectionRef, where("year", "==", Number(year)));
         onSnapshot(electionQuery, (querySnapshot) => {
@@ -175,12 +171,12 @@ export default function PresidentialElectionYear() {
                         <h1 className='text-2xl font-Hind '>
                             {"Résultats " + (election?.state == "stopped" ? "définitifs" : "provisoires") + " :"}
                         </h1>
-                        <div className="flex space-x-4">
+                        <div className="flex space-x-4 shadow-lg pt-3 p-2">
                             <div>
-                                <span className='text-xl font-Hind mt-3 block italic'>Nombre total de votes par candidat</span>
+                                <span className='text-xl font-Hind block italic'>Nombre total de votes par candidat</span>
                                 <ul className='list-decimal list-outside text-xl ml-10 space-y-5 mt-2'>
                                     {
-                                        candidateResults.map(
+                                        candidates.map(
                                             (candidate) => (
                                                 <Fragment key={candidate.id}>
                                                     <li key={candidate.id}>
@@ -193,24 +189,51 @@ export default function PresidentialElectionYear() {
                                     }
                                 </ul>
                             </div>
-                            <div className='bg-red-400 flex-1'>
+                            <div className='flex-1'>
                                 <MapContainer
-                                    center={position}
-                                    zoom={14}
-                                    style={mapStyle}
+                                    minZoom={7}
+                                    style={{ height: "500px", zIndex: 0 }}
                                     ref={setMap}
+                                    zoomAnimation={true}
                                 >
-                                    <Marker position={position}>
-                                        <Popup>
-                                            A pretty CSS3 popup. <br /> Easily customizable.
-                                        </Popup>
-                                    </Marker>
+                                    {
+                                        regions.length > 0 && regions.map(
+                                            region => (
+                                                <Marker key={region.id} position={[Number(region.latitude), Number(region.longitude)]}>
+                                                    <Popup >
+                                                        <span className='text-base'>
+                                                            Région de {region.nom}
+                                                        </span>
+                                                        <ul className='list-decimal list-outside text-sm ml-10 space-y-5 mt-2'>
+                                                            {
+                                                                candidates.map(
+                                                                    (candidate) => {
+                                                                        const actualRegion = voteData?.regions[region.id];
+                                                                        if (actualRegion && actualRegion[candidate.id] == undefined)
+                                                                            actualRegion[candidate.id] = 0;
+                                                                        return (
+                                                                            <Fragment key={candidate.id}>
+                                                                                <li key={candidate.id}>
+                                                                                    {candidate.lastName + " " + candidate.firstName + " : "
+                                                                                        + (actualRegion && (Object.keys(voteData).length != 0) ? ((Object.keys(actualRegion).length > 0) ? actualRegion[candidate.id] : 0) : 0)}
+                                                                                </li>
+                                                                            </Fragment>
+                                                                        )
+                                                                    }
+                                                                )
+                                                            }
+                                                        </ul>
+                                                    </Popup>
+                                                </Marker>
+                                            )
+                                        )
+                                    }
                                 </MapContainer>
                             </div>
                         </div>
                     </section>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
