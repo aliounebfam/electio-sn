@@ -28,7 +28,7 @@ export default function Header() {
 
     return (
         <>
-            <header className="shadow-md shadow-violet-600/30 z-10 sticky bg-gray-900 text-white top-0 pt-3 lg:pb-0 lg:pt-2">
+            <header className="shadow-md shadow-violet-600/30 z-50 sticky bg-gray-900 text-white top-0 pt-3 lg:pb-0 lg:pt-2">
                 <div className=" px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <nav className="flex items-center justify-between h-16 lg:h-20">
                         <Link to={'/'} className="flex-shrink-0 hover:text-transparent text-white transition-all duration-[350ms] flex items-center">

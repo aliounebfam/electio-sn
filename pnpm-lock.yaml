@@ -16,6 +16,8 @@ specifiers:
   autoprefixer: ^10.4.11
   firebase: ^9.10.0
   hamburger-react: ^2.5.0
+  leaflet: ^1.9.2
+  leaflet-boundary-canvas: ^1.0.0
   notistack: ^2.0.5
   postcss: ^8.4.16
   react: ^18.2.0
@@ -23,6 +25,7 @@ specifiers:
   react-detect-offline: ^2.4.5
   react-dom: ^18.2.0
   react-hook-form: ^7.36.1
+  react-leaflet: ^4.1.0
   react-multi-date-picker: ^3.3.1
   react-router-dom: ^6.4.0
   react-simple-typewriter: ^4.0.2
@@ -43,12 +46,15 @@ dependencies:
   '@mui/x-data-grid': 5.17.5_nfsb2jhsjja245b65g5s5d4aki
   firebase: 9.10.0
   hamburger-react: 2.5.0_react@18.2.0
+  leaflet: 1.9.2
+  leaflet-boundary-canvas: 1.0.0
   notistack: 2.0.5_l2qqre42bn772ugwcietgyxzoi
   react: 18.2.0
   react-camera-pro: 1.2.1_2zpt4ilzykmne4yndyzrqd4gdm
   react-detect-offline: 2.4.5
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.36.1_react@18.2.0
+  react-leaflet: 4.1.0_ck4vhzg7aizutrwygiu3aueify
   react-multi-date-picker: 3.3.1_biqbaboplfbrettd7655fr4n2y
   react-router-dom: 6.4.0_biqbaboplfbrettd7655fr4n2y
   react-simple-typewriter: 4.0.2_biqbaboplfbrettd7655fr4n2y
@@ -2997,6 +3003,18 @@ packages:
 
   /@protobufjs/utf8/1.1.0:
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
+    dev: false
+
+  /@react-leaflet/core/2.1.0_ck4vhzg7aizutrwygiu3aueify:
+    resolution: {integrity: sha512-Qk7Pfu8BSarKGqILj4x7bCSZ1pjuAPZ+qmRwH5S7mDS91VSbVVsJSrW4qA+GPrro8t69gFYVMWb1Zc4yFmPiVg==}
+    peerDependencies:
+      leaflet: ^1.9.0
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      leaflet: 1.9.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@remix-run/router/1.0.0:
@@ -7621,6 +7639,14 @@ packages:
       language-subtag-registry: 0.3.22
     dev: false
 
+  /leaflet-boundary-canvas/1.0.0:
+    resolution: {integrity: sha512-+0kTmtqOBIKM5iOI8lywAAPHpKVHBSkyjdg/UvPW+M9moc8f1lBWaF7KEL6uc5cL3FAQf5J66bRFtJQ0bxPoLA==}
+    dev: false
+
+  /leaflet/1.9.2:
+    resolution: {integrity: sha512-Kc77HQvWO+y9y2oIs3dn5h5sy2kr3j41ewdqCMEUA4N89lgfUUfOBy7wnnHEstDpefiGFObq12FdopGRMx4J7g==}
+    dev: false
+
   /leven/3.1.0:
     resolution: {integrity: sha512-qsda+H8jTaUaN/x5vzW2rzc+8Rw4TAQ/4KjB46IwK5VH+IlVeeeje/EoZRpiXvIqjFgK84QffqPztGI3VBLG1A==}
     engines: {node: '>=6'}
@@ -9363,6 +9389,19 @@ packages:
 
   /react-is/18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
+    dev: false
+
+  /react-leaflet/4.1.0_ck4vhzg7aizutrwygiu3aueify:
+    resolution: {integrity: sha512-i+V9pX5lywJ48O2+K3USeeTdYLIhxnLMweH+YLd/UPqVIj3uKzE3Q29bzt83PBtViyZmxDlulzC6uoR3JLiE9A==}
+    peerDependencies:
+      leaflet: ^1.9.0
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      '@react-leaflet/core': 2.1.0_ck4vhzg7aizutrwygiu3aueify
+      leaflet: 1.9.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react-multi-date-picker/3.3.1_biqbaboplfbrettd7655fr4n2y:

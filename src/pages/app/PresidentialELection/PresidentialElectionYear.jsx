@@ -1,5 +1,4 @@
 import { Skeleton } from '@mui/material';
-import { data } from 'autoprefixer';
 import { doc, onSnapshot, query, where } from 'firebase/firestore';
 import { useSnackbar } from 'notistack';
 import { Fragment } from 'react';
@@ -9,6 +8,9 @@ import { useParams } from 'react-router-dom'
 import { electionCollectionRef } from '../../../services/dashboard/ElectionService';
 import { getAllCandidateFromSpecificYear } from '../../../services/dashboard/VoterService';
 import { db } from '../../../services/firebase';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import "leaflet-boundary-canvas";
+import coordinates from "../../../utils/senegal.json"
 
 export default function PresidentialElectionYear() {
     const { year } = useParams();
@@ -18,6 +20,46 @@ export default function PresidentialElectionYear() {
     const [voteData, setVoteData] = useState([]);
     const [isFetchingData, setIsFetchingData] = useState(false);
     const { enqueueSnackbar } = useSnackbar();
+
+
+    const [map, setMap] = useState(null);
+
+
+    let newCoordinates = [[]];
+
+    coordinates[0].forEach(element => {
+        const arr = Object.values(element)
+        newCoordinates[0].push(arr.reverse());
+    });
+
+    const position = [16.2, - 14.567871093750002];
+    const mapStyle = { height: "500px" };
+
+    useEffect(() => {
+        if (!map) return;
+
+
+        const fetchGeoJSON = async () => {
+            const response = await fetch(
+                "https://cdn.rawgit.com/johan/world.geo.json/34c96bba/countries/SEN.geo.json"
+            );
+            const geoJSON = await response.json();
+            geoJSON.features[0].geometry.coordinates = newCoordinates
+
+            const osm = L.TileLayer.boundaryCanvas(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+                    boundary: geoJSON,
+                    attribution:
+                        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors, UK shape <a href="https://github.com/johan/world.geo.json">johan/word.geo.json</a>'
+                }
+            );
+            map.addLayer(osm);
+            const ukLayer = L.geoJSON(geoJSON);
+            map.fitBounds(ukLayer.getBounds());
+        };
+        fetchGeoJSON();
+    }, [map]);
 
     const getCandidates = () => {
         setIsFetchingData(true)
@@ -133,22 +175,38 @@ export default function PresidentialElectionYear() {
                         <h1 className='text-2xl font-Hind '>
                             {"Résultats " + (election?.state == "stopped" ? "définitifs" : "provisoires") + " :"}
                         </h1>
-                        <div>
-                            <span className='text-xl font-Hind mt-3 block italic'>Nombre total de votes par candidat</span>
-                            <ul className='list-decimal list-outside text-xl ml-10 space-y-5 mt-2'>
-                                {
-                                    candidateResults.map(
-                                        (candidate) => (
-                                            <Fragment key={candidate.id}>
-                                                <li key={candidate.id}>
-                                                    {candidate.lastName + " " + candidate.firstName + " : "
-                                                        + (Object.keys(voteData).length != 0 ? (voteData.candidates[candidate.id] ? voteData.candidates[candidate.id] : 0) : 0)}
-                                                </li>
-                                            </Fragment>
+                        <div className="flex space-x-4">
+                            <div>
+                                <span className='text-xl font-Hind mt-3 block italic'>Nombre total de votes par candidat</span>
+                                <ul className='list-decimal list-outside text-xl ml-10 space-y-5 mt-2'>
+                                    {
+                                        candidateResults.map(
+                                            (candidate) => (
+                                                <Fragment key={candidate.id}>
+                                                    <li key={candidate.id}>
+                                                        {candidate.lastName + " " + candidate.firstName + " : "
+                                                            + (Object.keys(voteData).length != 0 ? (voteData.candidates[candidate.id] ? voteData.candidates[candidate.id] : 0) : 0)}
+                                                    </li>
+                                                </Fragment>
+                                            )
                                         )
-                                    )
-                                }
-                            </ul>
+                                    }
+                                </ul>
+                            </div>
+                            <div className='bg-red-400 flex-1'>
+                                <MapContainer
+                                    center={position}
+                                    zoom={14}
+                                    style={mapStyle}
+                                    ref={setMap}
+                                >
+                                    <Marker position={position}>
+                                        <Popup>
+                                            A pretty CSS3 popup. <br /> Easily customizable.
+                                        </Popup>
+                                    </Marker>
+                                </MapContainer>
+                            </div>
                         </div>
                     </section>
                 </div>
