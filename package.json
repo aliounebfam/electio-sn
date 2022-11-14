@@ -22,6 +22,7 @@
     "hamburger-react": "^2.5.0",
     "leaflet": "^1.9.2",
     "leaflet-boundary-canvas": "^1.0.0",
+    "leaflet.fullscreen": "^2.4.0",
     "notistack": "^2.0.5",
     "react": "^18.2.0",
     "react-camera-pro": "^1.2.1",
@@ -32,6 +33,7 @@
     "react-multi-date-picker": "^3.3.1",
     "react-router-dom": "^6.4.0",
     "react-simple-typewriter": "^4.0.2",
+    "screenfull": "^6.0.2",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {

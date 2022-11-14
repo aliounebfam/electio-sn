@@ -18,6 +18,7 @@ specifiers:
   hamburger-react: ^2.5.0
   leaflet: ^1.9.2
   leaflet-boundary-canvas: ^1.0.0
+  leaflet.fullscreen: ^2.4.0
   notistack: ^2.0.5
   postcss: ^8.4.16
   react: ^18.2.0
@@ -29,6 +30,7 @@ specifiers:
   react-multi-date-picker: ^3.3.1
   react-router-dom: ^6.4.0
   react-simple-typewriter: ^4.0.2
+  screenfull: ^6.0.2
   styled-components: ^5.3.6
   tailwindcss: ^3.1.8
   vite: ^3.1.0
@@ -48,6 +50,7 @@ dependencies:
   hamburger-react: 2.5.0_react@18.2.0
   leaflet: 1.9.2
   leaflet-boundary-canvas: 1.0.0
+  leaflet.fullscreen: 2.4.0
   notistack: 2.0.5_l2qqre42bn772ugwcietgyxzoi
   react: 18.2.0
   react-camera-pro: 1.2.1_2zpt4ilzykmne4yndyzrqd4gdm
@@ -58,6 +61,7 @@ dependencies:
   react-multi-date-picker: 3.3.1_biqbaboplfbrettd7655fr4n2y
   react-router-dom: 6.4.0_biqbaboplfbrettd7655fr4n2y
   react-simple-typewriter: 4.0.2_biqbaboplfbrettd7655fr4n2y
+  screenfull: 6.0.2
   styled-components: 5.3.6_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
@@ -7643,6 +7647,10 @@ packages:
     resolution: {integrity: sha512-+0kTmtqOBIKM5iOI8lywAAPHpKVHBSkyjdg/UvPW+M9moc8f1lBWaF7KEL6uc5cL3FAQf5J66bRFtJQ0bxPoLA==}
     dev: false
 
+  /leaflet.fullscreen/2.4.0:
+    resolution: {integrity: sha512-41O0ikdUR0bVC0QfoFN3W5S+9yoeHqL74i0QQafa/W79+ij/G7IRZwpfwPuxoNwpydoUJ/9Mq/6Hp7WZOnkWzQ==}
+    dev: false
+
   /leaflet/1.9.2:
     resolution: {integrity: sha512-Kc77HQvWO+y9y2oIs3dn5h5sy2kr3j41ewdqCMEUA4N89lgfUUfOBy7wnnHEstDpefiGFObq12FdopGRMx4J7g==}
     dev: false
@@ -9921,6 +9929,11 @@ packages:
       ajv: 8.11.0
       ajv-formats: 2.1.1
       ajv-keywords: 5.1.0_ajv@8.11.0
+    dev: false
+
+  /screenfull/6.0.2:
+    resolution: {integrity: sha512-AQdy8s4WhNvUZ6P8F6PB21tSPIYKniic+Ogx0AacBMjKP1GUHN2E9URxQHtCusiwxudnCKkdy4GrHXPPJSkCCw==}
+    engines: {node: ^14.13.1 || >=16.0.0}
     dev: false
 
   /select-hose/2.0.0:

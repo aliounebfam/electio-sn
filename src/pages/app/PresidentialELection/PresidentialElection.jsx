@@ -57,7 +57,7 @@ export default function PresidentialElection() {
                                                 </Tooltip>
                                             </>
                                         ) :
-                                        elections.map(election => (
+                                        elections?.map(election => (
                                             <PresidentialElectionCardItem key={election?.id} year={election?.year} />
                                         ))
                             }

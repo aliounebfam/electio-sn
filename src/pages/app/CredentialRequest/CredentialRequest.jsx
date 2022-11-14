@@ -10,7 +10,7 @@ import { disableKeyboard, enableKeyboard } from '../../../utils/ToogleActivation
 
 export default function CredentialRequest() {
     const [userElectoralData, setUserElectoralData] = useState({})
-    const [openModalStepper, setOpenModalStepper] = useState(true)
+    const [openModalStepper, setOpenModalStepper] = useState(false)
     const [openBackdrop, setOpenBackdrop] = useState(false);
     const { register, handleSubmit, reset, watch, formState: { errors, isSubmitSuccessful } } = useForm({ mode: "onChange" });
     const { enqueueSnackbar } = useSnackbar();
