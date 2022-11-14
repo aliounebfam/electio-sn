@@ -18,6 +18,7 @@ specifiers:
   hamburger-react: ^2.5.0
   leaflet: ^1.9.2
   leaflet-boundary-canvas: ^1.0.0
+  leaflet.fullscreen: ^2.4.0
   notistack: ^2.0.5
   postcss: ^8.4.16
   react: ^18.2.0
@@ -48,6 +49,7 @@ dependencies:
   hamburger-react: 2.5.0_react@18.2.0
   leaflet: 1.9.2
   leaflet-boundary-canvas: 1.0.0
+  leaflet.fullscreen: 2.4.0
   notistack: 2.0.5_l2qqre42bn772ugwcietgyxzoi
   react: 18.2.0
   react-camera-pro: 1.2.1_2zpt4ilzykmne4yndyzrqd4gdm
@@ -7641,6 +7643,10 @@ packages:
 
   /leaflet-boundary-canvas/1.0.0:
     resolution: {integrity: sha512-+0kTmtqOBIKM5iOI8lywAAPHpKVHBSkyjdg/UvPW+M9moc8f1lBWaF7KEL6uc5cL3FAQf5J66bRFtJQ0bxPoLA==}
+    dev: false
+
+  /leaflet.fullscreen/2.4.0:
+    resolution: {integrity: sha512-41O0ikdUR0bVC0QfoFN3W5S+9yoeHqL74i0QQafa/W79+ij/G7IRZwpfwPuxoNwpydoUJ/9Mq/6Hp7WZOnkWzQ==}
     dev: false
 
   /leaflet/1.9.2:

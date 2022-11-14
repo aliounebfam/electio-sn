@@ -8,12 +8,14 @@ import { useParams } from 'react-router-dom'
 import { electionCollectionRef } from '../../../services/dashboard/ElectionService';
 import { getAllCandidateFromSpecificYear } from '../../../services/dashboard/VoterService';
 import { db } from '../../../services/firebase';
-import { MapContainer, Marker, Popup, useMapEvent } from 'react-leaflet';
+import { MapContainer, Marker, Popup } from 'react-leaflet';
 import "leaflet-boundary-canvas";
 import coordinates from "../../../utils/senegal.json"
 import { getAllRegions } from '../../../services/dashboard/RegionService';
 import { getAllDepartments } from '../../../services/dashboard/DepartmentService';
 import { getAllMunicipalities } from '../../../services/dashboard/MunicipalitieService';
+import './leafletFullscreen/Control.FullScreen.js';
+import './leafletFullscreen/Control.FullScreen.css';
 
 export default function PresidentialElectionYear() {
     const { year } = useParams();
@@ -202,6 +204,7 @@ export default function PresidentialElectionYear() {
                                     minZoom={7}
                                     style={{ height: "500px", zIndex: 0 }}
                                     ref={setMap}
+                                    fullscreenControl={true}
                                 >
 
                                     {
