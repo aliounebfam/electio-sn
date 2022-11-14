@@ -13,6 +13,7 @@ import "leaflet-boundary-canvas";
 import coordinates from "../../../utils/senegal.json"
 import { getAllRegions } from '../../../services/dashboard/RegionService';
 import { getAllDepartments } from '../../../services/dashboard/DepartmentService';
+import { getAllMunicipalities } from '../../../services/dashboard/MunicipalitieService';
 
 export default function PresidentialElectionYear() {
     const { year } = useParams();
@@ -21,6 +22,7 @@ export default function PresidentialElectionYear() {
     const [voteData, setVoteData] = useState([]);
     const [regions, setRegions] = useState([]);
     const [departments, setDepartments] = useState([]);
+    const [municipalities, setMunicipalities] = useState([]);
     const [zoomLevel, setZoomLevel] = useState()
     const [isFetchingData, setIsFetchingData] = useState(false);
     const { enqueueSnackbar } = useSnackbar();
@@ -99,11 +101,9 @@ export default function PresidentialElectionYear() {
     useEffect(() => {
         getCandidates();
 
-        getAllRegions().then((r) => {
-            setRegions(r);
-        });
-
+        getAllRegions().then((r) => setRegions(r));
         getAllDepartments().then((r) => setDepartments(r));
+        getAllMunicipalities().then(r => setMunicipalities(r));
 
         const electionQuery = query(electionCollectionRef, where("year", "==", Number(year)));
         onSnapshot(electionQuery, (querySnapshot) => {
@@ -203,7 +203,7 @@ export default function PresidentialElectionYear() {
                                     style={{ height: "500px", zIndex: 0 }}
                                     ref={setMap}
                                 >
-                                    {/* {console.log(departments)} */}
+
                                     {
                                         (zoomLevel <= 8 && regions.length > 0) && regions.map(
                                             region => (
@@ -249,7 +249,7 @@ export default function PresidentialElectionYear() {
                                                             {
                                                                 candidates.map(
                                                                     (candidate) => {
-                                                                        const actualDepartment = voteData?.departments[department.id];
+                                                                        const actualDepartment = voteData?.municipalities[department.id];
                                                                         if (actualDepartment && actualDepartment[candidate.id] == undefined)
                                                                             actualDepartment[candidate.id] = 0;
                                                                         return (
@@ -257,6 +257,39 @@ export default function PresidentialElectionYear() {
                                                                                 <li key={candidate.id}>
                                                                                     {candidate.lastName + " " + candidate.firstName + " : "
                                                                                         + (actualDepartment && (Object.keys(voteData).length != 0) ? ((Object.keys(actualDepartment).length > 0) ? actualDepartment[candidate.id] : 0) : 0)}
+                                                                                </li>
+                                                                            </Fragment>
+                                                                        )
+                                                                    }
+                                                                )
+                                                            }
+                                                        </ul>
+                                                    </Popup>
+                                                </Marker>
+                                            )
+                                        )
+                                    }
+                                    {
+                                        (zoomLevel > 10 && municipalities.length > 0) && municipalities.map(
+                                            municipality =>
+                                            (
+                                                <Marker key={municipality.id} position={[Number(municipality.latitude), Number(municipality.longitude)]}>
+                                                    <Popup >
+                                                        <span className='text-base underline underline-offset-2 '>
+                                                            Commune de {municipality.nom}
+                                                        </span>
+                                                        <ul className='list-decimal list-outside text-sm ml-10 space-y-3 mt-2'>
+                                                            {
+                                                                candidates.map(
+                                                                    (candidate) => {
+                                                                        const actualMunicipality = voteData?.municipalities[municipality.id];
+                                                                        if (actualMunicipality && actualMunicipality[candidate.id] == undefined)
+                                                                            actualMunicipality[candidate.id] = 0;
+                                                                        return (
+                                                                            <Fragment key={candidate.id}>
+                                                                                <li key={candidate.id}>
+                                                                                    {candidate.lastName + " " + candidate.firstName + " : "
+                                                                                        + (actualMunicipality && (Object.keys(voteData).length != 0) ? ((Object.keys(actualMunicipality).length > 0) ? actualMunicipality[candidate.id] : 0) : 0)}
                                                                                 </li>
                                                                             </Fragment>
                                                                         )
