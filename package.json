@@ -2,6 +2,7 @@
   "name": "electio-sn",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "vite",
@@ -21,7 +22,6 @@
     "hamburger-react": "^2.5.0",
     "leaflet": "^1.9.2",
     "leaflet-boundary-canvas": "^1.0.0",
-    "leaflet.fullscreen": "^2.4.0",
     "notistack": "^2.0.5",
     "react": "^18.2.0",
     "react-camera-pro": "^1.2.1",

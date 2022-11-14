@@ -219,7 +219,9 @@ export default function PresidentialElectionYear() {
                                                             {
                                                                 candidates.map(
                                                                     (candidate) => {
-                                                                        const actualRegion = voteData?.regions[region.id];
+                                                                        let actualRegion = undefined;
+                                                                        if (Object.keys(voteData).length != 0)
+                                                                            actualRegion = voteData?.regions[region.id];
                                                                         if (actualRegion && actualRegion[candidate.id] == undefined)
                                                                             actualRegion[candidate.id] = 0;
                                                                         return (
@@ -252,7 +254,7 @@ export default function PresidentialElectionYear() {
                                                             {
                                                                 candidates.map(
                                                                     (candidate) => {
-                                                                        const actualDepartment = voteData?.municipalities[department.id];
+                                                                        const actualDepartment = voteData?.departments[department.id];
                                                                         if (actualDepartment && actualDepartment[candidate.id] == undefined)
                                                                             actualDepartment[candidate.id] = 0;
                                                                         return (
