@@ -163,15 +163,15 @@ export default function Home() {
                             <div className=" border-t-4 border-violet-500 space-y-8 group">
                                 <div className="w-36 h-36 -mt-16 mx-auto rounded-[2rem] rotate-45 overflow-hidden">
                                     <img className="w-full h-full object-cover  -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale-[1.4]"
-                                        src="https://avatars.dicebear.com/api/adventurer/oka.svg" alt="" loading="lazy" width="100" height="66" />
+                                        src="./assets/images/ndoye.jpeg" alt="Mohamed Ndoye" loading="lazy" width="100" height="66" />
                                 </div>
                                 <div className="space-y-4 text-center">
                                     <div>
-                                        <h4 className="text-2xl font-Hind">Mouhamed NDOYE</h4>
+                                        <h4 className="text-2xl font-Hind">Mohamed NDOYE</h4>
                                         <span className="block text-md text-gray-800 font-Trykker">Génie Logiciel</span>
                                     </div>
-                                    <Tooltip title="Accéder au compte LinkedIn de Mouhamed NDOYE" placement='bottom' arrow followCursor>
-                                        <a href="#" className="w-max mx-auto flex items-center space-x-3 hover:text-violet-800 transition">
+                                    <Tooltip title="Accéder au compte LinkedIn de Mohamed NDOYE" placement='bottom' arrow followCursor>
+                                        <a href="https://www.linkedin.com/in/mohamed-ndoye-a80316203" className="w-max mx-auto flex items-center space-x-3 hover:text-violet-800 transition">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 m-auto" viewBox="0 0 16 16">
                                                 <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
                                             </svg>
@@ -184,7 +184,7 @@ export default function Home() {
                             <div className="border-t-4 border-violet-500 space-y-8 group">
                                 <div className="w-36 h-36 -mt-16 mx-auto rounded-[2rem] rotate-45 overflow-hidden">
                                     <img className="w-full h-full object-cover -rotate-45 scale-125 mx-auto transition duration-300 group-hover:scale-[1.4]"
-                                        src="https://avatars.dicebear.com/api/adventurer/oops.svg" alt="" loading="lazy" width="1000" height="667" />
+                                        src="./assets/images/sane.jpeg" alt="" loading="lazy" width="1000" height="667" />
                                 </div>
                                 <div className="space-y-4 text-center">
                                     <div>
@@ -192,7 +192,7 @@ export default function Home() {
                                         <span className="block text-md text-gray-800 font-Trykker">Intelligence Artificielle</span>
                                     </div>
                                     <Tooltip title="Accéder au compte LinkedIn de Mouhamadou Lamine SANE" placement='bottom' arrow followCursor>
-                                        <a href="#" className="w-max mx-auto flex items-center space-x-3 hover:text-violet-800 transition">
+                                        <a href="https://www.linkedin.com/in/mouhamadou-lamine-sane-5266551a6" className="w-max mx-auto flex items-center space-x-3 hover:text-violet-800 transition">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 m-auto" viewBox="0 0 16 16">
                                                 <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
                                             </svg>
