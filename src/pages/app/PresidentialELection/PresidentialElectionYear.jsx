@@ -14,10 +14,9 @@ import coordinates from "../../../utils/senegal.json"
 import { getAllRegions } from '../../../services/dashboard/RegionService';
 import { getAllDepartments } from '../../../services/dashboard/DepartmentService';
 import { getAllMunicipalities } from '../../../services/dashboard/MunicipalitieService';
-// import './leafletFullscreen/Control.FullScreen.js';
+import './leafletFullscreen/Control.FullScreen.js';
 import './leafletFullscreen/Control.FullScreen.css';
-import "leaflet.fullscreen/Control.FullScreen"
-// import 'leaflet.fullscreen/Control.FullScreen.css'
+// import "leaflet.fullscreen/Control.FullScreen"
 
 export default function PresidentialElectionYear() {
     const { year } = useParams();

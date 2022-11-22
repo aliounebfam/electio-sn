@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import ReloadPrompt from './services/ReloadPwaPrompt';
+import ReloadPrompt from './utils/ReloadPwaPrompt';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { SnackbarProvider } from 'notistack';
 import { router } from './Routes';

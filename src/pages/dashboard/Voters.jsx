@@ -156,6 +156,7 @@ export default function Voters() {
             { field: 'emailAddress', headerName: 'Adresse email', minWidth: 250, flex: 0.5 },
             { field: 'district', headerName: 'Quartier', minWidth: 200, flex: 0.5 },
             { field: 'isRegistered', headerName: 'Inscrit', type: "boolean", minWidth: 60, flex: 0.2 },
+            { field: 'canVoted', headerName: 'Peut voter', type: "boolean", minWidth: 80, flex: 0.2, editable: true },
             {
                 field: 'candidateYears', headerName: 'Année(s) de candidature', minWidth: 175, flex: 0.2,
                 align: "center",
