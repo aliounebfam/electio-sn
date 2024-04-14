@@ -1,4 +1,4 @@
-import { addDoc, collection, doc, getDocs, serverTimestamp } from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, query, serverTimestamp, where } from "firebase/firestore";
 import { db } from "../firebase.js";
 
 export const departmentCollectionRef = collection(db, "departments");
@@ -14,3 +14,12 @@ export const addDepartment = (data) => {
     })
 }
 
+export const getDataSpecificDepartmentFromName = async (departmentName) => {
+    let department = undefined;
+    const departmentRef = query(departmentCollectionRef, where("nom", "==", departmentName));
+    const querySnapshot = await getDocs(departmentRef);
+    querySnapshot.forEach((doc) => {
+        department = { id: doc.id, ...doc.data() };
+    });
+    return department;
+}

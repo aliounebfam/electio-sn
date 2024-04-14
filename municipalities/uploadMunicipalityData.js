@@ -7,8 +7,8 @@ Object.keys(values).forEach((element) => {
     values[element][el].forEach((comm) => {
       fetch(
         "https://api.aladhan.com/v1/timingsByCity?city=" +
-          encodeURIComponent(comm) +
-          "&country=senegal&method=3"
+        encodeURIComponent(comm) +
+        "&country=senegal&method=3"
       )
         .then((response) => {
           return response.json();
